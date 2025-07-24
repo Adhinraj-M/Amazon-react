@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+body{
+    font-family: 'AmazonEmber',Arial, sans-serif;
+}
+
+
+@font-face {
+    font-family:'AmazonEmber' ;
+    src: url('../public/Fonts/AmazonUIBaseCSS-amazonember_rg-fd81bacb6a659a8c8c95828226b74594ab985060._V299195749_.woff2');
+}
+
+
+
+
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    padding: 0;
+}
