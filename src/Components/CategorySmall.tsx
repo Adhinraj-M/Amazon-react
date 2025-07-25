@@ -1,4 +1,4 @@
-import Categories from "../Types/categories"
+import {Categories} from "../Types/categories"
 
 function CategorySmall() {
   return (

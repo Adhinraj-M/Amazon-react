@@ -5,7 +5,7 @@ type Category = {
 }
 
 
-const  Categories:Category[]=[
+export const  Categories:Category[]=[
         {
             id:'c_1',
             img:'https://m.media-amazon.com/images/I/01nDWQ5XCSL._SX100_SY100_.png',
@@ -80,4 +80,35 @@ const  Categories:Category[]=[
 
     ]
 
-    export default Categories
+    
+    type AmazonPay={
+        id:string,
+        img:string,
+        name:string
+
+    }
+
+    export const AmazonPayDetails:AmazonPay[]=[
+        {
+            id:'a_1',
+            img:'https://m.media-amazon.com/images/I/11YgrZMCywL._SS140_.png',
+            name:'Amazon Pay'
+        },
+        {
+            id:'a_2',
+            img:'https://m.media-amazon.com/images/I/01MARS4bb1L._SS140_.png',
+            name:'Recharge'
+        },
+        {
+            id:'a_3',
+            img:'https://m.media-amazon.com/images/I/11yG-E4G3uL._SS140_.png',
+            name:'Rewards'
+        },
+        {
+            id:'a_3',
+            img:'https://m.media-amazon.com/images/I/01vMjYs18BL._SS140_.png',
+            name:'Pay Bills'
+        }
+    ]
+
+    

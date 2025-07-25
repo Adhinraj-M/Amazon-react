@@ -7,13 +7,12 @@
     --font-fontReg:'Amazon-regular' ;
     --font-fontBold:'Amazon-bold';
     --font-fontLight:'Amazon-light'
-
+    
     
 }
 
 body{
         font-family:'Amazon-regular' ;
-
 
 }
 
@@ -34,6 +33,7 @@ body{
     font-family:'Amazon-light' ;
     src: url('/public/Fonts/light.woff2');
 }
+
 
 
 
