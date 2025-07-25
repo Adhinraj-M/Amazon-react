@@ -1,16 +1,39 @@
 @import "tailwindcss";
 
+@theme{
+    --breakpoint-lap2xl:1100px;
+    --breakpoint-lap3xl:1300px;
+    --breakpoint-desk2xl:1700px;
+    --font-fontReg:'Amazon-regular' ;
+    --font-fontBold:'Amazon-bold';
+    --font-fontLight:'Amazon-light'
+
+    
+}
+
 body{
-    font-family: 'AmazonEmber',Arial, sans-serif;
+        font-family:'Amazon-regular' ;
+
+
 }
 
 
 @font-face {
-    font-family:'AmazonEmber' ;
-    src: url('../public/Fonts/AmazonUIBaseCSS-amazonember_rg-fd81bacb6a659a8c8c95828226b74594ab985060._V299195749_.woff2');
+    font-family:'Amazon-regular' ;
+    src: url('/public/Fonts/reg.woff2');
 }
 
 
+@font-face {
+    font-family:'Amazon-bold' ;
+    src: url('/public/Fonts/bold.woff2');
+}
+
+
+@font-face {
+    font-family:'Amazon-light' ;
+    src: url('/public/Fonts/light.woff2');
+}
 
 
 
@@ -20,4 +43,10 @@ a{
 
 ul{
     padding: 0;
+}
+
+
+img{
+    max-width: 100%;
+    border: 0;
 }

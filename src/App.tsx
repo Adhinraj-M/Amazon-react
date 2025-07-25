@@ -1,10 +1,11 @@
-import DeskHeader from "./Components/DeskHeader"
+
+import Home from "./Pages/Home"
 
 function App() {
 
   return (
     <>
-      <DeskHeader/>
+      <Home/>
     </>
   )
 }
