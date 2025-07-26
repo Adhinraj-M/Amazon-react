@@ -1,4 +1,4 @@
-import smallSizeIcon from "../../../public/icon-image/smallSizeIcon.png";
+import smallSizeIcon from "../../../../public/icon-image/smallSizeIcon.png";
 import {
   ProgramsFeaturesMenu,
   TopCategoriesMenu,
@@ -6,7 +6,11 @@ import {
 } from "../../../Types/categories";
 import SideMenuSub from "./SideMenuSub";
 
-function SideMenuBar() {
+ export type SideMenuBarProps={
+  toggleBtn:()=>void
+}
+
+function SideMenuBar({toggleBtn}:SideMenuBarProps) {
   return (
     <div
       className="fixed top-0 left-0 right-0 bottom-0 z-[9999]"
@@ -14,10 +18,11 @@ function SideMenuBar() {
     >
       <div className="opacity-[1] bg-[rgba(0,0,0,.8)] absolute will-change-[opacity] h-full w-full flex"></div>
       <div className="fixed bg-white flex-col h-full shadow-[4px_0_10px_0_rgba(0,0,0,.4)] will-change-[transform] transform-[translateX(0)] min-w-[265px] max-w-[calc(100vw-50px)] w-[80vw]">
-        <div
-          className="fixed w-5 h-5 flex bg-no-repeat bg-[position:-132px_-173px] bg-[length:275px] top-10 right-[-12vw]"
+        <button
+          className="fixed w-5 h-5 flex bg-no-repeat bg-[position:-132px_-173px] bg-[length:275px] top-10 right-[-12vw] cursor-pointer"
           style={{ backgroundImage: `url(${smallSizeIcon})` }}
-        ></div>
+          onClick={toggleBtn}
+        ></button>
         <section className="pt-0 pb-[30px] m-0 absolute right-0 left-0 top-0 bottom-0 overflow-scroll will-change-[transform] block">
           <div className="flex flex-col justify-end bg-[#232f3e] text-white">
             <div className="flex justify-end mb-4 p-[20px_20px_0_20px] items-center">

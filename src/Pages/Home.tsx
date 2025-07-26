@@ -8,11 +8,19 @@ import CubicList from "../Components/SmallScreenComponents/CubicList"
 import CuratedCardList from "../Components/SmallScreenComponents/CuratedCardList"
 import { ProductEmergingBusiness, productLocalStore } from "../Types/product"
 import SideMenuBar from "../Components/SmallScreenComponents/sideMenuComponents/SideMenuBar"
+import { useState } from "react"
 
 function Home() {
+
+  const [toggle,setToggle] =useState(false)
+
+  const handleToggle =()=>{
+    setToggle(!toggle)
+  }
+
   return (
     <div className="bg-gray-200 overflow-x-hidden h-screen relative ">
-      <Header/>
+      <Header toggleBtn={handleToggle}/>
       <Address/>
       <CategorySmall/>
       <HeroCarousel/>
@@ -21,7 +29,7 @@ function Home() {
       <CubicList products={ProductEmergingBusiness}/>
       <CuratedCardList/>
       <CubicList products={productLocalStore}/>
-       <SideMenuBar/>
+      { toggle && <SideMenuBar toggleBtn={handleToggle}/>}
      
     </div>
   )

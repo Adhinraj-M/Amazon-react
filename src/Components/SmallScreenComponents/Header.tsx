@@ -1,7 +1,9 @@
 import smallIconImage from '../../../public/icon-image/smallSizeIcon.png'
+import type { SideMenuBarProps } from './sideMenuComponents/SideMenuBar';
 
 
-function Header() {
+
+function Header({toggleBtn}:SideMenuBarProps) {
 
   const smallIcon = smallIconImage
 
@@ -9,7 +11,7 @@ function Header() {
     <header className="relative z-[208] text-xs leading-[1em] min-w-[200px]">
       <div className="flex relative h-12 w-full border-b-[#232f3e] flex-row flex-nowrap justify-between bg-[#232f3e]">
         <div className="flex-shrink-0 flex-row flex-nowrap flex relative w-auto">
-          <button className="float-left p-3.5 cursor-pointer">
+          <button className="float-left p-3.5 cursor-pointer" onClick={toggleBtn}>
             <i className=" block w-5 h-5 bg-[position:-20px_-382px] bg-[length:278px] bg-no-repeat overflow-hidden" style={{backgroundImage:`url(${smallIcon})`}}></i>
           </button>
           <div className="ml-auto relative float-left z-20 mt-[13px]">
