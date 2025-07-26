@@ -208,3 +208,12 @@ export const SingleImgList: singleListType[] = [
     img: "https://m.media-amazon.com/images/I/318gYLzAzVL._SR270,360_.jpg",
   },
 ];
+
+
+
+
+export const TrendingListMenu:string[]=['Bestsellers','New Releases','Movers and Shakers']
+
+export const TopCategoriesMenu:string[]=['Mobiles','Computers','Books','Amazon Fashion','See All Categories']
+
+export const ProgramsFeaturesMenu:string[]=[`Today's Deals`,'Amazon Bazaar','Amazon Pay','Amazon Launchpad','Handloom and Handicrafts','Amazon Saheli','Amazon Custom','Try Prime','Sell on Amazon','International Brands']

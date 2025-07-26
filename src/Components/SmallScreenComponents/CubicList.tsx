@@ -1,14 +1,19 @@
-import { ProductEmergingBusiness } from "../../Types/product";
+import type { ProductCubicType } from "../../Types/product";
 
-function CubicList() {
+type cubicProductType={
+  products:ProductCubicType[]
+}
+
+
+function CubicList({products}:cubicProductType) {
   return (
     <div className="mt-0.5 mb-0.5 bg-white  p-[12px_15px]">
       <h3 className=" pb-2 text-lg  font-fontBold leading-[23.4px]  text-black">
         Up to 70% off | Trending products from Emerging Businesses
       </h3>
       <div className="grid gap-2 grid-cols-3">
-        {ProductEmergingBusiness &&
-          ProductEmergingBusiness.map((item) => {
+        {products &&
+          products.map((item) => {
             return (
               <div
                 key={item.id}
