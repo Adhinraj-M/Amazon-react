@@ -1,4 +1,4 @@
-import smallIconImage from '../../public/icon-image/smallSizeIcon.png'
+import smallIconImage from '../../../public/icon-image/smallSizeIcon.png'
 
 
 function Address() {

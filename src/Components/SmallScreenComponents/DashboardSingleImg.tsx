@@ -1,4 +1,4 @@
-import type { singleListType } from "../Types/categories";
+import type { singleListType } from "../../Types/categories";
 
 type DashboardSingleImgProps = {
   singleList: singleListType;

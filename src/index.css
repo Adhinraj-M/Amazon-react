@@ -4,15 +4,17 @@
     --breakpoint-lap2xl:1100px;
     --breakpoint-lap3xl:1300px;
     --breakpoint-desk2xl:1700px;
+    --breakpoint-tab:720ppx;
     --font-fontReg:'Amazon-regular' ;
     --font-fontBold:'Amazon-bold';
-    --font-fontLight:'Amazon-light'
-    
+    --font-fontLight:'Amazon-light'    
     
 }
 
 body{
-        font-family:'Amazon-regular' ;
+    font-family:'Amazon-regular' ;
+    height: 100%;
+    width: 100%;
 
 }
 
@@ -36,7 +38,6 @@ body{
 
 
 
-
 a{
     text-decoration: none;
 }
@@ -49,4 +50,8 @@ ul{
 img{
     max-width: 100%;
     border: 0;
+}
+
+.scroll-width-none{
+    scrollbar-width: none;
 }

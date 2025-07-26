@@ -1,8 +1,8 @@
-import {Categories} from "../Types/categories"
+import {Categories} from "../../Types/categories"
 
 function CategorySmall() {
   return (
-    <div className="my-0.5 bg-white overflow-x-scroll overflow-y-hidden whitespace-nowrap p-[10px_0px] relative leading-px h-[93px]">
+    <div className="my-0.5 bg-white overflow-x-scroll overflow-y-hidden whitespace-nowrap p-[10px_0px] relative leading-px h-[93px] scroll-width-none" >
         <div className="mx-[5px] w-full  mb-2.5 h-[55px] text-center scroll">
             {
                 Categories && Categories.map((item)=>{

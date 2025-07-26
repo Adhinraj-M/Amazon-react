@@ -1,0 +1,43 @@
+export type ProductCubicType={
+    img:string,
+    id:string
+}
+
+export const ProductEmergingBusiness:ProductCubicType[]=[
+    {
+        id:'pe_1',
+        img:'https://m.media-amazon.com/images/I/51uB35vUM6L._AC_SS260_.jpg'
+    },
+    {
+        id:'pe_2',
+        img:'https://m.media-amazon.com/images/I/71gws3S21fL._AC_SS260_.jpg'
+    },
+    {
+        id:'pe_3',
+        img:'https://m.media-amazon.com/images/I/912tcfPajcL._AC_SS260_.jpg'
+    },
+    {
+        id:'pe_4',
+        img:'https://m.media-amazon.com/images/I/61o44bX8giL._AC_SS260_.jpg'
+    },
+    {
+        id:'pe_5',
+        img:'https://m.media-amazon.com/images/I/811+WdwdtjL._AC_SS260_.jpg'
+    },
+    {
+        id:'pe_6',
+        img:'https://m.media-amazon.com/images/I/81QUZjovaxL._AC_SS260_.jpg'
+    },
+    {
+        id:'pe_7',
+        img:'https://m.media-amazon.com/images/I/7103Wl91cqL._AC_SS260_.jpg'
+    },
+    {
+        id:'pe_8',
+        img:'https://m.media-amazon.com/images/I/515Dz3Ko3jL._AC_SS260_.jpg'
+    },
+    {
+        id:'pe_9',
+        img:'https://m.media-amazon.com/images/I/51+WF4Y6UVL._AC_SS260_.jpg'
+    },
+]

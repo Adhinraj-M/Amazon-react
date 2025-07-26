@@ -1,4 +1,4 @@
-import type { DashboardListType } from "../Types/categories";
+import type { DashboardListType } from "../../Types/categories";
 
 type dataProps = {
   data: DashboardListType[];
