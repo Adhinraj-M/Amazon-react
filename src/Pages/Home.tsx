@@ -29,7 +29,7 @@ function Home() {
       <CubicList products={ProductEmergingBusiness}/>
       <CuratedCardList/>
       <CubicList products={productLocalStore}/>
-      { toggle && <SideMenuBar toggleBtn={handleToggle}/>}
+      { toggle && <SideMenuBar toggleBtn={handleToggle} toggle={toggle}/>}
      
     </div>
   )

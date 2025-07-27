@@ -6,16 +6,18 @@ import {
 } from "../../../Types/categories";
 import SideMenuSub from "./SideMenuSub";
 
- export type SideMenuBarProps={
-  toggleBtn:()=>void
+ type SideMenuBarProps={
+  toggleBtn:()=>void,
+  toggle:boolean
 }
 
-function SideMenuBar({toggleBtn}:SideMenuBarProps) {
+function SideMenuBar({toggleBtn,toggle}:SideMenuBarProps) {
+
+
+
   return (
     <div
-      className="fixed top-0 left-0 right-0 bottom-0 z-[9999]"
-      style={{ visibility: "visible" }}
-    >
+      className={`fixed top-0 left-0 right-0 bottom-0 z-[9999] `}>
       <div className="opacity-[1] bg-[rgba(0,0,0,.8)] absolute will-change-[opacity] h-full w-full flex"></div>
       <div className="fixed bg-white flex-col h-full shadow-[4px_0_10px_0_rgba(0,0,0,.4)] will-change-[transform] transform-[translateX(0)] min-w-[265px] max-w-[calc(100vw-50px)] w-[80vw]">
         <button

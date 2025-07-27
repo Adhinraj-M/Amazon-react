@@ -1,9 +1,11 @@
 import smallIconImage from '../../../public/icon-image/smallSizeIcon.png'
-import type { SideMenuBarProps } from './sideMenuComponents/SideMenuBar';
 
+ type HeaderProps={
+  toggleBtn:()=>void,
+  
+}
 
-
-function Header({toggleBtn}:SideMenuBarProps) {
+function Header({toggleBtn}:HeaderProps) {
 
   const smallIcon = smallIconImage
 
