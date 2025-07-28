@@ -10,7 +10,7 @@ function CuratedCardList() {
         {CuratedProduct &&
           CuratedProduct.map((item) => {
             return (
-              <div className="h-[101.41px]" key={item.id}>
+              <div className="h-auto" key={item.id}>
                 <img
                   className="w-full rounded-[4px]"
                   src={item.img}

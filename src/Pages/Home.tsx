@@ -10,6 +10,7 @@ import { ProductEmergingBusiness, productLocalStore } from "../Types/product"
 import SideMenuBar from "../Components/SmallScreenComponents/sideMenuComponents/SideMenuBar"
 import { useState } from "react"
 import DiscoverProduct from "../Components/SmallScreenComponents/DiscoverProduct"
+import Footer from "../Components/SmallScreenComponents/Footer"
 
 function Home() {
 
@@ -32,6 +33,7 @@ function Home() {
       <CubicList products={productLocalStore}/>
       { toggle && <SideMenuBar toggleBtn={handleToggle} toggle={toggle}/>}
       <DiscoverProduct/>
+      <Footer/>
     </div>
   )
 }
