@@ -2,6 +2,87 @@
     {
         "id":"P_1",
         "product_category":"home_decor_and_kitchen",
-        "product_title":""
+        "product_title":"McFarlane PVC Door Guard (‥",
+        "product_detailed_title":"McFarlane PVC Door Guard (39 Inches, Pack of 3) Gap Filler for Door Bottom Seal Strip, Sound Proof, Reduce Noise, Energy...",
+        "product_offer":"-68%",
+        "product_price":"158",
+        "product_actual_price":"₹499",
+        "no_of_buyers":"3K+",
+        "proudct_rating":"4.7",
+        "total_reviews":"1,408",
+        "product_img":[
+            "https://m.media-amazon.com/images/I/61A6Na5lzkL._UF1000,1000_QL80_FMwebp_.jpg",
+            "https://m.media-amazon.com/images/I/415iIS7j5SL._UF1000,1000_QL80_FMwebp_.jpg",
+            "https://m.media-amazon.com/images/I/71xGZVueS6L._UF1000,1000_QL80_FMwebp_.jpg"
+             ]
+    },
+    {
+        "id":"P_2",
+        "product_category":"books",
+        "product_title":"Sarkari Chai Ke liye - Hindi N‥",
+        "product_detailed_title":"Sarkari Chai Ke liye - Hindi Novel Perfect Paperback ",
+        "product_offer":"-6%",
+        "product_price":"235",
+        "product_actual_price":"₹249",
+        "no_of_buyers":"no_data",
+        "proudct_rating":"5.0",
+        "total_reviews":"2",
+        "product_img":[
+            "https://m.media-amazon.com/images/I/51FOH-bX-GL._UF1000,1000_QL80_FMwebp_.jpg",
+            "https://m.media-amazon.com/images/I/51v8BKC1biL._UF1000,1000_QL80_FMwebp_.jpg"
+            ]
+    },
+    {
+        "id":"P_3",
+        "product_category":"gym_and_sports",
+        "product_title":"Adidas Women's Shoes-Low‥",
+        "product_detailed_title":" Adidas Women's Shoes-Low (Non Football) CL7345 Black Running 7 UK (40.5 EU)",
+        "product_offer":"-36%",
+        "product_price":"1,926",
+        "product_actual_price":"₹2,999",
+        "no_of_buyers":"no_data",
+         "proudct_rating":"4.0",
+        "total_reviews":"1",
+        "product_img":[
+            "https://m.media-amazon.com/images/I/81M6gdvcn6L._UY1000_FMwebp_.jpg",
+            "https://m.media-amazon.com/images/I/813oLGbOVpL._UY1000_FMwebp_.jpg",
+            "https://m.media-amazon.com/images/I/81zGDonrxbL._UY1000_FMwebp_.jpg"
+            ]
+    },
+    {
+        "id":"P_3",
+        "product_category":"home_decor_and_kitchen",
+        "product_title":"Mee Mee Accurate Medicine‥",
+        "product_detailed_title":"Mee Mee Accurate Medicine Dropper and Dispenser (Blue)",
+        "product_offer":"-20%",
+        "product_price":"198",
+        "product_actual_price":"₹249",
+        "no_of_buyers":"300+",
+         "proudct_rating":"4.0",
+        "total_reviews":"902",
+        "product_img":[
+            "https://m.media-amazon.com/images/I/413vv+dBHOL._AC_SS304_.jpg",
+            "https://m.media-amazon.com/images/I/61F0x-TzdML._UF894,1000_QL80_FMwebp_.jpg",
+            "https://m.media-amazon.com/images/I/61Bko6i+r6L._UF894,1000_QL80_FMwebp_.jpg"
+            ]
+    },
+    {
+        "id":"P_4",
+        "product_category":"automotive",
+        "product_title":"Shakti Technology S5 High‥",
+        "product_detailed_title":"    Shakti Technology S5 High Pressure Car Washer Machine 1900 Watts, Pressure 125 Bar, 8L/Min Flow Rate and 10 Meter Hose Pipe with Professional 1L Foam Cannon Snow Lance     ",
+        "product_offer":"-40%",
+        "product_price":"5,999",
+        "product_actual_price":"₹9,999",
+        "no_of_buyers":"2K+",
+         "proudct_rating":"4.0",
+        "total_reviews":"902",
+        "product_img":[
+            "https://m.media-amazon.com/images/I/71tuewWK6QL._AC_SS304_.jpg",
+            "https://m.media-amazon.com/images/I/61F0x-TzdML._UF894,1000_QL80_FMwebp_.jpg",
+            "https://m.media-amazon.com/images/I/61Bko6i+r6L._UF894,1000_QL80_FMwebp_.jpg"
+            ]
     }
+
+
 ]
