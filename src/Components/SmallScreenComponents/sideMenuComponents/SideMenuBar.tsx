@@ -13,8 +13,6 @@ import SideMenuSub from "./SideMenuSub";
 
 function SideMenuBar({toggleBtn,toggle}:SideMenuBarProps) {
 
-
-
   return (
     <div
       className={`fixed top-0 left-0 right-0 bottom-0 z-[9999] `}>

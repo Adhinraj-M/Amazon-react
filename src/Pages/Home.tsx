@@ -9,6 +9,7 @@ import CuratedCardList from "../Components/SmallScreenComponents/CuratedCardList
 import { ProductEmergingBusiness, productLocalStore } from "../Types/product"
 import SideMenuBar from "../Components/SmallScreenComponents/sideMenuComponents/SideMenuBar"
 import { useState } from "react"
+import DiscoverProduct from "../Components/SmallScreenComponents/DiscoverProduct"
 
 function Home() {
 
@@ -30,7 +31,7 @@ function Home() {
       <CuratedCardList/>
       <CubicList products={productLocalStore}/>
       { toggle && <SideMenuBar toggleBtn={handleToggle} toggle={toggle}/>}
-     
+      <DiscoverProduct/>
     </div>
   )
 }
