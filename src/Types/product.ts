@@ -129,3 +129,32 @@ export const CuratedProduct:CuratedProductType[]=[
         title:`Books | Under ₹499`
     },
 ]
+
+
+export const heroCarouselImg: string[] = [
+  "https://m.media-amazon.com/images/I/71sqZ+9KGzL._SR1236,1080_.jpg",
+  "https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/ab80958b-64cb-46b5-8f33-e654b88d4ad6.jpg",
+  "https://m.media-amazon.com/images/I/611lCr8X1vL._SR1236,1080_.jpg",
+  "https://m.media-amazon.com/images/I/61zDNpQPdUL._SR1236,1080_.jpg",
+  "https://m.media-amazon.com/images/I/71QzfbiakxL._SR1236,1080_.png",
+  "https://m.media-amazon.com/images/I/61uX94pLhTL._SR1236,1080_.jpg",
+  "https://m.media-amazon.com/images/I/71Koz99yS+L._SR1236,1080_.png",
+  "https://m.media-amazon.com/images/I/61B1eCsNnXL._SR1236,1080_.jpg",
+  "https://m.media-amazon.com/images/I/61KIqe+KP5L._SR1236,1080_.jpg",
+  "https://m.media-amazon.com/images/I/61uX94pLhTL._SR1236,1080_.jpg",
+
+];
+
+export type Products={
+    id:string,  
+    product_category:string,
+    product_title: string,
+    product_detailed_title: string,
+    product_offer: string,
+    product_price:string,
+    product_actual_price: string,
+    no_of_buyers: string,
+    proudct_rating: string,
+    total_reviews:string,
+    product_img: Array<string>
+}
