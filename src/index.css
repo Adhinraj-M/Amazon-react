@@ -5,10 +5,20 @@
     --breakpoint-lap3xl:1300px;
     --breakpoint-desk2xl:1700px;
     --breakpoint-tab:720px;
-    --font-fontReg:'Amazon-regular' ;
+    --font-fontReg:'Amazon-regular';
     --font-fontBold:'Amazon-bold';
-    --font-fontLight:'Amazon-light'    
-    
+    --font-fontLight:'Amazon-light';
+    --animate-navbar:animate-navbar 0.2s;
+
+
+    @keyframes animate-navbar {
+        0%{
+            top:-44px
+        }
+        100%{
+            top:0
+        }
+    }
 }
 
 body{

@@ -1,5 +1,5 @@
-import bigScreenIcon from '../../public/icon-image/bigSizeIcon.png'
-import flagIcon from '../../public/icon-image/flag.png'
+import bigScreenIcon from '../../../public/icon-image/bigSizeIcon.png'
+import flagIcon from '../../../public/icon-image/flag.png'
 import NavDesk from './NavDesk';
 
 function DeskHeader() {
