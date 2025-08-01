@@ -6,7 +6,7 @@ import useWindowWidth from '../../Resize/WindowWidth';
 function NavDesk() {
 
 
-    const menuCategory:string[]=['Fresh','MX Player','Sell','Bestsellers',`Today's Deals`,'Mobiles','Prime','Customer Service','Fashion','New Releases','Home & Kitchen','Electronics','Amazon Pay','Computers','Beauty & Personal Care','Books','Car & Motorbike','Video Games']
+    const menuCategory:string[]=['MX Player','Sell','Bestsellers',`Today's Deals`,'Mobiles','Prime','Customer Service','Fashion','New Releases','Home & Kitchen','Electronics','Amazon Pay','Computers','Beauty & Personal Care','Books','Car & Motorbike','Video Games']
 
     const [menuList,setMenuList] = useState<string[]>(menuCategory.slice(0,10))
 
@@ -43,7 +43,7 @@ function NavDesk() {
   },[screenWidth])
 
   return (
-    <nav className="pl-[11px]  h-10 pt-0 flex static flex-nowrap bg-[#232f3e] w-full transform translate-[0,0,0] z-[4] bg-[position:0_-725px] desk2xl:pl-[15px]">
+    <nav className="pl-[11px]  h-[39px] pt-0 flex static flex-nowrap bg-[#232f3e] w-full transform translate-[0,0,0] z-[4] bg-[position:0_-725px] desk2xl:pl-[15px]">
       <a
         href="#"
         className="flex static items-center w-auto h-auto border:none p-[8px_9px_8px_9px] m-0 text-[25px] text-white rounded-[3px] desk2xl:mr-[3px]"
@@ -68,7 +68,7 @@ function NavDesk() {
                 href="#">
                 {item}
                 </a>
-                <button className={`m-[18px_0px_4px] relative left-[5px] border-4 border-b-0 cursor-pointer border-[transparent] ${index === 6 ? 'inline-block':'hidden'}  border-t-[#a7acb2] p-0  w-0 h-0 leading-0 items-center `}>
+                <button className={`m-[18px_0px_4px] relative left-[5px] border-4 border-b-0 cursor-pointer border-[transparent] ${index === 5 ? 'inline-block':'hidden'}  border-t-[#a7acb2] p-0  w-0 h-0 leading-0 items-center `}>
                </button>
             </li>
             );
