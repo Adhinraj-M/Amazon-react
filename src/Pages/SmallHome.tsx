@@ -36,7 +36,7 @@ function SmallHome() {
   }, []);
 
   return (
-    <div className="bg-gray-200 overflow-x-hidden min-h-screen relative min-tab:hidden ">
+    <div className="bg-gray-200 overflow-x-hidden min-h-screen relative min-large:hidden ">
       <Header toggleBtn={handleToggle} />
         {showTopBar && <TopBar toggleBtn={handleToggle} />}
       <Address />

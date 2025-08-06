@@ -4,7 +4,10 @@
     --breakpoint-lap2xl:1100px;
     --breakpoint-lap3xl:1300px;
     --breakpoint-desk2xl:1700px;
+    --breakpoint-min-1240:1240px;
     --breakpoint-tab:720px;
+    --breakpoint-large:1000px;
+   
     --font-fontReg:'Amazon-regular';
     --font-fontBold:'Amazon-bold';
     --font-fontLight:'Amazon-light';

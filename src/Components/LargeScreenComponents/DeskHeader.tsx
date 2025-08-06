@@ -29,7 +29,7 @@ function DeskHeader() {
               ></div>
               <div className="ml-[3px] flex flex-col flex-nowrap ">
                 <span className="text-[#ccc] mt-0 pr-0 text-xs leading-3.5 h-3.5 font-normal ">
-                  Delivering to Kannur 670001
+                  Delivering to Kalpatta 673122
                 </span>
                 <span className="font-fontBold pb-[1px] pr-0 text-white text-sm leading-[15px]  ">
                   Update location
