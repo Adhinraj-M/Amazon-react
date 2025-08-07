@@ -371,10 +371,11 @@ function DeskAdds() {
       <div className="relative h-auto min-h-5 text-right p-0 mt-0.5 leading-0 ">
         <a className="no-underline text-[11px] text-[rgb(85,85,85)] cursor-pointer p-0.5 text-right" href="#">
             Sponsored
-                          <b className="ml-0.5 inline-block align-text-bottom m-[1px_0] w-[14px] h-3 bg-no-repeat  bg-transparent" style={{backgroundImage:"url('	https://m.media-amazon.com/images/G/01/ad-feedback/New-info-icon-sprite-1x.png')"}}></b>
+        <b className="ml-0.5 inline-block align-text-bottom m-[1px_0] w-[14px] h-3 bg-no-repeat  bg-transparent" style={{backgroundImage:"url('	https://m.media-amazon.com/images/G/01/ad-feedback/New-info-icon-sprite-1x.png')"}}></b>
 
         </a>
       </div>
+
     </div>
   );
 }

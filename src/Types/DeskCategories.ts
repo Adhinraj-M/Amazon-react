@@ -248,3 +248,63 @@ export const BeautyCategoryProducts: CategoryProductImg[] =[
   },
   
 ]
+
+
+
+export const deskNavfooterOne:string[]=["About Amazon","Careers","Press Releases","Amazon Science"]
+export const deskNavfooterTwo:string[]=["Facebook","Twitter","Instagram"]
+export const deskNavfooterThree:string[]=["Sell on Amazon","Sell under Amazon Accelerator","Protect and Build Your Brand","Amazon Global Selling","Supply to Amazon","Become an Affiliate","Fulfilment by Amazon","Advertise Your Products","Amazon Pay on Merchants"]
+export const deskNavfooterFour:string[]=["Your Account","Returns Centre","Recalls and Product Safety Alerts","100% Purchase Protection","Amazon App Download","Help"]
+
+type amazonServiceType={
+  heading:string,
+  firstPart:string,
+  secondPart:string
+}
+
+export const amazonServiceOne:amazonServiceType[]=[
+  {
+    heading:'AbeBooks',
+    firstPart:'Books, art',
+    secondPart:'& collectibles'
+  },
+  {
+    heading:'Amazon Web Services',
+    firstPart:'Scalable Cloud ',
+    secondPart:'Computing Services'
+  },
+  {
+    heading:'Audible',
+    firstPart:'Download ',
+    secondPart:'Audio Books'
+  },
+  {
+    heading:'IMDb',
+    firstPart:'Movies, TV ',
+    secondPart:'& Celebrities'
+  }
+]
+
+export const amazonServiceTwo:amazonServiceType[]=[
+  {
+    heading:'Shopbop',
+    firstPart:'Designer ',
+    secondPart:'Fashion Brands'
+  },
+  {
+    heading:'Amazon Business',
+    firstPart:'Everything For ',
+    secondPart:'Your Business'
+  },
+  {
+    heading:'Prime Now',
+    firstPart:'2-Hour Delivery ',
+    secondPart:'on Everyday items'
+  },
+  {
+    heading:'Amazon Prime Music',
+    firstPart:'100 million songs, ad-free ',
+    secondPart:'Over 15 million podcast episodes'
+  }
+
+]
