@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import DeskAdds from "../Components/LargeScreenComponents/DeskAdds";
 import DeskAllProductCard from "../Components/LargeScreenComponents/DeskAllProductCard";
 import DeskCarousel from "../Components/LargeScreenComponents/DeskCarousel";
@@ -14,10 +15,41 @@ import {
   MobileCategoryProduct,
 } from "../Types/DeskCategories";
 
+import DeskSideMenu from "../Components/LargeScreenComponents/DeskTopSideMenu/DeskSideMenu";
+import NavDesk from "../Components/LargeScreenComponents/NavDesk";
+
 function LargeHome() {
+
+const [showHeader,setShowHeader]=useState<boolean>(false)
+const [showSideBar,setShowSideBar]=useState<boolean>(false)
+
+
+  useEffect(() => {
+    const handleScrollY = () => {
+      if (window.scrollY > 10) {
+        setShowHeader(true);
+      } else {
+        setShowHeader(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScrollY);
+
+    return () => window.removeEventListener("scroll", handleScrollY);
+  }, []);
+
+  const handleSideBar = () =>{
+    setShowSideBar(!showSideBar)
+  }
+  
+  
+  
+  
   return (
     <div className="hidden min-large:block bg-[#E3E6E6]">
-      <DeskHeader />
+      <DeskHeader stickHeader={showHeader}/>
+      <NavDesk sideBar={handleSideBar} />
+     { showSideBar && <DeskSideMenu sideBar={handleSideBar}/> }
       <DeskCarousel />
       <DeskAllProductCard />
       <div className="max-w-[1480px] 2xl:m-auto">
@@ -67,6 +99,8 @@ function LargeHome() {
       </div>
       <Pagination/>
       <DeskFooter/>
+
+
     </div>
   );
 }

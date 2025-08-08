@@ -346,13 +346,13 @@ function Pagination() {
       {/* see personalized recommendations */}
 
 
-        <div className="mt-[19px] mb-[17px] border-0 leading-[15px] px-5 text-center">
+        <div className="mt-[19px] mb-[17px] border-0 leading-[15px] px-5 text-center pb-5">
           <h2  className="pb-1 font-fontBold text-2xl leading-8">See personalized recommendations</h2>
           <button className="rounded-[100px] !w-[17%] bg-[#ffd814] border-[#ffd814] inline-block p-0 text-center cursor-pointer !my-1 h-7.5 text-[13px] leading-[30px]">Sign in</button>
         <div className="leading-[15px] text-[11px] ">New customer? <a className="text-[#2162a1] !underline" href="#">Start here</a></div>
         </div>
-
       </div>
+        <div className="pt-5"></div>
     </div>
   );
 }

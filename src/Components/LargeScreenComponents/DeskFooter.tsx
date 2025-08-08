@@ -11,7 +11,7 @@ import AmazonService from "./AmazonService";
 
 function DeskFooter() {
   return (
-    <div className=" bg-[#232F3E] min-w-[1000px] relative  m-[20px_0px_0px_0px] p-[0_0_0px_0] ">
+    <div className=" bg-[#232F3E] min-w-[1000px] relative  m-0 p-[0_0_0px_0] ">
       <div className="mb-10 bg-[#37475A] text-white block text-center p-[15px_0] leading-[19px] text-[13px]">
         Back to top
       </div>

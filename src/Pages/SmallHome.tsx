@@ -56,4 +56,3 @@ function SmallHome() {
 
 export default SmallHome;
 
-
