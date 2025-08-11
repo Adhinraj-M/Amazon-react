@@ -320,3 +320,14 @@ export const deskCarousel:string[]=[
   "https://images-eu.ssl-images-amazon.com/images/G/31/img23/Softlines_JWL_SH_GW_Assets/2024/BAU_BTF/Nov/Unrec/Shoes/1/30001._CB542120021_.jpg"
 ]
 
+
+   export type CarWashProduct={
+      id:string,
+      title:string,
+      img:string[],
+      no_of_rating:string,
+      rating:string,
+      original_price:string,
+      offer_price:string,
+      offer_percentage:string
+    }

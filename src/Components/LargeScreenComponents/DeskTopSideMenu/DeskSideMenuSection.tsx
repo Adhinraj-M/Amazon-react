@@ -54,7 +54,7 @@ function DeskSideMenuSection({
                 )}
 
                 {index === 3 && hasSeeMore && Isexpand && (
-                  <li className=" pb-[15px] m-0 flex items-center pr-5 pl-[18px] pt-[13px] text-[14px] w-full leading-4 "
+                  <li className=" pb-[15px] m-0 flex items-center cursor-pointer pr-5 pl-[18px] pt-[13px] text-[14px] w-full leading-4 "
                     onClick={handleSeeMore}>
                     <span>See all</span>
 
@@ -65,7 +65,7 @@ function DeskSideMenuSection({
 
                 {index === 10 && !Isexpand && (
                   <li
-                    className=" pb-[15px] m-0 flex items-center pr-5 pl-[18px] pt-[13px] text-[14px] w-full leading-4 "
+                    className=" pb-[15px] m-0 flex items-center pr-5 pl-[18px] pt-[13px] text-[14px] w-full leading-4 cursor-pointer"
                     onClick={handleSeeMore}>
                     <span>see less</span>
 
@@ -82,5 +82,4 @@ function DeskSideMenuSection({
 }
 
 export default DeskSideMenuSection;
-
-
+ 

@@ -61,9 +61,9 @@ function Header({toggleBtn}:HeaderProps) {
         <ul className="contents list-none ">
           <li className="relative m-[0px_0px_20px_15px] pr-[3px] leading-[15px] text-[15px] font-normal text-white">
             Category
-            <li className="absolute top-[-14px] left-0 text-[11px] text-white">
+            <span className="absolute top-[-14px] left-0 text-[11px] text-white">
               Shop By
-            </li>
+            </span>
           </li>
 
           <li className="m-[0px_0px_20px_15px] pr-[3px] leading-[15px] text-[15px] font-normal text-white">
