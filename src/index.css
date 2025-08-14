@@ -48,8 +48,6 @@ body{
     src: url('/public/Fonts/light.woff2');
 }
 
-
-
 a{
     text-decoration: none;
 }
@@ -67,3 +65,5 @@ img{
 .scroll-width-none{
     scrollbar-width: none;
 }
+
+input[type="range" ]

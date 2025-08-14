@@ -84,49 +84,58 @@ export const productLocalStore:ProductCubicType[]=[
 export type CuratedProductType ={
     id:string,
     img:string,
-    title:string
+    title:string,
+    url_endpoint:string
 }
 
 export const CuratedProduct:CuratedProductType[]=[
     {
         id:'cp_1',
-        img:'https://m.media-amazon.com/images/I/61gw9cl+JHL._SR540,200_.jpg',
-        title:`Women's westernwear | Starting ₹99`
+        img:'https://m.media-amazon.com/images/I/413rC-v6TtL._SR540,200_.jpg',
+        title:`Women's Kurtis | Starting ₹199`,
+        url_endpoint:'WomenDress'
     },
     {
         id:'cp_2',
-        img:'https://m.media-amazon.com/images/I/6104bMA1NqL._SR540,200_.jpg',
-        title:`Men's t-shirts | Starting ₹99`
+        img:'https://m.media-amazon.com/images/I/61gw9cl+JHL._SR540,200_.jpg',
+        title:`Women's westernwear | Starting ₹99`,
+        url_endpoint:'WomenDress'
     },
     {
         id:'cp_3',
-        img:'https://m.media-amazon.com/images/I/41w1uizy5-L._SR540,200_.jpg',
-        title:`Best finds for home | Starting ₹99`
+        img:'https://m.media-amazon.com/images/I/6104bMA1NqL._SR540,200_.jpg',
+        title:`Men's t-shirts | Starting ₹99`,
+        url_endpoint:'menDress'
     },
     {
         id:'cp_4',
-        img:'https://m.media-amazon.com/images/I/41YBFpAZykL._SR540,200_.jpg',
-        title:`Top picks on kitchen | Starting ₹99`
+        img:'https://m.media-amazon.com/images/I/41w1uizy5-L._SR540,200_.jpg',
+        title:`Home décor | Starting ₹79`,
+        url_endpoint:'homeDecor'
     },
     {
         id:'cp_5',
-        img:'https://m.media-amazon.com/images/I/31rpzxE0u1L._SR540,200_.jpg',
-        title:`Bestselling electronics | Under ₹1,999`
+        img:'https://m.media-amazon.com/images/I/41YBFpAZykL._SR540,200_.jpg',
+        title:`Kitchen essentials | Under ₹299`,
+        url_endpoint:'kitchen'
     },
     {
         id:'cp_6',
-        img:'https://m.media-amazon.com/images/I/31a6C2k0CsL._SR540,200_.jpg',
-        title:`Health & personal care | Starting ₹149`
+        img:'https://m.media-amazon.com/images/I/31vCBYV+1uL._SR540,200_.jpg',
+        title:`Mobile accessories | Starting ₹99`,
+        url_endpoint:'mobileAccessories'
     },
     {
         id:'cp_7',
-        img:'https://m.media-amazon.com/images/I/31Bs--KrZOL._SR540,200_.jpg',
-        title:`Smartphones | Starting ₹6,999`
+        img:'https://m.media-amazon.com/images/I/31VTHFIvC-L._SR540,200_.jpg',
+        title:`Headphones | Starting ₹199`,
+        url_endpoint:'headPhones'
     },
     {
         id:'cp_8',
-        img:'https://m.media-amazon.com/images/I/41Sidv0d6WL._SR540,200_.jpg',
-        title:`Books | Under ₹499`
+        img:'https://m.media-amazon.com/images/I/41Tuqb5TxdL._SR540,200_.jpg',
+        title:`Kids' wear | Starting ₹79`,
+        url_endpoint:'kidsWear'
     },
 ]
 
@@ -158,3 +167,20 @@ export type Products={
     total_reviews:string,
     product_img: Array<string>
 }
+
+export type CategoryProdut={
+   id:string
+product_category:string
+product_title:string
+product_detailed_title:string
+product_offer:string
+product_price:string
+product_actual_price:string
+no_of_buyers:string
+product_rating:string
+total_reviews:string
+product_img:string[]
+
+
+}
+

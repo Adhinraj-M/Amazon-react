@@ -1,0 +1,245 @@
+{"product":[
+  {
+    "id": "hp01",
+    "product_category": "headphones",
+    "product_title": "House of Quirk Animal Finger Headphones",
+    "product_price": "599",
+    "product_actual_price": "₹2,499",
+    "product_rating": "3.8",
+    "total_reviews": "5,958",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/61+pEvfKgOL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "hp02",
+    "product_category": "headphones",
+    "product_title": "boAt Rockerz 450 Bluetooth On-Ear Headphones",
+    "product_price": "1,299",
+    "product_actual_price": "₹3,990",
+    "product_rating": "4.2",
+    "total_reviews": "85,320",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/61+0KSoFrOL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "hp03",
+    "product_category": "headphones",
+    "product_title": "Zebronics Zeb-Rush Wired Gaming Headphones",
+    "product_price": "999",
+    "product_actual_price": "₹2,499",
+    "product_rating": "4.0",
+    "total_reviews": "10,025",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/61FrvQMXxJL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "hp04",
+    "product_category": "headphones",
+    "product_title": "Sony WH-CH520 Wireless On-Ear Bluetooth Headset",
+    "product_price": "3,999",
+    "product_actual_price": "₹4,990",
+    "product_rating": "4.4",
+    "total_reviews": "13,872",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/51nAbVtQiPL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "hp05",
+    "product_category": "headphones",
+    "product_title": "JBL Tune 510BT Wireless On-Ear Headphones",
+    "product_price": "2,999",
+    "product_actual_price": "₹4,499",
+    "product_rating": "4.3",
+    "total_reviews": "25,421",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/51olaRm1P4L._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "hp06",
+    "product_category": "headphones",
+    "product_title": "Infinity (JBL) Glide 510 Wireless Headphones",
+    "product_price": "1,399",
+    "product_actual_price": "₹3,499",
+    "product_rating": "4.1",
+    "total_reviews": "8,763",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/61hn6KsNlKL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "hp07",
+    "product_category": "headphones",
+    "product_title": "Realme Buds Wireless 2 Neo Neckband",
+    "product_price": "1,299",
+    "product_actual_price": "₹2,499",
+    "product_rating": "4.0",
+    "total_reviews": "17,382",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/41EGY5ySGDL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "hp08",
+    "product_category": "headphones",
+    "product_title": "Noise Two Wireless On-Ear Headphones",
+    "product_price": "1,499",
+    "product_actual_price": "₹3,999",
+    "product_rating": "4.1",
+    "total_reviews": "6,512",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/41u5hi3npOL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "hp09",
+    "product_category": "headphones",
+    "product_title": "Boult Audio ProBass Thunder Over-Ear Headphones",
+    "product_price": "1,499",
+    "product_actual_price": "₹3,999",
+    "product_rating": "4.0",
+    "total_reviews": "9,642",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/71GjdTXmqrL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "hp10",
+    "product_category": "headphones",
+    "product_title": "OneOdio Studio Pro Wired Over-Ear Headphones",
+    "product_price": "2,099",
+    "product_actual_price": "₹3,499",
+    "product_rating": "4.5",
+    "total_reviews": "2,504",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/51yKaboUIbL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "hp11",
+    "product_category": "headphones",
+    "product_title": "Cosmic Byte GS410 Wired Gaming Headset",
+    "product_price": "1,299",
+    "product_actual_price": "₹2,999",
+    "product_rating": "4.3",
+    "total_reviews": "18,942",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/71GA+Nbqe9L._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "hp12",
+    "product_category": "headphones",
+    "product_title": "Sennheiser HD 400s Wired Over-Ear Headphones",
+    "product_price": "4,490",
+    "product_actual_price": "₹7,490",
+    "product_rating": "4.6",
+    "total_reviews": "3,429",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/612MZD8FGWL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "hp13",
+    "product_category": "headphones",
+    "product_title": "pTron Studio Lite Bluetooth Headphones",
+    "product_price": "899",
+    "product_actual_price": "₹2,499",
+    "product_rating": "3.9",
+    "total_reviews": "11,700",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/71ludQCpmWL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "hp14",
+    "product_category": "headphones",
+    "product_title": "Marshall Major IV Bluetooth Headphones",
+    "product_price": "9,999",
+    "product_actual_price": "₹12,999",
+    "product_rating": "4.7",
+    "total_reviews": "2,132",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/61xaolOBMcL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "hp15",
+    "product_category": "headphones",
+    "product_title": "Skullcandy Hesh ANC Wireless Over-Ear Headphones",
+    "product_price": "7,499",
+    "product_actual_price": "₹10,999",
+    "product_rating": "4.3",
+    "total_reviews": "1,594",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/41fziMJ+SvL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "hp16",
+    "product_category": "headphones",
+    "product_title": "Philips Audio TAH4205BK Wireless On-Ear Headphones",
+    "product_price": "1,899",
+    "product_actual_price": "₹3,499",
+    "product_rating": "4.2",
+    "total_reviews": "5,060",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/71fGV7xOpgL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "hp17",
+    "product_category": "headphones",
+    "product_title": "Boat Nirvana 751 ANC Hybrid Noise Cancellation Headphones",
+    "product_price": "3,299",
+    "product_actual_price": "₹7,990",
+    "product_rating": "4.1",
+    "total_reviews": "7,821",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/61XUIvi+OwL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "hp18",
+    "product_category": "headphones",
+    "product_title": "Kotion Each GS410 Gaming Headphones with Mic",
+    "product_price": "1,499",
+    "product_actual_price": "₹3,299",
+    "product_rating": "4.0",
+    "total_reviews": "13,674",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/416ZDeKMBbL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "hp19",
+    "product_category": "headphones",
+    "product_title": "Soundcore by Anker Life Q10 Wireless Headphones",
+    "product_price": "2,799",
+    "product_actual_price": "₹4,999",
+    "product_rating": "4.4",
+    "total_reviews": "6,328",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/51A2Il3V3aL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "hp20",
+    "product_category": "headphones",
+    "product_title": "Redgear Cloak Wired Gaming Headphones",
+    "product_price": "1,599",
+    "product_actual_price": "₹2,999",
+    "product_rating": "4.2",
+    "total_reviews": "9,143",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/61qUKWJpnYL._AC_SR175,263_FMwebp_QL65_.jpg"
+   
+    ]
+}
+],
+"category":["wired","wireless","Neckband","Gaming"]
+}

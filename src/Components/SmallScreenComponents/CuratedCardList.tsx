@@ -1,6 +1,16 @@
+
+import { useNavigate } from "react-router-dom";
 import { CuratedProduct } from "../../Types/product";
 
 function CuratedCardList() {
+
+  const navigate = useNavigate()
+
+
+  const handleNavigate=(url:string)=>{
+   navigate(`/productList/${url}`)
+  }
+
   return (
     <div className="mt-[2px] mb-[2px] bg-white overflow-auto p-[12px_15px] ">
       <h3 className="font-fontBold text-lg leading-[23.4px] pb-2">
@@ -10,7 +20,7 @@ function CuratedCardList() {
         {CuratedProduct &&
           CuratedProduct.map((item) => {
             return (
-              <div className="h-auto" key={item.id}>
+              <div  className="h-auto" key={item.id} onClick={()=>handleNavigate(item.url_endpoint)}>
                 <img
                   className="w-full rounded-[4px]"
                   src={item.img}
@@ -31,3 +41,5 @@ function CuratedCardList() {
 }
 
 export default CuratedCardList;
+
+

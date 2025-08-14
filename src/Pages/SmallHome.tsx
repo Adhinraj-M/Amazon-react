@@ -8,19 +8,18 @@ import CubicList from "../Components/SmallScreenComponents/CubicList";
 import CuratedCardList from "../Components/SmallScreenComponents/CuratedCardList";
 import { ProductEmergingBusiness, productLocalStore } from "../Types/product";
 import SideMenuBar from "../Components/SmallScreenComponents/sideMenuComponents/SideMenuBar";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import DiscoverProduct from "../Components/SmallScreenComponents/DiscoverProduct";
 import Footer from "../Components/SmallScreenComponents/Footer";
 import TopBar from "../Components/SmallScreenComponents/TopBar";
+import { ToggleContext } from "../Context/toggleContext";
+import FilterSection from "../Components/SmallScreenComponents/FilterSection";
 
 function SmallHome() {
-  const [toggle, setToggle] = useState<boolean>(false);
   const [showTopBar, setShowTopBar] = useState<boolean>(false);
 
-  const handleToggle = () => {
-    setToggle(!toggle);
-  };
-
+  const {handleSideBar,showSideBar} = useContext(ToggleContext)
+  
   useEffect(() => {
     const handleScrollY = () => {
       if (window.scrollY > 50) {
@@ -37,8 +36,25 @@ function SmallHome() {
 
   return (
     <div className="bg-gray-200 overflow-x-hidden min-h-screen relative min-large:hidden ">
-      <Header toggleBtn={handleToggle} />
-        {showTopBar && <TopBar toggleBtn={handleToggle} />}
+      {/* <Header toggleBtn={handleSideBar} />
+      <div className="flex h-[45px] overflow-x-scroll pt-3 w-full bg-[#232f3e] overflow-hidden">
+        <ul className="contents list-none ">
+          <li className="relative m-[0px_0px_20px_15px] pr-[3px] leading-[15px] text-[15px] font-normal text-white">
+            Category
+            <span className="absolute top-[-14px] left-0 text-[11px] text-white">
+              Shop By
+            </span>
+          </li>
+
+          <li className="m-[0px_0px_20px_15px] pr-[3px] leading-[15px] text-[15px] font-normal text-white">
+            Deals
+          </li>
+          <li className="m-[0px_0px_20px_15px] pr-[3px] leading-[15px] text-[15px] font-normal text-white">
+            Sell
+          </li>
+        </ul>
+      </div>
+        {showTopBar && <TopBar toggleBtn={handleSideBar} />}
       <Address />
       <CategorySmall />
       <HeroCarousel />
@@ -47,9 +63,11 @@ function SmallHome() {
       <CubicList products={ProductEmergingBusiness} />
       <CuratedCardList />
       <CubicList products={productLocalStore} />
-      {toggle && <SideMenuBar toggleBtn={handleToggle} toggle={toggle} />}
+      {showSideBar && <SideMenuBar toggleBtn={handleSideBar} toggle={showSideBar} />}
       <DiscoverProduct />
-      <Footer />
+      <Footer /> */}
+
+      <FilterSection/>
     </div>
   );
 }

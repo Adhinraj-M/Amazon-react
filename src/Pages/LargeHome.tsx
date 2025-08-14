@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import DeskAdds from "../Components/LargeScreenComponents/DeskAdds";
 import DeskAllProductCard from "../Components/LargeScreenComponents/DeskAllProductCard";
 import DeskCarousel from "../Components/LargeScreenComponents/DeskCarousel";
@@ -8,21 +8,15 @@ import FourProductCard from "../Components/LargeScreenComponents/FourProductCard
 import Pagination from "../Components/LargeScreenComponents/Pagination";
 import ProductCardCarousel from "../Components/LargeScreenComponents/ProductCardCarousel";
 import SingleCategoryProduct from "../Components/LargeScreenComponents/SingleCategoryProduct";
-import {
-  BeautyCategoryProducts,
-  HeroDeskProduct,
-  HomeKitchenProduct,
-  MobileCategoryProduct,
-} from "../Types/DeskCategories";
-
+import { BeautyCategoryProducts, HeroDeskProduct, HomeKitchenProduct, MobileCategoryProduct} from "../Types/DeskCategories";
 import DeskSideMenu from "../Components/LargeScreenComponents/DeskTopSideMenu/DeskSideMenu";
 import NavDesk from "../Components/LargeScreenComponents/NavDesk";
+import { ToggleContext } from "../Context/toggleContext";
 
 function LargeHome() {
 
 const [showHeader,setShowHeader]=useState<boolean>(false)
-const [showSideBar,setShowSideBar]=useState<boolean>(false)
-
+const {handleSideBar,showSideBar} = useContext(ToggleContext)
 
   useEffect(() => {
     const handleScrollY = () => {
@@ -32,20 +26,11 @@ const [showSideBar,setShowSideBar]=useState<boolean>(false)
         setShowHeader(false);
       }
     };
-
     window.addEventListener("scroll", handleScrollY);
-
     return () => window.removeEventListener("scroll", handleScrollY);
-  }, []);
+  }, [])
 
-  const handleSideBar = () =>{
-    setShowSideBar(!showSideBar)
-  }
-  
-  
-  
-  
-  return (
+    return (
     <div className="hidden min-large:block bg-[#E3E6E6]">
       <DeskHeader stickHeader={showHeader}/>
       <NavDesk sideBar={handleSideBar} />
@@ -98,11 +83,11 @@ const [showSideBar,setShowSideBar]=useState<boolean>(false)
         </div>
       </div>
       <Pagination/>
-      <DeskFooter/>
-
+      <DeskFooter/>     
 
     </div>
   );
 }
 
 export default LargeHome;
+

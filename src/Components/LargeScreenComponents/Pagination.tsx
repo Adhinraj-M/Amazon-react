@@ -30,7 +30,6 @@ function Pagination() {
 
   // pagination set up
 
-
   const totalPage: number = washProduct
     ? Math.ceil(washProduct?.length / itemsPerPage)
     : 0;
@@ -47,9 +46,8 @@ function Pagination() {
     setCurrentPage(pageNumber);
   };
 
-
-
  useEffect(() => {
+
   function calculateItemsPerPage() {
     if (!olRef.current) return;
 
@@ -78,9 +76,6 @@ function Pagination() {
     window.removeEventListener('resize', calculateItemsPerPage);
   };
 }, [itemsPerPage]);
-
-
-  
 
   return (
     <div className="pt-[44px] relative  bg-white ">
@@ -123,7 +118,7 @@ function Pagination() {
               </button>
             </div>
             <div className="mx-[42px] overflow-hidden relative h-103">
-              <ol ref={olRef}  className="m-0 h-full flex whitespace-nowrap  overflow-x-visible text-[#0f1111] tracking-[-4px] list-none ">
+              <ol ref={olRef}  className="m-0 h-full flex whitespace-nowrap   text-[#0f1111] tracking-[-4px] list-none ">
                 {currentItems &&
                   currentItems.map((item) => {
                     return (
@@ -211,7 +206,7 @@ function Pagination() {
             Sign in
           </button>
           <div className="leading-[15px] text-[11px] ">
-            New customer?{" "}
+            New customer?
             <a className="text-[#2162a1] !underline" href="#">
               Start here
             </a>

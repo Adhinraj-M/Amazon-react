@@ -1,0 +1,326 @@
+{"product":[
+  {
+    "id": "md_01",
+    "product_category": "men_clothing",
+    "product_title": "Roadster Half‑Sleeve Polo Tee",
+    "product_detailed_title": "Roadster Men’s Cotton Half‑Sleeve Polo T‑Shirt",
+    "product_offer": "-60%",
+    "product_price": "499",
+    "product_actual_price": "₹1,249",
+    "no_of_buyers": "no_data",
+    "product_rating": "4.1",
+    "color":"black",
+    "total_reviews": "1,250",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/612MkbVyluL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "md_02",
+    "product_category": "men_clothing",
+    "product_title": "Puma Performance Round‑Neck Tee",
+    "product_detailed_title": "Puma Men’s Regular Fit Solid Round‑Neck T‑Shirt",
+    "product_offer": "-50%",
+    "product_price": "599",
+    "product_actual_price": "₹1,199",
+    "no_of_buyers": "no_data",
+    "product_rating": "4.2",
+    "total_reviews": "950",
+    "color":"brown",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/51slHK9woDL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "md_03",
+    "product_category": "men_clothing",
+    "product_title": "HRX Slim‑Fit Sports Tee",
+    "product_detailed_title": "HRX Men’s Slim‑Fit Performance T‑Shirt",
+    "product_offer": "-45%",
+    "product_price": "699",
+    "product_actual_price": "₹1,299",
+    "no_of_buyers": "no_data",
+    "product_rating": "4.3",
+    "color":"gray",
+    "total_reviews": "1,800",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/61W3TkfRLrL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "md_04",
+    "product_category": "men_clothing",
+    "product_title": "Allen Solly Active T‑Shirt",
+    "product_detailed_title": "Allen Solly Men’s Regular Fit Active T‑Shirt",
+    "product_offer": "-40%",
+    "product_price": "549",
+    "product_actual_price": "₹899",
+    "no_of_buyers": "no_data",
+    "product_rating": "4.0",
+    "color":"",
+    "total_reviews": "620",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/61HS4sTDnPL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "md_05",
+    "product_category": "men_clothing",
+    "product_title": "Jockey Essentials Cotton Tee",
+    "product_detailed_title": "Jockey Men’s Regular Fit Cotton T‑Shirt",
+    "product_offer": "-35%",
+    "product_price": "749",
+    "product_actual_price": "₹1,149",
+    "no_of_buyers": "no_data",
+    "product_rating": "4.4",
+    "total_reviews": "1,100",
+    "color":"black",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/61YqacacUQL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "md_06",
+    "product_category": "men_clothing",
+    "product_title": "H&M Crew Neck Tee (Pack of 3)",
+    "product_detailed_title": "H&M Men’s Basic Crew Neck T‑Shirt 3‑Pack",
+    "product_offer": "-50%",
+    "product_price": "799",
+    "product_actual_price": "₹1,599",
+    "no_of_buyers": "no_data",
+    "product_rating": "4.2",
+    "total_reviews": "1,020",
+    "color":"blue",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/71U69KZLpvL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "md_07",
+    "product_category": "men_clothing",
+    "product_title": "Levi’s Basic Tee",
+    "product_detailed_title": "Levi’s Men’s Straight Fit Cotton T‑Shirt",
+    "product_offer": "-55%",
+    "product_price": "899",
+    "product_actual_price": "₹1,999",
+    "no_of_buyers": "no_data",
+    "product_rating": "4.5",
+    "total_reviews": "1,450",
+    "color":"",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/512fUCcOjyL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "md_08",
+    "product_category": "men_clothing",
+    "product_title": "Nike Legacy Dri‑Fit Tee",
+    "product_detailed_title": "Nike Men’s Legend Dri‑Fit T‑Shirt",
+    "product_offer": "-60%",
+    "product_price": "999",
+    "product_actual_price": "₹2,499",
+    "no_of_buyers": "no_data",
+    "product_rating": "4.3",
+    "total_reviews": "780",
+    "color":"yellow",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/71XQUGnlB-L._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "md_09",
+    "product_category": "men_clothing",
+    "product_title": "Adidas Originals Tee",
+    "product_detailed_title": "Adidas Originals Men’s Trefoil T‑Shirt",
+    "product_offer": "-50%",
+    "product_price": "1,199",
+    "product_actual_price": "₹2,399",
+    "no_of_buyers": "no_data",
+    "product_rating": "4.4",
+    "total_reviews": "1,200",
+    "color":"blue",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/710VGd5-f-L._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "md_10",
+    "product_category": "men_clothing",
+    "product_title": "U.S. Polo Assn. Stripe Tee",
+    "product_detailed_title": "U.S. Polo Assn. Men’s Cotton Stripe T‑Shirt",
+    "product_offer": "-45%",
+    "product_price": "899",
+    "product_actual_price": "₹1,649",
+    "no_of_buyers": "no_data",
+    "product_rating": "4.2",
+    "total_reviews": "890",
+    "color":"gray",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/71jnHCClWwL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "md_11",
+    "product_category": "men_clothing",
+    "product_title": "Van Heusen V‑Neck Tee",
+    "product_detailed_title": "Van Heusen Men’s V‑Neck Stretch Tee",
+    "product_offer": "-40%",
+    "product_price": "749",
+    "product_actual_price": "₹1,249",
+    "no_of_buyers": "no_data",
+    "product_rating": "4.1",
+    "total_reviews": "710",
+    "color":"black",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/51gCxr-c7GL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "md_12",
+    "product_category": "men_clothing",
+    "product_title": "Tommy Hilfiger Basic Tee",
+    "product_detailed_title": "Tommy Hilfiger Men’s Solid Cotton T‑Shirt",
+    "product_offer": "-35%",
+    "product_price": "949",
+    "product_actual_price": "₹1,499",
+    "no_of_buyers": "no_data",
+    "product_rating": "4.6",
+    "total_reviews": "820",
+    "color":"white",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/41b-P8PcD2L._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "md_13",
+    "product_category": "men_clothing",
+    "product_title": "Jack & Jones Graphic Tee",
+    "product_detailed_title": "Jack & Jones Men’s Graphic Print T‑Shirt",
+    "product_offer": "-50%",
+    "product_price": "729",
+    "product_actual_price": "₹1,459",
+    "no_of_buyers": "no_data",
+    "product_rating": "4.3",
+    "total_reviews": "650",
+    "color":"black",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/51euDQ7gprL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "md_14",
+    "product_category": "men_clothing",
+    "product_title": "Cult Fiction Organic Tee",
+    "product_detailed_title": "Cult Fiction Men’s Organic Cotton T‑Shirt",
+    "product_offer": "-45%",
+    "product_price": "579",
+    "product_actual_price": "₹1,049",
+    "no_of_buyers": "no_data",
+    "product_rating": "4.5",
+    "total_reviews": "940",
+    "color":"",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/414n2iXIV6L._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "md_15",
+    "product_category": "men_clothing",
+    "product_title": "Roadster Oversized Tee",
+    "product_detailed_title": "Roadster Men’s Oversized Print T‑Shirt",
+    "product_offer": "-50%",
+    "product_price": "649",
+    "product_actual_price": "₹1,299",
+    "no_of_buyers": "no_data",
+    "product_rating": "4.2",
+    "total_reviews": "780",
+    "color":"pink",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/71wOGr1VUlL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "md_16",
+    "product_category": "men_clothing",
+    "product_title": "Nike Sports Crew Tee",
+    "product_detailed_title": "Nike Men’s Sports Crew Neck T‑Shirt",
+    "product_offer": "-60%",
+    "product_price": "899",
+    "product_actual_price": "₹2,249",
+    "no_of_buyers": "no_data",
+    "product_rating": "4.4",
+    "color":"green",
+    "total_reviews": "1,300",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/41QZ3GN9qJL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "md_17",
+    "product_category": "men_clothing",
+    "product_title": "Adidas Climalite Tee",
+    "product_detailed_title": "Adidas Men’s Climalite Quick‑Dry Tee",
+    "product_offer": "-55%",
+    "product_price": "1,049",
+    "product_actual_price": "₹2,349",
+    "no_of_buyers": "no_data",
+    "product_rating": "4.5",
+    "color":"gray",
+    "total_reviews": "1,150",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/61zlnZCLSVL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "md_18",
+    "product_category": "men_clothing",
+    "product_title": "Puma Graphic Tee",
+    "product_detailed_title": "Puma Men’s Bold Graphic Print T‑Shirt",
+    "product_offer": "-40%",
+    "product_price": "699",
+    "product_actual_price": "₹1,159",
+    "no_of_buyers": "no_data",
+    "product_rating": "4.3",
+    "color":"black",
+
+    "total_reviews": "890",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/3149lH9LrUL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "md_19",
+    "product_category": "men_clothing",
+    "product_title": "Levi’s Logo Tee",
+    "product_detailed_title": "Levi’s Men’s Logo Print Cotton T‑Shirt",
+    "product_offer": "-50%",
+    "product_price": "849",
+    "product_actual_price": "₹1,699",
+    "no_of_buyers": "no_data",
+    "product_rating": "4.4",
+    "color":"yelow",
+    "total_reviews": "1,000",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/61AjC4PsXqL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  },
+  {
+    "id": "md_20",
+    "product_category": "men_clothing",
+    "product_title": "Tommy Hilfiger Striped Tee",
+    "product_detailed_title": "Tommy Hilfiger Men’s Slim Fit Striped T‑Shirt",
+    "product_offer": "-45%",
+    "product_price": "1,199",
+    "product_actual_price": "₹2,199",
+    "no_of_buyers": "no_data",
+    "product_rating": "4.6",
+    "color":"green",
+
+    "total_reviews": "1,400",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/71XlIMP2HWL._AC_SR175,263_FMwebp_QL65_.jpg"
+    ]
+  }
+],
+"category":["Under 300","Half Sleeve","3/4 Sleeve","Full Sleeve","Cotton","Casual","Formal"]
+}

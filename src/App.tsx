@@ -1,4 +1,4 @@
-import Home from "./Pages/Home"
+import AppRouter from "./Route/AppRouter"
 
 function App() {
 
@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <Home/>
+      <AppRouter/>
     </>
   )
 }

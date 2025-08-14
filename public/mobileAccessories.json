@@ -1,0 +1,245 @@
+{   
+ "product": [
+  {
+    "id": "ma1",
+    "product_category": "mobile_accessories",
+    "product_title": "Saco Polyester Shock Proof‥",
+    "product_price": "346",
+    "product_actual_price": "₹775",
+    "proudct_rating": "4.4",
+    "total_reviews": "986",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/218kIgZL3zL._SR500,500_.jpg"
+    ]
+  },
+  {
+    "id": "ma2",
+    "product_category": "mobile_accessories",
+    "product_title": "Amazon Basics Type A to Micro‑USB Cable (3 ft)",
+    "product_price": "₹109",
+    "product_actual_price": "₹449",
+    "product_rating": "3.9",
+    "total_reviews": "119,983",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/41qxzeDK0hL._SR745,800_.jpg"
+    ]
+  },
+  {
+    "id": "ma3",
+    "product_category": "mobile_accessories",
+    "product_title": "Anker PowerLine+ II USB‑C to USB‑C 2.0 Cable (3 ft)",
+    "product_price": "₹549",
+    "product_actual_price": "₹1,299",
+    "product_rating": "4.7",
+    "total_reviews": "21,450",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/312+l5E+lhL._SR500,500_.jpg"
+    ]
+  },
+  {
+    "id": "ma4",
+    "product_category": "mobile_accessories",
+    "product_title": "Belkin Car Charger Dual USB‑C & USB‑A 30 W",
+    "product_price": "₹899",
+    "product_actual_price": "₹1,499",
+    "product_rating": "4.5",
+    "total_reviews": "9,800",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/41IdiLGJXaL._SR500,500_.jpg"
+    ]
+  },
+  {
+    "id": "ma5",
+    "product_category": "mobile_accessories",
+    "product_title": "SanDisk Ultra 128 GB microSDXC UHS‑I Card with Adapter",
+    "product_price": "₹899",
+    "product_actual_price": "₹1,799",
+    "product_rating": "4.6",
+    "total_reviews": "75,600",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/31k5tIMzM9L._SR500,375_.jpg"
+    ]
+  },
+  {
+    "id": "ma6",
+    "product_category": "mobile_accessories",
+    "product_title": "UGREEN USB‑C to 3.5 mm Headphone Jack Adapter",
+    "product_price": "₹349",
+    "product_actual_price": "₹799",
+    "product_rating": "4.2",
+    "total_reviews": "12,300",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/21pYeqLteHL._SR500,500_.jpg"
+    ]
+  },
+  {
+    "id": "ma7",
+    "product_category": "mobile_accessories",
+    "product_title": "Logitech G335 LIGHTSPEED Wireless Gaming Headset",
+    "product_price": "₹4,999",
+    "product_actual_price": "₹7,999",
+    "product_rating": "4.4",
+    "total_reviews": "3,420",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/214B+JJ+I7L._SR500,500_.jpg"
+    ]
+  },
+  {
+    "id": "ma8",
+    "product_category": "mobile_accessories",
+    "product_title": "XOLO XOGear 3‑in‑1 Card Reader USB‑C/USB‑A/SD",
+    "product_price": "₹599",
+    "product_actual_price": "₹1,299",
+    "product_rating": "4.1",
+    "total_reviews": "2,150",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/41lFZPTdQqL._SR500,500_.jpg"
+    ]
+  },
+  {
+    "id": "ma9",
+    "product_category": "mobile_accessories",
+    "product_title": "Belkin Micro‑USB to USB‑C On‑The‑Go (OTG) Converter",
+    "product_price": "₹249",
+    "product_actual_price": "₹499",
+    "product_rating": "4.0",
+    "total_reviews": "1,925",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/41zQ9E7EvgL._SR500,412_.jpg"
+    ]
+  },
+  {
+    "id": "ma10",
+    "product_category": "mobile_accessories",
+    "product_title": "Mi Original In‑ear Earphones Basic Black Edition",
+    "product_price": "₹299",
+    "product_actual_price": "₹599",
+    "product_rating": "4.3",
+    "total_reviews": "65,800",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/41v39mvJjnL._SR500,491_.jpg"
+    ]
+  },
+  {
+    "id": "ma11",
+    "product_category": "mobile_accessories",
+    "product_title": "boAt Rockerz 450 Bluetooth On‑Ear Headphones",
+    "product_price": "₹1,299",
+    "product_actual_price": "₹2,999",
+    "product_rating": "4.1",
+    "total_reviews": "22,300",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/51htdJLsMfL._SR1113,1000_.jpg"
+    ]
+  },
+  {
+    "id": "ma12",
+    "product_category": "mobile_accessories",
+    "product_title": "OnePlus Warp Charge 30W Power Adapter",
+    "product_price": "₹1,499",
+    "product_actual_price": "₹2,699",
+    "product_rating": "4.5",
+    "total_reviews": "4,600",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/41qbgQRexoL._SR700,700_.jpg"
+    ]
+  },
+  {
+    "id": "ma13",
+    "product_category": "mobile_accessories",
+    "product_title": "TP-Link Archer T4U USB 3.0 Wi‑Fi Dongle",
+    "product_price": "₹899",
+    "product_actual_price": "₹1,799",
+    "product_rating": "4.2",
+    "total_reviews": "8,700",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/81pf3O2+IHL._SR2246,2246_.jpg"
+    ]
+  },
+  {
+    "id": "ma14",
+    "product_category": "mobile_accessories",
+    "product_title": "Boat Airdopes 141 True Wireless Earbuds",
+    "product_price": "₹1,499",
+    "product_actual_price": "₹3,999",
+    "product_rating": "4.0",
+    "total_reviews": "54,500",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/81mstRG5x1L._SR2246,2246_.jpg"
+    ]
+  },
+  {
+    "id": "ma15",
+    "product_category": "mobile_accessories",
+    "product_title": "Ambrane Fast Charger 33W & PD Cable Combo",
+    "product_price": "₹899",
+    "product_actual_price": "₹1,599",
+    "product_rating": "4.1",
+    "total_reviews": "6,350",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/61lQiMkVO8L._SR1200,1341_.jpg"
+    ]
+  },
+  {
+    "id": "ma16",
+    "product_category": "mobile_accessories",
+    "product_title": "Spigen Rugged Armor Kickstand Case for iPhone",
+    "product_price": "₹1,299",
+    "product_actual_price": "₹2,499",
+    "product_rating": "4.6",
+    "total_reviews": "9,200",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/71MtM2t6yDL._SR1504,1723_.jpg"
+    ]
+  },
+  {
+    "id": "ma17",
+    "product_category": "mobile_accessories",
+    "product_title": "Ringke Fusion-X Case for Samsung Galaxy Series",
+    "product_price": "₹1,099",
+    "product_actual_price": "₹1,999",
+    "product_rating": "4.5",
+    "total_reviews": "7,800",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/51qyVlTFafL._SR1080,1080_.jpg"
+    ]
+  },
+  {
+    "id": "ma18",
+    "product_category": "mobile_accessories",
+    "product_title": "Spigen Tempered Glass Screen Protector – Edge to Edge",
+    "product_price": "₹699",
+    "product_actual_price": "₹1,299",
+    "product_rating": "4.4",
+    "total_reviews": "19,500",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/51UFl5eDkuL._SR1500,1500_.jpg"
+    ]
+  },
+  {
+    "id": "ma19",
+    "product_category": "mobile_accessories",
+    "product_title": "Mi Cable Set Flat USB‑C & Micro‑USB (2‑Pack)",
+    "product_price": "₹499",
+    "product_actual_price": "₹699",
+    "product_rating": "4.2",
+    "total_reviews": "27,300",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/61HdCUBQzfL._SR1324,1156_.jpg"
+    ]
+  },
+  {
+    "id": "ma20",
+    "product_category": "mobile_accessories",
+    "product_title": "Samsung EVO Plus 64 GB microSDXC Memory Card",
+    "product_price": "₹579",
+    "product_actual_price": "₹899",
+    "product_rating": "4.6",
+    "total_reviews": "82,400",
+    "product_img": [
+     "https://m.media-amazon.com/images/I/71O1Fr7gkVL._SR2560,2560_.jpg"
+    ]
+  }
+],
+"category":[""]
+}

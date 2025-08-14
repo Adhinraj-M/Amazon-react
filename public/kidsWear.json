@@ -1,0 +1,279 @@
+{"product":[
+  {
+    "id": "kw01",
+    "product_category": "kids_wear",
+    "product_title": "Girls' Cherry Printed Sleeveless Frocks with Hat",
+    "product_price": "147",
+    "product_actual_price": "₹659",
+    "product_rating": "",
+    "total_reviews": "",
+    "color":"white",
+    "isGirl":"true",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/31UYamfs7PL._SR512,609_.jpg"
+    ]
+  },
+  {
+    "id": "kw02",
+    "product_category": "kids_wear",
+    "product_title": "Girl's Teal Sleeveless Frill Top and Pant Set",
+    "product_price": "243",
+    "product_actual_price": "₹799",
+    "product_rating": "4.0",
+    "total_reviews": "108",
+    "color":"green",
+    "isGirl":"true",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/31zYngBZQQL._SR512,515_.jpg"
+    ]
+  },
+  {
+    "id": "kw03",
+    "product_category": "kids_wear",
+    "product_title": "Unisex Childs' Cotton Tees and Shorts Set for Summer Beach Vibes",
+    "product_price": "599",
+    "product_actual_price": "₹1,099",
+    "product_rating": "4.1",
+    "total_reviews": "120",
+    "color":"orange",
+    "isGirl":"false",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/41Ol7E3Gs9L._SR512,663_.jpg"
+    ]
+  },
+  {
+    "id": "kw04",
+    "product_category": "kids_wear",
+    "product_title": "Girls' Allover Printed Sleeveless Frocks with Hat,116",
+    "product_price": "163",
+    "product_actual_price": "₹659",
+    "product_rating": "3.8",
+    "total_reviews": "215",
+    "color":"white",
+    "isGirl":"true",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/31SO7jbmTEL._SR360,800_.jpg"
+    ]
+  },
+  {
+    "id": "kw05",
+    "product_category": "kids_wear",
+    "product_title": "Bold N Elegant Girls Party Gown",
+    "product_price": "162",
+    "product_actual_price": "₹899",
+    "product_rating": "4.5",
+    "total_reviews": "87",
+    "color":"yellow",
+    "isGirl":"true",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/41iuXeBqgrL._SR372,671_.jpg"
+    ]
+  },
+  {
+    "id": "kw06",
+    "product_category": "kids_wear",
+    "product_title": "Girls' Velvet Top and Sequin Skirt Set",
+    "product_price": "289",
+    "product_actual_price": "₹599",
+    "product_rating": "",
+    "total_reviews": "",
+     "color":"blue",
+    "isGirl":"true",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/41NX3PPbqVL._SR512,768_.jpg"
+    ]
+  },
+  {
+    "id": "kw07",
+    "product_category": "kids_wear",
+    "product_title": "I. T Cotton T-shirt and Jogger for Baby Boy and Baby Girl, Printed Full Sleeves T-shirt and Pant Set for Kids",
+    "product_price": "508",
+    "product_actual_price": "₹1,799",
+    "product_rating": "4.6",
+    "total_reviews": "324",
+     "color":"green",
+    "isGirl":"false",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/51zjryGWNzL._SR1206,1600_.jpg"
+    ]
+  },
+  {
+    "id": "kw08",
+    "product_category": "kids_wear",
+    "product_title": "Kids Girls Yellow Blue Dress Set",
+    "product_price": "197",
+    "product_actual_price": "₹899",
+    "product_rating": "4.2",
+    "total_reviews": "197",
+    "color":"yello",
+    "isGirl":"true",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/31JETJiQIoL._SR439,568_.jpg"
+    ]
+  },
+  {
+    "id": "kw09",
+    "product_category": "kids_wear",
+    "product_title": "Printed Cotton Top & Bottom Clothing Set for Kid Boys",
+    "product_price": "148",
+    "product_actual_price": "₹599",
+    "product_rating": "4.0",
+    "total_reviews": "105",
+     "color":"black",
+    "isGirl":"flase",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/3173MhCdMjL._SR405,539_.jpg"
+    ]
+  },
+  {
+    "id": "kw10",
+    "product_category": "kids_wear",
+    "product_title": "kids Boys Cotton Printed Top & Bottom Clothing Set",
+    "product_price": "156",
+    "product_actual_price": "₹899",
+    "product_rating": "3.7",
+    "total_reviews": "60",
+    "color":"white",
+    "isGirl":"flase",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/31xuUEwVwfL._SR414,602_.jpg"
+    ]
+  },
+  {
+    "id": "kw11",
+    "product_category": "kids_wear",
+    "product_title": "Girls' Puffed Sleevs Satin Solid Party Frock_119",
+    "product_price": "240",
+    "product_actual_price": "₹799",
+    "product_rating": "4.4",
+    "total_reviews": "30",
+      "color":"green",
+    "isGirl":"true",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/41u1VG2x0mL._SR512,767_.jpg"
+    ]
+  },
+  {
+    "id": "kw12",
+    "product_category": "kids_wear",
+    "product_title": "Girls' Ethnic Embroidered Kurta…",
+    "product_price": "249",
+    "product_actual_price": "₹999",
+    "product_rating": "3.1",
+    "total_reviews": "",
+     "color":"yello",
+    "isGirl":"true",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/519RNo4eMWL._SR512,767_.jpg"
+    ]
+  },
+  {
+    "id": "kw13",
+    "product_category": "kids_wear",
+    "product_title": "kids Boy's Cotton Printed Top & Bottom Clothing Set",
+    "product_price": "167",
+    "product_actual_price": "₹499",
+    "product_rating": "4.3",
+    "total_reviews": "94",
+    "color":"red",
+    "isGirl":"false",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/41IuWg6MTcL._SR433,576_.jpg"
+    ]
+  },
+  {
+    "id": "kw14",
+    "product_category": "kids_wear",
+    "product_title": "Kid Boy's Printed Top & Bottom Set Cotton Blend",
+    "product_price": "182",
+    "product_actual_price": "₹799",
+    "product_rating": "4.2",
+    "total_reviews": "56",
+    "color":"blue",
+    "isGirl":"false",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/31dATG00mUL._SR433,576_.jpg"
+    ]
+  },
+  {
+    "id": "kw15",
+    "product_category": "kids_wear",
+    "product_title": "Kids Boys Mom Dad Printed Grey Cotton Blend Top & Bottom Clothing Set",
+    "product_price": "183",
+    "product_actual_price": "₹899",
+    "product_rating": "4.0",
+    "total_reviews": "78",
+    "color":"gray",
+    "isGirl":"false",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/41aYPoZWFgL._SR437,571_.jpg"
+    ]
+  },
+  {
+    "id": "kw16",
+    "product_category": "kids_wear",
+    "product_title": "Kids Boys Mom Dad Printed Green Cotton Blend Top & Bottom Clothing Set",
+    "product_price": "192",
+    "product_actual_price": "₹899",
+    "product_rating": "3.9",
+    "total_reviews": "112",
+    "color":"blue",
+    "isGirl":"false",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/31jqCRN9khL._SR433,577_.jpg"
+    ]
+  },
+  {
+    "id": "kw17",
+    "product_category": "kids_wear",
+    "product_title": "Agile Stylus Girl Frock & Dresses & Cute Stylus Girl Frock & Dresses|2-3 Years|Black",
+    "product_price": "455",
+    "product_actual_price": "₹999",
+    "product_rating": "",
+    "total_reviews": "",
+    "color":"black",
+    "isGirl":"true",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/41UqlcopquL._SR393,571_.jpg"
+    ]
+  },
+  {
+    "id": "kw18",
+    "product_category": "kids_wear",
+    "product_title": "Traditional Floral Embroidered Girls Kurti Sharara Set, Green and White, 3/4 Sleeve",
+    "product_price": "539",
+    "product_actual_price": "₹1,599",
+    "product_rating": "4.1",
+    "total_reviews": "43",
+    "color":"red",
+    "isGirl":"true",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/61uCU6DE9tL._SR914,1280_.jpg"
+    ]
+  },
+  {
+    "id": "kw19",
+    "product_category": "kids_wear",
+    "product_title": "22 ETHNIC DRESS SET FOR BABY'S COTTON BLEND",
+    "product_price": "284",
+    "product_actual_price": "₹1099",
+    "product_rating": "4.5",
+    "total_reviews": "76",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/31qX3Ne8k+L._SR433,577_.jpg"
+    ]
+  },
+  {
+    "id": "kw20",
+    "product_category": "kids_wear",
+    "product_title": "Fariha Fashions New Trend Dungaree for Girls.",
+    "product_price": "285",
+    "product_actual_price": "₹1,499",
+    "product_rating": "4.0",
+    "total_reviews": "134",
+    "product_img": [
+      "https://m.media-amazon.com/images/I/31lqBdFTueL._SR194,500_.jpg"
+    ]
+  }
+],
+"category":["Under 300","girls","boys"]}
