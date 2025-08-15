@@ -4,7 +4,8 @@ import { ToggleContext } from "../Context/toggleContext";
 import Address from "../Components/SmallScreenComponents/Address";
 import { useParams } from "react-router-dom";
 import axiosInstance from "../api/axios";
-import type { CategoryProdut } from "../Types/product";
+import type { CategoryFilter, CategoryProdut } from "../Types/product";
+import FilterSection from "../Components/SmallScreenComponents/FilterSection";
 
 function SmallProductLists() {
   const { handleSideBar } = useContext(ToggleContext);
@@ -12,6 +13,8 @@ function SmallProductLists() {
   const [cateProduct, setCateProduct] = useState<CategoryProdut[]>();
   const [sortCategory,setSortCategory]=useState<string[]>()
   const [error, setError] = useState<string | null>(null);
+  const [toggle,setToggle] = useState<boolean>(false)
+  const [filterCategory,setFilterCategory]=useState<CategoryFilter[]>([])
 
   useEffect(() => {
     axiosInstance
@@ -21,6 +24,7 @@ function SmallProductLists() {
       
         setCateProduct(res.data.product);
         setSortCategory(res.data.category)
+        setFilterCategory(res.data.filterCategory)
       })
       .catch((err) => {
         setError("Failed to load data");
@@ -30,10 +34,12 @@ function SmallProductLists() {
      
   }, []);
 
-  console.log(sortCategory)
+  const handleFilter=()=>{
+    setToggle(!toggle)
+  }
 
   return (
-    <div>
+    <>
       <Header toggleBtn={handleSideBar} />
       <div className="w-full bg-white border-t-[5px] border-t-[#FF4D5B] border-b border-b-[#FF4D5B]">
         <div className="h-12 p-0 overflow-hidden block whitespace-nowrap">
@@ -117,7 +123,8 @@ function SmallProductLists() {
               
             </div>
             <div className="-mr-1 bg-[#fff9f6] border-[#c7e4e8] h-[46px] p-[0_12px] shadow-[inset_1px_0_0_0_#e6e6e6] flex items-center">
-              <button className="text-[#0f1111] w-full h-full flex items-center p-[11px_16px] m-0 text-[16px] leading-5 text-center bg-transparent border-0 outline-0">
+              <button onClick={handleFilter} className="text-[#0f1111] w-full h-full flex items-center p-[11px_16px] m-0 text-[16px] leading-5 text-center bg-transparent border-0 outline-0">
+                
                 <span className="!text-sm !leading-5 text-black">Filters</span>
                 <span className="!text-sm !leading-5 text-black ml-1.5 ">
                   (1)
@@ -182,12 +189,11 @@ function SmallProductLists() {
           </div>
             )
           })
-         }
-
-         
+         }  
         </div>
       </div>
-    </div>
+      { toggle && <FilterSection filterCategory={filterCategory} handleFilter={handleFilter}/> }
+    </>
   );
 }
 

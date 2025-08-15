@@ -184,3 +184,10 @@ product_img:string[]
 
 }
 
+
+
+export type CategoryFilter={
+    filter_Type:string,
+    filter_sub_head:string,
+    filter_buttons:string[]
+}

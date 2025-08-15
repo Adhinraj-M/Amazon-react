@@ -36,7 +36,7 @@ function SmallHome() {
 
   return (
     <div className="bg-gray-200 overflow-x-hidden min-h-screen relative min-large:hidden ">
-      {/* <Header toggleBtn={handleSideBar} />
+      <Header toggleBtn={handleSideBar} />
       <div className="flex h-[45px] overflow-x-scroll pt-3 w-full bg-[#232f3e] overflow-hidden">
         <ul className="contents list-none ">
           <li className="relative m-[0px_0px_20px_15px] pr-[3px] leading-[15px] text-[15px] font-normal text-white">
@@ -65,9 +65,8 @@ function SmallHome() {
       <CubicList products={productLocalStore} />
       {showSideBar && <SideMenuBar toggleBtn={handleSideBar} toggle={showSideBar} />}
       <DiscoverProduct />
-      <Footer /> */}
+      <Footer />
 
-      <FilterSection/>
     </div>
   );
 }

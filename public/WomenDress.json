@@ -9,6 +9,9 @@
     "product_actual_price": "₹1,399",
     "no_of_buyers": "no_data",
     "color":"black",
+     "material":"cotton",
+    "available_size":["XS","S","M","L","XL","2XL"],
+    "sleeve_type":"Short Sleeve",
     "product_rating": "4.4",
     "total_reviews": "3,966",
     "product_img": [
@@ -28,6 +31,9 @@
     "no_of_buyers": "no_data",
     "product_rating": "4.2",
     "total_reviews": "1,200",
+     "material":"cotton",
+    "available_size":["M","L","XL","2XL"],
+    "sleeve_type":"3/4 Sleeve",
     "color":"brown",
     "product_img": [
       "https://m.media-amazon.com/images/I/51yWXtfLxjL._AC_SR175,263_FMwebp_QL65_.jpg"
@@ -45,6 +51,9 @@
     "no_of_buyers": "no_data",
     "product_rating": "4.5",
     "total_reviews": "850",
+    "material":"Georgette",
+    "available_size":["M","L","XL","2XL"],
+    "sleeve_type":"3/4 Sleeve",
     "color":"pink",
     "product_img": [
       "https://m.media-amazon.com/images/I/41o4R+mh7iL._AC_SR175,263_FMwebp_QL65_.jpg"
@@ -62,6 +71,9 @@
     "no_of_buyers": "no_data",
     "product_rating": "4.3",
     "total_reviews": "2,300",
+    "material":"Silk",
+    "available_size":["L","XL","2XL"],
+    "sleeve_type":"Long Sleeve",
     "color":"yellow",
     "product_img": [
       "https://m.media-amazon.com/images/I/51n2jT511uL._AC_SR175,263_FMwebp_QL65_.jpg"
@@ -78,6 +90,9 @@
     "no_of_buyers": "no_data",
     "product_rating": "4.6",
     "total_reviews": "980",
+    "material":"Silk",
+    "available_size":["M","L","XL","2XL"],
+    "sleeve_type":"Long Sleeve",
     "color":"white",
     "product_img": [
       "https://m.media-amazon.com/images/I/515yiVQ3GiL._AC_SR175,263_FMwebp_QL65_.jpg"
@@ -94,6 +109,9 @@
     "no_of_buyers": "no_data",
     "product_rating": "4.1",
     "total_reviews": "1,500",
+    "material":"Georgette",
+    "available_size":["M","L","XL","2XL"],
+    "sleeve_type":"3/4 Sleeve",
     "color":"white",
     "product_img": [
       "https://m.media-amazon.com/images/I/61xLMT3mT6L._AC_SR175,263_FMwebp_QL65_.jpg"
@@ -111,6 +129,9 @@
     "product_rating": "4.0",
     "total_reviews": "2,100",
     "color":"gray",
+     "material":"cotton",
+    "available_size":["M","L","XL","2XL"],
+    "sleeve_type":"3/4 Sleeve",
     "product_img": [
       "https://m.media-amazon.com/images/I/51LyN7FnpxL._AC_SR175,263_FMwebp_QL65_.jpg"
     ]
@@ -127,6 +148,9 @@
     "product_rating": "4.7",
     "total_reviews": "1,300",
     "color":"red",
+     "material":"Georgette",
+    "available_size":["M","L","XL","2XL"],
+    "sleeve_type":"3/4 Sleeve",
     "product_img": [
       "https://m.media-amazon.com/images/I/618qpneSnbL._AC_SR175,263_FMwebp_QL65_.jpg"
     ]
@@ -142,6 +166,9 @@
     "no_of_buyers": "no_data",
     "product_rating": "4.3",
     "total_reviews": "890",
+     "material":"Silk",
+    "available_size":["M","L","XL","2XL"],
+    "sleeve_type":"Long Sleeve",
     "color":"pink",
     "product_img": [
       "https://m.media-amazon.com/images/I/61rWa3ieZaL._AC_SR175,263_FMwebp_QL65_.jpg"
@@ -158,7 +185,10 @@
     "no_of_buyers": "no_data",
     "product_rating": "4.2",
     "total_reviews": "1,800",
-    "color":"pink",
+    "color":"blue",
+     "material":"cotton",
+    "available_size":["M","L","XL","2XL"],
+    "sleeve_type":"3/4 Sleeve",
     "product_img": [
       "https://m.media-amazon.com/images/I/8136v9EIK4L._AC_SR175,263_FMwebp_QL65_.jpg"
     ]
@@ -174,7 +204,10 @@
     "no_of_buyers": "no_data",
     "product_rating": "4.5",
     "total_reviews": "710",
-    "color":"blue",
+     "material":"cotton",
+    "available_size":["M","L","XL","2XL"],
+    "sleeve_type":"3/4 Sleeve",
+    "color":"pink",
     "product_img": [
       "https://m.media-amazon.com/images/I/51CQrsByXpL._AC_SR175,263_FMwebp_QL65_.jpg"
     ]
@@ -191,6 +224,9 @@
     "product_rating": "4.1",
     "total_reviews": "1,100",
     "color":"red",
+    "material":"cotton",
+    "available_size":["M","L","XL","2XL"],
+    "sleeve_type":"Long Sleeve",
     "product_img": [
       "https://m.media-amazon.com/images/I/61JLs45TaGL._AC_SR175,263_FMwebp_QL65_.jpg"
     ]
@@ -207,6 +243,9 @@
     "product_rating": "4.4",
     "total_reviews": "650",
     "color":"black",
+    "material":"Silk",
+    "available_size":["M","L","XL","2XL","S","XS"],
+    "sleeve_type":"3/4 Sleeve",
     "product_img": [
       "https://m.media-amazon.com/images/I/417aCFXarKL._AC_SR175,263_FMwebp_QL65_.jpg"
     ]
@@ -222,6 +261,9 @@
     "no_of_buyers": "no_data",
     "product_rating": "4.2",
     "total_reviews": "720",
+    "material":"Georgette",
+    "available_size":["M","L","XL","2XL","S","XS"],
+    "sleeve_type":"3/4 Sleeve",
     "color":"black",
     "product_img": [
       "https://m.media-amazon.com/images/I/41v87JDvtRL._AC_SR175,263_FMwebp_QL65_.jpg"
@@ -238,6 +280,9 @@
     "no_of_buyers": "no_data",
     "product_rating": "4.6",
     "total_reviews": "620",
+    "material":"cotton",
+    "available_size":["L","XL","2XL"],
+    "sleeve_type":"3/4 Sleeve",
     "color":"green",
     "product_img": [
       "https://m.media-amazon.com/images/I/51T4BHX+c2L._AC_SR175,263_FMwebp_QL65_.jpg"
@@ -255,6 +300,9 @@
     "product_rating": "4.3",
     "total_reviews": "1,120",
     "color":"red",
+    "material":"Georgette",
+    "available_size":["M","L","XL","2XL","S"],
+    "sleeve_type":"Long Sleeve",
     "product_img": [
       "https://m.media-amazon.com/images/I/31l-rlLgtdL._AC_SR175,263_FMwebp_QL65_.jpg"
     ]
@@ -270,6 +318,9 @@
     "no_of_buyers": "no_data",
     "product_rating": "4.7",
     "total_reviews": "900",
+    "material":"Georgette",
+    "available_size":["M","L","XL","2XL"],
+    "sleeve_type":"3/4 Sleeve",
     "color":"yellow",
     "product_img": [
       "https://m.media-amazon.com/images/I/51mfFKF5WYL._AC_SR175,263_FMwebp_QL65_.jpg"
@@ -287,6 +338,9 @@
     "product_rating": "4.8",
     "total_reviews": "1,010",
     "color":"blue",
+    "material":"silk",
+    "available_size":["M","L","XL","2XL","S"],
+    "sleeve_type":"3/4 Sleeve",
     "product_img": [
       "https://m.media-amazon.com/images/I/31mi+HBVBsL._AC_SR175,263_FMwebp_QL65_.jpg"
     ]
@@ -303,6 +357,9 @@
     "product_rating": "4.5",
     "total_reviews": "540",
     "color":"blue",
+    "material":"cotton",
+    "available_size":["M","L","XL","2XL","S"],
+    "sleeve_type":"3/4 Sleeve",
     "product_img": [
       "https://m.media-amazon.com/images/I/41K4mILSeHL._AC_SR175,263_FMwebp_QL65_.jpg"
     ]
@@ -319,6 +376,9 @@
     "color":"red",
     "product_rating": "4.3",
     "total_reviews": "780",
+    "material":"cotton",
+    "available_size":["M","L","XL","2XL","S"],
+    "sleeve_type":"3/4 Sleeve",
     "product_img": [
       "https://m.media-amazon.com/images/I/61x842E-LLL._AC_SR350,526_FMwebp_QL65_.jpg"
     ]
@@ -326,5 +386,44 @@
 ],
 "category":[
   "Under ₹500","Cotton","Georgette","Silk","3/4 Sleeve","Long Sleeve","Short Sleeve"
+],
+"filterCategory":[
+  {
+    "filter_Type":"Sizes",
+    "filter_sub_head":"Women's Clothing Size",
+    "filter_buttons":["XS","S","M","L","XL","2XL"]
+  },
+  {
+    "filter_Type":"Price and Deals",
+    "filter_sub_head":"Price",
+    "filter_buttons":["All Prices","Up to ₹350","₹350-₹450","Over ₹450"]
+  },
+  {
+    "filter_Type":"Colours",
+    "filter_sub_head":"Colours",
+    "filter_buttons":["black","Grey","White","Brown","Red","Yellow","Green","Blue"]
+  },
+  {
+    "filter_Type":"Customer Reviews",
+    "filter_sub_head":"Customer Reviews",
+    "filter_buttons":[]
+  },
+  {
+    "filter_Type":"Material",
+    "filter_sub_head":"Cloth Material",
+    "filter_buttons":["Cotton","Silk","Georgette"]
+  },
+  {
+    "filter_Type":"Sleeve Type",
+    "filter_sub_head":"Length of sleeve",
+    "filter_buttons":["3/4 Sleeve","Long Sleeve","Sleeveless"]
+  }
+
 ]
 }
+
+
+
+
+
+

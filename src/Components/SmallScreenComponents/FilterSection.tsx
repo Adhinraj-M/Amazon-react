@@ -1,17 +1,43 @@
+import { useState } from "react"
+import type { CategoryFilter } from "../../Types/product"
 
-function FilterSection() {
+type filterSectionType={
+  handleFilter:()=> void
+  filterCategory:CategoryFilter[]
+}
 
-  const size:string[]=["4XS","2XS","XS","S","M","L","XL","2XL","3XL","4XL","5XL","6XL","7XL","8XL","Free Size"]
 
+
+function FilterSection({handleFilter,filterCategory}:filterSectionType) {
+
+
+  const [activeIndex,setActiveIndex]=useState<number>(0)
+  const [filterBtn,setFilterBtn] = useState<string[]>(filterCategory[0].filter_buttons)
+  const [activeFilter,setActiveFilter] = useState<number | null>(null)
+
+
+  const handleCategory=(index:number)=>{
+    setActiveIndex(index)
+    setFilterBtn(filterCategory[index].filter_buttons)
+  }
+
+  const handleActiveFilter=(index:number)=>{
+    setActiveFilter(index)
+  }
+
+  
   return (
-    <section className="!h-[calc(100%-100px)] bg-white fixed right-0 bottom-0 left-0 z-[501]">
+    
+    <div className="fixed top-0 right-0 left-0 bottom-0 z-[9999]" >
+      <div className="bg-[rgba(0,0,0,.2)] opacity-100 h-full w-full absolute"></div>
+       <section className="!h-[calc(100%-100px)] bg-white fixed right-0 bottom-0 left-0 z-[501]">
 
         <div className="border-b-[#f4d8da] fixed flex w-full h-12 left-0 right-0 m-0 bg-white border-b z-[600] justify-between items-center transform-[translate3d(0,0,0)]">
             <div className="mx-3 whitespace-nowrap float-left mb-0 font-fontBold leading-[20.25px]">
                 <span className="text-[15px]">Filters</span>
                 <span className="text-[15px]"> (1)</span>
             </div>
-            <div className="mx-3 relative top-1">
+            <div className="mx-3 relative top-1" onClick={handleFilter}>
                 <i className=" h-3 w-3 bg-[position:-489px_-498px] bg-[length:512px_512px] bg-no-repeat inline-block align-top" style={{backgroundImage:`url(https://m.media-amazon.com/images/S/sash/VRxFMfjvVeE5Eoy.png)`}}></i>
             </div>
         </div>
@@ -19,81 +45,78 @@ function FilterSection() {
         <div className="mt-12 mb-11.5 flex w-full ">
 
           <div className="flex flex-col shrink-0 mb-0 w-30 overflow-y-auto bg-[#f7fafa] relative">
-
-            <div className="border-b-[#e3e6e6] items-center border-b z-[1] bg-white">
-              <div className="p-[8px_12px] text-ellipsis overflow-hidden w-19 leading-[1.4] text-[#eb1745] font-fontBold text-[13px] flex flex-row items-center min-h-13 justify-between relative mb-0 before:bg-[#eb1745] before:w-1 before:h-full before:content-[''] before:absolute before:left-0 before:right-0 ">
-                Sizes
-              </div>
-            </div>
-
-            <div className="bg-[#fff9f6] border-b-[#fee4d9] items-center border-b z-[1]">
-              <div className="p-[8px_12px] flex  items-center overflow-hidden min-h-13 mb-0 relative  after:w-1 after:h-full after:content-[''] after:absolute after:right-0 after:bg-[linear-gradient(270deg,rgba(15,17,17,.04)_0,rgba(15,17,17,0)_100%)]">
-                <span className="text-[#303333] text-ellipsis overflow-hidden text-[13px] w-19 leading-[1.4] ">Price and Deals</span>
-              </div>
-            </div>
-
-            <div className="bg-[#fff9f6] border-b-[#fee4d9] items-center border-b z-[1]">
-              <div className="p-[8px_12px] flex  items-center overflow-hidden min-h-13 mb-0 relative  after:w-1 after:h-full after:content-[''] after:absolute after:right-0 after:bg-[linear-gradient(270deg,rgba(15,17,17,.04)_0,rgba(15,17,17,0)_100%)]">
-                <span className="text-[#303333] text-ellipsis overflow-hidden text-[13px] w-19 leading-[1.4] ">Colours</span>
-              </div>
-            </div>
-
-            <div className="bg-[#fff9f6] border-b-[#fee4d9] items-center border-b z-[1]">
-              <div className="p-[8px_12px] flex  items-center overflow-hidden min-h-13 mb-0 relative  after:w-1 after:h-full after:content-[''] after:absolute after:right-0 after:bg-[linear-gradient(270deg,rgba(15,17,17,.04)_0,rgba(15,17,17,0)_100%)]">
-                <span className="text-[#303333] text-ellipsis overflow-hidden text-[13px] w-19 leading-[1.4] ">Customer Reviews</span>
-              </div>
-            </div>
-
+            {
+              filterCategory && filterCategory.map((item,index)=>{
+                return(
+                  <div key={index} className={`${activeIndex === index ? 'border-b-[#e3e6e6] items-center border-b z-[1] bg-white':'bg-[#fff9f6] border-b-[#fee4d9] items-center border-b z-[1]'} `} onClick={()=>handleCategory(index)}>
+                    <div className={`p-[8px_12px] flex overflow-hidden min-h-13 mb-0 relative  items-center text-ellipsis w-23 leading-[1.4] text-[13px] ${activeIndex === index ? '  text-[#eb1745] font-fontBold before:bg-[#eb1745] before:w-1 before:h-full before:content-[""] before:absolute before:left-0 before:right-0':
+                      ' after:w-1 after:h-full after:content-[""] after:absolute after:right-0 after:bg-[linear-gradient(270deg,rgba(15,17,17,.04)_0,rgba(15,17,17,0)_100%)]'}`}>
+                     {item.filter_Type}
+                    </div>
+                  </div>
+                )
+              })
+            }
           </div>
 
-          {/* <div className="overflow-y-auto pt-3 w-full">
+          <div className="overflow-y-auto pt-3 w-full">
             <div className="p-[0_12px]">
-              <h2 className="text-[15px] !leading-[1.35] font-fontBold !pb-4">Sizes</h2>
+              <h2 className="text-[15px] !leading-[1.35] font-fontBold !pb-4">{filterCategory[activeIndex].filter_Type}</h2>
                  <h2 className="text-[13px] !leading-[20.25px] font-fontBold mb-2 relative top-px">
-                  Women's Clothing Size
+                 { filterCategory[activeIndex].filter_Type !== filterCategory[activeIndex].filter_sub_head && <span> {filterCategory[activeIndex].filter_sub_head}</span>}
                 </h2>
                 <div className="mb-1 flex flex-wrap">
                   {
-                    size && size.map((item,index)=>{
+                    filterBtn.length >0 ? (filterBtn.map((item,index)=>{
                       return(
-                        <button key={index} className="p-[7px_8px] rounded-lg w-fit mb-2 mr-2 border border-[#e9e8e8] text-center bg-white inline-flex items-center justify-center text-[13px] leading-[1.4]">{item}</button>
-                      )
-                    })
+                            <button key={index} onClick={()=>handleActiveFilter(index)} className={`p-[7px_8px] rounded-lg w-fit mb-2 mr-2 border ${activeFilter !== index ? '  border-[#e9e8e8] text-center bg-white inline-flex items-center justify-center text-[13px] leading-[1.4]':'bg-[#f9d52a]  border-[#f34552] '}`} >
+                              {filterCategory[activeIndex].filter_Type === 'Colours' && <span className="w-3.5 h-3.5 rounded-sm mr-0.5" style={{backgroundColor:`${item}`}}></span> } 
+                                <span>{item}</span>
+                            </button>)
+                    })):(
+                        <button  className="mr-2  shrink-0 whitespace-nowrap h-8 flex items-center p-[9px] rounded-lg w-auto border border-[#e8e8e8] text-center bg-white justify-center  ">
+                    <div className="flex pb-0.5 mr-1">
+                      <span
+                        className="w-4 h-[15px] "
+                        style={{
+                          backgroundImage: `url(https://m.media-amazon.com/images/S/sash/1B5nH39U5U0JHHA.svg)`,
+                        }}
+                      ></span>
+                      <span
+                        className="w-4 h-[15px] "
+                        style={{
+                          backgroundImage: `url(https://m.media-amazon.com/images/S/sash/1B5nH39U5U0JHHA.svg)`,
+                        }}
+                      ></span>
+                      <span
+                        className="w-4 h-[15px] "
+                        style={{
+                          backgroundImage: `url(https://m.media-amazon.com/images/S/sash/1B5nH39U5U0JHHA.svg)`,
+                        }}
+                      ></span>
+                      <span
+                        className="w-4 h-[15px] "
+                        style={{
+                          backgroundImage: `url(https://m.media-amazon.com/images/S/sash/1B5nH39U5U0JHHA.svg)`,
+                        }}
+                      ></span>
+                    </div>
+                    <span className="text-sm leading-5 align-text-bottom text-black ">
+                      & Up
+                    </span>
+                        </button>
+                    )
                   }
+
+                  
                 </div>
             </div>
-          </div> */}
+          </div>
+           
 
-
-            <div className="pt-3 w-full overflow-y-auto">
-              <div className="p-[0_12px]">
-                <h2 className="text-[15px] !leading-[1.35] font-fontBold !pb-4">Price and Deals</h2>
-                <h2 className="text-[13px] !leading-[20.25px] font-fontBold mb-2 relative top-px">
-                 Price
-                </h2>
-                <div className="p-[12px_9px] mr-6 bg-[#f4f4f4] rounded-lg mb-[17px]">
-                  <form>
-                    <div className="flex pb-1 mb-1">
-                      <p className="mr-1 p-0 font-fontBold text-[15px] leading-[1.35]">₹115</p>
-                      <span className="mr-1 p-0 font-fontBold text-[15px] leading-[1.35]">–</span>
-                      <p className="mr-1 p-0 font-fontBold text-[15px] leading-[1.35]">₹570+</p>
-                    </div>
-
-                    <div className="flex pb-1 mb-1">
-                      <div className="p-[10px_0] flex-[1] my-3 relative">
-                        <input type="range" className="m-0 p-0 flex absolute bg-transparent text-[#bbbfbf] z-[1] appearance-none w-full h-1 leading-[1.35]" />
-                        <input type="range" className="z-0 bg-[linear-gradient(to_right,rgb(187,191,191)_0%,rgb(187,191,191)_0%,rgb(0,113,133)_0%,rgb(0,133,133)_100%,rgb(187,191,191)_100%,rgb(187,191,191)_100%)] text-[#007185] appearance-none pointer-events-none w-full h-1 leading-[1.35]" />
-                      </div>
-                    </div>
-
-                  </form>
-                </div>
-              </div>
-            </div>
-
-          
         </div>
-    </section>
+       </section>
+    </div>
   )
 }
 
