@@ -1,4 +1,5 @@
 import smallIconImage from '../../../public/icon-image/smallSizeIcon.png'
+import {Link} from 'react-router-dom'
 
  type HeaderProps={
   toggleBtn:()=>void ,
@@ -13,12 +14,12 @@ function Header({toggleBtn}:HeaderProps) {
           <button className="float-left p-3.5 cursor-pointer" onClick={toggleBtn}>
             <i className=" block w-5 h-5 bg-[position:-20px_-382px] bg-[length:278px] bg-no-repeat overflow-hidden" style={{backgroundImage:`url(${smallIconImage})`}}></i>
           </button>
-          <div className="ml-auto relative float-left z-20 mt-[13px]">
+          <Link to={'/'}className="ml-auto relative float-left z-20 mt-[13px]">
             <span className=" bg-[length:275px] float-left padding-[10px_40px_0px_20px] bg-[position:-185px_-236px] w-20 h-7" style={{backgroundImage:`url(${smallIconImage})`}}></span>
             <span className="block float-left m-[1px_0_0_1px] text-[13.5px] text-white leading-3.5 pt-[1px]">
               .in
             </span>
-          </div>
+          </Link>
         </div>
         <div className="flex-row-reverse flex-wrap overflow-hidden min-w-[60px] flex relative w-auto">
           <div className="order-2">

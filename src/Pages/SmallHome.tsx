@@ -13,7 +13,6 @@ import DiscoverProduct from "../Components/SmallScreenComponents/DiscoverProduct
 import Footer from "../Components/SmallScreenComponents/Footer";
 import TopBar from "../Components/SmallScreenComponents/TopBar";
 import { ToggleContext } from "../Context/toggleContext";
-import FilterSection from "../Components/SmallScreenComponents/FilterSection";
 
 function SmallHome() {
   const [showTopBar, setShowTopBar] = useState<boolean>(false);
@@ -35,7 +34,7 @@ function SmallHome() {
   }, []);
 
   return (
-    <div className="bg-gray-200 overflow-x-hidden min-h-screen relative min-large:hidden ">
+    <div className="bg-gray-200  min-h-screen relative min-large:hidden ">
       <Header toggleBtn={handleSideBar} />
       <div className="flex h-[45px] overflow-x-scroll pt-3 w-full bg-[#232f3e] overflow-hidden">
         <ul className="contents list-none ">

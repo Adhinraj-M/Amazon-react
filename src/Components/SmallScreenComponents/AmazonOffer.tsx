@@ -3,7 +3,7 @@
 function AmazonOffer() {
   return (
 
-    <div className="bg-gray-200 h-[199px]">
+    <div className="bg-gray-200 h-[199px] overflow-x-hidden">
     <div className="m-[5px_0px] relative text-center ">
       <div className="h-[50px] max-w-[390px]  m-auto overflow-x-hidden bottom-0  top-4  absolute left-[-200%]  right-[-200%]  ">
         <img

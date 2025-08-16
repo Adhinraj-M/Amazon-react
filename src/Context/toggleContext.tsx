@@ -5,7 +5,7 @@ type toggleType={
     showSideBar:boolean
 }
 
-export const ToggleContext = createContext<toggleType >({
+export const ToggleContext = createContext<toggleType>({
     handleSideBar:()=> {},
     showSideBar:false
 })

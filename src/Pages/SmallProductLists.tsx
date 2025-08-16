@@ -38,6 +38,13 @@ function SmallProductLists() {
     setToggle(!toggle)
   }
 
+  if(toggle){
+    document.body.style.overflowY='hidden'
+  }
+  else{
+    document.body.style.overflowY='scroll'
+  }
+
   return (
     <>
       <Header toggleBtn={handleSideBar} />
