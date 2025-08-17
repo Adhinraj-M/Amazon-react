@@ -1,4 +1,4 @@
-import FilterHome from "./FilterHome"
+
 import ProductList from "./ProductList"
 import SortCategory from "./SortCategory"
 
@@ -8,7 +8,7 @@ function DiscoverProduct() {
         <h3 className="mb-0 mt-2 pl-1 pb-2 text-lg font-bold leading-[1.25]">Disover Product for you</h3>
           <SortCategory/>
           <ProductList/>
-          <FilterHome/>
+          
     </div>
   )
 }
