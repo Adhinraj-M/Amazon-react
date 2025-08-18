@@ -217,3 +217,5 @@ export const TrendingListMenu:string[]=['Bestsellers','New Releases','Movers and
 export const TopCategoriesMenu:string[]=['Mobiles','Computers','Books','Amazon Fashion','See All Categories']
 
 export const ProgramsFeaturesMenu:string[]=[`Today's Deals`,'Amazon Bazaar','Amazon Pay','Amazon Launchpad','Handloom and Handicrafts','Amazon Saheli','Amazon Custom','Try Prime','Sell on Amazon','International Brands']
+
+export const HomeSmallcategories:string[]=["All","Toys","Shoes","Stationery","Jewellery","Mobile Accessories","Essentials","Gym & Sports", "Electronics","Clothing","Beauty", "Baby Products","Automotive"," Books"]

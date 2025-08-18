@@ -1,18 +1,15 @@
 import { MdKeyboardArrowDown } from "react-icons/md";
 import SortButtons from "./SortButtons";
 import FilterHome from "./FilterHome";
-import { useState } from "react";
+import { useContext } from "react";
+import { HomeProductContext } from "../../Context/HomeProductContext";
 
 
 function SortCategory() {
-
-    const [cateList,setCateList] = useState<boolean>(false)
+const {handleCateShow,cateList} = useContext(HomeProductContext)
 
 const sortCategories:string[]=[' Under ₹299','₹300 - ₹599','₹600 - ₹999','₹1,000 and above']
 
-const handleCateShow=()=>{
-    setCateList(!cateList)
-}
 
   return (
     <div className="sticky top-12 bg-[transparent] shadow-[0_1px_2px_0_hsla(0,0%,7%,.15)] -ml-2 -mr-2 z-[208] !mb-2  ">

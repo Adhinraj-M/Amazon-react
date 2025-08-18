@@ -1,30 +1,17 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import ProductIcons from "../../../public/icon-image/ProductIcons.png";
-import type { Products } from "../../Types/product";
-import axiosInstance from "../../api/axios";
+
+import { HomeProductContext } from "../../Context/HomeProductContext";
 
 function ProductList() {
-  const [products, setProducts] = useState<Products[]>();
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    axiosInstance
-      .get<Products[]>("Product.json")
-      .then((res) => {
-        setProducts(res.data);
-      })
-      .catch((err) => {
-        setError("Failed to load data.json");
-        console.log(err);
-      });
-  }, []);
+  
+const {filterList} = useContext(HomeProductContext)
 
 
   return (
     <div className="grid gap-2 grid-cols-2 relative">
      { 
-      
-      products  && products.map((product)=>{
+      filterList   ? (filterList.map((product)=>{
         return(
 
       <div className="bg-white border-none flex rounded-lg flex-col h-auto relative !mb-2  " key={product.id}>
@@ -68,7 +55,9 @@ function ProductList() {
         </div>
         </div>
         )
-      })
+      })):(
+        <div className="text-xl">Loading...</div>
+      )
       
       }
     </div>
@@ -76,5 +65,4 @@ function ProductList() {
 }
 
 export default ProductList;
-
 

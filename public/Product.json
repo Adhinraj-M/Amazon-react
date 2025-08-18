@@ -1,7 +1,7 @@
 [
   {
     "id": "P_1",
-    "product_category": "essentials",
+    "product_category": "Essentials",
     "product_title": "McFarlane PVC Door Guard (‥",
     "product_detailed_title": "McFarlane PVC Door Guard (39 Inches, Pack of 3) Gap Filler for Door Bottom Seal Strip, Sound Proof, Reduce Noise, Energy...",
     "product_offer": "-68%",
@@ -18,7 +18,7 @@
   },
   {
     "id": "P_2",
-    "product_category": "books",
+    "product_category": "Books",
     "product_title": "Sarkari Chai Ke liye - Hindi N‥",
     "product_detailed_title": "Sarkari Chai Ke liye - Hindi Novel Perfect Paperback ",
     "product_offer": "-6%",
@@ -34,7 +34,7 @@
   },
   {
     "id": "P_3",
-    "product_category": "gym_and_sports",
+    "product_category": "Gym & Sports",
     "product_title": "Adidas Women's Shoes-Low‥",
     "product_detailed_title": " Adidas Women's Shoes-Low (Non Football) CL7345 Black Running 7 UK (40.5 EU)",
     "product_offer": "-36%",
@@ -51,7 +51,7 @@
   },
   {
     "id": "P_4",
-    "product_category": "baby_product",
+    "product_category": "Baby Products",
     "product_title": "Mee Mee Accurate Medicine‥",
     "product_detailed_title": "Mee Mee Accurate Medicine Dropper and Dispenser (Blue)",
     "product_offer": "-20%",
@@ -68,7 +68,7 @@
   },
   {
     "id": "P_5",
-    "product_category": "automotive",
+    "product_category": "Automotive",
     "product_title": "Shakti Technology S5 High‥",
     "product_detailed_title": "    Shakti Technology S5 High Pressure Car Washer Machine 1900 Watts, Pressure 125 Bar, 8L/Min Flow Rate and 10 Meter Hose Pipe with Professional 1L Foam Cannon Snow Lance           ",
     "product_offer": "-40%",
@@ -85,7 +85,7 @@
   },
   {
     "id": "P_6",
-    "product_category": "automotive",
+    "product_category": "Automotive",
     "product_title": "JPT F10 Car Washer High Pr‥",
     "product_detailed_title": "JPT F10 Car Washer High Pressure Pump | 2400 Watt Powerful Motor | Pressure - 220 BAR | Flow Rate 10L/Min | Heavy Duty Deep-Cleaner Washing Machine for Cars, Bikes, Floor & Home | 100% Copper Winding             ",
     "product_offer": "-42%",
@@ -102,7 +102,7 @@
   },
   {
     "id": "P_7",
-    "product_category": "baby_product",
+    "product_category": "Baby Products",
     "product_title": "LITTLOO Silicone Baby Fing‥",
     "product_detailed_title": "    LITTLOO Silicone Baby Finger Manual Toothbrush, Great For Massaging & Cleaning Gums, Bpa-Free, Use Soft Brush For Kids & New Born Baby, Kids Finger Toothbrushes Pack Of 2 (Clear)              ",
     "product_offer": "-52%",
@@ -119,7 +119,7 @@
   },
   {
     "id": "P_8",
-    "product_category": "beauty",
+    "product_category": "Beauty",
     "product_title": "Yardley London Gentleman‥",
     "product_detailed_title": "    Yardley London Gentleman Classic Deodorant Body Spray For Men, 150ml             ",
     "product_offer": "-30%",
@@ -136,7 +136,7 @@
   },
   {
     "id": "P_9",
-    "product_category": "beauty",
+    "product_category": "Beauty",
     "product_title": "Beauté Secrets Essentials M‥",
     "product_detailed_title": "    Beauté Secrets Essentials Manicure Set Nail Clippers, Stainless Steel Nail Scissors Grooming Kit, Acne needle, Blackhead Tool Leather Travel Case (Yellow)             ",
     "product_offer": "-4%",
@@ -153,7 +153,7 @@
   },
   {
     "id": "P_10",
-    "product_category": "beauty",
+    "product_category": "Beauty",
     "product_title": "Karmabhoomi (Hindi)",
     "product_detailed_title": " Karmabhoomi (Hindi) Hindi Edition   ",
     "product_offer": "-24%",
@@ -170,7 +170,7 @@
   },
   {
     "id": "P_11",
-    "product_category": "clothing",
+    "product_category": "Clothing",
     "product_title": "Miss Chase Women's Comfor‥",
     "product_detailed_title": " Miss Chase Women's Comfortable Round Neck Sleeveless Striped Midi Bodycon Dress with Zipper          ",
     "product_offer": "-57%",
@@ -187,7 +187,7 @@
   },
   {
     "id": "P_12",
-    "product_category": "clothing",
+    "product_category": "Clothing",
     "product_title": "fanideaz Branded Mens Half‥",
     "product_detailed_title": "  fanideaz Branded Mens Half Sleeve Cotton Striped Polo T-Shirt for Mens || Polo Tshirt for Men || Branded Tshirt for Men              ",
     "product_offer": "-70%",
@@ -204,7 +204,7 @@
   },
   {
     "id": "P_13",
-    "product_category": "electronics",
+    "product_category": "Electronics",
     "product_title": "Tizum Mouse Pad Computer‥",
     "product_detailed_title": "    Tizum Mouse Pad Computer Mouse Mat with Anti-Slip Rubber Base & Smooth Mouse Control with Spill-Resistant Surface for Laptop, Notebook, MacBook Pro, Gaming Computer (9.4*7.9 Inches), Beta (Multicolor)              ",
     "product_offer": "-70%",
@@ -221,7 +221,7 @@
   },
   {
     "id": "P_14",
-    "product_category": "electronics",
+    "product_category": "Electronics",
     "product_title": "ZEBRONICS ZEB-KM2100 M‥",
     "product_detailed_title": " ZEBRONICS ZEB-KM2100 Multimedia USB Keyboard Comes with 114 Keys Including 12 Dedicated Multimedia Keys & with Rupee Key ",
     "product_offer": "-38%",
@@ -238,7 +238,7 @@
   },
   {
     "id": "P_15",
-    "product_category": "essentials",
+    "product_category": "Essentials",
     "product_title": "Foreign Holics Hair Cutting‥",
     "product_detailed_title": "    Foreign Holics Hair Cutting Scissor Smooth and Comfortable (Black, 7-inch) (Black)             ",
     "product_offer": "-50%",
@@ -255,7 +255,7 @@
   },
   {
     "id": "P_16",
-    "product_category": "essentials",
+    "product_category": "Essentials",
     "product_title": "Ujala IDD Detergent Powder‥",
     "product_detailed_title": "  Ujala IDD Detergent Powder - 1 kg  ",
     "product_offer": "-13%",
@@ -272,7 +272,7 @@
   },
   {
     "id": "P_17",
-    "product_category": "gym_and_sports",
+    "product_category": "Gym & Sports",
     "product_title": "Protoner 4 kg x 2 PVC Dumb‥",
     "product_detailed_title": " Ujala IDD Detergent Powder - 1 kg  ",
     "product_offer": "-44%",
@@ -289,7 +289,7 @@
   },
   {
     "id": "P_18",
-    "product_category": "essentials",
+    "product_category": "Essentials",
     "product_title": "Bajaj DX-7 1000 Watts Dry Ir‥",
     "product_detailed_title": "Bajaj DX-7 1000 Watts Dry Iron | Advance Soleplate And Anti-Bacterial German Coating Technology | Light Weight Iron | Thermal Safety Fuse | 360 Degree Swivel Cord | 2-Yrs Warranty 【White】",
     "product_offer": "-54%",
@@ -306,7 +306,7 @@
   },
   {
     "id": "P_19",
-    "product_category": "jewellery",
+    "product_category": "Jewellery",
     "product_title": "Fashion Frill Silver Couple Ri‥",
     "product_detailed_title": " Fashion Frill Silver Couple Ring For Women Men Closed Hand Stainless Steel Promise Silver Hug Ring For Girls Women Men Boys Promise Adjustable Couple Ring Anniversary Love Gifts Jewellery  ",
     "product_offer": "-81%",
@@ -323,7 +323,7 @@
   },
   {
     "id": "P_20",
-    "product_category": "jewellery",
+    "product_category": "Jewellery",
     "product_title": "ZAVERI PEARLS Splendid Go‥",
     "product_detailed_title": " ZAVERI PEARLS Splendid Gold Look Finely Detailed Adjustable Finger Ring For Women-ZPFK9376 ",
     "product_offer": "-80%",
@@ -340,7 +340,7 @@
   },
   {
     "id": "P_21",
-    "product_category": "mobile_accessories",
+    "product_category": "Mobile Accessories",
     "product_title": "Saco Polyester Shock Proof‥",
     "product_detailed_title": " ZAVERI PEARLS Splendid Gold Look Finely Detailed Adjustable Finger Ring For Women-ZPFK9376 ",
     "product_offer": "-58%",
@@ -357,7 +357,7 @@
   },
   {
     "id": "P_22",
-    "product_category": "mobile_accessories",
+    "product_category": "Mobile Accessories",
     "product_title": "amazon basics Type A to Mic‥",
     "product_detailed_title": "     Saco Polyester Shock Proof Pouch Case Compatible For Mi 20000Mah Backcase For Mobile Phone Power Bank 2I | Mi 10000Mah Power Bank 3I | Xiaomi Wireless Power Bank 10000Mah (Wallet | Black)                ",
     "product_offer": "-78%",
@@ -374,7 +374,7 @@
   },
   {
     "id": "P_23",
-    "product_category": "stationery",
+    "product_category": "Stationery",
     "product_title": "Storite 5 Pack 220mm x 180‥",
     "product_detailed_title": " Storite 5 Pack 220mm x 180mm x 2mm Speed Type Gaming Non-Slip Rubber Base Mousepad Desk Mat Keyboard Pad for Laptop/Computer Office PC & Home  ",
     "product_offer": "-74%",
@@ -391,7 +391,7 @@
   },
   {
     "id": "P_24",
-    "product_category": "stationery",
+    "product_category": "Stationery",
     "product_title": "Scotch 6-inches Stainless St‥",
     "product_detailed_title": " Storite 5 Pack 220mm x 180mm x 2mm Speed Type Gaming Non-Slip Rubber Base Mousepad Desk Mat Keyboard Pad for Laptop/Computer Office PC & Home  ",
     "product_offer": "-17%",
@@ -408,7 +408,7 @@
   },
   {
     "id": "P_25",
-    "product_category": "shoes",
+    "product_category": "Shoes",
     "product_title": "Vendoz Women and Girls La‥",
     "product_detailed_title": " Storite 5 Pack 220mm x 180mm x 2mm Speed Type Gaming Non-Slip Rubber Base Mousepad Desk Mat Keyboard Pad for Laptop/Computer Office PC & Home  ",
     "product_offer": "-54%",
@@ -425,7 +425,7 @@
   },
   {
     "id": "P_26",
-    "product_category": "shoes",
+    "product_category": "Shoes",
     "product_title": " adidas Men Coreracer Casual Shoe ",
     "product_detailed_title": " adidas Men Coreracer Casual Shoe",
     "product_offer": "-74%",
@@ -442,7 +442,7 @@
   },
   {
     "id": "P_27",
-    "product_category": "toys",
+    "product_category": "Toys",
     "product_title": "House of Quirk Animal Fing‥",
     "product_detailed_title": "House of Quirk Animal Finger Puppets - Set of10  ",
     "product_offer": "-23%",
@@ -459,7 +459,7 @@
   },
   {
     "id": "P_28",
-    "product_category": "toys",
+    "product_category": "Toys",
     "product_title": "Sanghariyat® Big Size Monst‥",
     "product_detailed_title": "    Sanghariyat® Big Size Monster Truck Friction Powered Cars Toys, 360 Degree Stunt 4wd Cars Push go Truck for Toddlers Kids Gift (Pack of 2 Car) (assorted)",
     "product_offer": "-91%",
