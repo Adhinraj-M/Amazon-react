@@ -9,7 +9,7 @@ type filterHomeType={
 
 function FilterHome({handleCatehide}:filterHomeType) {
 
-    const {handleFilter,setActiveFilters,activeFilters} = useContext(HomeProductContext)
+    const {handleFilter,setActiveFilters,activeFilters,handleClearFilter} = useContext(HomeProductContext)
 
 const handleActiveFilters=(index:number)=>{
 
@@ -40,13 +40,7 @@ const handleActiveFilters=(index:number)=>{
 }
 
 
-
-
-const handleClearFilter=()=>{
-    setActiveFilters({
-        0:true
-    })
-}
+ 
 
 
 
@@ -66,7 +60,7 @@ const handleClearFilter=()=>{
                             HomeSmallcategories && HomeSmallcategories.map((item,index)=>{
 
                                 return(
-                                    <button key={index} onClick={()=>handleActiveFilters(index)} className={`${activeFilters[index] !==  true ? 'bg-white  border-[#e8e8e8]  ml-[-3px] mr-[-3px] !text-[15px] leading-[1.35] border rounded-[7px] p-[4px_8px] text-center whitespace-nowrap w-auto':`bg-[#e7fbff]  border-[#bddee3] text-[#007185] ml-[-3px] mr-[-3px] !text-[15px] leading-[1.35] border rounded-[7px] p-[4px_8px] text-center whitespace-nowrap w-auto ${index > 0 && 'before:content-["×"] before:text-[15px] before:p-[2px_2px_2px_0]'} `}`}>{item}</button>
+                                    <button key={index} onClick={()=>handleActiveFilters(index)} className={`ml-[-3px] mr-[-3px] !text-[15px] leading-[1.35] border rounded-[7px] p-[4px_8px] text-center whitespace-nowrap w-auto ${activeFilters[index] !==  true ? 'bg-white  border-[#e8e8e8]  ':`bg-[#e7fbff]  border-[#bddee3] text-[#007185]  ${index > 0 && 'before:content-["×"] before:text-[15px] before:p-[2px_2px_2px_0]'} `}`}>{item}</button>
                                 )
                             })
                         }

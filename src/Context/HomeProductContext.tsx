@@ -12,13 +12,14 @@ type HomeProductType = {
   products: Products[] | undefined;
   handleFilter: () => void;
   activeFilters: { [key: number]: boolean };
-  setActiveFilters: React.Dispatch<
-    React.SetStateAction<{ [key: number]: boolean }>
-  >;
+  setActiveFilters: React.Dispatch<React.SetStateAction<{ [key: number]: boolean }>>;
   filterList: Products[] | undefined;
   handleCateShow: () => void;
   cateList: boolean;
+  selectCateCount:number,
+  handleClearFilter:()=>void
 };
+
 
 export const HomeProductContext = createContext<HomeProductType>({
   products: undefined,
@@ -28,19 +29,22 @@ export const HomeProductContext = createContext<HomeProductType>({
   filterList: undefined,
   handleCateShow: () => {},
   cateList: false,
+  selectCateCount:0,
+  handleClearFilter:()=>{}
 });
 
 export const HomeProductProvider = ({ children }: { children: ReactNode }) => {
   const [products, setProducts] = useState<Products[]>();
   const [error, setError] = useState<string | null>(null);
   const [filterList, setFilterList] = useState<Products[] | undefined>();
-  const [activeFilters, setActiveFilters] = useState<{
-    [key: number]: boolean;
-  }>({
+  const [activeFilters, setActiveFilters] = useState<{[key: number]: boolean;}>({
     0: true,
   });
   const [cateList, setCateList] = useState<boolean>(false);
+  const [selectCateCount,setSelectCateCount] = useState<number>(0)
 
+
+  // data fetching 
   useEffect(() => {
     axiosInstance
       .get<Products[]>("Product.json")
@@ -54,11 +58,14 @@ export const HomeProductProvider = ({ children }: { children: ReactNode }) => {
       });
   }, []);
 
+
+  // filtering according to the category
   const handleFilter = () => {
     const activeKeys = Object.entries(activeFilters)
         .filter(([_, value]) => value === true)
         .map(([key]) => HomeSmallcategories[Number(key)]);
     
+        setSelectCateCount(activeKeys.length)
 
     if (activeKeys.includes("All") || activeKeys.length === 0) {
       setFilterList(products);
@@ -78,6 +85,14 @@ export const HomeProductProvider = ({ children }: { children: ReactNode }) => {
     setCateList(!cateList);
   };
 
+  //clear filter 
+  const handleClearFilter=()=>{
+    setActiveFilters({
+        0:true
+    })
+    setSelectCateCount(0)
+    setFilterList(products)
+}
 
   return (
     <HomeProductContext.Provider
@@ -89,9 +104,12 @@ export const HomeProductProvider = ({ children }: { children: ReactNode }) => {
         filterList,
         setActiveFilters,
         handleCateShow,
-      }}
-    >
+        selectCateCount,
+        handleClearFilter
+      }}>
       {children}
     </HomeProductContext.Provider>
   );
 };
+
+
