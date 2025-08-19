@@ -6,7 +6,7 @@ import React, {
 } from "react";
 import type { Products } from "../Types/product";
 import axiosInstance from "../api/axios";
-import { HomeSmallcategories } from "../Types/categories";
+import { HomeSmallcategories, type priceSortCategoriesType } from "../Types/categories";
 
 type HomeProductType = {
   products: Products[] | undefined;
@@ -17,9 +17,10 @@ type HomeProductType = {
   handleCateShow: () => void;
   cateList: boolean;
   selectCateCount:number,
-  handleClearFilter:()=>void
+  handleClearFilter:()=>void,
+  selectedPrice:{[key:number]:{min:number,max:number,isSelected:boolean }},
+  handleFilterPrice:(price:priceSortCategoriesType,index:number)=> void,
 };
-
 
 export const HomeProductContext = createContext<HomeProductType>({
   products: undefined,
@@ -30,7 +31,9 @@ export const HomeProductContext = createContext<HomeProductType>({
   handleCateShow: () => {},
   cateList: false,
   selectCateCount:0,
-  handleClearFilter:()=>{}
+  handleClearFilter:()=>{},
+  selectedPrice:{},
+  handleFilterPrice:()=>{},
 });
 
 export const HomeProductProvider = ({ children }: { children: ReactNode }) => {
@@ -42,6 +45,9 @@ export const HomeProductProvider = ({ children }: { children: ReactNode }) => {
   });
   const [cateList, setCateList] = useState<boolean>(false);
   const [selectCateCount,setSelectCateCount] = useState<number>(0)
+const [selectedPrice,setSelectedPrice] = useState<{[key:number]:{min:number,max:number,isSelected:boolean }}>({
+ 
+})
 
 
   // data fetching 
@@ -59,31 +65,76 @@ export const HomeProductProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
 
-  // filtering according to the category
-  const handleFilter = () => {
-    const activeKeys = Object.entries(activeFilters)
-        .filter(([_, value]) => value === true)
-        .map(([key]) => HomeSmallcategories[Number(key)]);
+
+  //filtering accoring to the price range
+const handleFilterPrice = (price:priceSortCategoriesType,index:number) =>{
+
+   const {min,max} = price
+
+   // i want to use this immediately after updating
+   const updated ={
+    ...selectedPrice,
+     [index]:{ min,
+      max,
+      isSelected:!selectedPrice[index]?.isSelected}
     
-        setSelectCateCount(activeKeys.length)
+   }
 
-    if (activeKeys.includes("All") || activeKeys.length === 0) {
-      setFilterList(products);
-    } else {
-      const filterd = products?.filter((item) => {
-        return activeKeys.some(
-          (category) => item.product_category === category
-        );
-      });
+   setSelectedPrice(updated)
+   const filtered = filteredProducts(updated)
 
-      setFilterList(filterd);
-    }
-    setCateList(!cateList);
+   setFilterList(filtered)
+   
+}
+
+
+  // filtering according to the category and price function
+  const filteredProducts = (updated:any) => {
+
+    const activeKeys = Object.entries(activeFilters).filter(([_,value])=>value === true)
+                      .map(([key])=>HomeSmallcategories[Number(key)])
+
+    const categoryFiltered = activeKeys.includes("All") || activeKeys.length === 0 ?
+                              products : products?.filter((product)=>{
+                                return activeKeys.some((category)=> product.product_category === category)
+                              })
+
+
+       const selectedRanges = Object.values(updated).filter((p:any)=> p?.isSelected === true)
+
+
+      if(selectedRanges?.length === 0 || selectedRanges?.length === undefined){
+        console.log("filtered",categoryFiltered)
+          return categoryFiltered
+      }
+      
+       const finalFiltered =categoryFiltered?.filter((product)=>{
+        
+         const price = Number(product.product_price.replace(/,/g, '').trim())
+         return selectedRanges.some((range:any)=>{
+      
+           return price >= range.min && price <= range.max
+         })
+       })
+      console.log("finalFiltered",finalFiltered?.length)
+       return finalFiltered
+ }
+
+ //category modal toggle function
+ const handleCateShow = () => {
+   setCateList(!cateList);
   };
 
-  const handleCateShow = () => {
-    setCateList(!cateList);
-  };
+
+//category filter handler
+ const handleFilter=()=>{
+  const activeKeys = Object.entries(activeFilters).filter(([_,value])=> value === true ).map(([key])=> HomeSmallcategories[Number(key)])
+  setSelectCateCount(activeKeys.length)
+  console.log("category slectedCheck",selectedPrice)
+  setFilterList(filteredProducts(selectedPrice))
+  setCateList(!cateList)
+}
+
 
   //clear filter 
   const handleClearFilter=()=>{
@@ -91,6 +142,7 @@ export const HomeProductProvider = ({ children }: { children: ReactNode }) => {
         0:true
     })
     setSelectCateCount(0)
+    setSelectedPrice({})
     setFilterList(products)
 }
 
@@ -105,7 +157,9 @@ export const HomeProductProvider = ({ children }: { children: ReactNode }) => {
         setActiveFilters,
         handleCateShow,
         selectCateCount,
-        handleClearFilter
+        handleClearFilter,
+        handleFilterPrice,
+        selectedPrice,
       }}>
       {children}
     </HomeProductContext.Provider>

@@ -24,7 +24,7 @@ const handleActiveFilters=(index:number)=>{
 
      newFilters[0] = false;
 
-     //This check if any of the index is true and return true
+     // This check if any of the index is true and return true
      const hasAnyTrue = Object.entries(newFilters).some(([key, value]) => {
        return key !== "0" && value === true;
      });
@@ -36,12 +36,7 @@ const handleActiveFilters=(index:number)=>{
 
    return newFilters;
  });
-
 }
-
-
- 
-
 
 
   return (

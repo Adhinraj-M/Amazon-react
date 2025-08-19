@@ -219,3 +219,35 @@ export const TopCategoriesMenu:string[]=['Mobiles','Computers','Books','Amazon F
 export const ProgramsFeaturesMenu:string[]=[`Today's Deals`,'Amazon Bazaar','Amazon Pay','Amazon Launchpad','Handloom and Handicrafts','Amazon Saheli','Amazon Custom','Try Prime','Sell on Amazon','International Brands']
 
 export const HomeSmallcategories:string[]=["All","Toys","Shoes","Stationery","Jewellery","Mobile Accessories","Essentials","Gym & Sports", "Electronics","Clothing","Beauty", "Baby Products","Automotive"," Books"]
+
+
+export type  priceSortCategoriesType={
+  text:string,
+  min:number,
+  max:number
+}
+
+export const priceSortCategories:priceSortCategoriesType[] = [
+  {
+    text:"Under ₹299",
+    min:0,
+    max:299
+  },
+  {
+    text:"₹300 - ₹599",
+    min:300,
+    max:599
+  },
+  {
+    text:"₹600 - ₹999",
+    min:600,
+    max:999
+  },
+  {
+    text:"₹1,000 and above",
+    min:1000,
+    max:9999
+  }
+
+]
+
