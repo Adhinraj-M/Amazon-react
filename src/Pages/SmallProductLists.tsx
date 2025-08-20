@@ -1,43 +1,21 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import Header from "../Components/SmallScreenComponents/Header";
 import { ToggleContext } from "../Context/toggleContext";
 import Address from "../Components/SmallScreenComponents/Address";
-import { useParams } from "react-router-dom";
-import axiosInstance from "../api/axios";
-import type { CategoryFilter, CategoryProdut } from "../Types/product";
 import FilterSection from "../Components/SmallScreenComponents/FilterSection";
+import { ProductListContext } from "../Context/ProductListContext";
 
 function SmallProductLists() {
+
   const { handleSideBar } = useContext(ToggleContext);
-  const params = useParams();
-  const [cateProduct, setCateProduct] = useState<CategoryProdut[]>();
-  const [sortCategory,setSortCategory]=useState<string[]>()
-  const [error, setError] = useState<string | null>(null);
+  const {filterCategory,sortCategory,cateProduct} = useContext(ProductListContext)
   const [toggle,setToggle] = useState<boolean>(false)
-  const [filterCategory,setFilterCategory]=useState<CategoryFilter[]>([])
-
-  useEffect(() => {
-    axiosInstance
-      .get(`/${params.url}.json`)
-      
-      .then((res:any) => {
-      
-        setCateProduct(res.data.product);
-        setSortCategory(res.data.category)
-        setFilterCategory(res.data.filterCategory)
-      })
-      .catch((err) => {
-        setError("Failed to load data");
-        console.log(err);
-      });
-
-     
-  }, []);
 
   const handleFilter=()=>{
     setToggle(!toggle)
   }
 
+  // to avoid background scroll when the filter modal opens
   if(toggle){
     document.body.style.overflowY='hidden'
   }
@@ -119,14 +97,13 @@ function SmallProductLists() {
               {
                 sortCategory && sortCategory.map((item:string,index:number)=>{
                    return(
-                     <button key={index} className="mr-2 text-sm shrink-0 whitespace-nowrap h-8 flex items-center p-[9px] rounded-lg w-auto border border-[#e8e8e8] text-center bg-white justify-center  ">
+                     <button key={index} onClick={()=>console.log(item)} className="mr-2 text-sm shrink-0 whitespace-nowrap h-8 flex items-center p-[9px] rounded-lg w-auto border border-[#e8e8e8] text-center bg-white justify-center  ">
                      {item}
                    </button>
                    )
                 })
               }
-              
-              
+                    
               
             </div>
             <div className="-mr-1 bg-[#fff9f6] border-[#c7e4e8] h-[46px] p-[0_12px] shadow-[inset_1px_0_0_0_#e6e6e6] flex items-center">
@@ -193,7 +170,7 @@ function SmallProductLists() {
                 </div>
               </div>
             </div>
-          </div>
+               </div>
             )
           })
          }  

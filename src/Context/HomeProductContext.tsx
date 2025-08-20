@@ -16,10 +16,12 @@ type HomeProductType = {
   filterList: Products[] | undefined;
   handleCateShow: () => void;
   cateList: boolean;
-  selectCateCount:number,
+  selecedCategory:string[],
   handleClearFilter:()=>void,
   selectedPrice:{[key:number]:{min:number,max:number,isSelected:boolean }},
   handleFilterPrice:(price:priceSortCategoriesType,index:number)=> void,
+  setFilterList: React.Dispatch<React.SetStateAction<Products[] | undefined>>,
+  setSelectedCategory:React.Dispatch<React.SetStateAction<string[]>>
 };
 
 export const HomeProductContext = createContext<HomeProductType>({
@@ -30,13 +32,15 @@ export const HomeProductContext = createContext<HomeProductType>({
   filterList: undefined,
   handleCateShow: () => {},
   cateList: false,
-  selectCateCount:0,
+  selecedCategory:[],
   handleClearFilter:()=>{},
   selectedPrice:{},
   handleFilterPrice:()=>{},
+  setFilterList:()=>{},
+  setSelectedCategory:()=>{}
 });
 
-export const HomeProductProvider = ({ children }: { children: ReactNode }) => {
+export const HomeProductProvider = ({ children }:{ children: ReactNode }) => {
   const [products, setProducts] = useState<Products[]>();
   const [error, setError] = useState<string | null>(null);
   const [filterList, setFilterList] = useState<Products[] | undefined>();
@@ -44,13 +48,13 @@ export const HomeProductProvider = ({ children }: { children: ReactNode }) => {
     0: true,
   });
   const [cateList, setCateList] = useState<boolean>(false);
-  const [selectCateCount,setSelectCateCount] = useState<number>(0)
+  const [selecedCategory,setSelectedCategory] = useState<string[]>([])
 const [selectedPrice,setSelectedPrice] = useState<{[key:number]:{min:number,max:number,isSelected:boolean }}>({
  
 })
 
 
-  // data fetching 
+// data fetching 
   useEffect(() => {
     axiosInstance
       .get<Products[]>("Product.json")
@@ -65,9 +69,9 @@ const [selectedPrice,setSelectedPrice] = useState<{[key:number]:{min:number,max:
   }, []);
 
 
-
   //filtering accoring to the price range
-const handleFilterPrice = (price:priceSortCategoriesType,index:number) =>{
+
+  const handleFilterPrice = (price:priceSortCategoriesType,index:number) =>{
 
    const {min,max} = price
 
@@ -76,7 +80,7 @@ const handleFilterPrice = (price:priceSortCategoriesType,index:number) =>{
     ...selectedPrice,
      [index]:{ min,
       max,
-      isSelected:!selectedPrice[index]?.isSelected}
+      isSelected:!selectedPrice[index]?.isSelected }
     
    }
 
@@ -87,61 +91,60 @@ const handleFilterPrice = (price:priceSortCategoriesType,index:number) =>{
    
 }
 
-
   // filtering according to the category and price function
-  const filteredProducts = (updated:any) => {
+  const filteredProducts = (updated: any) => {
+    const activeKeys = Object.entries(activeFilters)
+      .filter(([_, value]) => value === true)
+      .map(([key]) => HomeSmallcategories[Number(key)]);
 
-    const activeKeys = Object.entries(activeFilters).filter(([_,value])=>value === true)
-                      .map(([key])=>HomeSmallcategories[Number(key)])
+    setSelectedCategory(activeKeys);
 
-    const categoryFiltered = activeKeys.includes("All") || activeKeys.length === 0 ?
-                              products : products?.filter((product)=>{
-                                return activeKeys.some((category)=> product.product_category === category)
-                              })
+    // console.log("activekeys",activeKeys)
 
+    const categoryFiltered =
+      activeKeys.includes("All") || activeKeys.length === 0
+        ? products
+        : products?.filter((product) => {
+            return activeKeys.some(
+              (category) => product.product_category === category
+            );
+          });
 
-       const selectedRanges = Object.values(updated).filter((p:any)=> p?.isSelected === true)
+    const selectedRanges = Object.values(updated).filter(
+      (p: any) => p?.isSelected === true
+    );
 
+    if (selectedRanges?.length === 0 || selectedRanges?.length === undefined) {
+      return categoryFiltered;
+    }
 
-      if(selectedRanges?.length === 0 || selectedRanges?.length === undefined){
-        console.log("filtered",categoryFiltered)
-          return categoryFiltered
-      }
-      
-       const finalFiltered =categoryFiltered?.filter((product)=>{
-        
-         const price = Number(product.product_price.replace(/,/g, '').trim())
-         return selectedRanges.some((range:any)=>{
-      
-           return price >= range.min && price <= range.max
-         })
-       })
-      console.log("finalFiltered",finalFiltered?.length)
-       return finalFiltered
- }
+    const finalFiltered = categoryFiltered?.filter((product) => {
+      const price = Number(product.product_price.replace(/,/g, "").trim());
+      return selectedRanges.some((range: any) => {
+        return price >= range.min && price <= range.max;
+      });
+    });
+
+    return finalFiltered;
+  };
 
  //category modal toggle function
  const handleCateShow = () => {
    setCateList(!cateList);
   };
 
-
-//category filter handler
+  //category filter handler
  const handleFilter=()=>{
-  const activeKeys = Object.entries(activeFilters).filter(([_,value])=> value === true ).map(([key])=> HomeSmallcategories[Number(key)])
-  setSelectCateCount(activeKeys.length)
-  console.log("category slectedCheck",selectedPrice)
   setFilterList(filteredProducts(selectedPrice))
   setCateList(!cateList)
 }
-
 
   //clear filter 
   const handleClearFilter=()=>{
     setActiveFilters({
         0:true
     })
-    setSelectCateCount(0)
+    setSelectedCategory([])
     setSelectedPrice({})
     setFilterList(products)
 }
@@ -156,14 +159,19 @@ const handleFilterPrice = (price:priceSortCategoriesType,index:number) =>{
         filterList,
         setActiveFilters,
         handleCateShow,
-        selectCateCount,
+        selecedCategory,
         handleClearFilter,
         handleFilterPrice,
         selectedPrice,
+        setFilterList,
+        setSelectedCategory
       }}>
       {children}
     </HomeProductContext.Provider>
   );
 };
+
+
+
 
 

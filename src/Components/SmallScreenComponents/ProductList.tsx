@@ -1,10 +1,41 @@
-import { useContext } from "react";
+import { useContext, useEffect, useMemo } from "react";
 import ProductIcons from "../../../public/icon-image/ProductIcons.png";
 import { VscLoading } from "react-icons/vsc";
 import { HomeProductContext } from "../../Context/HomeProductContext";
+import { useSearchParams } from "react-router-dom";
 
 function ProductList() {
-  const { filterList } = useContext(HomeProductContext);
+  const {setFilterList, filterList,products,selecedCategory ,setSelectedCategory} = useContext(HomeProductContext);
+
+  const [searchParams,setSearchParams] = useSearchParams()
+
+
+  const categories = useMemo(()=> searchParams.getAll("category")
+   ,[searchParams])
+
+//filter
+  useEffect(()=>{
+    const cateFilter = categories.includes('All') || categories.length === 0 ? products : products?.filter((product)=>{
+       return categories.some((category)=> product.product_category === category)
+    })
+    setFilterList(cateFilter) 
+
+     if(categories.length > 0){
+       setSelectedCategory(categories)
+     }             
+                 
+  },[categories,products])
+
+// setting the searchParams
+  useEffect(()=>{
+    const newParams = new URLSearchParams()
+
+    selecedCategory.forEach((cat)=>{
+      newParams.append("category",cat)
+    })
+    setSearchParams(newParams)
+  },[selecedCategory])
+  
 
   return (
     <div className="grid gap-2 grid-cols-2 relative">
@@ -75,3 +106,4 @@ function ProductList() {
 }
 
 export default ProductList;
+
