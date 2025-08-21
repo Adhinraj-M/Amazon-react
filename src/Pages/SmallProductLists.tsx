@@ -4,6 +4,7 @@ import { ToggleContext } from "../Context/toggleContext";
 import Address from "../Components/SmallScreenComponents/Address";
 import FilterSection from "../Components/SmallScreenComponents/FilterSection";
 import { ProductListContext } from "../Context/ProductListContext";
+import { Link, Outlet } from "react-router-dom";
 
 function SmallProductLists() {
 
@@ -123,8 +124,8 @@ function SmallProductLists() {
          {
           cateProduct && cateProduct.map((item)=>{
             return(
-               <div key={item.id} className="grid  float-none w-auto h-[363px] px-1 visible before:-mb-px before:content-[''] before:block before:h-px">
-            <div className="pb-[15px] h-[calc(100%-8px)] -ml-1 -mr-1 border border-[#fee4d9] rounded-lg bg-white transform-[translate3d(0,0,0)] relative ">
+               <Link to={`/productList/productData/${item.id}`} key={item.id} className="grid  float-none w-auto h-[363px] px-1 visible before:-mb-px before:content-[''] before:block before:h-px">
+               <div className="pb-[15px] h-[calc(100%-8px)] -ml-1 -mr-1 border border-[#fee4d9] rounded-lg bg-white transform-[translate3d(0,0,0)] relative ">
               <div className="flex justify-center bg-[linear-gradient(212deg,#f3f3f3_11.9%,#fff_54.57%,#f0f0f0_99.3%)] relative">
                 <img
                   className="mix-blend-multiply !h-[263px]"
@@ -170,13 +171,14 @@ function SmallProductLists() {
                 </div>
               </div>
             </div>
-               </div>
+            </Link>
             )
           })
          }  
         </div>
       </div>
       { toggle && <FilterSection filterCategory={filterCategory} handleFilter={handleFilter}/> }
+   
     </>
   );
 }

@@ -251,3 +251,45 @@ export const priceSortCategories:priceSortCategoriesType[] = [
 
 ]
 
+type ProvidingBenefitsType={
+  benefits:string,
+  img:{
+    src:string,
+    alt:string
+  }
+}
+
+export const ProvidingBenefits:ProvidingBenefitsType[]=[
+  {
+    benefits:"10 days Return & Exchange",
+    img:{
+      src:"https://m.media-amazon.com/images/G/31/A2I-Convert/mobile/IconFarmCX2/returnable._CB544881141_.svg",
+      alt:"10 days Return & Exchange"
+    }
+    
+  },
+  {
+    benefits:"Cash/Pay on Delivery",
+    img:{
+      src:"https://m.media-amazon.com/images/G/31/A2I-Convert/mobile/IconFarmCX2/pod._CB544881141_.svg",
+      alt:"Cash/Pay on Delivery"
+    }
+    
+  },
+  {
+    benefits:"Top Brands",
+    img:{
+      src:"https://m.media-amazon.com/images/G/31/A2I-Convert/mobile/IconFarmCX2/top_brand._CB544881141_.svg",
+      alt:"Top Brands"
+    }
+    
+  },
+  {
+    benefits:"Free Delivery",
+    img:{
+      src:"https://m.media-amazon.com/images/G/31/A2I-Convert/mobile/IconFarmCX2/free_delivery._CB544881141_.svg",
+      alt:"Free Delivery"
+    }
+    
+  }
+]

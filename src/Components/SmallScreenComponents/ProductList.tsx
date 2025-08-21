@@ -2,7 +2,7 @@ import { useContext, useEffect, useMemo } from "react";
 import ProductIcons from "../../../public/icon-image/ProductIcons.png";
 import { VscLoading } from "react-icons/vsc";
 import { HomeProductContext } from "../../Context/HomeProductContext";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 function ProductList() {
   const {setFilterList, filterList,products,selecedCategory ,setSelectedCategory} = useContext(HomeProductContext);
@@ -50,10 +50,9 @@ function ProductList() {
       {filterList ? (
         filterList.map((product) => {
           return (
-            <div
+            <Link to={`productData/${product.id}`}
               className="bg-white border-none flex rounded-lg flex-col h-auto relative !mb-2"
-              key={product.id}
-            >
+              key={product.id}>
               <div className="h-full relative w-full !mb-0 before:content-[''] before:block before:h-0 before:pb-[100%] after:bg-[#0f1111] after:rounded-lg after:contents-[''] after:h-full after:opacity-[.03] after:absolute after:top-0 after:w-full">
                 <img
                   className="rounded-lg max-h-[calc(100%-8px)] max-w-[calc(100%-8px)] w-full absolute top-0 bottom-0 right-0 left-0 m-auto "
@@ -93,7 +92,7 @@ function ProductList() {
                   </span>
                 </div>
               </div>
-            </div>
+            </Link>
           );
         })
       ) : (
