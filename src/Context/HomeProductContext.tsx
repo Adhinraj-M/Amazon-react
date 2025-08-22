@@ -81,7 +81,6 @@ const [selectedPrice,setSelectedPrice] = useState<{[key:number]:{min:number,max:
      [index]:{ min,
       max,
       isSelected:!selectedPrice[index]?.isSelected }
-    
    }
 
    setSelectedPrice(updated)

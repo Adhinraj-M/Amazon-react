@@ -38,6 +38,8 @@ const handleActiveFilters=(index:number)=>{
  });
 }
 
+console.log("activeFilters",activeFilters)
+
 
   return (
     <div className=" translate-y-0 h-full fixed top-auto bottom-0 right-0 left-0 z-[500]">

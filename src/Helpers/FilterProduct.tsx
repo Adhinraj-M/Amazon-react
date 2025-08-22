@@ -1,9 +1,13 @@
 import type { CategoryProdut } from "../Types/product";
 
-function FilterProduct(cateProduct:CategoryProdut[],selectedFilters:{[key:string]:string[]}) {
+function FilterProduct(cateProduct:CategoryProdut[],selectedFilters:{
+    [key: string]: string[] | {min:number,max:number}[];}) {
+
   return cateProduct.filter((product:any)=>{
+    
     for(const [key,values] of Object.entries(selectedFilters)){
         
+        if(values.length === 0) return false
         let categoryKey = key.toLocaleLowerCase()
         if(key === 'slider'){
             const [min,max] = values.map(Number)
@@ -49,3 +53,5 @@ function FilterProduct(cateProduct:CategoryProdut[],selectedFilters:{[key:string
 }
             
 export default FilterProduct
+
+

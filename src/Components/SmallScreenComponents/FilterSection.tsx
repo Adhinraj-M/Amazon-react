@@ -21,7 +21,12 @@ function FilterSection({ handleModal, filterCategory }: filterSectionType) {
     handleFilters,
   } = useContext(ProductListContext);
 
+  console.log("activeFilter",activeFilter)
+
   let count = Object.values(activeFilter).flat().length;
+
+
+  
 
   const min: number = 115;
   const max: number = 3999;
@@ -80,17 +85,17 @@ function FilterSection({ handleModal, filterCategory }: filterSectionType) {
           <div className="overflow-y-auto pt-3 w-full">
             <div className="p-[0_12px]">
               <h2 className="text-[15px] !leading-[1.35] font-fontBold !pb-4">
-                {filterCategory[activeIndex].filter_Type}
+                {filterCategory[activeIndex]?.filter_Type}
               </h2>
               <h2 className="text-[13px] !leading-[20.25px] font-fontBold mb-2 relative top-px">
-                {filterCategory[activeIndex].filter_Type !==
-                  filterCategory[activeIndex].filter_sub_head && (
+                {filterCategory[activeIndex]?.filter_Type !==
+                  filterCategory[activeIndex]?.filter_sub_head && (
                   <span> {filterCategory[activeIndex].filter_sub_head}</span>
                 )}
               </h2>
               <div className="mb-1 flex flex-wrap">
-                {filterBtn.filter_buttons.length > 0 ? (
-                  filterBtn.filter_buttons.map((item, index) => {
+                {filterBtn?.filter_buttons.length > 0 ? (
+                  filterBtn?.filter_buttons.map((item, index) => {
                     return (
                       <div key={index} className="">
                         {item === "All Prices" && (
@@ -150,7 +155,7 @@ function FilterSection({ handleModal, filterCategory }: filterSectionType) {
                           className={`p-[7px_8px] rounded-lg w-fit mb-2 mr-2 border  text-center inline-flex items-center justify-center text-[13px] leading-[1.4] ${
                             activeFilter[filterBtn.filter_Type]?.includes(index)
                               ? "bg-[#f9d52a]  border-[#f34552] "
-                              : "  border-[#e9e8e8] bg-white "
+                              : "border-[#e9e8e8] bg-white "
                           }`}
                         >
                           {filterCategory[activeIndex].filter_Type ===

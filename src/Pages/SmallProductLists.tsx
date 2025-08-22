@@ -7,16 +7,15 @@ import { ProductListContext } from "../Context/ProductListContext";
 import { Link } from "react-router-dom";
 
 function SmallProductLists() {
-
   const { handleSideBar } = useContext(ToggleContext);
-  const {filterCategory,sortCategory,filteredLists,handleModal,toggle} = useContext(ProductListContext)
-  
+  const { filterCategory, sortCategory, filteredLists, handleModal, toggle } =
+    useContext(ProductListContext);
+
   // to avoid background scroll when the filter modal opens
-  if(toggle){
-    document.body.style.overflowY='hidden'
-  }
-  else{
-    document.body.style.overflowY='scroll'
+  if (toggle) {
+    document.body.style.overflowY = "hidden";
+  } else {
+    document.body.style.overflowY = "scroll";
   }
 
   return (
@@ -90,21 +89,24 @@ function SmallProductLists() {
                 </span>
               </button>
 
-              {
-                sortCategory && sortCategory.map((item:string,index:number)=>{
-                   return(
-                     <button key={index} onClick={()=>console.log(item)} className="mr-2 text-sm shrink-0 whitespace-nowrap h-8 flex items-center p-[9px] rounded-lg w-auto border border-[#e8e8e8] text-center bg-white justify-center  ">
-                     {item}
-                   </button>
-                   )
-                })
-              }
-                    
-              
+              {sortCategory &&
+                sortCategory.map((item: string, index: number) => {
+                  return (
+                    <button
+                      key={index}
+                      onClick={() => console.log(item)}
+                      className="mr-2 text-sm shrink-0 whitespace-nowrap h-8 flex items-center p-[9px] rounded-lg w-auto border border-[#e8e8e8] text-center bg-white justify-center  "
+                    >
+                      {item}
+                    </button>
+                  );
+                })}
             </div>
             <div className="-mr-1 bg-[#fff9f6] border-[#c7e4e8] h-[46px] p-[0_12px] shadow-[inset_1px_0_0_0_#e6e6e6] flex items-center">
-              <button onClick={handleModal} className="text-[#0f1111] w-full h-full flex items-center p-[11px_16px] m-0 text-[16px] leading-5 text-center bg-transparent border-0 outline-0">
-                
+              <button
+                onClick={handleModal}
+                className="text-[#0f1111] w-full h-full flex items-center p-[11px_16px] m-0 text-[16px] leading-5 text-center bg-transparent border-0 outline-0"
+              >
                 <span className="!text-sm !leading-5 text-black">Filters</span>
                 <span className="!text-sm !leading-5 text-black ml-1.5 ">
                   (1)
@@ -116,68 +118,80 @@ function SmallProductLists() {
         </div>
 
         <div className="grid grid-cols-2 ">
-         {
-          filteredLists && filteredLists.map((item)=>{
-            return(
-               <Link to={`/productList/productData/${item.id}`} key={item.id} className="grid  float-none w-auto h-[363px] px-1 visible before:-mb-px before:content-[''] before:block before:h-px">
-               <div className="pb-[15px] h-[calc(100%-8px)] -ml-1 -mr-1 border border-[#fee4d9] rounded-lg bg-white transform-[translate3d(0,0,0)] relative ">
-              <div className="flex justify-center bg-[linear-gradient(212deg,#f3f3f3_11.9%,#fff_54.57%,#f0f0f0_99.3%)] relative">
-                <img
-                  className="mix-blend-multiply !h-[263px]"
-                  src={item.product_img[0]}
-                  alt={item.product_title}
-                />
-                <div className="h-[30.25px] flex absolute bottom-3 left-3 border border-[#fee4d9] rounded-sm bg-white p-1">
-                  <span className="text-[10px] relative top-1 leading-4 text-black ">
-                    {item.product_rating}
-                  </span>
-                  <i
-                    className="mr-1 ml-1 w-4  top-0.5  bg-[length:512px_512px] bg-[position:-194px_-467px] bg-no-repeat relative inline-block h-4.5 "
-                    style={{
-                      backgroundImage:
-                        "url(https://m.media-amazon.com/images/S/sash/VRxFMfjvVeE5Eoy.png)",
-                    }}
-                  ></i>
-                  <span className="text-[10px] relative top-1  leading-4">
-                    1
-                  </span>
-                </div>
-              </div>
-              <div className="pr-4 pl-3 my-2 h-auto">
-                <h2 className="text-sm leading-5 max-h-5 line-clamp-1 pb-0">
-                  {item.product_title}
-                </h2>
-                <div className="bg-[#DB1846] mt-1  text-xs p-[0_4px]  flex items-center rounded-sm w-fit leading-0 relative h-6 z-[1] float-left font-fontBold text-white ">
-                  #CrazyDeal
-                </div>
-                <div className=" leading-[20.25px] relative top-1 w-full flex">
-                  <span className="text-[18px] text-[#d6001b] leading-normal relative bottom-0.5 ">
-                    <span className="text-[11px] relative top-[-4.4px] ">
-                      ₹
-                    </span>
-                    {item.product_price}
-                  </span>
-                  <span className="text-xs inline-block self-center text-[11px] leading-4 text-[#565959] line-through ml-[4.8px]">
-                    {item.product_actual_price}
-                  </span>
-                </div>
-                <div className="fixed bottom-0 right-0 mb-0 mr-0 ">
-                  <button className="m-2 w-7 h-7  bg-[#ffd814] border-[#ffd814] block text-center p-0 align-middle cursor-pointer rounded-[100px] before:content-['\002B'] before:text-[27px] before:leading-[26px] before:text-[#0f1111] before:relative before:top-px"></button>
-                </div>
-              </div>
+          {filteredLists.length == 0 ? (
+            <div className="flex justify-end h-screen">
+              <span className="text-2xl text-red-500 relative left-20">
+                No Data Found
+              </span>
             </div>
-            </Link>
-            )
-          })
-         }  
+          ) : (
+            filteredLists.map((item) => {
+              return (
+                <Link
+                  to={`/productList/productData/${item.id}`}
+                  key={item.id}
+                  className="grid  float-none w-auto h-[363px] px-1 visible before:-mb-px before:content-[''] before:block before:h-px"
+                >
+                  <div className="pb-[15px] h-[calc(100%-8px)] -ml-1 -mr-1 border border-[#fee4d9] rounded-lg bg-white transform-[translate3d(0,0,0)] relative ">
+                    <div className="flex justify-center bg-[linear-gradient(212deg,#f3f3f3_11.9%,#fff_54.57%,#f0f0f0_99.3%)] relative">
+                      <img
+                        className="mix-blend-multiply !h-[263px]"
+                        src={item.product_img[0]}
+                        alt={item.product_title}
+                      />
+                      <div className="h-[30.25px] flex absolute bottom-3 left-3 border border-[#fee4d9] rounded-sm bg-white p-1">
+                        <span className="text-[10px] relative top-1 leading-4 text-black ">
+                          {item.product_rating}
+                        </span>
+                        <i
+                          className="mr-1 ml-1 w-4  top-0.5  bg-[length:512px_512px] bg-[position:-194px_-467px] bg-no-repeat relative inline-block h-4.5 "
+                          style={{
+                            backgroundImage:
+                              "url(https://m.media-amazon.com/images/S/sash/VRxFMfjvVeE5Eoy.png)",
+                          }}
+                        ></i>
+                        <span className="text-[10px] relative top-1  leading-4">
+                          1
+                        </span>
+                      </div>
+                    </div>
+                    <div className="pr-4 pl-3 my-2 h-auto">
+                      <h2 className="text-sm leading-5 max-h-5 line-clamp-1 pb-0">
+                        {item.product_title}
+                      </h2>
+                      <div className="bg-[#DB1846] mt-1  text-xs p-[0_4px]  flex items-center rounded-sm w-fit leading-0 relative h-6 z-[1] float-left font-fontBold text-white ">
+                        #CrazyDeal
+                      </div>
+                      <div className=" leading-[20.25px] relative top-1 w-full flex">
+                        <span className="text-[18px] text-[#d6001b] leading-normal relative bottom-0.5 ">
+                          <span className="text-[11px] relative top-[-4.4px] ">
+                            ₹
+                          </span>
+                          {item.product_price}
+                        </span>
+                        <span className="text-xs inline-block self-center text-[11px] leading-4 text-[#565959] line-through ml-[4.8px]">
+                          {item.product_actual_price}
+                        </span>
+                      </div>
+                      <div className="fixed bottom-0 right-0 mb-0 mr-0 ">
+                        <button className="m-2 w-7 h-7  bg-[#ffd814] border-[#ffd814] block text-center p-0 align-middle cursor-pointer rounded-[100px] before:content-['\002B'] before:text-[27px] before:leading-[26px] before:text-[#0f1111] before:relative before:top-px"></button>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })
+          )}
         </div>
       </div>
-      { toggle && <FilterSection filterCategory={filterCategory} handleModal={handleModal} /> }
-   
+      {toggle && (
+        <FilterSection
+          filterCategory={filterCategory}
+          handleModal={handleModal}
+        />
+      )}
     </>
   );
 }
 
 export default SmallProductLists;
-
-

@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState, type ReactNode } from "react";
-import type { CategoryFilter, CategoryProdut } from "../Types/product";
+import { priceRangeMap, type CategoryFilter, type CategoryProdut } from "../Types/product";
 import { useParams } from "react-router-dom";
 import axiosInstance from "../api/axios";
 import FilterProduct from "../Helpers/FilterProduct";
@@ -15,7 +15,7 @@ type ProductListContextType = {
     filter_buttons: string[];
   };
   activeFilter: { [key: string]: number[] };
-  selectedFilters: { [key: string]: string[] };
+  selectedFilters: { [key: string]: string[] | {min:number,max:number}[] };
   handleCategory: (index: number) => void;
   handleActiveFilter: (
     index: number,
@@ -94,11 +94,15 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [filterBtn, setFilterBtn] = useState(filterCategory[0]);
   const [activeFilter, setActiveFilter] = useState<{ [key: string]: number[] }>(
-    {}
+    {
+    "Price and Deals":[0]
+
+    }
   );
   const [selectedFilters, setSelectedFilters] = useState<{
-    [key: string]: string[];
-  }>({});
+    [key: string]: string[] | {min:number,max:number}[];}>({
+    'Price and Deals':[{min:0,max:3999}]
+  });
   const [sliderValue, setSliderValue] = useState<{ [key: string]: number }>({
     sliderOne: 115,
     sliderTwo: 3999,
@@ -116,17 +120,79 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
     item: string,
     filterTitle: string
   ) => {
-    setSelectedFilters((prev) => ({
-      ...prev,
-      [filterTitle]: [...(prev[filterTitle] || []), item],
-      slider: [String(sliderValue.sliderOne), String(sliderValue.sliderTwo)],
-    }));
 
-    setActiveFilter((prev) => ({
+    setSelectedFilters((prev) => {    
+     let currentItems:any = prev[filterTitle] || []
+     let updatedItems:string[]=[]
+
+     if(filterTitle === 'Price and Deals'){
+      if( currentItems.includes("All Prices") ){
+        updatedItems = [item]
+      }
+      else{
+
+        const isSelected = currentItems.includes(item);
+
+        updatedItems =isSelected ? currentItems.filter((i:any)=> i !== item):[item]
+
+        if(updatedItems.length === 0){
+          updatedItems=["All Prices"]
+        }
+
+      }
+
+      const PriceRange = updatedItems.map(label=>priceRangeMap[label])
+      return{
+        ...prev,
+        [filterTitle]:PriceRange,
+        slider: [String(sliderValue.sliderOne),String(sliderValue.sliderTwo)],
+
+      }
+    }
+    
+    const isSelected = currentItems.includes(item)
+     updatedItems = isSelected ? currentItems.filter((i:any)=> i !== item):[...currentItems,item]
+    
+      return{
       ...prev,
-      [filterTitle]: [...(prev[filterTitle] || []), index],
-    }));
+      [filterTitle]: updatedItems,
+      slider: [String(sliderValue.sliderOne),String(sliderValue.sliderTwo)],
+
+    }});
+
+    setActiveFilter((prev) => {
+      const currentIndexes = prev[filterTitle] || []
+     let updatedIndexes:number[]=[]
+
+
+       if(filterTitle === 'Price and Deals'){
+      if( currentIndexes.includes(0) ){
+        updatedIndexes = [index]
+      }
+      else{
+
+        const isSelected = currentIndexes.includes(index);
+
+        updatedIndexes =isSelected ? currentIndexes.filter(i=> i !== index):[index]
+
+        if(updatedIndexes.length === 0){
+          updatedIndexes=[0]
+        }
+      }
+
+    }
+    else{
+
+      const isSelectedIndex = currentIndexes.includes(index)
+       updatedIndexes = isSelectedIndex ? currentIndexes.filter(i=> i !== index) :[...currentIndexes,index]
+    }
+      return{
+      ...prev,
+      [filterTitle]: updatedIndexes
+    }});
   };
+
+
 
   // rating controller function
   const handleRating = () => {
@@ -193,7 +259,9 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
     handleModal()
   };
 
+
   console.log("cateProduct",cateProduct)
+  console.log("selectedFilteres",selectedFilters)
 
   return (
     <ProductListContext.Provider
@@ -221,3 +289,7 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
     </ProductListContext.Provider>
   );
 };
+
+
+
+

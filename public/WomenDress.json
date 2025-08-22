@@ -396,7 +396,7 @@
   {
     "filter_Type":"Price and Deals",
     "filter_sub_head":"Price",
-    "filter_buttons":["All Prices","Up to ₹350","₹350-₹450","Over ₹450"]
+    "filter_buttons":["All Prices","Up to ₹500","₹500-₹1000","Over ₹1000"]
   },
   {
     "filter_Type":"Colours",
