@@ -22,7 +22,6 @@ function HomeProductData() {
   setProductData(filtered)
   },[filterList])
 
-
   return (
    <>
    <Header toggleBtn={handleSideBar} />

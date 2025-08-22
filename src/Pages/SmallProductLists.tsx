@@ -1,21 +1,16 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Header from "../Components/SmallScreenComponents/Header";
 import { ToggleContext } from "../Context/toggleContext";
 import Address from "../Components/SmallScreenComponents/Address";
 import FilterSection from "../Components/SmallScreenComponents/FilterSection";
 import { ProductListContext } from "../Context/ProductListContext";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function SmallProductLists() {
 
   const { handleSideBar } = useContext(ToggleContext);
-  const {filterCategory,sortCategory,cateProduct} = useContext(ProductListContext)
-  const [toggle,setToggle] = useState<boolean>(false)
-
-  const handleFilter=()=>{
-    setToggle(!toggle)
-  }
-
+  const {filterCategory,sortCategory,filteredLists,handleModal,toggle} = useContext(ProductListContext)
+  
   // to avoid background scroll when the filter modal opens
   if(toggle){
     document.body.style.overflowY='hidden'
@@ -108,7 +103,7 @@ function SmallProductLists() {
               
             </div>
             <div className="-mr-1 bg-[#fff9f6] border-[#c7e4e8] h-[46px] p-[0_12px] shadow-[inset_1px_0_0_0_#e6e6e6] flex items-center">
-              <button onClick={handleFilter} className="text-[#0f1111] w-full h-full flex items-center p-[11px_16px] m-0 text-[16px] leading-5 text-center bg-transparent border-0 outline-0">
+              <button onClick={handleModal} className="text-[#0f1111] w-full h-full flex items-center p-[11px_16px] m-0 text-[16px] leading-5 text-center bg-transparent border-0 outline-0">
                 
                 <span className="!text-sm !leading-5 text-black">Filters</span>
                 <span className="!text-sm !leading-5 text-black ml-1.5 ">
@@ -122,7 +117,7 @@ function SmallProductLists() {
 
         <div className="grid grid-cols-2 ">
          {
-          cateProduct && cateProduct.map((item)=>{
+          filteredLists && filteredLists.map((item)=>{
             return(
                <Link to={`/productList/productData/${item.id}`} key={item.id} className="grid  float-none w-auto h-[363px] px-1 visible before:-mb-px before:content-[''] before:block before:h-px">
                <div className="pb-[15px] h-[calc(100%-8px)] -ml-1 -mr-1 border border-[#fee4d9] rounded-lg bg-white transform-[translate3d(0,0,0)] relative ">
@@ -177,7 +172,7 @@ function SmallProductLists() {
          }  
         </div>
       </div>
-      { toggle && <FilterSection filterCategory={filterCategory} handleFilter={handleFilter}/> }
+      { toggle && <FilterSection filterCategory={filterCategory} handleModal={handleModal} /> }
    
     </>
   );

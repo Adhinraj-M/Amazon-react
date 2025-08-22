@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import bigScreenIcon from '../../../public/icon-image/bigSizeIcon.png'
-import useWindowWidth from '../../Resize/WindowWidth';
+import useWindowWidth from '../../Helpers/WindowWidth';
 
 type NavDeskType={
   sideBar:()=> void

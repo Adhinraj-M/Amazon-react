@@ -99,7 +99,6 @@ const [selectedPrice,setSelectedPrice] = useState<{[key:number]:{min:number,max:
 
     setSelectedCategory(activeKeys);
 
-    // console.log("activekeys",activeKeys)
 
     const categoryFiltered =
       activeKeys.includes("All") || activeKeys.length === 0
