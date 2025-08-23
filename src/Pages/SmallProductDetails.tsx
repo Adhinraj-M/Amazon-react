@@ -4,6 +4,7 @@ import { ToggleContext } from "../Context/toggleContext";
 import Address from "../Components/SmallScreenComponents/Address";
 import Sponsored from "../Components/SmallScreenComponents/Sponsored";
 import ProductData from "../Components/SmallScreenComponents/ProductData";
+import Footer from "../Components/SmallScreenComponents/Footer";
 
 function SmallProductDetails() {
   const { handleSideBar } = useContext(ToggleContext);
@@ -14,12 +15,15 @@ function SmallProductDetails() {
       <Address />
       <Sponsored/>
 
-      {/* product data UI  */}
+      {/* product data UI */}
 
       <ProductData/>
+      <Footer/>
     </>
   );
 }
 
 export default SmallProductDetails;
+
+
 

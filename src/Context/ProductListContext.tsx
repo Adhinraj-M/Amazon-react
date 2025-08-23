@@ -101,7 +101,7 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
   );
   const [selectedFilters, setSelectedFilters] = useState<{
     [key: string]: string[] | {min:number,max:number}[];}>({
-    'Price and Deals':[{min:0,max:3999}]
+    'Price and Deals':[{min:115,max:3999}]
   });
   const [sliderValue, setSliderValue] = useState<{ [key: string]: number }>({
     sliderOne: 115,
@@ -125,15 +125,18 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
      let currentItems:any = prev[filterTitle] || []
      let updatedItems:string[]=[]
 
+     console.log("selected destructure for pre",currentItems)
+
      if(filterTitle === 'Price and Deals'){
       if( currentItems.includes("All Prices") ){
         updatedItems = [item]
+        
       }
       else{
 
         const isSelected = currentItems.includes(item);
 
-        updatedItems =isSelected ? currentItems.filter((i:any)=> i !== item):[item]
+        updatedItems = isSelected ? currentItems.filter((i:any)=> i !== item):[item]
 
         if(updatedItems.length === 0){
           updatedItems=["All Prices"]
@@ -149,6 +152,8 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
 
       }
     }
+
+    
     
     const isSelected = currentItems.includes(item)
      updatedItems = isSelected ? currentItems.filter((i:any)=> i !== item):[...currentItems,item]
@@ -184,15 +189,16 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
     else{
 
       const isSelectedIndex = currentIndexes.includes(index)
-       updatedIndexes = isSelectedIndex ? currentIndexes.filter(i=> i !== index) :[...currentIndexes,index]
+       updatedIndexes = isSelectedIndex ? currentIndexes.filter(i=> i !== index):[...currentIndexes,index]
     }
       return{
       ...prev,
       [filterTitle]: updatedIndexes
     }});
   };
+  
 
-
+  
 
   // rating controller function
   const handleRating = () => {
@@ -209,8 +215,12 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
 
   // clear selected values
   const handleClearFilter = () => {
-    setActiveFilter({});
-    setSelectedFilters({});
+    setActiveFilter({
+      "Price and Deals":[0]
+    });
+    setSelectedFilters({
+      'Price and Deals':[{min:0,max:3999}]
+    });
     setSliderValue({
       sliderOne: 115,
       sliderTwo: 3999,
@@ -223,6 +233,7 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
     const minGap: number = 70;
     const { name, value } = e.target;
     const val = Number(value);
+    console.log("Selected in slider",selectedFilters)
 
     if (name === "sliderOne") {
       if (sliderValue.sliderTwo - val >= minGap) {
@@ -243,16 +254,33 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  //when the price and deals button changes
   useEffect(() => {
-    setSelectedFilters((prev) => ({
-      ...prev,
-      slider: [String(sliderValue.sliderOne), String(sliderValue.sliderTwo)],
-    }));
-  }, [sliderValue]);
+    
+      if(selectedFilters["Price and Deals"]){
+        const sliderArr = Object.values(selectedFilters["Price and Deals"][0])
+        const filtered = Object.fromEntries(Object.entries(selectedFilters).filter(([key])=> key !== "Price and Deals" && key !=="slider"))
+        const updated = {...filtered,slider:[String(sliderArr[0]),String(sliderArr[1])]}
+        console.log("updated",updated)
+        setSelectedFilters(updated)
+      }
+  }, [selectedFilters["Price and Deals"]]);
+
+  //when slider changes                
+  useEffect(()=>{
+    setActiveFilter({
+      "Price and Deals":[0]
+    });
+    setSelectedFilters((prev)=>({
+        ...prev,
+        slider:[String(sliderValue.sliderOne),String(sliderValue.sliderTwo)]
+      }))
+
+  },[sliderValue])
 
 
   // filtering main function 
-  const handleFilters = () => {
+    const handleFilters = () => {
     const filtered = FilterProduct(cateProduct, selectedFilters);
     console.log("filtered",filtered)
     setFilteredLists(filtered);
@@ -260,7 +288,7 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
   };
 
 
-  console.log("cateProduct",cateProduct)
+  // console.log("cateProduct",cateProduct)
   console.log("selectedFilteres",selectedFilters)
 
   return (

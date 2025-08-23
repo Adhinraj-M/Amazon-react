@@ -7,7 +7,7 @@ function FilterProduct(cateProduct:CategoryProdut[],selectedFilters:{
     
     for(const [key,values] of Object.entries(selectedFilters)){
         
-        if(values.length === 0) return false
+        if((values.length === 0)) continue
         let categoryKey = key.toLocaleLowerCase()
         if(key === 'slider'){
             const [min,max] = values.map(Number)
@@ -19,7 +19,6 @@ function FilterProduct(cateProduct:CategoryProdut[],selectedFilters:{
             }
         }
         else{
-            
             if(key === 'Customer Rating'){
                 categoryKey = 'product_rating'
                 let  productValue = product[categoryKey]
@@ -29,11 +28,9 @@ function FilterProduct(cateProduct:CategoryProdut[],selectedFilters:{
                 }      
             }
            else{
-
             if(key === 'Sleeve Type'){
                 categoryKey = 'sleeve_type'
             }
-           
 
              const productValue = product[categoryKey]
             

@@ -193,8 +193,8 @@ export type CategoryFilter={
 
 
 export const priceRangeMap: {[key:string]:{min:number,max:number}} = {
-  "All Prices": { min: 0, max: 3999 },
-  "Up to ₹350": { min: 0, max: 500 },
-  "₹350-₹450": { min: 500, max: 1000 },
-  "Over ₹450": { min: 1000, max: 3999 },
+  "All Prices": { min: 115, max: 3999 },
+  "Up to ₹500": { min: 115, max: 500 },
+  "₹500-₹1000": { min: 500, max: 1000 },
+  "Over ₹1000": { min: 1000, max: 3999 },
 };

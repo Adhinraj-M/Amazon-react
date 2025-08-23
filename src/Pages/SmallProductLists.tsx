@@ -5,6 +5,7 @@ import Address from "../Components/SmallScreenComponents/Address";
 import FilterSection from "../Components/SmallScreenComponents/FilterSection";
 import { ProductListContext } from "../Context/ProductListContext";
 import { Link } from "react-router-dom";
+import Footer from "../Components/SmallScreenComponents/Footer";
 
 function SmallProductLists() {
   const { handleSideBar } = useContext(ToggleContext);
@@ -184,14 +185,21 @@ function SmallProductLists() {
           )}
         </div>
       </div>
+      <Footer/>
       {toggle && (
         <FilterSection
           filterCategory={filterCategory}
           handleModal={handleModal}
         />
       )}
-    </>
+   </>
   );
+
 }
 
 export default SmallProductLists;
+
+
+
+
+
