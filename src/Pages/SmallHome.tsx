@@ -6,7 +6,7 @@ import Header from "../Components/SmallScreenComponents/Header";
 import HeroCarousel from "../Components/SmallScreenComponents/HeroCarousel";
 import CubicList from "../Components/SmallScreenComponents/CubicList";
 import CuratedCardList from "../Components/SmallScreenComponents/CuratedCardList";
-import { ProductEmergingBusiness, productLocalStore } from "../Types/product";
+// import { ProductEmergingBusiness, productLocalStore, type CategoryProdut } from "../Types/product";
 import SideMenuBar from "../Components/SmallScreenComponents/sideMenuComponents/SideMenuBar";
 import { useContext, useEffect, useState } from "react";
 import DiscoverProduct from "../Components/SmallScreenComponents/DiscoverProduct";
@@ -17,7 +17,7 @@ import { ToggleContext } from "../Context/toggleContext";
 function SmallHome() {
   const [showTopBar, setShowTopBar] = useState<boolean>(false);
 
-  const {handleSideBar,showSideBar} = useContext(ToggleContext)
+  const {handleSideBar,showSideBar, carProduct} = useContext(ToggleContext)
   
   useEffect(() => {
     const handleScrollY = () => {
@@ -32,6 +32,8 @@ function SmallHome() {
 
     return () => window.removeEventListener("scroll", handleScrollY);
   }, []);
+
+  
 
   return (
     <div className="bg-gray-200  min-h-screen relative min-large:hidden ">
@@ -59,9 +61,9 @@ function SmallHome() {
       <HeroCarousel />
       <DashboardCategory />
       <AmazonOffer />
-      <CubicList products={ProductEmergingBusiness} />
+      <CubicList products={carProduct} />
       <CuratedCardList />
-      <CubicList products={productLocalStore} />
+      <CubicList products={carProduct} />
       {showSideBar && <SideMenuBar toggleBtn={handleSideBar} toggle={showSideBar} />}
       <DiscoverProduct />
       <Footer />

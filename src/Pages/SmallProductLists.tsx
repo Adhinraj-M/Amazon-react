@@ -60,30 +60,17 @@ function SmallProductLists() {
               </button>
               <button className="mr-2  shrink-0 whitespace-nowrap h-8 flex items-center p-[9px] rounded-lg w-auto border border-[#e8e8e8] text-center bg-white justify-center  ">
                 <div className="flex pb-0.5 mr-1">
-                  <span
-                    className="w-4 h-[15px] "
+                  {
+                    Array.from({length:4},(_,i:number)=>{
+                      return(
+                   <span key={i}
+                    className="w-4 h-[15px]"
                     style={{
                       backgroundImage: `url(https://m.media-amazon.com/images/S/sash/1B5nH39U5U0JHHA.svg)`,
-                    }}
-                  ></span>
-                  <span
-                    className="w-4 h-[15px] "
-                    style={{
-                      backgroundImage: `url(https://m.media-amazon.com/images/S/sash/1B5nH39U5U0JHHA.svg)`,
-                    }}
-                  ></span>
-                  <span
-                    className="w-4 h-[15px] "
-                    style={{
-                      backgroundImage: `url(https://m.media-amazon.com/images/S/sash/1B5nH39U5U0JHHA.svg)`,
-                    }}
-                  ></span>
-                  <span
-                    className="w-4 h-[15px] "
-                    style={{
-                      backgroundImage: `url(https://m.media-amazon.com/images/S/sash/1B5nH39U5U0JHHA.svg)`,
-                    }}
-                  ></span>
+                    }}></span>
+                    )
+                    })
+                  } 
                 </div>
                 <span className="text-sm leading-5 align-text-bottom text-black ">
                   & Up
@@ -96,8 +83,7 @@ function SmallProductLists() {
                     <button
                       key={index}
                       onClick={() => console.log(item)}
-                      className="mr-2 text-sm shrink-0 whitespace-nowrap h-8 flex items-center p-[9px] rounded-lg w-auto border border-[#e8e8e8] text-center bg-white justify-center  "
-                    >
+                      className="mr-2 text-sm shrink-0 whitespace-nowrap h-8 flex items-center p-[9px] rounded-lg w-auto border border-[#e8e8e8] text-center bg-white justify-center ">
                       {item}
                     </button>
                   );
