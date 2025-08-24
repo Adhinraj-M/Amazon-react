@@ -1,33 +1,44 @@
-import { useEffect, useState } from "react";
+import {  useRef, useState } from "react";
 import { heroCarouselImg } from "../../Types/product";
+import Slider from "react-slick";
 
 function HeroCarousel() {
   const [index, setIndex] = useState(0);
+  const sliderRef = useRef<Slider | null>(null)
 
-  const len = heroCarouselImg.length;
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % len);
-    }, 5000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, [len]);
+  const settings = {
+      dots: false,
+      infinte: true,
+      speed: 500,
+      slidesToShow: 1,
+      beforeChange: (_: number, newIndex: number) => setIndex(newIndex),
+      slidesToScroll: 1,
+      autoplay:true,
+      autoplaySpeed:5000,
+      arrows: true,
+  };
 
   return (
     <>
       <div className="!h-[63vw] relative m-0 w-full z-0">
         <div className="!h-[78vw] w-full overflow-hidden before:bg-[linear-gradient(-180deg,rgba(213,219,219,0)_45%,#E3E6E6_100%)] before:absolute before:top-[50vw] before:bottom-0 before:right-0 before:left-0 before:h-[28vw] before:w-full before:z-[1] before:content-['']">
           <ol className="w-full list-none h-full whitespace-nowrap overflow-x-visible tracking-[-.4rem] p-0 ">
-            <li className="w-full text-center opacity-100 m-0 visible overflow-hidden min-h-full inline-block whitespace-normal tracking-normal">
-              <img
-                src={heroCarouselImg[index]}
-                alt="carousel"
-                className="max-w-full max-h-full relative w-full"
-              />
-            </li>
+            <Slider ref={sliderRef} {...settings}>
+              {heroCarouselImg &&
+                heroCarouselImg.map((_,index) => {
+                  return (
+                    <li
+                      key={index}
+                      className="w-full text-center opacity-100 m-0 visible overflow-hidden min-h-full inline-block whitespace-normal tracking-normal">
+                      <img
+                        src={heroCarouselImg[index]}
+                        alt="carousel"
+                        className="max-w-full max-h-full relative w-full"
+                      />
+                    </li>
+                  );
+                })}
+            </Slider>
           </ol>
         </div>
       </div>

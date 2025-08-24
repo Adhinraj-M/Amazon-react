@@ -125,7 +125,6 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
      let currentItems:any = prev[filterTitle] || []
      let updatedItems:string[]=[]
 
-     console.log("selected destructure for pre",currentItems)
 
      if(filterTitle === 'Price and Deals'){
       if( currentItems.includes("All Prices") ){
@@ -233,7 +232,6 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
     const minGap: number = 70;
     const { name, value } = e.target;
     const val = Number(value);
-    console.log("Selected in slider",selectedFilters)
 
     if (name === "sliderOne") {
       if (sliderValue.sliderTwo - val >= minGap) {
@@ -261,7 +259,6 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
         const sliderArr = Object.values(selectedFilters["Price and Deals"][0])
         const filtered = Object.fromEntries(Object.entries(selectedFilters).filter(([key])=> key !== "Price and Deals" && key !=="slider"))
         const updated = {...filtered,slider:[String(sliderArr[0]),String(sliderArr[1])]}
-        console.log("updated",updated)
         setSelectedFilters(updated)
       }
   }, [selectedFilters["Price and Deals"]]);
@@ -282,14 +279,13 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
   // filtering main function 
     const handleFilters = () => {
     const filtered = FilterProduct(cateProduct, selectedFilters);
-    console.log("filtered",filtered)
     setFilteredLists(filtered);
     handleModal()
   };
 
 
   // console.log("cateProduct",cateProduct)
-  console.log("selectedFilteres",selectedFilters)
+  // console.log("selectedFilteres",selectedFilters)
 
   return (
     <ProductListContext.Provider

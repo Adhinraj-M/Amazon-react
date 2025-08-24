@@ -1,11 +1,20 @@
-import SmallProductLists from "./SmallProductLists"
+import SideFilter from "../Components/LargeScreenComponents/SideFilter";
+import { ToggleBtnProvider } from "../Context/toggleContext";
+import LargeProductLists from "./LargeProductLists";
+import SmallProductLists from "./SmallProductLists";
 
 function AllProductList() {
   return (
     <div>
-        <SmallProductLists/>
+      <ToggleBtnProvider>
+        <SmallProductLists />
+        {/* <LargeProductLists /> */} <SideFilter/> 
+      </ToggleBtnProvider>
     </div>
-  )
+  );
 }
 
-export default AllProductList
+export default AllProductList;
+
+
+

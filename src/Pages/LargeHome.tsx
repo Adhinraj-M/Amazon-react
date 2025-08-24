@@ -15,20 +15,8 @@ import { ToggleContext } from "../Context/toggleContext";
 
 function LargeHome() {
 
-const [showHeader,setShowHeader]=useState<boolean>(false)
-const {handleSideBar,showSideBar} = useContext(ToggleContext)
-
-  useEffect(() => {
-    const handleScrollY = () => {
-      if (window.scrollY > 10) {
-        setShowHeader(true);
-      } else {
-        setShowHeader(false);
-      }
-    };
-    window.addEventListener("scroll", handleScrollY);
-    return () => window.removeEventListener("scroll", handleScrollY);
-  }, [])
+  const {handleSideBar,showSideBar,showHeader} = useContext(ToggleContext)
+  
 
     return (
     <div className="hidden min-large:block bg-[#E3E6E6]">

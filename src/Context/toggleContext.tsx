@@ -5,13 +5,15 @@ import axiosInstance from "../api/axios";
 type toggleType={
     handleSideBar:()=> void,
     showSideBar:boolean,
-    carProduct:CarWashProduct[] | undefined
+    carProduct:CarWashProduct[] | undefined,
+    showHeader:boolean
 }
 
 export const ToggleContext = createContext<toggleType>({
     handleSideBar:()=> {},
     showSideBar:false,
-     carProduct:[] 
+     carProduct:[] ,
+     showHeader:false
 })
 
 export const ToggleBtnProvider =({children}:{children:ReactNode})=>{
@@ -20,7 +22,7 @@ export const ToggleBtnProvider =({children}:{children:ReactNode})=>{
  const handleSideBar = () =>{
     setShowSideBar(!showSideBar)
   }
-
+//fetch data
   const [carProduct,setCarProduct] = useState<CarWashProduct[] | undefined>()
 
   useEffect(()=>{
@@ -28,10 +30,25 @@ export const ToggleBtnProvider =({children}:{children:ReactNode})=>{
     .then((res)=>setCarProduct(res.data.splice(0,9)) ).catch((err)=>console.log(err))
   },[])
 
+  //header scroll
+  const [showHeader,setShowHeader]=useState<boolean>(false)
+
+  useEffect(() => {
+    const handleScrollY = () => {
+      if (window.scrollY > 10) {
+        setShowHeader(true);
+      } else {
+        setShowHeader(false);
+      }
+    };
+    window.addEventListener("scroll", handleScrollY);
+    return () => window.removeEventListener("scroll", handleScrollY);
+  }, [])
+
 
 
   return(
-    <ToggleContext.Provider value={{handleSideBar,showSideBar,carProduct}}>
+    <ToggleContext.Provider value={{showHeader,handleSideBar,showSideBar,carProduct}}>
     {children}
   </ToggleContext.Provider>
   )

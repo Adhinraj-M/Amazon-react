@@ -20,7 +20,7 @@ function SmallProductLists() {
   }
 
   return (
-    <>
+    <div className="min-large:hidden ">
       <Header toggleBtn={handleSideBar} />
       <div className="w-full bg-white border-t-[5px] border-t-[#FF4D5B] border-b border-b-[#FF4D5B]">
         <div className="h-12 p-0 overflow-hidden block whitespace-nowrap">
@@ -178,7 +178,7 @@ function SmallProductLists() {
           handleModal={handleModal}
         />
       )}
-   </>
+   </div>
   );
 
 }
