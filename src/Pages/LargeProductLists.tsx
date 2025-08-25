@@ -1,113 +1,239 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import DeskHeader from "../Components/LargeScreenComponents/DeskHeader"
 import NavDesk from "../Components/LargeScreenComponents/NavDesk"
 import { ToggleContext } from "../Context/toggleContext"
+import { RecentlyViewed } from "../Types/DeskCategories"
+import Pagination from "../Components/LargeScreenComponents/Pagination"
+import Footer from "../Components/SmallScreenComponents/Footer"
+import { ProductListContext } from "../Context/ProductListContext"
+import FilterModal from "../Components/LargeScreenComponents/FilterModal"
 
 function LargeProductLists() {
     const {handleSideBar,showHeader} = useContext(ToggleContext)
-    
+    const {filterCategory,cateProduct} = useContext(ProductListContext)
+    const [modalIndex,setModalIndex] = useState<number | null>(null)
+  
+    const handleModal=(i:number)=>{
+      if(modalIndex === i){
+        setModalIndex(null)
+      }
+      else{
+        setModalIndex(i)
+      }
+
+    }
+
 
   return (
     <div className="min-large:block">
-      <DeskHeader stickHeader={showHeader} />
+      <DeskHeader stickHeader={false} />
       <NavDesk sideBar={handleSideBar} />
-      {/* category list  */}
-      <div className="flex justify-between h-12.5 bg-white shadow-[0_0_1px_#ddd] z-[1] relative m-0 p-[0_9px_0_15px] overflow-hidden border-t border-t-[rgba(0,0,0,.17)] border-b border-b-[rgba(0,0,0,.1)] whitespace-nowrap">
-        <button className="flex-[0_0_auto] inline-block relative text-center align-middle h-12 leading-12.5 float-none p-[0_13px] text-xs text-[#333] cursor-pointer">
-          {/* now img is used instead of text */}
-          <img
-            className="h-12.5 align-baseline w-auto pt-[5px]"
-            src="https://m.media-amazon.com/images/G/31/img18/Electronics/Megamenu/Megamenu_Electronics_top._CB485947327_.png"
-            alt="Electronics"
-          />
-        </button>
-        <button className="flex-[0_0_auto] inline-block relative text-center align-middle h-12 leading-12.5 float-none p-[0_13px] text-xs text-[#333] cursor-pointer">
-          Mobiles & Accessories
-        </button>
-        <button className="flex-[0_0_auto] inline-block relative text-center align-middle h-12 leading-12.5 float-none p-[0_13px] text-xs text-[#333] cursor-pointer">
-          Laptops & Accessories
-        </button>
-        <button className="flex-[0_0_auto] inline-block relative text-center align-middle h-12 leading-12.5 float-none p-[0_13px] text-xs text-[#333] cursor-pointer">
-          TV & Home Entertainment
-        </button>
-        <button className="flex-[0_0_auto] inline-block relative text-center align-middle h-12 leading-12.5 float-none p-[0_13px] text-xs text-[#333] cursor-pointer">
-          Audio
-        </button>
-        <button className="flex-[0_0_auto] inline-block relative text-center align-middle h-12 leading-12.5 float-none p-[0_13px] text-xs text-[#333] cursor-pointer">
-          Cameras
-        </button>
-        <button className="flex-[0_0_auto] inline-block relative text-center align-middle h-12 leading-12.5 float-none p-[0_13px] text-xs text-[#333] cursor-pointer">
-          Computer Peripherals
-        </button>
-        <button className="flex-[0_0_auto] inline-block relative text-center align-middle h-12 leading-12.5 float-none p-[0_13px] text-xs text-[#333] cursor-pointer">
-          Smart Technology
-        </button>
-      </div>
-      {/* sort & filter buttons */}
-
-      <div className="mb-2 h-[calc(100%-8px)] border-t border-t-[#ccc] border-b border-b-[#ccc] shadow-[0_0_10px_#ddd] bg-white relative ">
-        <div className="max-w-450 items-center flex flex-wrap content-start w-[calc(100vw - 28px + 4px)] p-0 min-w-[269px] mx-3 justify-between">
-          <div className="flex  items-center w-[calc(.66667 * (100vw - 28px))] min-w-[179.33px] max-w-[1197.33px] p-[0_4px] before:content-[''] before: ">
-            <button className="rounded-[100px] m-1.5 border border-[#888c8c] flex items-center justify-center w-16 p-[0_12px_0_12px] text-[13px] text-center bg-transparent h-8  outline-none">
-              <span
-                style={{
-                  filter:
-                    "brightness(0) saturate(100%) invert(5%) sepia(4%) saturate(1251%) hue-rotate(131deg) brightness(91%) contrast(95%)",
-                }}
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  aria-label="Filters"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M11.1429 4C11.774 4 12.2857 4.52912 12.2857 5.18182V8.72727C12.2857 9.37997 11.774 9.90909 11.1429 9.90909C10.5117 9.90909 10 9.37997 10 8.72727V8.72727C10 8.40092 9.73544 8.13636 9.40909 8.13636H3.14286C2.51167 8.13636 2 7.60725 2 6.95455C2 6.30185 2.51167 5.77273 3.14286 5.77273H9.40909C9.73544 5.77273 10 5.50817 10 5.18182V5.18182C10 4.52912 10.5117 4 11.1429 4Z"
-                    fill="#007185"
-                  ></path>
-                  <path
-                    d="M10 11.8636C9.36882 11.8636 8.85714 12.3928 8.85714 13.0455C8.85714 13.6982 9.36882 14.2273 10 14.2273H16.8571C17.4883 14.2273 18 13.6982 18 13.0455C18 12.3928 17.4883 11.8636 16.8571 11.8636H10Z"
-                    fill="#007185"
-                  ></path>
-                  <path
-                    d="M7.71429 11.2727C7.71429 10.62 7.20261 10.0909 6.57143 10.0909C5.94025 10.0909 5.42857 10.62 5.42857 11.2727V11.2727C5.42857 11.5991 5.16401 11.8636 4.83766 11.8636H3.14286C2.51167 11.8636 2 12.3928 2 13.0455C2 13.6982 2.51167 14.2273 3.14286 14.2273H4.83766C5.16401 14.2273 5.42857 14.4918 5.42857 14.8182V14.8182C5.42857 15.4709 5.94025 16 6.57143 16C7.20261 16 7.71429 15.4709 7.71429 14.8182V11.2727Z"
-                    fill="#007185"
-                  ></path>
-                  <path
-                    d="M13.4286 6.95455C13.4286 6.30185 13.9402 5.77273 14.5714 5.77273H16.8571C17.4883 5.77273 18 6.30185 18 6.95455C18 7.60725 17.4883 8.13636 16.8571 8.13636H14.5714C13.9402 8.13636 13.4286 7.60725 13.4286 6.95455Z"
-                    fill="#007185"
-                  ></path>
-                </svg>
-              </span>
-            </button>
-
-            <h2 className="my-2 text-sm leading-5 ml-2">1-24 of 246 results</h2>
-          </div>
-
-          <div className="block w-[calc(.3333 * (100vw - 28px))] min-w-[89.67px] max-w-[598.67px] pl-1 pr-2 h-full relative">
-           <div className="bg-[#f0f0f0] p-[0_26px_0_8px] rounded-lg border border-[#d5d9d9] flex items-center ">
-             <label
-              className="z-[1] relative max-w-full left-0 top-px pl-0.5 pb-0.5 !text-[11px] !leading-5 "
-              htmlFor="sort-select">
-              Sort by:&nbsp;&nbsp;
-            </label>
-            <select className="!text-[11px] !leading-5 appearance-none" name="" id="">
-              <option className="" value="">Bestselling</option>
-            </select>
-            <i className="absolute right-[17px] top-[7px] w-2.5 h-2 bg-[position:-7px_-102px] inline-block align-top bg-[length:400px_900px] bg-no-repeat "style={{backgroundImage:`url(https://m.media-amazon.com/images/S/sash/McBZv0ZvnbehkIx.png)`}}></i>
-           </div>
-            
+        {/* keep shoping section  */}
+      <div className="w-full mb-[22px] flex ">
+        <div className="w-[90%] max-w-[1500px] min-w-[1000px] bg-white m-auto flex border-b border-b-[#c8cccc]">
+          <h1 className=" mb-3.5 flex flex-col flex-wrap p-[14px_0px] bg-white w-full text-[28px] leading-9">
+            Keep shopping for <span className="font-fontBold">Books</span>
+          </h1>
+          <div className="visible pl-20 flex bg-white mt-2 max-w-full w-fit">
+            <div className="h-6 m-[10px_13px_0_0] w-fit bg-white text-[#006275] text-sm leading-6 flex">
+              Edit
+            </div>
+            <ol className="w-[649.64px] scroll-width-none list-none h-full whitespace-nowrap overflow-x-scroll tracking-[-4px] ">
+              {RecentlyViewed &&
+                RecentlyViewed.map((item, index) => {
+                  return (
+                    <li
+                      key={index}
+                      className={` ${index === 0 ? 'm-[6px_13px_0_7px]':'m-[6px_13px_0_3px]'}   inline-block  w-18.5 align-top text-left min-h-full`}>
+                      <div
+                        className={`flex   h-18.5 justify-center w-18.5 rounded-lg ${
+                          index == 0
+                            ? "border-[3px] border-[#007185]"
+                            : "border border-[#000]"
+                        }`}
+                      >
+                        <img
+                          src={item.img.src}
+                          alt={item.img.alt}
+                          className={`rounded-lg max-h-18.5 max-w-18.5 mix-blend-multiply ${
+                            index !== 0 ? "p-[3px]" : ""
+                          }`}
+                        />
+                      </div>
+                      <span className="block text-[11px] mt-[1.6px] leading-5 text-[#565959] tracking-normal">
+                        {item.no_of_views}
+                      </span>
+                    </li>
+                  );
+                })}
+            </ol>
           </div>
         </div>
       </div>
+
+      {/* previously viewed section */}
+
+     <div className="mb-3 mt-3 w-full flex">
+       <div className="mx-auto p-0 bg-white overflow-auto  w-[90%] max-w-[1500px] min-w-250">
+        <h1 className="text-lg leading-6 font-fontBold text-[#0f1111]">Previously viewed</h1>
+        <div className="flex mt-2 mb-[22px] overflow-auto scroll-width-none">
+
+              <div className="mr-[85px] items-start flex text-center  ml-5">
+            <div className="aspect-[18/19] flex justify-center relative items-center bg-[#fafafa] mr-[5px]">
+            <img src={cateProduct[5]?.product_img[0]} alt={cateProduct[5]?.product_title} className="flex-[0_0_auto] m-auto h-[288.88px] mix-blend-multiply w-[219.8px]" />
+            </div>
+            <div className="w-62.5 ml-5 text-left text-[0f1111]">
+              <h1 className="leading-[20.8px] line-clamp-2 m-[8px_0_0_0] text-[16px]">{cateProduct[5]?.product_title}</h1>
+              <div className="flex items-center">
+                <i className="bg-[position:-2px_-400px] bg-[length:512px_512px] bg-no-repeat mr-1 -top-px h-4.5 w-20 relative align-text-top inline-block" style={{backgroundImage:`url(https://m.media-amazon.com/images/S/sash/5iL84kcaRCLp$es.png)`}}></i>
+                <span className="text-[#565959] text-sm leading-5">2016</span>
+              </div>
+              <div className="flex">
+                <span className="text-[#cc1c39] mr-1 text-[28px] leading-9 ">{cateProduct[5]?.product_offer}</span>
+                <span className="text-[28px] text-[#0f1111] ">
+                  <span className="text-[13px] top-[-9.75px] relative">₹</span>
+                  <span className="font-medium">{cateProduct[5]?.product_price}</span>
+                          <span className="text-[13px] top-[-9.75px] relative">00</span>
+
+                </span>
+                <span className="inline-block text-[#565959] ml-1 text-xs relative left-0 top-5 z-[1] line-through">₹{cateProduct[5]?.product_actual_price} </span>
+              </div>
+                <div className="flex items-center pt-1 flex-wrap text-sm">
+                  <span className="flex">Get it by &nbsp;<b>Wednesday, August 27</b></span>
+                  <span className="leading-5">FREE Delivery by Amazon</span>
+                </div>
+
+                <button className="mt-3 flex items-center justify-center h-7.5 rounded-[100px] w-50 bg-[#ffd814] border border-[#ffd814] text-center align-middle cursor-pointer text-black text-[13px]">Add to Cart</button>
+            </div>
+              </div>
+
+
+
+              <div className="mr-[85px] items-start flex text-center  ml-5">
+            <div className="aspect-[18/19] flex justify-center relative items-center bg-[#fafafa] mr-[5px]">
+            <img src={cateProduct[8]?.product_img[0]} alt={cateProduct[8]?.product_title} className="flex-[0_0_auto] m-auto h-[288.88px] mix-blend-multiply w-[219.8px]" />
+            </div>
+            <div className="w-62.5 ml-5 text-left text-[0f1111]">
+              <h1 className="leading-[20.8px] line-clamp-2 m-[8px_0_0_0] text-[16px]">{cateProduct[8]?.product_title}</h1>
+              <div className="flex items-center">
+                <i className="bg-[position:-2px_-400px] bg-[length:512px_512px] bg-no-repeat mr-1 -top-px h-4.5 w-20 relative align-text-top inline-block" style={{backgroundImage:`url(https://m.media-amazon.com/images/S/sash/5iL84kcaRCLp$es.png)`}}></i>
+                <span className="text-[#565959] text-sm leading-5">2016</span>
+              </div>
+              <div className="flex">
+                <span className="text-[#cc1c39] mr-1 text-[28px] leading-9 ">{cateProduct[8]?.product_offer}</span>
+                <span className="text-[28px] text-[#0f1111] ">
+                  <span className="text-[13px] top-[-9.75px] relative">₹</span>
+                  <span className="font-medium">{cateProduct[8]?.product_price}</span>
+                          <span className="text-[13px] top-[-9.75px] relative">00</span>
+
+                </span>
+                <span className="inline-block text-[#565959] ml-1 text-xs relative left-0 top-5 z-[1] line-through">₹{cateProduct[8]?.product_actual_price} </span>
+              </div>
+                <div className="flex items-center pt-1 flex-wrap text-sm">
+                  <span className="flex">Get it by &nbsp;<b>Wednesday, August 27</b></span>
+                  <span className="leading-5">FREE Delivery by Amazon</span>
+                </div>
+
+                <button className="mt-3 flex items-center justify-center h-7.5 rounded-[100px] w-50 bg-[#ffd814] border border-[#ffd814] text-center align-middle cursor-pointer text-black text-[13px]">Add to Cart</button>
+            </div>
+              </div>
+           
+             
+
+        </div>
+      </div>
+     </div>
+
+          <div className="flex w-full bg-white sticky top-0 z-[200]" >
+             <div className="mx-auto w-[90%] flex border-t-2 border-t-[#c8cccc]  border-b border-b-[#c8cccc] z-[50] h-13 relative m-0 scroll-width-none max-w-[1500px] min-w-250">
+                <ul className="h-13 p-0  list-none flex ">
+                  <li className="m-[0_48px_0_0] h-12 flex items-center text-[#007185] border-b-2 border-b-[#007185] cursor-pointer text-[16px] p-[12px_0] font-fontBold leading-12 ">
+                    For you
+                  </li>
+                   <li className="m-[0_48px_0_0] h-12 flex items-center text-[#0F1111]  cursor-pointer text-[16px] p-[12px_0]  leading-12 ">
+                    Bestsellers
+                  </li>
+                   <li className="m-[0_48px_0_0] h-12 flex items-center text-[#0F1111] cursor-pointer text-[16px] p-[12px_0]  leading-12 ">
+                    Bought together
+                  </li>
+                </ul>
+              </div>
+          </div>
+
+                  {/* filter section  */}
+
+           <div className="flex w-full top28.5 top-12 sticky z-[10] bg-white">
+             <div className=" w-[90%] max-w-[1500px] min-w-250 mx-auto">
+                <ol className="overflow-hidden flex-wrap max-h-25 flex pt-3.5 grow m-0 bg-transparent list-none ">
+
+                  {
+                    filterCategory.length > 0 && filterCategory.map((item,i:any)=>{
+                  return(
+                    <li key={i} className="inline-block mr-[5px] mb-3 m-0">
+                    <button onClick={()=>handleModal(i)} className="flex items-center border border-[#888c8c] cursor-pointer bg-white h-8 min-w-14 max-w-47.5 rounded-lg hover:border-[#007185] hover:bg-[#e7fbff]">
+                      <span className="flex items-center pl-3 text-[#0f1111] whitespace-nowrap max-w-40 text-sm leading-[18.2px]">{item.filter_Type}</span>
+                      <svg className="m-[0_12px_0_4px]" role="img" aria-label="open price modal" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><title>open price modal</title><path d="M5.99982 10.0001L2.29361 6.58305C2.1055 6.40915 1.99982 6.17329 1.99982 5.92736C1.99982 5.68142 2.1055 5.44556 2.29361 5.27166C2.48172 5.09776 2.73685 5.00006 3.00288 5.00006C3.26891 5.00006 3.52405 5.09776 3.71216 5.27166L5.99982 7.39575L8.28748 5.27166C8.38062 5.18555 8.4912 5.11725 8.6129 5.07065C8.73459 5.02405 8.86503 5.00006 8.99675 5.00006C9.12848 5.00006 9.25891 5.02405 9.38061 5.07065C9.50231 5.11725 9.61288 5.18555 9.70603 5.27166C9.79917 5.35777 9.87306 5.45999 9.92346 5.5725C9.97387 5.685 9.99982 5.80558 9.99982 5.92736C9.99982 6.04913 9.97387 6.16971 9.92346 6.28222C9.87306 6.39472 9.79917 6.49694 9.70603 6.58305L5.99982 10.0001Z" fill="#0F1111"></path></svg>
+                    </button>
+                    {
+                    modalIndex === i  && <FilterModal filterBtn={item.filter_buttons} handleModal={handleModal} index={i} subhead={item.filter_sub_head}/>
+                    }
+                  </li>
+                  )
+                    })
+                  }
+                </ol>
+              </div>
+            </div>
+
+                  {/* product list sections  */}
+                <div className="flex flex-col items-center h-auto w-full">
+                <ul className=" mx-auto w-[90%] max-w-[1500px] min-w-250 grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] px-0.5 gap-3 pt-0.5  m-0 list-none">
+                 { cateProduct.length > 0 && cateProduct.map((item)=>{
+                  return(
+                  <li className="flex border border-[#d5d9d9] rounded-md flex-col h-full p-0 relative">
+                      <div className="p-3  bg-[rgba(0,0,0,.03)]  max-h-100 overflow-hidden  aspect-[18/19] flex justify-center relative mb-2">
+                        <img className="flex-[0_0_auto] m-auto max-h-full mix-blend-multiply" src={item.product_img[0]} alt={item.product_title} />
+                    </div>
+                    <div className="px-3 pt-1">
+                      <span className="leading-[20.8px] line-clamp-3 text-[16px] ">{item.product_title}</span>
+                      <div className="flex items-center">
+                        <i className="bg-[position:-2px_-400px] bg-[length:512px_512px] bg-no-repeat mr-1 -top-px h-4.5 w-20 relative align-text-top inline-block" style={{backgroundImage:`url(https://m.media-amazon.com/images/S/sash/5iL84kcaRCLp$es.png)`}}></i>
+                        { item.no_of_buyers !== 'no_data' && <span className="text-[#565959] text-sm leading-5">{item.no_of_buyers}</span>}
+                      </div>
+                      <span className="bg-[#CC0C39] p-[4px_8px_4px_8px] rounded-sm mb-1 text-white text-[13px] leading-[1.4] block mt-1 w-[123.219px]">Limited time deal</span>
+                        <span className="text-[#cc1c39] mr-1 text-[28px] leading-9">{item.product_offer}</span>
+                        <span className="text-[28px] text-[#0f1111] ">
+                          <span className="text-[13px] top-[-9.75px] relative">₹</span>
+                          <span className="font-medium">{item.product_price}</span>
+                          <span className="text-[13px] top-[-9.75px] relative">00</span>
+                        </span>
+                       <div className="flex">
+                         <span className="text-[#565959] text-xs leading-4 block">M.R.P.:  </span>
+                        <span className=" text-xs text-[#565959] ml-1">₹{item.product_actual_price}</span>
+                       </div>
+                       <span className="text-sm leading-5 text-[#0f1111] block">Get it by&nbsp; <b>Monday, September 1</b></span>
+                       <span className="text-sm leading-5">FREE Delivery by Amazon</span>
+                    </div>
+                    <div className="mt-auto p-[16px_24px] justify-center flex items-center">
+                      <button className="rounded-[100px] w-full border border-[#888c8c] inline-block bg-white text-center align-middle cursor-pointer h-7.5 text-[13px]">Buying options</button>
+                    </div>
+                  </li>
+                  )
+                 })
+                }
+                 
+                </ul>
+              </div>
+
+
+                  
+
+                <Pagination/>
+                <Footer/>
     </div>
   );
 }
 
 export default LargeProductLists
-
-
 
 

@@ -1,4 +1,3 @@
-import SideFilter from "../Components/LargeScreenComponents/SideFilter";
 import { ToggleBtnProvider } from "../Context/toggleContext";
 import LargeProductLists from "./LargeProductLists";
 import SmallProductLists from "./SmallProductLists";
@@ -8,7 +7,7 @@ function AllProductList() {
     <div>
       <ToggleBtnProvider>
         <SmallProductLists />
-        {/* <LargeProductLists /> */} <SideFilter/> 
+        <LargeProductLists /> 
       </ToggleBtnProvider>
     </div>
   );

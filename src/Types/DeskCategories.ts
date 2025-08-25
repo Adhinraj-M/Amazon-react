@@ -331,3 +331,100 @@ export const deskCarousel:string[]=[
       offer_price:string,
       offer_percentage:string
     }
+
+
+    export type RecentlyViewedType={
+      img:{
+        src:string,
+        alt:string
+      },
+      no_of_views:string
+    }
+
+
+   export const RecentlyViewed:RecentlyViewedType[]=[
+      {
+        img:{
+          src:"https://m.media-amazon.com/images/I/51eN72fGH9L._MCnd_AC_.jpg",
+          alt:"books"
+        },
+        no_of_views:"2 viewed"
+      },
+      {
+        img:{
+          src:"https://m.media-amazon.com/images/I/41kJPrvjxyL._MCnd_AC_.jpg",
+          alt:"t-shirts"
+        },
+        no_of_views:"8 viewed"
+      },
+      {
+        img:{
+          src:"https://m.media-amazon.com/images/I/41LSMx4-i1L._MCnd_AC_.jpg",
+          alt:"home appliance"
+        },
+        no_of_views:"1 viewed"
+      },
+      {
+        img:{
+          src:"https://m.media-amazon.com/images/I/41lKfFsdKOL._MCnd_AC_.jpg",
+          alt:"kurta"
+        },
+        no_of_views:"2 viewed"
+      },
+      {
+        img:{
+          src:"https://m.media-amazon.com/images/I/41HIlwR9RsL._MCnd_AC_.jpg",
+          alt:"spray"
+        },
+        no_of_views:"1 viewed"
+      },
+      {
+        img:{
+          src:"https://m.media-amazon.com/images/I/51694ovH5qL._MCnd_AC_.jpg",
+          alt:"Ujala"
+        },
+        no_of_views:"1 viewed"
+      },
+      {
+        img:{
+          src:"https://m.media-amazon.com/images/I/31-oSLJMpUL._MCnd_AC_.jpg",
+          alt:"scissors"
+        },
+        no_of_views:"1 viewed"
+      },
+      {
+        img:{
+          src:"https://m.media-amazon.com/images/I/31eD5NuEVGL._MCnd_AC_.jpg",
+          alt:"shoes"
+        },
+        no_of_views:"1 viewed"
+      },
+      {
+        img:{
+          src:"https://m.media-amazon.com/images/I/41ip130VUuL._MCnd_AC_.jpg",
+          alt:"car washing"
+        },
+        no_of_views:"11 viewed"
+      },
+      {
+        img:{
+          src:"https://m.media-amazon.com/images/I/51z2VTsej1L._MCnd_AC_.jpg",
+          alt:"ornaments"
+        },
+        no_of_views:"2 viewed"
+      },{
+        img:{
+          src:"https://m.media-amazon.com/images/I/31khu1-yRbL._MCnd_AC_.jpg",
+          alt:"case"
+        },
+        no_of_views:"1 viewed"
+      },
+      {
+        img:{
+          src:"https://m.media-amazon.com/images/I/31f6Bja6ydL._MCnd_AC_.jpg",
+          alt:"iron box"
+        },
+        no_of_views:"1 viewed"
+      }
+
+   ]
