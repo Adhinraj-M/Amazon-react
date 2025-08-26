@@ -29,7 +29,10 @@ type ProductListContextType = {
   sliderValue: { [key: string]: number };
   toggle:boolean,
   handleModal:()=>void,
-  filteredLists:CategoryProdut[] | []
+  filteredLists:CategoryProdut[] | [],
+  handleFilterModal:(i:number)=> void,
+  modalIndex:number | null,
+  handleCategoryClear:(i:number | null)=>void
 
 };
 
@@ -54,7 +57,10 @@ export const ProductListContext = createContext<ProductListContextType>({
   sliderValue: {},
   toggle:false,
   handleModal:()=>{},
-  filteredLists:[]
+  filteredLists:[],
+  handleFilterModal:()=>{},
+  modalIndex:null,
+  handleCategoryClear:()=>{}
 });
 
 export const ProductListProvider = ({ children }: { children: ReactNode }) => {
@@ -125,7 +131,6 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
      let currentItems:any = prev[filterTitle] || []
      let updatedItems:string[]=[]
 
-
      if(filterTitle === 'Price and Deals'){
       if( currentItems.includes("All Prices") ){
         updatedItems = [item]
@@ -194,6 +199,8 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
       ...prev,
       [filterTitle]: updatedIndexes
     }});
+
+    
   };
   
 
@@ -281,11 +288,49 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
     const filtered = FilterProduct(cateProduct, selectedFilters);
     setFilteredLists(filtered);
     handleModal()
+    handleFilterModal(modalIndex)
   };
 
+  //clear category section for desktop
+  const handleCategoryClear=(i:any)=>{
+    if(i !== null){
+       const clearCate = filterCategory[i].filter_Type
 
-  // console.log("cateProduct",cateProduct)
-  // console.log("selectedFilteres",selectedFilters)
+       const updatedActiveFilter = Object.fromEntries(Object.entries(activeFilter).filter(([key,_])=> key !== clearCate))
+       const updatedSelectedFilter = Object.fromEntries(Object.entries(selectedFilters).filter(([key,_])=> key !== clearCate))
+
+       const finalActiveFilter = { ...updatedActiveFilter,'Price and Deals':[0]}
+       const finalSelectedFilter = {...updatedSelectedFilter,'slider':['115','3999']}
+
+       setActiveFilter(finalActiveFilter)
+    
+       setSelectedFilters(finalSelectedFilter);
+
+    const filtered = FilterProduct(cateProduct, finalSelectedFilter);
+    setFilteredLists(filtered);
+    }
+    
+    
+  }
+
+  // large screen filter modal handling 
+
+  const [modalIndex, setModalIndex] = useState<number | null>(null);
+  
+    const handleFilterModal = (i: number | null) => {
+      if (modalIndex === i) {
+        setModalIndex(null);
+      } else {
+        setModalIndex(i);
+      }
+    };
+
+
+
+   
+
+
+  
 
   return (
     <ProductListContext.Provider
@@ -306,14 +351,13 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
         sliderValue,
         handleModal,
         toggle,
-        filteredLists
-      }}
-    >
+        filteredLists,
+        handleFilterModal,
+        modalIndex,
+        handleCategoryClear
+      }}>
       {children}
     </ProductListContext.Provider>
   );
 };
-
-
-
 

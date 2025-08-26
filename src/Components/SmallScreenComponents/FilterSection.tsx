@@ -21,12 +21,8 @@ function FilterSection({ handleModal, filterCategory }: filterSectionType) {
     handleFilters,
   } = useContext(ProductListContext);
 
-  console.log("activeFilter",activeFilter)
 
   let count = Object.values(activeFilter).flat().length;
-
-
-  
 
   const min: number = 115;
   const max: number = 3999;
@@ -154,7 +150,7 @@ function FilterSection({ handleModal, filterCategory }: filterSectionType) {
                           }
                           className={`p-[7px_8px] rounded-lg w-fit mb-2 mr-2 border  text-center inline-flex items-center justify-center text-[13px] leading-[1.4] ${
                             activeFilter[filterBtn.filter_Type]?.includes(index)
-                              ? "bg-[#f9d52a]  border-[#f34552] "
+                              ? "bg-[#f9d52a]  border-[#f34552]"
                               : "border-[#e9e8e8] bg-white "
                           }`}
                         >
@@ -213,7 +209,7 @@ function FilterSection({ handleModal, filterCategory }: filterSectionType) {
             className="flex w-35  border p-[10px_12px] border-[#ff4d5b]  rounded-lg justify-center items-center bg-[#ff4d5b] text-[13px] text-white leading-[1.4] shadow-[0px_2px_5px_0px_rgba(213,217,217,0.5)]"
             onClick={handleFilters}
           >
-            Show  results
+            Show results
           </button>
         </div>
       </div>

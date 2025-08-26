@@ -6,14 +6,18 @@ import FilterSection from "../Components/SmallScreenComponents/FilterSection";
 import { ProductListContext } from "../Context/ProductListContext";
 import { Link } from "react-router-dom";
 import Footer from "../Components/SmallScreenComponents/Footer";
+import useWindowWidth from "../Helpers/WindowWidth";
 
 function SmallProductLists() {
   const { handleSideBar } = useContext(ToggleContext);
   const { filterCategory, sortCategory, filteredLists, handleModal, toggle } =
     useContext(ProductListContext);
 
-  // to avoid background scroll when the filter modal opens
-  if (toggle) {
+  // to avoid background scroll when the filter modal opens 
+
+  const width = useWindowWidth()
+
+  if (toggle && width < 1000) {
     document.body.style.overflowY = "hidden";
   } else {
     document.body.style.overflowY = "scroll";

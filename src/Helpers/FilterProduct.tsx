@@ -7,7 +7,7 @@ function FilterProduct(cateProduct:CategoryProdut[],selectedFilters:{
     
     for(const [key,values] of Object.entries(selectedFilters)){
         
-        if((values.length === 0)) continue
+        if(values.length === 0) continue;
         let categoryKey = key.toLocaleLowerCase()
         if(key === 'slider'){
             const [min,max] = values.map(Number)

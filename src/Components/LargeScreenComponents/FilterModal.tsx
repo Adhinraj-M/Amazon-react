@@ -1,17 +1,30 @@
+import { useContext } from "react";
+import { ProductListContext } from "../../Context/ProductListContext";
+import type { CategoryFilter } from "../../Types/product";
+
 type filterModalType = {
-  filterBtn: string[];
-  handleModal: (i:number) => void;
-  index:number,
-  subhead:string
+  filterBtn: CategoryFilter;
+  index: number;
+  subhead: string;
 };
 
-function FilterModal({ filterBtn, handleModal,index ,subhead}: filterModalType) {
+function FilterModal({ filterBtn, index, subhead }: filterModalType) {
+  const {
+    handleFilters,
+    handleActiveFilter,
+    handleCategoryClear,
+    activeFilter,
+    handleRating,
+    handleFilterModal,
+    modalIndex,
+  } = useContext(ProductListContext);
+
   return (
     <div className="top-13.5 left-auto absolute z-[1] bg-white border border-[#d5d9d9] rounded-lg shadow-[1px_1px_10px_0px_rgba(0,0,0,.3)] max-w-125 min-w-100 p-[8px_16px_12px]">
       <span className="top-[-15px] left-[65.4531px] border-8 absolute z-[1] border-b-white border-transparent"></span>
       <button
-        className="flex h-7.5 justify-center absolute right-1 top-1 w-7.5 z-[1] items-center"
-        onClick={()=>handleModal(index)}
+        className="flex h-7.5 justify-center absolute right-1 top-1 w-7.5 z-[1] items-center cursor-pointer"
+        onClick={() => handleFilterModal(index)}
       >
         <svg
           role="img"
@@ -33,51 +46,64 @@ function FilterModal({ filterBtn, handleModal,index ,subhead}: filterModalType) 
       <div className="p-0 mx-5 bg-white ">
         <h1 className="text-lg leading-6 font-fontBold">{subhead}</h1>
         <div className="relative p-0 h-[74px] min-h-[45px] pt-2 pb-[3px] flex flex-wrap ">
-          {filterBtn.length > 0 ?(
-            filterBtn.map((btn, i) => {
+          {filterBtn.filter_buttons.length > 0 ? (
+            filterBtn.filter_buttons.map((btn, i) => {
               return (
-                
                 <button
                   key={i}
-                  className="flex items-center border m-[0_5px_5px_0] border-[#888c8c] cursor-pointer bg-white h-8 min-w-14 max-w-47.5 rounded-lg hover:border-[#007185] hover:bg-[#e7fbff]"
+                  onClick={() =>
+                    handleActiveFilter(i, btn, filterBtn.filter_Type)
+                  }
+                  className={`flex items-center border m-[0_5px_5px_0] ${
+                    activeFilter[filterBtn.filter_Type]?.includes(i)
+                      ? "border-2 border-[#007185] bg-[#e7fbff]"
+                      : "border-[#888c8c] bg-white"
+                  }  cursor-pointer  h-8 min-w-14 max-w-47.5 rounded-lg hover:border-[#007185] hover:bg-[#e7fbff]`}
                 >
                   <span className="flex items-center px-3 text-[#0f1111] whitespace-nowrap max-w-40 text-sm leading-[18.2px]">
                     {btn}
                   </span>
                 </button>
-
-                
-
               );
-            })):(
-                <button
-                    className={`mr-2 shrink-0 whitespace-nowrap h-8 flex items-center p-[9px] rounded-lg w-auto border  text-center  justify-center
-                    " border-[#e8e8e8] bg-white "
-                    }`}
-                  >
-                    <div className="flex pb-0.5 mr-1">
-                      {Array.from({ length: 4 }).map((_, index) => (
-                        <span
-                          key={index}
-                          className="w-4 h-[15px] "
-                          style={{
-                            backgroundImage: `url(https://m.media-amazon.com/images/S/sash/1B5nH39U5U0JHHA.svg)`,
-                          }}
-                        ></span>
-                      ))}
-                    </div>
-                    <span className="text-sm leading-5 align-text-bottom text-black ">
-                      & Up
-                    </span>
-                  </button>
-            )}
+            })
+          ) : (
+            <button
+              onClick={handleRating}
+              className={`mr-2 shrink-0 whitespace-nowrap cursor-pointer h-8 flex items-center p-[9px] rounded-lg w-auto border  text-center  justify-center hover:border-[#007185] hover:bg-[#e7fbf    ${
+                activeFilter["Customer Rating"]?.includes(0)
+                  ? "border-2 border-[#007185] bg-[#e7fbff]"
+                  : "border-[#e8e8e8] bg-white"
+              } `}
+            >
+              <div className="flex pb-0.5 mr-1">
+                {Array.from({ length: 4 }).map((_, index) => (
+                  <span
+                    key={index}
+                    className="w-4 h-[15px] "
+                    style={{
+                      backgroundImage: `url(https://m.media-amazon.com/images/S/sash/1B5nH39U5U0JHHA.svg)`,
+                    }}
+                  ></span>
+                ))}
+              </div>
+              <span className="text-sm leading-5 align-text-bottom text-black ">
+                & Up
+              </span>
+            </button>
+          )}
         </div>
 
-        <button className="mt-3 block   relative z-[2] w-37.5 h-9 bg-[#007185]  rounded-lg text-white whitespace-nowrap cursor-pointer">
+        <button
+          onClick={handleFilters}
+          className="mt-3 block   relative z-[2] w-37.5 h-9 bg-[#007185]  rounded-lg text-white whitespace-nowrap cursor-pointer hover:bg-[#4b9aa8]"
+        >
           Show result
         </button>
 
-        <button className="mt-2 h-5 w-fit text-[#a2a6a6] leading-5 text-sm">
+        <button
+          className="mt-2 h-5 w-fit hover:underline cursor-pointer leading-5 text-sm text-[#007185]"
+          onClick={() => handleCategoryClear(modalIndex)}
+        >
           Clear filters
         </button>
       </div>
