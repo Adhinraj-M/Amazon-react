@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ProductListContext } from "../../Context/ProductListContext";
+import { Link } from "react-router-dom";
 
 function ProductList() {
   const { filteredLists } = useContext(ProductListContext);
@@ -20,13 +21,16 @@ function ProductList() {
                 key={item.id}
                 className="flex border border-[#d5d9d9] rounded-md flex-col h-full p-0 relative"
               >
-                <div className="p-3  bg-[rgba(0,0,0,.03)]  max-h-100 overflow-hidden  aspect-[18/19] flex justify-center relative mb-2 cursor-pointer">
+                <Link
+                  to={`/productList/productData/${item.id}`}
+                  className="p-3  bg-[rgba(0,0,0,.03)]  max-h-100 overflow-hidden  aspect-[18/19] flex justify-center relative mb-2 cursor-pointer"
+                >
                   <img
                     className="flex-[0_0_auto] m-auto max-h-full mix-blend-multiply hover:scale-110 hover:transition-transform hover:duration-400 hover:ease-in"
                     src={item.product_img[0]}
                     alt={item.product_title}
                   />
-                </div>
+                </Link>
                 <div className="px-3 pt-1">
                   <span className="leading-[20.8px] line-clamp-3 text-[16px] ">
                     {item.product_title}

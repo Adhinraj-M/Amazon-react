@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext} from "react";
 import DeskAdds from "../Components/LargeScreenComponents/DeskAdds";
 import DeskAllProductCard from "../Components/LargeScreenComponents/DeskAllProductCard";
 import DeskCarousel from "../Components/LargeScreenComponents/DeskCarousel";

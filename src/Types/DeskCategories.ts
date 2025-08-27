@@ -1,47 +1,55 @@
 export type HeroProductDesktopType = {
-  img: {
-    src:string,
-    alt:string
-  };
-  name: string;
-  viewsCount:string,
+  url: string;
+  product: {
+    img: {
+      src: string;
+      alt: string;
+    };
+    name: string;
+    viewsCount: string;
+  }[];
 };
 
-export const HeroDeskProduct: HeroProductDesktopType[] = [
+
+export const HeroDeskProduct: HeroProductDesktopType[] =[
+{ 
+  
+  url:"WomenDress",
+  product:[
   {
     img:{
-        src:"https://m.media-amazon.com/images/I/51pjBoL1uEL._MCnd_AC_.jpg",
-        alt:"kids truck image",
+        src:"https://m.media-amazon.com/images/I/71R7flci04L._AC_SS304_.jpg",
+        alt:"Miss Chase Women's Comfy Round Neck Striped Midi Dress",
     },
-    name: "Kids' play trucks",
+    name: "Miss Chase Women's Comfy Round Neck Striped Midi Dress",
      viewsCount:'1'
   },
   {
     img:{
-        src:"https://m.media-amazon.com/images/I/51fCuP80jSL._MCnd_AC_.jpg",
-        alt:"finger puppets image",
+        src:"https://m.media-amazon.com/images/I/51yWXtfLxjL._AC_SR175,263_FMwebp_QL65_.jpg",
+        alt:"Biba Solid A-Line Kurti for Women",
     },
-    name: "Finger puppets",
+    name: "Biba Solid A-Line Kurti for Women",
     viewsCount:'1'
   },
   {
     img:{
-        src:"https://m.media-amazon.com/images/I/41LSMx4-i1L._MCnd_AC_.jpg",
-        alt:"stationery products image",
+        src:"https://m.media-amazon.com/images/I/41o4R+mh7iL._AC_SR175,263_FMwebp_QL65_.jpg",
+        alt:"Jaipur Kurti Women’s Crocheted Yoke Kurta",
     },
-    name: "Stationery products",
+    name: "Jaipur Kurti Women’s Crocheted Yoke Kurta",
     viewsCount:'1'
   },
   {
     img:{
-        src:"https://m.media-amazon.com/images/I/31eLts1X1nL._MCnd_AC_.jpg",
-        alt:"mouse pad image",
+        src:"https://m.media-amazon.com/images/I/51n2jT511uL._AC_SR175,263_FMwebp_QL65_.jpg",
+        alt:"Aurelia Printed Straight Kurti",
     },
-    name: "Mouse pads",
+    name: "Aurelia Printed Straight Kurti",
     viewsCount:'2'
   }
 
-]
+]}]
 
 export type CategoryProductImg = {
   img: {

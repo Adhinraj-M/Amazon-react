@@ -58,8 +58,7 @@ function FilterModal({ filterBtn, index, subhead }: filterModalType) {
                     activeFilter[filterBtn.filter_Type]?.includes(i)
                       ? "border-2 border-[#007185] bg-[#e7fbff]"
                       : "border-[#888c8c] bg-white"
-                  }  cursor-pointer  h-8 min-w-14 max-w-47.5 rounded-lg hover:border-[#007185] hover:bg-[#e7fbff]`}
-                >
+                  }  cursor-pointer  h-8 min-w-14 max-w-47.5 rounded-lg hover:border-[#007185] hover:bg-[#e7fbff]`}>
                   <span className="flex items-center px-3 text-[#0f1111] whitespace-nowrap max-w-40 text-sm leading-[18.2px]">
                     {btn}
                   </span>

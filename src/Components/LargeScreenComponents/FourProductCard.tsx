@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { HeroProductDesktopType } from "../../Types/DeskCategories";
 
 type fourProductType={
@@ -13,12 +14,12 @@ function FourProductCard({fourProduct}:fourProductType) {
           Keep shopping for
         </h2>
         <div className="grid  flex-[1] gap-[2px_6px] grid-cols-[repeat(auto-fit,_minmax(40%,_1fr))] mb-px">
-          {fourProduct &&
-            fourProduct.map((item, index) => {
+          {fourProduct[0].product.length >0 &&
+            fourProduct[0].product.map((item, index) => {
               return (
-                <a
+                <Link to={`/productList/${fourProduct[0].url}`}
                   className="flex flex-col  h-full flex-wrap"
-                  href="#"
+                  
                   key={index} >
                   <div className="grid bg-[rgba(0,0,0,.03)] flex-[1] gap-[6px_8px] grid-cols-[repeat(auto-fit,_minmax(40%,_1fr))] p-1.5 !mb-1">
                     <div className="h-full min-h-[85px] relative">
@@ -29,7 +30,7 @@ function FourProductCard({fourProduct}:fourProductType) {
                       />
                     </div>
                   </div>
-                  <div className="pr-1 !mb-1 w-full ">
+                  <div className="pr-1 !mb-1 w-full">
                     <span className="leading-[18.2px] block max-h-[18.2px] text-[#0f1111] text-sm mb-[-2.4px] relative w-full overflow-hidden">
                       {item.name}
                     </span>
@@ -37,7 +38,7 @@ function FourProductCard({fourProduct}:fourProductType) {
                       {item.viewsCount} viewed
                     </span>
                   </div>
-                </a>
+                </Link>
               );
             })}
         </div>

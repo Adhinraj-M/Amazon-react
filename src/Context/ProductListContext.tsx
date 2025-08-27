@@ -1,5 +1,9 @@
 import { createContext, useEffect, useState, type ReactNode } from "react";
-import { priceRangeMap, type CategoryFilter, type CategoryProdut } from "../Types/product";
+import {
+  priceRangeMap,
+  type CategoryFilter,
+  type CategoryProdut,
+} from "../Types/product";
 import { useParams } from "react-router-dom";
 import axiosInstance from "../api/axios";
 import FilterProduct from "../Helpers/FilterProduct";
@@ -15,7 +19,7 @@ type ProductListContextType = {
     filter_buttons: string[];
   };
   activeFilter: { [key: string]: number[] };
-  selectedFilters: { [key: string]: string[] | {min:number,max:number}[] };
+  selectedFilters: { [key: string]: string[] | { min: number; max: number }[] };
   handleCategory: (index: number) => void;
   handleActiveFilter: (
     index: number,
@@ -27,13 +31,12 @@ type ProductListContextType = {
   handleSliderValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleFilters: () => void;
   sliderValue: { [key: string]: number };
-  toggle:boolean,
-  handleModal:()=>void,
-  filteredLists:CategoryProdut[] | [],
-  handleFilterModal:(i:number)=> void,
-  modalIndex:number | null,
-  handleCategoryClear:(i:number | null)=>void
-
+  toggle: boolean;
+  handleModal: () => void;
+  filteredLists: CategoryProdut[] | [];
+  handleFilterModal: (i: number) => void;
+  modalIndex: number | null;
+  handleCategoryClear: (i: number | null) => void;
 };
 
 export const ProductListContext = createContext<ProductListContextType>({
@@ -55,12 +58,12 @@ export const ProductListContext = createContext<ProductListContextType>({
   handleSliderValue: () => {},
   handleFilters: () => {},
   sliderValue: {},
-  toggle:false,
-  handleModal:()=>{},
-  filteredLists:[],
-  handleFilterModal:()=>{},
-  modalIndex:null,
-  handleCategoryClear:()=>{}
+  toggle: false,
+  handleModal: () => {},
+  filteredLists: [],
+  handleFilterModal: () => {},
+  modalIndex: null,
+  handleCategoryClear: () => {},
 });
 
 export const ProductListProvider = ({ children }: { children: ReactNode }) => {
@@ -70,6 +73,7 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
   const [error, setError] = useState<string | null>(null);
   const [filterCategory, setFilterCategory] = useState<CategoryFilter[]>([]);
 
+
   // data fetching
   useEffect(() => {
     axiosInstance
@@ -77,7 +81,7 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
       .then((res: any) => {
         setCateProduct(res.data.product);
         setSortCategory(res.data.category);
-        setFilteredLists(res.data.product)
+        setFilteredLists(res.data.product);
         setFilterCategory(res.data.filterCategory);
         setFilterBtn(res.data.filterCategory[0]);
       })
@@ -88,12 +92,11 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   // filter modal toggle function
-  const [toggle,setToggle] = useState<boolean>(false)
+  const [toggle, setToggle] = useState<boolean>(false);
 
-  const handleModal=()=>{
-    setToggle(!toggle)
-  }
-
+  const handleModal = () => {
+    setToggle(!toggle);
+  };
 
   // main fiiter section
 
@@ -101,13 +104,13 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
   const [filterBtn, setFilterBtn] = useState(filterCategory[0]);
   const [activeFilter, setActiveFilter] = useState<{ [key: string]: number[] }>(
     {
-    "Price and Deals":[0]
-
+      "Price and Deals": [0],
     }
   );
   const [selectedFilters, setSelectedFilters] = useState<{
-    [key: string]: string[] | {min:number,max:number}[];}>({
-    'Price and Deals':[{min:115,max:3999}]
+    [key: string]: string[] | { min: number; max: number }[];
+  }>({
+    "Price and Deals": [{ min: 115, max: 3999 }],
   });
   const [sliderValue, setSliderValue] = useState<{ [key: string]: number }>({
     sliderOne: 115,
@@ -118,7 +121,7 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
     setActiveIndex(index);
     setFilterBtn(filterCategory[index]);
   };
-  const [filteredLists,setFilteredLists] = useState<CategoryProdut[]>([])
+  const [filteredLists, setFilteredLists] = useState<CategoryProdut[]>([]);
 
   // active filter function
   const handleActiveFilter = (
@@ -126,85 +129,78 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
     item: string,
     filterTitle: string
   ) => {
+    setSelectedFilters((prev) => {
+      let currentItems: any = prev[filterTitle] || [];
+      let updatedItems: string[] = [];
 
-    setSelectedFilters((prev) => {    
-     let currentItems:any = prev[filterTitle] || []
-     let updatedItems:string[]=[]
+      if (filterTitle === "Price and Deals") {
+        if (currentItems.includes("All Prices")) {
+          updatedItems = [item];
+        } else {
+          const isSelected = currentItems.includes(item);
 
-     if(filterTitle === 'Price and Deals'){
-      if( currentItems.includes("All Prices") ){
-        updatedItems = [item]
-        
-      }
-      else{
+          updatedItems = isSelected
+            ? currentItems.filter((i: any) => i !== item)
+            : [item];
 
-        const isSelected = currentItems.includes(item);
-
-        updatedItems = isSelected ? currentItems.filter((i:any)=> i !== item):[item]
-
-        if(updatedItems.length === 0){
-          updatedItems=["All Prices"]
+          if (updatedItems.length === 0) {
+            updatedItems = ["All Prices"];
+          }
         }
 
+        const PriceRange = updatedItems.map((label) => priceRangeMap[label]);
+        return {
+          ...prev,
+          [filterTitle]: PriceRange,
+          slider: [
+            String(sliderValue.sliderOne),
+            String(sliderValue.sliderTwo),
+          ],
+        };
       }
 
-      const PriceRange = updatedItems.map(label=>priceRangeMap[label])
-      return{
+      const isSelected = currentItems.includes(item);
+      updatedItems = isSelected
+        ? currentItems.filter((i: any) => i !== item)
+        : [...currentItems, item];
+
+      return {
         ...prev,
-        [filterTitle]:PriceRange,
-        slider: [String(sliderValue.sliderOne),String(sliderValue.sliderTwo)],
-
-      }
-    }
-
-    
-    
-    const isSelected = currentItems.includes(item)
-     updatedItems = isSelected ? currentItems.filter((i:any)=> i !== item):[...currentItems,item]
-    
-      return{
-      ...prev,
-      [filterTitle]: updatedItems,
-      slider: [String(sliderValue.sliderOne),String(sliderValue.sliderTwo)],
-
-    }});
+        [filterTitle]: updatedItems,
+        slider: [String(sliderValue.sliderOne), String(sliderValue.sliderTwo)],
+      };
+    });
 
     setActiveFilter((prev) => {
-      const currentIndexes = prev[filterTitle] || []
-     let updatedIndexes:number[]=[]
+      const currentIndexes = prev[filterTitle] || [];
+      let updatedIndexes: number[] = [];
 
+      if (filterTitle === "Price and Deals") {
+        if (currentIndexes.includes(0)) {
+          updatedIndexes = [index];
+        } else {
+          const isSelected = currentIndexes.includes(index);
 
-       if(filterTitle === 'Price and Deals'){
-      if( currentIndexes.includes(0) ){
-        updatedIndexes = [index]
-      }
-      else{
+          updatedIndexes = isSelected
+            ? currentIndexes.filter((i) => i !== index)
+            : [index];
 
-        const isSelected = currentIndexes.includes(index);
-
-        updatedIndexes =isSelected ? currentIndexes.filter(i=> i !== index):[index]
-
-        if(updatedIndexes.length === 0){
-          updatedIndexes=[0]
+          if (updatedIndexes.length === 0) {
+            updatedIndexes = [0];
+          }
         }
+      } else {
+        const isSelectedIndex = currentIndexes.includes(index);
+        updatedIndexes = isSelectedIndex
+          ? currentIndexes.filter((i) => i !== index)
+          : [...currentIndexes, index];
       }
-
-    }
-    else{
-
-      const isSelectedIndex = currentIndexes.includes(index)
-       updatedIndexes = isSelectedIndex ? currentIndexes.filter(i=> i !== index):[...currentIndexes,index]
-    }
-      return{
-      ...prev,
-      [filterTitle]: updatedIndexes
-    }});
-
-    
+      return {
+        ...prev,
+        [filterTitle]: updatedIndexes,
+      };
+    });
   };
-  
-
-  
 
   // rating controller function
   const handleRating = () => {
@@ -222,16 +218,16 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
   // clear selected values
   const handleClearFilter = () => {
     setActiveFilter({
-      "Price and Deals":[0]
+      "Price and Deals": [0],
     });
     setSelectedFilters({
-      'Price and Deals':[{min:0,max:3999}]
+      "Price and Deals": [{ min: 0, max: 3999 }],
     });
     setSliderValue({
       sliderOne: 115,
       sliderTwo: 3999,
     });
-    setFilteredLists(cateProduct)
+    setFilteredLists(cateProduct);
   };
 
   // slider value controller function
@@ -261,76 +257,81 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
 
   //when the price and deals button changes
   useEffect(() => {
-    
-      if(selectedFilters["Price and Deals"]){
-        const sliderArr = Object.values(selectedFilters["Price and Deals"][0])
-        const filtered = Object.fromEntries(Object.entries(selectedFilters).filter(([key])=> key !== "Price and Deals" && key !=="slider"))
-        const updated = {...filtered,slider:[String(sliderArr[0]),String(sliderArr[1])]}
-        setSelectedFilters(updated)
-      }
+    if (selectedFilters["Price and Deals"]) {
+      const sliderArr = Object.values(selectedFilters["Price and Deals"][0]);
+      const filtered = Object.fromEntries(
+        Object.entries(selectedFilters).filter(
+          ([key]) => key !== "Price and Deals" && key !== "slider"
+        )
+      );
+      const updated = {
+        ...filtered,
+        slider: [String(sliderArr[0]), String(sliderArr[1])],
+      };
+      setSelectedFilters(updated);
+    }
   }, [selectedFilters["Price and Deals"]]);
 
-  //when slider changes                
-  useEffect(()=>{
+  //when slider changes
+  useEffect(() => {
     setActiveFilter({
-      "Price and Deals":[0]
+      "Price and Deals": [0],
     });
-    setSelectedFilters((prev)=>({
-        ...prev,
-        slider:[String(sliderValue.sliderOne),String(sliderValue.sliderTwo)]
-      }))
+    setSelectedFilters((prev) => ({
+      ...prev,
+      slider: [String(sliderValue.sliderOne), String(sliderValue.sliderTwo)],
+    }));
+  }, [sliderValue]);
 
-  },[sliderValue])
-
-
-  // filtering main function 
-    const handleFilters = () => {
+  // filtering main function
+  const handleFilters = () => {
     const filtered = FilterProduct(cateProduct, selectedFilters);
     setFilteredLists(filtered);
-    handleModal()
-    handleFilterModal(modalIndex)
+    handleModal();
+    handleFilterModal(modalIndex);
   };
 
   //clear category section for desktop
-  const handleCategoryClear=(i:any)=>{
-    if(i !== null){
-       const clearCate = filterCategory[i].filter_Type
+  const handleCategoryClear = (i: any) => {
+    if (i !== null) {
+      const clearCate = filterCategory[i].filter_Type;
 
-       const updatedActiveFilter = Object.fromEntries(Object.entries(activeFilter).filter(([key,_])=> key !== clearCate))
-       const updatedSelectedFilter = Object.fromEntries(Object.entries(selectedFilters).filter(([key,_])=> key !== clearCate))
+      const updatedActiveFilter = Object.fromEntries(
+        Object.entries(activeFilter).filter(([key, _]) => key !== clearCate)
+      );
+      const updatedSelectedFilter = Object.fromEntries(
+        Object.entries(selectedFilters).filter(([key, _]) => key !== clearCate)
+      );
 
-       const finalActiveFilter = { ...updatedActiveFilter,'Price and Deals':[0]}
-       const finalSelectedFilter = {...updatedSelectedFilter,'slider':['115','3999']}
+      const finalActiveFilter = {
+        ...updatedActiveFilter,
+        "Price and Deals": [0],
+      };
+      const finalSelectedFilter = {
+        ...updatedSelectedFilter,
+        slider: ["115", "3999"],
+      };
 
-       setActiveFilter(finalActiveFilter)
-    
-       setSelectedFilters(finalSelectedFilter);
+      setActiveFilter(finalActiveFilter);
 
-    const filtered = FilterProduct(cateProduct, finalSelectedFilter);
-    setFilteredLists(filtered);
+      setSelectedFilters(finalSelectedFilter);
+
+      const filtered = FilterProduct(cateProduct, finalSelectedFilter);
+      setFilteredLists(filtered);
     }
-    
-    
-  }
+  };
 
-  // large screen filter modal handling 
+  // large screen filter modal handling
 
   const [modalIndex, setModalIndex] = useState<number | null>(null);
-  
-    const handleFilterModal = (i: number | null) => {
-      if (modalIndex === i) {
-        setModalIndex(null);
-      } else {
-        setModalIndex(i);
-      }
-    };
 
-
-
-   
-
-
-  
+  const handleFilterModal = (i: number | null) => {
+    if (modalIndex === i) {
+      setModalIndex(null);
+    } else {
+      setModalIndex(i);
+    }
+  };
 
   return (
     <ProductListContext.Provider
@@ -354,10 +355,10 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
         filteredLists,
         handleFilterModal,
         modalIndex,
-        handleCategoryClear
-      }}>
+        handleCategoryClear,
+      }}
+    >
       {children}
     </ProductListContext.Provider>
   );
 };
-

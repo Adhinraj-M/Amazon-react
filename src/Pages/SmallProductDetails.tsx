@@ -10,7 +10,7 @@ function SmallProductDetails() {
   const { handleSideBar } = useContext(ToggleContext);
 
   return (
-    <>
+    <div className="min-large:hidden">
       <Header toggleBtn={handleSideBar} />
       <Address />
       <Sponsored/>
@@ -19,7 +19,7 @@ function SmallProductDetails() {
 
       <ProductData/>
       <Footer/>
-    </>
+    </div>
   );
 }
 

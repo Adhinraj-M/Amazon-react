@@ -29,9 +29,10 @@ function ProductData() {
     arrows: true,
   };
 
+
   return (
     <>
-      {productData && (
+      {productData &&  (
         <div className="bg-white min-w-50 p-[0_14px] m-[0_auto] w-full">
           <div className="-mt-1 ">
             <div className="flex justify-between mt-1 items-center ">
@@ -58,7 +59,7 @@ function ProductData() {
             <div className="m-[0_-4px] relative overflow-hidden !h-137.5 ">
               <ol className="m-0 h-full p-0">
                 <Slider {...settings}>
-                  {productData[0].product_img.map((img, i) => (
+                  {productData[0]?.product_img.map((img, i) => (
                     <li key={i} className="h-full flex justify-center">
                       <img
                         className="h-[537.88px]"
@@ -75,7 +76,7 @@ function ProductData() {
               <div className="flex items-center min-h-6 relative justify-center">
                 <ul className="border-none flex z-[1] p-0 w-auto items-center absolute h-2.5 list-none m-0">
                   {Array.from(
-                    { length: productData[0].product_img.length },
+                    { length: productData[0]?.product_img.length },
                     (_, i) => {
                       return (
                         <li
