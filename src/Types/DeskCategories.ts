@@ -436,3 +436,60 @@ export const deskCarousel:string[]=[
       }
 
    ]
+
+
+   type  offerType={
+    offername:string,
+    description:string,
+    noOffers:string
+   }
+
+
+   export const offers:offerType[]=[{
+    offername:"Cashback",
+    description:"Upto ₹11.00 cashback as Amazon Pay Balance when…",
+    noOffers:"1 offer"
+  },
+  {
+    offername:"Bank Offer",
+    description:"Upto ₹1,000.00 discount on select Credit Cards, Debit…",
+    noOffers:"15 offer"
+  },
+  {
+    offername:"Partner Offers",
+    description:"Get GST invoice and save up to 28% on business purchases. ",
+    noOffers:"1 offer"
+  },
+]
+
+type productOfferType={
+  img:{
+    src:string,
+    alt:string
+  },
+  offerName:string
+}
+
+export const productOfferType:productOfferType[] = [
+  {
+    img:{
+      src:"https://m.media-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/icon-cod._CB562506657_.png",
+      alt:"Cash/Pay on Delivery"
+    },
+    offerName:"Cash/Pay on Delivery"
+  },
+  {
+    img:{
+      src:"https://m.media-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/trust_icon_free_shipping_81px._CB562549966_.png",
+      alt:" Free Delivery"
+    },
+    offerName:" Free Delivery"
+  },
+  {
+    img:{
+      src:"https://m.media-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/icon-top-brand._CB562506657_.png",
+      alt:"Top Brand"
+    },
+    offerName:"Top Brand"
+  }
+]

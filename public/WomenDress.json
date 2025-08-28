@@ -56,7 +56,11 @@
     "sleeve_type":"3/4 Sleeve",
     "colours":"Pink",
     "product_img": [
-      "https://m.media-amazon.com/images/I/41o4R+mh7iL._AC_SR175,263_FMwebp_QL65_.jpg"
+      "https://m.media-amazon.com/images/I/41o4R+mh7iL._UY1100_FMwebp_.jpg",
+      "https://m.media-amazon.com/images/I/61Ilx9eF+nL._UY1100_FMwebp_.jpg",
+      "https://m.media-amazon.com/images/I/51D0e7EsddL._UY1100_FMwebp_.jpg",
+      "https://m.media-amazon.com/images/I/61am9ASnQxL._UY1100_FMwebp_.jpg"
+
       
     ]
   },
@@ -152,7 +156,12 @@
     "sizes":["M","L","XL","2XL"],
     "sleeve_type":"3/4 Sleeve",
     "product_img": [
-      "https://m.media-amazon.com/images/I/618qpneSnbL._AC_SR175,263_FMwebp_QL65_.jpg"
+      "https://m.media-amazon.com/images/I/618qpneSnbL._UY1100_FMwebp_.jpg",
+      "https://m.media-amazon.com/images/I/71sgekW+NLL._UY1100_FMwebp_.jpg",
+      "https://m.media-amazon.com/images/I/61dPHVoAq-L._UY1100_FMwebp_.jpg",
+      "https://m.media-amazon.com/images/I/71sZd1i8myL._UY1100_FMwebp_.jpg",
+      "https://m.media-amazon.com/images/I/816srHT7XKL._UY1100_FMwebp_.jpg"
+
     ]
   },
   {

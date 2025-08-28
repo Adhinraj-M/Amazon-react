@@ -169,18 +169,21 @@ export type Products={
 }
 
 export type CategoryProdut={
-   id:string
-product_category:string
-product_title:string
-product_detailed_title:string
-product_offer:string
-product_price:string
-product_actual_price:string
-no_of_buyers:string
-product_rating:string
-total_reviews:string
-product_img:string[]
-
+  id: string;
+  product_category: string;
+  product_title: string;
+  product_detailed_title: string;
+  product_offer: string;
+  product_price: string;
+  product_actual_price: string;
+  no_of_buyers: string ; 
+  product_rating: string; 
+  total_reviews: string; 
+  material: string;
+  sizes: string[];
+  sleeve_type: string;
+  colours: string;
+  product_img: string[];
 
 }
 

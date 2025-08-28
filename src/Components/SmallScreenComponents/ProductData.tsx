@@ -87,7 +87,7 @@ function ProductData() {
                         ></li>
                       );
                     }
-                  )}
+                  )}const {} = useContext()
                 </ul>
               </div>
               <div className="flex absolute grow-1 justify-end h-6 w-full items-center">
@@ -113,7 +113,7 @@ function ProductData() {
               <div className="p-[16px_14px_16px] relative border-t-[5px] border-t-[#F3F3F3] border-b border-b-[#d5d9d9] m-[0_-14px_12px] overflow-hidden bg-transparent">
                 <div className="mb-4">
                   <span className=" text-[15px] leading-[1.35] p-0 ">
-                    Colour:{" "}
+                    Colour:
                     <span className="uppercase font-fontBold">black</span>
                   </span>
                 </div>
@@ -134,7 +134,7 @@ function ProductData() {
                         </span>
                         <div className="text-center flex flex-col gap-y-0.5 relative top-2">
                           <span className="mr-0.5 ml-0.5 block">
-                            {" "}
+                            
                             ₹{productData[0]?.product_price}
                           </span>
                           <span className="mr-0.5 ml-0.5 whitespace-nowrap line-through text-[#aaa] block ">
@@ -208,10 +208,10 @@ function ProductData() {
             </span>
           </div>
           <span className="text-[#565959] mb-2 text-[13px]">
-            M.R.P.:{" "}
+            M.R.P.:
             <span className="inline-block  line-through">
               ₹{productData[0]?.product_actual_price}
-            </span>{" "}
+            </span>
           </span>
           <span className="text-[15px] leading-[1.35] flex">
             <i className="flex rounded-[2px_0_0_2px] bg-[#3e4650] leading-[1.05] text-[12px] text-white p-[3px_4px_3px_15px] relative top-px tracking-[0.96px] align-top before:content-[''] before:absolute before:-right-[5px] before:bottom-0 before:border-dashed before:border-r-[6px] before:border-b-[#3e4650] before:border-[rgba(255,255,255,0)] before:w-0 before:h-0 before:leading-0 before:border-l-0 before:!border-b-[10px] after:content-[''] after:absolute after:top-0 after:-right-[5px] after:bottom-0 after:border-dashed after:border-r-[6px] after:border-t-[#3e4650] after:border-[rgba(255,255,255,0)] after:w-0 after:h-0 after:leading-0 after:border-l-0 after:!border-t-[10px] ">
@@ -237,8 +237,8 @@ function ProductData() {
                     alt=""
                   />
                   <span className="inline-block align-middle pl-[17px] pr-1 text-[15px] leading-[1.35]">
-                    {" "}
-                    All offers & discounts{" "}
+                    
+                    All offers & discounts
                   </span>
                 </div>
                 <i
@@ -252,10 +252,10 @@ function ProductData() {
           </div>
           <div className="relative">
             <div className="text-[15px] mb-3 ">
-              Free delivery{" "}
+              Free delivery
               <span className="font-fontBold">Saturday, 23 August</span> on your
-              first order. Order within{" "}
-              <span className="text-[#067D62]">18 hrs 7 min</span>.{" "}
+              first order. Order within
+              <span className="text-[#067D62]">18 hrs 7 min</span>.
               <span className="text-[#2162a1] underline">Details</span>
             </div>
             <div className="flex">

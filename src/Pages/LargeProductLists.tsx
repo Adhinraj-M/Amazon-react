@@ -1,24 +1,26 @@
-import { useContext } from "react";
+import { use, useContext, useEffect, useState } from "react";
 import DeskHeader from "../Components/LargeScreenComponents/DeskHeader";
 import NavDesk from "../Components/LargeScreenComponents/NavDesk";
 import { ToggleContext } from "../Context/toggleContext";
 import { RecentlyViewed } from "../Types/DeskCategories";
 import Pagination from "../Components/LargeScreenComponents/Pagination";
-import Footer from "../Components/SmallScreenComponents/Footer";
 import { ProductListContext } from "../Context/ProductListContext";
 import FilterModal from "../Components/LargeScreenComponents/FilterModal";
 import ProductList from "../Components/LargeScreenComponents/ProductList";
+import DeskFooter from "../Components/LargeScreenComponents/DeskFooter";
 
 function LargeProductLists() {
   const { handleSideBar } = useContext(ToggleContext);
+
   const {
     filterCategory,
     modalIndex,
     cateProduct,
     handleFilterModal,
-    selectedFilters,
+    selectedFilters
   } = useContext(ProductListContext);
 
+  
   return (
     <div className="min-large:block hidden">
       <DeskHeader stickHeader={false} />
@@ -265,7 +267,7 @@ function LargeProductLists() {
       <ProductList />
 
       <Pagination />
-      <Footer />
+      <DeskFooter />
     </div>
   );
 }
