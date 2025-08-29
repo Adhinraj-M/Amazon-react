@@ -3,25 +3,19 @@ import type { CarWashProduct } from "../Types/DeskCategories";
 import axiosInstance from "../api/axios";
 
 type toggleType={
-    handleSideBar:()=> void,
-    showSideBar:boolean,
+    
     carProduct:CarWashProduct[] | undefined,
     showHeader:boolean
 }
 
 export const ToggleContext = createContext<toggleType>({
-    handleSideBar:()=> {},
-    showSideBar:false,
+   
      carProduct:[] ,
      showHeader:false
 })
 
 export const ToggleBtnProvider =({children}:{children:ReactNode})=>{
-    const [showSideBar,setShowSideBar]=useState<boolean>(false)
-
- const handleSideBar = () =>{
-    setShowSideBar(!showSideBar)
-  }
+   
 //fetch data
   const [carProduct,setCarProduct] = useState<CarWashProduct[] | undefined>()
 
@@ -48,7 +42,7 @@ export const ToggleBtnProvider =({children}:{children:ReactNode})=>{
 
 
   return(
-    <ToggleContext.Provider value={{showHeader,handleSideBar,showSideBar,carProduct}}>
+    <ToggleContext.Provider value={{showHeader,carProduct}}>
     {children}
   </ToggleContext.Provider>
   )

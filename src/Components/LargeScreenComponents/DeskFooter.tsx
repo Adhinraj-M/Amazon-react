@@ -12,9 +12,9 @@ import AmazonService from "./AmazonService";
 function DeskFooter() {
   return (
     <div className=" bg-[#232F3E] min-w-[1000px] relative  m-0 p-[0_0_0px_0] ">
-      <div className="mb-10 bg-[#37475A] text-white block text-center p-[15px_0] leading-[19px] text-[13px]">
+      <a href="#" className="mb-10 bg-[#37475A] text-white block text-center p-[15px_0] leading-[19px] text-[13px]">
         Back to top
-      </div>
+      </a>
       <div className="max-w-250 m-[0_auto] flex gap-25">
         <DeskNavFooter navlink={deskNavfooterOne} heading={"Get to Know Us"} />
         <DeskNavFooter navlink={deskNavfooterTwo} heading={"Connect with Us"} />
@@ -32,33 +32,29 @@ function DeskFooter() {
         <span className="p-[0_7.2px] inline-block m-[30px_auto_11px]">
           <div
             className="bg-[position:-10px_-90px] w-19 h-[27px] m-[0_auto] bg-repeat-x"
-            style={{ backgroundImage: `url(${bigSizeIcon})` }}
+            style={{ backgroundImage: `url(${bigSizeIcon})`}}
           ></div>
         </span>
         <span className="mt-[18px] ml-[70px] p-[0_7.2px] inline-block align-top leading-[18px] ">
           <div className="!inline-block border border-[#848668] rounded-[3px] p-[6px_18px_6px_8px] mr-1 text-[13px]">
             <a
               className="inline-block p-[0_7.2px] no-underline whitespace-normal "
-              href="#"
-            >
+              href="#">
               <div
                 className=" inline-block bg-[position:-77px_-24px] bg-[length:194px_295px] w-[15px] h-[15px] relative top-0.5 left-0"
-                style={{ backgroundImage: `url(${flagIcon})` }}
-              ></div>
+                style={{ backgroundImage: `url(${flagIcon})`}}></div>
               <span className="text-[#CCC] inline-block p-[0_7.8px] leading-[18px]">
                 English
               </span>
             </a>
             <button
               className="bg-[position:-79px_-79px] w-3 h-4  bg-[length:194px_295px] p-[1px_6px] relative top-[4px] left-2 border-none cursor-pointer"
-              style={{ backgroundImage: `url(${flagIcon})` }}
-            ></button>
+              style={{ backgroundImage: `url(${flagIcon})`}}></button>
           </div>
 
           <a
             className="inline-block border border-[#848668] rounded-[3px] p-[6px_18px_6px_8px] mr-1 "
-            href="#"
-          >
+            href="#">
             <span
               className="bg-[position:-18px_-36px] m-[3px_0_0] relative top-px p-[0_7.8px] inline-block bg-[length:194px_295px] w-[18px] h-3"
               style={{ backgroundImage: `url(${flagIcon})` }}

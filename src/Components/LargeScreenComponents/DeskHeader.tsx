@@ -1,5 +1,9 @@
+import { useState } from "react";
 import bigScreenIcon from "../../../public/icon-image/bigSizeIcon.png";
 import flagIcon from "../../../public/icon-image/flag.png";
+import Language from "./HeaderModals/Language";
+import AccountList from "./HeaderModals/AccountList";
+import { Link } from "react-router-dom";
 
 type DeskHeaderType={
   stickHeader:boolean
@@ -7,12 +11,14 @@ type DeskHeaderType={
 
 function DeskHeader({stickHeader}:DeskHeaderType) {
 
+  const [openModal,setOpenModal] = useState<"language" | "account" | null>(null)
+
   return (
     <>
       <header className={`bg-[#131921] ${stickHeader && 'fixed top-0 z-[9999]'} flex h-[60px] flex-row flex-nowrap w-full`} >
         {/* first section  */}
         <div className="h-[60px] flex">
-          <div className="m-[1px_1px_1px_2px] w-auto p-[5px_8px_0px_6px] flex relative top-0 right-0 bottom-0 left-0 flex-shrink-0 cursor-pointer lap2xl:m-[1px_1px_1px_12px] desk2xl:m-[1px_1px_1px_16px]  hover:outline hover:outline-white">
+          <Link to={'/'} className="m-[1px_1px_1px_2px] w-auto p-[5px_8px_0px_6px] flex relative top-0 right-0 bottom-0 left-0 flex-shrink-0 cursor-pointer lap2xl:m-[1px_1px_1px_12px] desk2xl:m-[1px_1px_1px_16px]  hover:outline hover:outline-white">
             <span
               className=" mt-[11px] bg-[position:-9px_-125px] w-[98px] h-[34px] bg-repeat-x "
               style={{ backgroundImage: `url(${bigScreenIcon})` }}
@@ -20,7 +26,7 @@ function DeskHeader({stickHeader}:DeskHeaderType) {
             <span className="w-auto mt-[16.5px] bg-[position:-270px_-109px] h-3.5 m-[6px_0px_0px_1px] text-[13.5px] text-white leading-3.5">
               .in
             </span>
-          </div>
+          </Link>
 
           <div className="w-auto h-[60px] p-0 m-0 flex  static lap2xl:ml-0.5 desk2xl:ml-1.5 ">
             <div className="p-[0px_9px_0px_9px] m-[5px_2px_5px_0] flex flex-row flex-nowrap items-center hover:outline hover:outline-white">
@@ -53,9 +59,7 @@ function DeskHeader({stickHeader}:DeskHeaderType) {
                 style={{ backgroundImage: `url(${bigScreenIcon})` }}
               ></i>
 
-              {/* <select name="" id="">
 
-            </select> */}
             </div>
 
             <div className="flex relative h-auto flex-[1_1_0px]">
@@ -82,7 +86,7 @@ function DeskHeader({stickHeader}:DeskHeaderType) {
         <div className="h-[60px] flex mt-0.5 p-[3px_0px_0px_0px] ">
           {/* language -section */}
 
-          <div className="m-[0_1px] p-[0px_6px_5px_7px] flex relative ">
+          <div className="m-[0_1px] p-[0px_6px_5px_7px] flex relative " onMouseEnter={()=>setOpenModal("language")} onMouseLeave={()=>setOpenModal(null)}>
             <a
               href="#"
               className="p-[0_0_5px] m-[1px] items-center text-white text-sm leading-11  flex static h-[50px] hover:outline hover:outline-white"
@@ -99,14 +103,16 @@ function DeskHeader({stickHeader}:DeskHeaderType) {
                   </span>
                 </span>
               </span>
+              
             </a>
             <button
               className="m-[31px_0_0_1px] absolute  border-4 border-b-0 cursor-pointer border-[transparent]  border-t-[#a7acb2] p-0 inline-block w-0 h-0 leading-0 items-center right-[-3px] "
               style={{ visibility: "visible" }}
             ></button>
+            { openModal =="language" && <Language/>}
           </div>
 
-          <div className="mr-0 ml-0 px-[9px] flex relative items-start left-0 right-0 bottom-0 top-0 lap2xl:ml-0.5 desk2xl:ml-1.5">
+          <div className="mr-0 ml-0 px-[9px] flex relative items-start left-0 right-0 bottom-0 top-0 lap2xl:ml-0.5 desk2xl:ml-1.5" onMouseEnter={()=>setOpenModal("account")} onMouseLeave={()=>setOpenModal(null)}>
             <a
               href="#"
               className="p-[0_4px_8px] flex flex-shrink-0 justify-center pl-[9px] h-[50px] overflow-hidden flex-col flex-nowrap m-[0px_1px] hover:outline hover:outline-white"
@@ -122,6 +128,8 @@ function DeskHeader({stickHeader}:DeskHeaderType) {
               className=" mt-[31.5px] relative  border-4 border-b-0 cursor-pointer border-[transparent]  border-t-[#a7acb2] p-0 inline-block w-0 h-0 leading-0 items-center "
               style={{ visibility: "visible" }}
             ></button>
+            
+            { openModal =="account" && <AccountList/>}
           </div>
 
           <div className="h-[50px] mr-0 ml-0 p-[0px_9px_10px_9px] flex flex-col flex-nowrap justify-center static lap2xl:ml-0.5 desk2xl:ml-1.5 hover:outline hover:outline-white">

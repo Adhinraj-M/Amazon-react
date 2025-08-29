@@ -1,17 +1,43 @@
+import { useEffect, useState } from 'react'
 import smallIconImage from '../../../public/icon-image/smallSizeIcon.png'
 import {Link} from 'react-router-dom'
+import TopBar from './TopBar'
+import SideMenuBar from './sideMenuComponents/SideMenuBar'
 
- type HeaderProps={
-  toggleBtn:()=>void ,
-}
 
-function Header({toggleBtn}:HeaderProps) {
+
+function Header() {
+
+  const [showSideBar,setShowSideBar]=useState<boolean>(false)
+    const [showTopBar, setShowTopBar] = useState<boolean>(false);
+  
+      
+       const handleSideBar = () =>{
+          setShowSideBar(!showSideBar)
+        }
+  
+
+        useEffect(() => {
+    const handleScrollY = () => {
+      if (window.scrollY > 50) {
+        setShowTopBar(true);
+      } else {
+        setShowTopBar(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScrollY);
+
+    return () => window.removeEventListener("scroll", handleScrollY);
+  }, []);
+
 
   return (
+    <>
     <header className="relative z-[208] text-xs leading-[1em] min-w-[200px]">
       <div className="flex relative h-12 w-full border-b-[#232f3e] flex-row flex-nowrap justify-between bg-[#232f3e]">
         <div className="flex-shrink-0 flex-row flex-nowrap flex relative w-auto">
-          <button className="float-left p-3.5 cursor-pointer" onClick={toggleBtn}>
+          <button className="float-left p-3.5 cursor-pointer" onClick={handleSideBar}>
             <i className=" block w-5 h-5 bg-[position:-20px_-382px] bg-[length:278px] bg-no-repeat overflow-hidden" style={{backgroundImage:`url(${smallIconImage})`}}></i>
           </button>
           <Link to={'/'}className="ml-auto relative float-left z-20 mt-[13px]">
@@ -60,6 +86,12 @@ function Header({toggleBtn}:HeaderProps) {
 
 
     </header>
+
+    {showTopBar && <TopBar toggleBtn={handleSideBar} />}
+
+      {showSideBar && <SideMenuBar toggleBtn={handleSideBar} toggle={showSideBar} />}
+
+    </>
   );
 }
 

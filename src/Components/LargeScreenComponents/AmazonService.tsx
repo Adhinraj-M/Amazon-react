@@ -12,9 +12,7 @@ function AmazonService() {
              <li className="w-[15%] text-xs p-[0_9px] align-top text-left leading-[115%] text-[#DDD]" key={index}>
                 <h5 className="text-xs leading-3.5 ">{item.heading}</h5>
                 <span className="text-[#999] inline-block leading-[110%]">{item.firstPart} <br/>{item.secondPart}</span>
-              </li>
-
-                )
+              </li>)
             })
               }
              

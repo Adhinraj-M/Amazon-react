@@ -394,8 +394,15 @@
   }
 ],
 "category":[
-  "Under ₹500","Cotton","Georgette","Silk","3/4 Sleeve","Long Sleeve","Short Sleeve"
+  { "sub_cate": "Under ₹500", "category": "Price and Deals" },
+  { "sub_cate": "Cotton", "category": "Material" },
+  { "sub_cate": "Georgette", "category": "Material" },
+  { "sub_cate": "Silk", "category": "Material" },
+  { "sub_cate": "3/4 Sleeve", "category": "Sleeve Type" },
+  { "sub_cate": "Long Sleeve", "category": "Sleeve Type" },
+  { "sub_cate": "Short Sleeve", "category": "Sleeve Type" }
 ],
+
 "filterCategory":[
   {
     "filter_Type":"Sizes",

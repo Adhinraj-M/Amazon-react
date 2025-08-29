@@ -1,4 +1,5 @@
-import { ToggleBtnProvider } from "../Context/toggleContext"
+
+import { ToggleBtnProvider } from "../../Context/toggleContext"
 import LargeHome from "./LargeHome"
 import SmallHome from "./SmallHome"
 

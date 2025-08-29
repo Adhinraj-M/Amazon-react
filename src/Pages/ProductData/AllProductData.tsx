@@ -1,6 +1,7 @@
 import LargeProductDetails from "./LargeProductDetails"
 import SmallProductDetails from "./SmallProductDetails"
 
+
 function AllProductData() {
   return (
     <div>

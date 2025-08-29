@@ -10,7 +10,7 @@ import FilterProduct from "../Helpers/FilterProduct";
 
 type ProductListContextType = {
   cateProduct: CategoryProdut[] | [];
-  sortCategory: string[] | [];
+  sortCategory: {sub_cate:string,category:string}[];
   filterCategory: CategoryFilter[] | [];
   activeIndex: number;
   filterBtn: {
@@ -69,8 +69,7 @@ export const ProductListContext = createContext<ProductListContextType>({
 export const ProductListProvider = ({ children }: { children: ReactNode }) => {
   const params = useParams();
   const [cateProduct, setCateProduct] = useState<CategoryProdut[]>([]);
-  const [sortCategory, setSortCategory] = useState<string[]>([]);
-  const [error, setError] = useState<string | null>(null);
+  const [sortCategory, setSortCategory] = useState<{sub_cate:string,category:string}[]>([]);
   const [filterCategory, setFilterCategory] = useState<CategoryFilter[]>([]);
 
 
@@ -86,7 +85,6 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
         setFilterBtn(res.data.filterCategory[0]);
       })
       .catch((err) => {
-        setError("Failed to load data");
         console.log(err);
       });
   }, []);

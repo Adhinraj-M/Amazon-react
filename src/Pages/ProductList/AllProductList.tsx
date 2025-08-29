@@ -1,4 +1,4 @@
-import { ToggleBtnProvider } from "../Context/toggleContext";
+import { ToggleBtnProvider } from "../../Context/toggleContext";
 import LargeProductLists from "./LargeProductLists";
 import SmallProductLists from "./SmallProductLists";
 

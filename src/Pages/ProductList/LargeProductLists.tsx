@@ -1,16 +1,14 @@
-import { use, useContext, useEffect, useState } from "react";
-import DeskHeader from "../Components/LargeScreenComponents/DeskHeader";
-import NavDesk from "../Components/LargeScreenComponents/NavDesk";
-import { ToggleContext } from "../Context/toggleContext";
-import { RecentlyViewed } from "../Types/DeskCategories";
-import Pagination from "../Components/LargeScreenComponents/Pagination";
-import { ProductListContext } from "../Context/ProductListContext";
-import FilterModal from "../Components/LargeScreenComponents/FilterModal";
-import ProductList from "../Components/LargeScreenComponents/ProductList";
-import DeskFooter from "../Components/LargeScreenComponents/DeskFooter";
+import {  useContext  } from "react";
+import DeskHeader from "../../Components/LargeScreenComponents/DeskHeader";
+import NavDesk from "../../Components/LargeScreenComponents/NavDesk";
+import { RecentlyViewed } from "../../Types/DeskCategories";
+import Pagination from "../../Components/LargeScreenComponents/Pagination";
+import { ProductListContext } from "../../Context/ProductListContext";
+import FilterModal from "../../Components/LargeScreenComponents/FilterModal";
+import ProductList from "../../Components/LargeScreenComponents/ProductList";
+import DeskFooter from "../../Components/LargeScreenComponents/DeskFooter";
 
 function LargeProductLists() {
-  const { handleSideBar } = useContext(ToggleContext);
 
   const {
     filterCategory,
@@ -24,7 +22,7 @@ function LargeProductLists() {
   return (
     <div className="min-large:block hidden">
       <DeskHeader stickHeader={false} />
-      <NavDesk sideBar={handleSideBar} />
+      <NavDesk  />
       {/* keep shoping section  */}
       <div className="w-full mb-[22px] flex ">
         <div className="w-[90%] max-w-[1500px] min-w-[1000px] bg-white m-auto flex border-b border-b-[#c8cccc]">

@@ -55,3 +55,6 @@ function ProductImages({productImg}:ProductImagesType) {
 }
 
 export default ProductImages;
+
+
+

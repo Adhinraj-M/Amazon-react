@@ -1,28 +1,28 @@
 import { useContext} from "react";
-import DeskAdds from "../Components/LargeScreenComponents/DeskAdds";
-import DeskAllProductCard from "../Components/LargeScreenComponents/DeskAllProductCard";
-import DeskCarousel from "../Components/LargeScreenComponents/DeskCarousel";
-import DeskFooter from "../Components/LargeScreenComponents/DeskFooter";
-import DeskHeader from "../Components/LargeScreenComponents/DeskHeader";
-import FourProductCard from "../Components/LargeScreenComponents/FourProductCard";
-import Pagination from "../Components/LargeScreenComponents/Pagination";
-import ProductCardCarousel from "../Components/LargeScreenComponents/ProductCardCarousel";
-import SingleCategoryProduct from "../Components/LargeScreenComponents/SingleCategoryProduct";
-import { BeautyCategoryProducts, HeroDeskProduct, HomeKitchenProduct, MobileCategoryProduct} from "../Types/DeskCategories";
-import DeskSideMenu from "../Components/LargeScreenComponents/DeskTopSideMenu/DeskSideMenu";
-import NavDesk from "../Components/LargeScreenComponents/NavDesk";
-import { ToggleContext } from "../Context/toggleContext";
+import DeskAdds from "../../Components/LargeScreenComponents/DeskAdds";
+import DeskAllProductCard from "../../Components/LargeScreenComponents/DeskAllProductCard";
+import DeskCarousel from "../../Components/LargeScreenComponents/DeskCarousel";
+import DeskFooter from "../../Components/LargeScreenComponents/DeskFooter";
+import DeskHeader from "../../Components/LargeScreenComponents/DeskHeader";
+import FourProductCard from "../../Components/LargeScreenComponents/FourProductCard";
+import Pagination from "../../Components/LargeScreenComponents/Pagination";
+import ProductCardCarousel from "../../Components/LargeScreenComponents/ProductCardCarousel";
+import SingleCategoryProduct from "../../Components/LargeScreenComponents/SingleCategoryProduct";
+import { BeautyCategoryProducts, HeroDeskProduct, HomeKitchenProduct, MobileCategoryProduct} from "../../Types/DeskCategories";
+import DeskSideMenu from "../../Components/LargeScreenComponents/DeskTopSideMenu/DeskSideMenu";
+import NavDesk from "../../Components/LargeScreenComponents/NavDesk";
+import { ToggleContext } from "../../Context/toggleContext";
 
 function LargeHome() {
 
-  const {handleSideBar,showSideBar,showHeader} = useContext(ToggleContext)
+  const {showHeader} = useContext(ToggleContext)
   
 
     return (
     <div className="hidden min-large:block bg-[#E3E6E6]">
       <DeskHeader stickHeader={showHeader}/>
-      <NavDesk sideBar={handleSideBar} />
-     { showSideBar && <DeskSideMenu sideBar={handleSideBar}/> }
+      <NavDesk />
+     
       <DeskCarousel />
       <DeskAllProductCard />
       <div className="max-w-[1480px] 2xl:m-auto">

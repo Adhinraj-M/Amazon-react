@@ -5,7 +5,6 @@ import type { Products } from "../../Types/product";
 import { HomeProductContext } from "../../Context/HomeProductContext";
 import Address from "./Address";
 import Header from "./Header";
-import { ToggleContext } from "../../Context/toggleContext";
 import Sponsored from "./Sponsored";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -13,7 +12,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 function HomeProductData() {
   const { filterList } = useContext(HomeProductContext);
-  const { handleSideBar } = useContext(ToggleContext);
 
   const [productData, setProductData] = useState<Products[] | undefined>(
     filterList
@@ -21,6 +19,7 @@ function HomeProductData() {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const params = useParams();
 
+   
   useEffect(() => {
     const filtered = filterList?.filter((item) => item.id === params.productId);
 
@@ -40,7 +39,7 @@ function HomeProductData() {
 
   return (
     <>
-      <Header toggleBtn={handleSideBar} />
+      <Header  />
       <Address />
       <Sponsored />
       {productData && (

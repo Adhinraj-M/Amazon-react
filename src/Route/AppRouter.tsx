@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Home from "../Pages/Home"
 import {  ProductListProvider } from "../Context/ProductListContext"
 import HomeProductData from "../Components/SmallScreenComponents/HomeProductData"
 import { HomeProductProvider } from "../Context/HomeProductContext"
 import { ToggleBtnProvider } from "../Context/toggleContext"
 import ProductInfo from "../Components/SmallScreenComponents/ProductInfo"
-import AllProductList from "../Pages/AllProductList"
-import AllProductData from "../Pages/AllProductData"
+import AllProductList from "../Pages/ProductList/AllProductList"
+import AllProductData from "../Pages/ProductData/AllProductData"
+import Home from "../Pages/Home/Home"
 
 const AppRouter=()=>{
     return(

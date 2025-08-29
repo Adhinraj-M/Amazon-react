@@ -87,7 +87,7 @@ function ProductData() {
                         ></li>
                       );
                     }
-                  )}const {} = useContext()
+                  )}
                 </ul>
               </div>
               <div className="flex absolute grow-1 justify-end h-6 w-full items-center">

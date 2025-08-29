@@ -51,6 +51,45 @@ export const HeroDeskProduct: HeroProductDesktopType[] =[
 
 ]}]
 
+export type diffrentCateType={
+  img:{
+    src:string,
+    alt:string
+  },
+  title:string
+}
+
+export const mensDress:diffrentCateType[]=[
+{
+    img:{
+      src:"https://m.media-amazon.com/images/I/612MkbVyluL._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt:"Roadster Half‑Sleeve Polo Tee"
+    },
+    title:"Roadster Half‑Sleeve Polo Tee"
+  },
+  {
+    img:{
+      src:"https://m.media-amazon.com/images/I/51slHK9woDL._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt:"Puma Performance Round‑Neck Tee"
+    },
+    title:"Puma Performance Round‑Neck Tee"
+  },
+  {
+    img:{
+      src:"https://m.media-amazon.com/images/I/61W3TkfRLrL._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt:"HRX Slim‑Fit Sports Tee"
+    },
+    title:"HRX Slim‑Fit Sports Tee"
+  },
+  {
+    img:{
+      src:"https://m.media-amazon.com/images/I/61HS4sTDnPL._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt:"Allen Solly Active T‑Shirt"
+    },
+    title:"Allen Solly Active T‑Shirt"
+  }
+]
+
 export type CategoryProductImg = {
   img: {
     src:string,

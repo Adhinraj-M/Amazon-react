@@ -1,17 +1,15 @@
 import { useContext, useEffect, useState } from "react";
-import DeskHeader from "../Components/LargeScreenComponents/DeskHeader";
-import NavDesk from "../Components/LargeScreenComponents/NavDesk";
-import { ToggleContext } from "../Context/toggleContext";
-import DeskFooter from "../Components/LargeScreenComponents/DeskFooter";
-import ProductImages from "../Components/LargeScreenComponents/ProductDetails/ProductImages";
-import ProductDataRight from "../Components/LargeScreenComponents/ProductDetails/ProductDataRight";
-import ProductDetailed from "../Components/LargeScreenComponents/ProductDetails/ProductDetailed";
-import type { CategoryProdut } from "../Types/product";
 import { useParams } from "react-router-dom";
-import { ProductListContext } from "../Context/ProductListContext";
+import DeskHeader from "../../Components/LargeScreenComponents/DeskHeader";
+import { ProductListContext } from "../../Context/ProductListContext";
+import type { CategoryProdut } from "../../Types/product";
+import NavDesk from "../../Components/LargeScreenComponents/NavDesk";
+import ProductImages from "../../Components/LargeScreenComponents/ProductDetails/ProductImages";
+import ProductDetailed from "../../Components/LargeScreenComponents/ProductDetails/ProductDetailed";
+import ProductDataRight from "../../Components/LargeScreenComponents/ProductDetails/ProductDataRight";
+import DeskFooter from "../../Components/LargeScreenComponents/DeskFooter";
 
 function LargeProductDetails() {
-  const { handleSideBar } = useContext(ToggleContext);
 
   const currentPath: string[] = [
     "Clothing & Accessories",
@@ -52,7 +50,7 @@ function LargeProductDetails() {
   return (
     <div className="min-large:block hidden">
       <DeskHeader stickHeader={false} />
-      <NavDesk sideBar={handleSideBar} />
+      <NavDesk />
 
       {/* amazon fashion */}
       <div className="flex justify-between h-[50px] bg-white shadow-[0_0_1px_#ddd] z-[1] relative p-[0_9px_0_15px] overflow-hidden border-t border-t-[rgba(0,0,0,.17)] border-b border-b-[rgba(0,0,0,.1)] whitespace-nowrap">

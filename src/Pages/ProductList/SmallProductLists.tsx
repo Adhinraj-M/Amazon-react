@@ -1,21 +1,18 @@
 import { useContext } from "react";
-import Header from "../Components/SmallScreenComponents/Header";
-import { ToggleContext } from "../Context/toggleContext";
-import Address from "../Components/SmallScreenComponents/Address";
-import FilterSection from "../Components/SmallScreenComponents/FilterSection";
-import { ProductListContext } from "../Context/ProductListContext";
+import Header from "../../Components/SmallScreenComponents/Header";
+import Address from "../../Components/SmallScreenComponents/Address";
+import FilterSection from "../../Components/SmallScreenComponents/FilterSection";
+import { ProductListContext } from "../../Context/ProductListContext";
 import { Link } from "react-router-dom";
-import Footer from "../Components/SmallScreenComponents/Footer";
-import useWindowWidth from "../Helpers/WindowWidth";
+import Footer from "../../Components/SmallScreenComponents/Footer";
+import useWindowWidth from "../../Helpers/WindowWidth";
 
 function SmallProductLists() {
-  const { handleSideBar } = useContext(ToggleContext);
   const { filterCategory, sortCategory, filteredLists, handleModal, toggle } =
     useContext(ProductListContext);
 
-  // to avoid background scroll when the filter modal opens 
-
-  const width = useWindowWidth()
+  // to avoid background scroll when the filter modal opens
+  const width = useWindowWidth();
 
   if (toggle && width < 1000) {
     document.body.style.overflowY = "hidden";
@@ -25,7 +22,7 @@ function SmallProductLists() {
 
   return (
     <div className="min-large:hidden ">
-      <Header toggleBtn={handleSideBar} />
+      <Header />
       <div className="w-full bg-white border-t-[5px] border-t-[#FF4D5B] border-b border-b-[#FF4D5B]">
         <div className="h-12 p-0 overflow-hidden block whitespace-nowrap">
           <a
@@ -59,22 +56,22 @@ function SmallProductLists() {
         <div className=" px-0 sticky top-0 z-20 overflow-x-hidden  transition-[transform_.2s_linear] grid-cols-2">
           <div className="h-12 mb-1.5 flex  items-center bg-white shadow-[0_1px_2px_0_rgba(17,17,17,.15)] p-0 transition-[.2s_linear]">
             <div className="flex items-center overflow-y-hidden w-full h-full overflow-x-scroll scroll-width-none">
-              <button className="ml-2 mr-2 shrink-0 whitespace-nowrap h-8 flex items-center p-[9px] rounded-lg bg-[#f9d52a] border border-[#f34552] w-auto text-center justify-center text-sm leading-5 max-w-[115px] overflow-hidden text-ellipsis ">
+              <button className="ml-2 mr-2 shrink-0 whitespace-nowrap h-8 flex items-center p-[9px] rounded-lg bg-[#f9d52a] border border-[#f34552] w-auto text-center justify-center text-sm leading-5 max-w-[115px] overflow-hidden text-ellipsis" >
                 Bazaar
               </button>
-              <button className="mr-2  shrink-0 whitespace-nowrap h-8 flex items-center p-[9px] rounded-lg w-auto border border-[#e8e8e8] text-center bg-white justify-center  ">
+              <button className="mr-2  shrink-0 whitespace-nowrap h-8 flex items-center p-[9px] rounded-lg w-auto border border-[#e8e8e8] text-center bg-white justify-center">
                 <div className="flex pb-0.5 mr-1">
-                  {
-                    Array.from({length:4},(_,i:number)=>{
-                      return(
-                   <span key={i}
-                    className="w-4 h-[15px]"
-                    style={{
-                      backgroundImage: `url(https://m.media-amazon.com/images/S/sash/1B5nH39U5U0JHHA.svg)`,
-                    }}></span>
-                    )
-                    })
-                  } 
+                  {Array.from({ length: 4 }, (_, i: number) => {
+                    return (
+                      <span
+                        key={i}
+                        className="w-4 h-[15px]"
+                        style={{
+                          backgroundImage: `url(https://m.media-amazon.com/images/S/sash/1B5nH39U5U0JHHA.svg)`,
+                        }}
+                      ></span>
+                    );
+                  })}
                 </div>
                 <span className="text-sm leading-5 align-text-bottom text-black ">
                   & Up
@@ -82,13 +79,14 @@ function SmallProductLists() {
               </button>
 
               {sortCategory &&
-                sortCategory.map((item: string, index: number) => {
+                sortCategory.map((item: {sub_cate:string,category:string}, index: number) => {
                   return (
                     <button
                       key={index}
                       onClick={() => console.log(item)}
-                      className="mr-2 text-sm shrink-0 whitespace-nowrap h-8 flex items-center p-[9px] rounded-lg w-auto border border-[#e8e8e8] text-center bg-white justify-center ">
-                      {item}
+                      className="mr-2 text-sm shrink-0 whitespace-nowrap h-8 flex items-center p-[9px] rounded-lg w-auto border border-[#e8e8e8] text-center bg-white justify-center "
+                    >
+                      {item.sub_cate}
                     </button>
                   );
                 })}
@@ -121,8 +119,7 @@ function SmallProductLists() {
                 <Link
                   to={`/productList/productData/${item.id}`}
                   key={item.id}
-                  className="grid  float-none w-auto h-[363px] px-1 visible before:-mb-px before:content-[''] before:block before:h-px"
-                >
+                  className="grid  float-none w-auto h-[363px] px-1 visible before:-mb-px before:content-[''] before:block before:h-px" >
                   <div className="pb-[15px] h-[calc(100%-8px)] -ml-1 -mr-1 border border-[#fee4d9] rounded-lg bg-white transform-[translate3d(0,0,0)] relative ">
                     <div className="flex justify-center bg-[linear-gradient(212deg,#f3f3f3_11.9%,#fff_54.57%,#f0f0f0_99.3%)] relative">
                       <img
@@ -175,21 +172,15 @@ function SmallProductLists() {
           )}
         </div>
       </div>
-      <Footer/>
+      <Footer />
       {toggle && (
         <FilterSection
           filterCategory={filterCategory}
           handleModal={handleModal}
         />
       )}
-   </div>
+    </div>
   );
-
 }
 
 export default SmallProductLists;
-
-
-
-
-
