@@ -1,14 +1,14 @@
 import { useContext, useEffect, useState } from "react";
-import { ProvidingBenefits } from "../../Types/categories";
 import { useParams } from "react-router-dom";
-import type { Products } from "../../Types/product";
-import { HomeProductContext } from "../../Context/HomeProductContext";
-import Address from "./Address";
-import Header from "./Header";
-import Sponsored from "./Sponsored";
+import Address from "../Home/Address";
+import Sponsored from "../Home/Sponsored";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Header from "../Home/Header";
+import { HomeProductContext } from "../../../Context/HomeProductContext";
+import type { Products } from "../../../Types/product";
+import { ProvidingBenefits } from "../../../Types/categories";
 
 function HomeProductData() {
   const { filterList } = useContext(HomeProductContext);

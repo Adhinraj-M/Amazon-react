@@ -1,4 +1,4 @@
-import smallIcon from "../../../public/icon-image/smallSizeIcon.png";
+import smallIcon from "/icon-image/smallSizeIcon.png";
 
 
  type TopBarProps={

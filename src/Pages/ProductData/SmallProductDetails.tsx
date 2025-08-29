@@ -1,9 +1,9 @@
 
-import Header from "../../Components/SmallScreenComponents/Header";
-import Address from "../../Components/SmallScreenComponents/Address";
-import Sponsored from "../../Components/SmallScreenComponents/Sponsored";
-import ProductData from "../../Components/SmallScreenComponents/ProductData";
-import Footer from "../../Components/SmallScreenComponents/Footer";
+import Address from "../../Components/SmallScreenComponents/Home/Address";
+import Sponsored from "../../Components/SmallScreenComponents/Home/Sponsored";
+import Footer from "../../Components/SmallScreenComponents/Home/Footer";
+import ProductData from "../../Components/SmallScreenComponents/Product/ProductData";
+import Header from "../../Components/SmallScreenComponents/Home/Header";
 
 function SmallProductDetails() {
 

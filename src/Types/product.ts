@@ -201,3 +201,26 @@ export const priceRangeMap: {[key:string]:{min:number,max:number}} = {
   "₹500-₹1000": { min: 500, max: 1000 },
   "Over ₹1000": { min: 1000, max: 3999 },
 };
+
+
+export const addProduct=[{
+    id: "s24",
+    product_category: "mobile",
+    product_detailed_title: " Samsung Galaxy S24 Ultra 5G AI Smartphone with Galaxy AI (Titanium Black, 12GB, 512GB Storage), Snapdragon 8 Gen 3, 200 MP Camera with ProVisual Engine and 5000mAh Battery ",
+    product_offer: "-48%",
+    product_price: "1,29,999",
+    brand:"Samsung",
+    product_actual_price: "₹1,44,999",
+    no_of_buyers: "2971",
+    colours:"Titanium Black",
+    product_rating: "4.4",
+    total_reviews: "780",
+    sleeve_type:"3/4 Sleeve",
+    product_img: [
+      "https://m.media-amazon.com/images/I/71Nwtop9jtL._SX679_.jpg",
+      "https://m.media-amazon.com/images/I/71WCPYr4ZmL._SX522_.jpg",
+      "https://m.media-amazon.com/images/I/71nqP9tkAcL._SX522_.jpg",
+      "https://m.media-amazon.com/images/I/71TSysiBmrL._SX522_.jpg",
+      "https://m.media-amazon.com/images/I/81sQQ98D8FL._SX522_.jpg"
+    ]
+}]

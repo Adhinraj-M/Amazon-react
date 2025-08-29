@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import bigIcon from "../../../../public/icon-image/bigSizeIcon.png";
+import bigIcon from "/icon-image/bigSizeIcon.png";
 import type { deskSideMenuList } from "../../../Types/deskSideMenuList";
 
 type DeskSideMenuSectionType = {

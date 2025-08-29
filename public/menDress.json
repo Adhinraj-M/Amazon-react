@@ -8,15 +8,17 @@
     "product_price": "499",
     "product_actual_price": "₹1,249",
     "no_of_buyers": "no_data",
-    "available_size":["S","M","L"],
+    "sizes":["S","M","L"],
     "product_rating": "4.1",
-    "material":"cotton",
+    "material":"Cotton",
     "sleeve_type":"Short Sleeve",
-    "fit_type":"Regular Fit",
-    "color":"black",
+    "colours":"Black",
     "total_reviews": "1,250",
     "product_img": [
-      "https://m.media-amazon.com/images/I/612MkbVyluL._AC_SR175,263_FMwebp_QL65_.jpg"
+      "https://m.media-amazon.com/images/I/612MkbVyluL._SY550_.jpg",
+      "https://m.media-amazon.com/images/I/814mMPviu2L._SY606_.jpg",
+      "https://m.media-amazon.com/images/I/61PZvf3WxvL._SY606_.jpg",
+      "https://m.media-amazon.com/images/I/61DWsPS0gwL._SY606_.jpg"
     ]
   },
   {
@@ -29,12 +31,11 @@
     "product_actual_price": "₹1,199",
     "no_of_buyers": "no_data",
     "product_rating": "4.2",
-    "material":"cotton",
-    "available_size":["XS","S","M","L","2XL"],
+    "material":"Cotton",
+    "sizes":["XS","S","M","L","2XL"],
     "total_reviews": "950",
     "sleeve_type":"Short Sleeve",
-    "fit_type":"Regular Fit",
-    "color":"brown",
+    "colours":"Brown",
     "product_img": [
       "https://m.media-amazon.com/images/I/51slHK9woDL._AC_SR175,263_FMwebp_QL65_.jpg"
     ]
@@ -48,12 +49,12 @@
     "product_price": "699",
     "product_actual_price": "₹1,299",
     "no_of_buyers": "no_data",
-    "available_size":["XS","L","2XL"],
-    "material":"wool",
+    "sizes":["XS","L","2XL"],
+    "material":"Wool",
     "sleeve_type":"3/4 Sleeve",
     "fit_type":"Oversized Fit",
     "product_rating": "4.3",
-    "color":"gray",
+    "colours":"Gray",
     "total_reviews": "1,800",
     "product_img": [
       "https://m.media-amazon.com/images/I/61W3TkfRLrL._AC_SR175,263_FMwebp_QL65_.jpg"
@@ -69,11 +70,10 @@
     "product_actual_price": "₹899",
     "no_of_buyers": "no_data",
     "product_rating": "4.0",
-    "material":"silk",
-    "available_size":["XS","S","M","L","XL","2XL"],
+    "material":"Silk",
+    "sizes":["XS","S","M","L","XL","2XL"],
     "sleeve_type":"Short Sleeve",
-    "fit_type":"Regular Fit",
-    "color":"blue",
+    "colours":"Blue",
     "total_reviews": "620",
     "product_img": [
       "https://m.media-amazon.com/images/I/61HS4sTDnPL._AC_SR175,263_FMwebp_QL65_.jpg"
@@ -90,11 +90,11 @@
     "no_of_buyers": "no_data",
     "product_rating": "4.4",
     "total_reviews": "1,100",
-    "available_size":["XS","S","M","L","XL","2XL"],
-    "material":"cotton",
+    "sizes":["XS","S","M","L","XL","2XL"],
+    "material":"Cotton",
     "sleeve_type":"Full Sleeve",
     "fit_type":"Oversized Fit",
-    "color":"black",
+    "colours":"Black",
     "product_img": [
       "https://m.media-amazon.com/images/I/61YqacacUQL._AC_SR175,263_FMwebp_QL65_.jpg"
     ]
@@ -106,15 +106,15 @@
     "product_detailed_title": "H&M Men’s Basic Crew Neck T‑Shirt 3‑Pack",
     "product_offer": "-50%",
     "product_price": "799",
-    "available_size":["XS","L","2XL"],
-    "material":"wool",
+    "sizes":["XS","L","2XL"],
+    "material":"Wool",
     "sleeve_type":"3/4 Sleeve",
     "fit_type":"Oversized Fit",
     "product_actual_price": "₹1,599",
     "no_of_buyers": "no_data",
     "product_rating": "4.2",
     "total_reviews": "1,020",
-    "color":"blue",
+    "colours":"Blue",
     "product_img": [
       "https://m.media-amazon.com/images/I/71U69KZLpvL._AC_SR175,263_FMwebp_QL65_.jpg"
     ]
@@ -128,13 +128,12 @@
     "product_price": "899",
     "product_actual_price": "₹1,999",
     "no_of_buyers": "no_data",
-    "available_size":["XS","S","M","L"],
-    "material":"cotton",
+    "sizes":["XS","S","M","L"],
+    "material":"Cotton",
     "sleeve_type":"3/4 Sleeve",
-    "fit_type":"Regular Fit",
     "product_rating": "4.5",
     "total_reviews": "1,450",
-    "color":"black",
+    "colours":"Black",
     "product_img": [
       "https://m.media-amazon.com/images/I/512fUCcOjyL._AC_SR175,263_FMwebp_QL65_.jpg"
     ]
@@ -150,11 +149,10 @@
     "no_of_buyers": "no_data",
     "product_rating": "4.3",
     "total_reviews": "780",
-    "available_size":["XS","S","M","L","2XL"],
-    "material":"silk",
+    "sizes":["XS","S","M","L","2XL"],
+    "material":"Silk",
     "sleeve_type":"Short Sleeve",
-    "fit_type":"Regular Fit",
-    "color":"yellow",
+    "colours":"Yellow",
     "product_img": [
       "https://m.media-amazon.com/images/I/71XQUGnlB-L._AC_SR175,263_FMwebp_QL65_.jpg"
     ]
@@ -170,11 +168,10 @@
     "no_of_buyers": "no_data",
     "product_rating": "4.4",
     "total_reviews": "1,200",
-    "available_size":["XS","S"],
-    "material":"cotton",
+    "sizes":["XS","S"],
+    "material":"Cotton",
     "sleeve_type":"Short Sleeve",
-    "fit_type":"Regular Fit",
-    "color":"blue",
+    "colours":"Blue",
     "product_img": [
       "https://m.media-amazon.com/images/I/710VGd5-f-L._AC_SR175,263_FMwebp_QL65_.jpg"
     ]
@@ -190,11 +187,10 @@
     "no_of_buyers": "no_data",
     "product_rating": "4.2",
     "total_reviews": "890",
-    "available_size":["XS","S","2XL","M"],
-    "material":"cotton",
+    "sizes":["XS","S","2XL","M"],
+    "material":"Cotton",
     "sleeve_type":"Short Sleeve",
-    "fit_type":"Regular Fit",
-    "color":"gray",
+    "colours":"Gray",
     "product_img": [
       "https://m.media-amazon.com/images/I/71jnHCClWwL._AC_SR175,263_FMwebp_QL65_.jpg"
     ]
@@ -210,11 +206,10 @@
     "no_of_buyers": "no_data",
     "product_rating": "4.1",
     "total_reviews": "710",
-     "available_size":["2XL","M","L"],
-    "material":"silk",
+     "sizes":["2XL","M","L"],
+    "material":"Silk",
     "sleeve_type":"Short Sleeve",
-    "fit_type":"Regular Fit",
-    "color":"black",
+    "colours":"Black",
     "product_img": [
       "https://m.media-amazon.com/images/I/51gCxr-c7GL._AC_SR175,263_FMwebp_QL65_.jpg"
     ]
@@ -230,11 +225,10 @@
     "no_of_buyers": "no_data",
     "product_rating": "4.6",
     "total_reviews": "820",
-      "available_size":["2XL","M","L","S","XL"],
-    "material":"wool",
+      "sizes":["2XL","M","L","S","XL"],
+    "material":"Wool",
     "sleeve_type":"Full Sleeve",
-    "fit_type":"Regular Fit",
-    "color":"white",
+    "colours":"White",
     "product_img": [
       "https://m.media-amazon.com/images/I/41b-P8PcD2L._AC_SR175,263_FMwebp_QL65_.jpg"
     ]
@@ -250,11 +244,11 @@
     "no_of_buyers": "no_data",
     "product_rating": "4.3",
     "total_reviews": "650",
-    "available_size":["2XL","M","L","S","XL","XS"],
-    "material":"cotton",
+    "sizes":["2XL","M","L","S","XL","XS"],
+    "material":"Cotton",
     "sleeve_type":"3/4 Sleeve",
     "fit_type":"Oversized Fit",
-    "color":"black",
+    "colours":"Black",
     "product_img": [
       "https://m.media-amazon.com/images/I/51euDQ7gprL._AC_SR175,263_FMwebp_QL65_.jpg"
     ]
@@ -270,11 +264,11 @@
     "no_of_buyers": "no_data",
     "product_rating": "4.5",
     "total_reviews": "940",
-    "available_size":["2XL","M","L","S","XL","XS"],
-    "material":"cotton",
+    "sizes":["2XL","M","L","S","XL","XS"],
+    "material":"Cotton",
     "sleeve_type":"3/4 Sleeve",
     "fit_type":"Oversized Fit",
-    "color":"red",
+    "colours":"Red",
     "product_img": [
       "https://m.media-amazon.com/images/I/414n2iXIV6L._AC_SR175,263_FMwebp_QL65_.jpg"
     ]
@@ -290,11 +284,10 @@
     "no_of_buyers": "no_data",
     "product_rating": "4.2",
     "total_reviews": "780",
-    "available_size":["2XL","XL","XS"],
-    "material":"wool",
+    "sizes":["2XL","XL","XS"],
+    "material":"Wool",
     "sleeve_type":"Short Sleeve",
-    "fit_type":"Regular Fit",
-    "color":"pink",
+    "colours":"Pink",
     "product_img": [
       "https://m.media-amazon.com/images/I/71wOGr1VUlL._AC_SR175,263_FMwebp_QL65_.jpg"
     ]
@@ -309,11 +302,11 @@
     "product_actual_price": "₹2,249",
     "no_of_buyers": "no_data",
     "product_rating": "4.4",
-    "available_size":["2XL","XL","XS","S","L"],
-    "material":"cotton",
+    "sizes":["2XL","XL","XS","S","L"],
+    "material":"Cotton",
     "sleeve_type":"3/4 Sleeve",
     "fit_type":"Oversized Fit",
-    "color":"green",
+    "colours":"Green",
     "total_reviews": "1,300",
     "product_img": [
       "https://m.media-amazon.com/images/I/41QZ3GN9qJL._AC_SR175,263_FMwebp_QL65_.jpg"
@@ -329,11 +322,10 @@
     "product_actual_price": "₹2,349",
     "no_of_buyers": "no_data",
     "product_rating": "4.5",
-    "available_size":["2XL","XL","XS","S","L","M"],
-    "material":"silk",
+    "sizes":["2XL","XL","XS","S","L","M"],
+    "material":"Silk",
     "sleeve_type":"Short Sleeve",
-    "fit_type":"Regular Fit",
-    "color":"gray",
+    "colours":"Gray",
     "total_reviews": "1,150",
     "product_img": [
       "https://m.media-amazon.com/images/I/61zlnZCLSVL._AC_SR175,263_FMwebp_QL65_.jpg"
@@ -349,11 +341,11 @@
     "product_actual_price": "₹1,159",
     "no_of_buyers": "no_data",
     "product_rating": "4.3",
-     "available_size":["M","S","L"],
-    "material":"cotton",
+     "sizes":["M","S","L"],
+    "material":"Cotton",
     "sleeve_type":"3/4 Sleeve",
     "fit_type":"Oversized Fit",
-    "color":"black",
+    "colours":"Black",
     "total_reviews": "890",
     "product_img": [
       "https://m.media-amazon.com/images/I/3149lH9LrUL._AC_SR175,263_FMwebp_QL65_.jpg"
@@ -369,11 +361,10 @@
     "product_actual_price": "₹1,699",
     "no_of_buyers": "no_data",
     "product_rating": "4.4",
-     "available_size":["M","S","L","2XL","XL"],
-    "material":"wool",
+     "sizes":["M","S","L","2XL","XL"],
+    "material":"Wool",
     "sleeve_type":"Short Sleeve",
-    "fit_type":"Regular Fit",
-    "color":"yelow",
+    "colours":"Yellow",
     "total_reviews": "1,000",
     "product_img": [
       "https://m.media-amazon.com/images/I/61AjC4PsXqL._AC_SR175,263_FMwebp_QL65_.jpg"
@@ -388,20 +379,29 @@
     "product_price": "1,199",
     "product_actual_price": "₹2,199",
     "no_of_buyers": "no_data",
-    "available_size":["M","S","L","2XL","XL"],
-    "material":"silk",
+    "sizes":["M","S","L","2XL","XL"],
+    "material":"Silk",
     "sleeve_type":"Short Sleeve",
-    "fit_type":"Regular Fit",
     "product_rating": "4.6",
-    "color":"green",
-
+    "colours":"Green",
     "total_reviews": "1,400",
     "product_img": [
       "https://m.media-amazon.com/images/I/71XlIMP2HWL._AC_SR175,263_FMwebp_QL65_.jpg"
     ]
   }
+
 ],
-"category":["Under 300","Half Sleeve","3/4 Sleeve","Full Sleeve","Cotton","Casual","Formal"],
+"category":[
+  { "sub_cate": "Up to ₹500", "category": "Price and Deals","pos":1},
+  { "sub_cate": "Cotton", "category": "Material","pos":0 },
+  { "sub_cate": "Silk", "category": "Material","pos":1 },
+  { "sub_cate": "Short Sleeve", "category": "Sleeve Type" ,"pos":0},
+  { "sub_cate": "3/4 Sleeve", "category": "Sleeve Type","pos":1 },
+  { "sub_cate": "Black", "category": "Colours" ,"pos":0},
+  { "sub_cate": "White", "category": "Colours" ,"pos":1}
+
+],
+
 "filterCategory":[
   {
     "filter_Type":"Sizes",
@@ -416,7 +416,7 @@
   {
     "filter_Type":"Colours",
     "filter_sub_head":"Colours",
-    "filter_buttons":["black","Grey","White","Brown","Red","Yellow","Green","Blue"]
+    "filter_buttons":["Black","Gray","White","Brown","Red","Yellow","Green","Blue"]
   },
   {
     "filter_Type":"Customer Reviews",
@@ -432,12 +432,8 @@
     "filter_Type":"Sleeve Type",
     "filter_sub_head":"Length of Sleeve",
     "filter_buttons":["Short Sleeve","3/4 Sleeve","Full Sleeve"]
-  },
-  {
-    "filter_Type":"Fit Type",
-    "filter_sub_head":"Fit Type",
-    "filter_buttons":["Regular Fit","Oversized Fit"]
   }
+
 
 ]
 }

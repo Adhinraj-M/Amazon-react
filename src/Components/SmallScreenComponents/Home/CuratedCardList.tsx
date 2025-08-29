@@ -1,6 +1,6 @@
 
 import { useNavigate } from "react-router-dom";
-import { CuratedProduct } from "../../Types/product";
+import { CuratedProduct } from "../../../Types/product";
 
 function CuratedCardList() {
 

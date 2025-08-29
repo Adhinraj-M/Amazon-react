@@ -3,10 +3,10 @@ import {
   deskNavfooterOne,
   deskNavfooterThree,
   deskNavfooterTwo,
-} from "../../Types/DeskCategories";
+} from "../../../Types/DeskCategories";
 import DeskNavFooter from "./DeskNavFooter";
-import bigSizeIcon from "../../../public/icon-image/bigSizeIcon.png";
-import flagIcon from "../../../public/icon-image/flag.png";
+import bigSizeIcon from "/icon-image/bigSizeIcon.png";
+import flagIcon from "/icon-image/flag.png";
 import AmazonService from "./AmazonService";
 
 function DeskFooter() {

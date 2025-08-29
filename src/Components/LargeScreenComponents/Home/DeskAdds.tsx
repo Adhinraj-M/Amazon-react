@@ -1,3 +1,5 @@
+import { addProduct} from "../../../Types/product";
+
 function DeskAdds() {
   return (
     <div className="h-[250px] flex-[1_0_100%]  min-w-[290px]  w-[970px] mb-5 mx-auto relative border border-[#ccc]">
@@ -9,7 +11,7 @@ function DeskAdds() {
           gridTemplateColumns: "50% 50%",
         }}
       >
-        <div className="w-full h-full  transform-[scale(0.82)] relative ">
+        <div  className="w-full h-full  transform-[scale(0.82)] relative ">
           <img
             className="[grid-area:Image] w-full h-full object-scale-down object-center p-0.5 transform-[scale(90%)] relative z-[-10]"
             src="https://m.media-amazon.com/images/I/71Nwtop9jtL._AC_PT0_BL0_SX970_SY500_.jpg"
@@ -22,9 +24,7 @@ function DeskAdds() {
             <div className="w-full h-full grid justify-items-start items-center gap-x-1 p-6">
               <div className="flex flex-col justify-center items-start gap-1 [grid-area:1/1/auto/span_1]">
                 <span className="text-[rgb(15,17,17)] overflow-hidden text-start text-lg leading-6">
-                  Samsung Galaxy S24 Ultra 5G AI Smartphone with Galaxy AI
-                  (Titanium Black, 12GB, 512GB Storage), Snapdragon 8 Gen 3, 200
-                  MP Camera with ProVisual Engine and 5000mAh Battery
+                 {addProduct[0].product_detailed_title}
                 </span>
                 <div className="flex">
                   <svg
@@ -272,7 +272,7 @@ function DeskAdds() {
                     />
                   </svg>
                   <span className="text-[rgb(86,89,89)] overflow-hidden pl-1 text-start mt-px text-[16px] leading-6">
-                    98
+                    {addProduct[0].no_of_buyers}
                   </span>
                 </div>
                 <div className="flex justify-start items-center flex-wrap gap-x-1 ">
@@ -281,14 +281,14 @@ function DeskAdds() {
                       ₹
                     </span>
                     <span className=" grid items-end text-[28px] leaidng-[34px]">
-                      1,29,999
+                      {addProduct[0].product_price}
                     </span>
                     <span className="align-top pr-px text-[13px] leading-4 ">
                       00
                     </span>
                   </div>
                   <span className="line-through text-sm leading-5">
-                    ₹1,44,999.00
+                    {addProduct[0].product_actual_price}.00
                   </span>
                   <span className="grid items-center">
                     {" "}

@@ -1,8 +1,8 @@
 import { useContext, useEffect, useMemo } from "react";
-import ProductIcons from "../../../public/icon-image/ProductIcons.png";
+import ProductIcons from "/icon-image/ProductIcons.png";
 import { VscLoading } from "react-icons/vsc";
-import { HomeProductContext } from "../../Context/HomeProductContext";
 import { Link, useSearchParams } from "react-router-dom";
+import { HomeProductContext } from "../../../Context/HomeProductContext";
 
 function ProductList() {
   const {setFilterList, filterList,products,selecedCategory ,setSelectedCategory} = useContext(HomeProductContext);

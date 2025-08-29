@@ -1,6 +1,6 @@
 import {  useRef, useState } from "react";
-import { heroCarouselImg } from "../../Types/product";
 import Slider from "react-slick";
+import { heroCarouselImg } from "../../../Types/product";
 
 function HeroCarousel() {
   const [index, setIndex] = useState(0);

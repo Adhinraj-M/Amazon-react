@@ -11,7 +11,7 @@ export type HeroProductDesktopType = {
 };
 
 
-export const HeroDeskProduct: HeroProductDesktopType[] =[
+export const HeroDeskProduct:HeroProductDesktopType[] =[
 { 
   
   url:"WomenDress",
@@ -46,6 +46,47 @@ export const HeroDeskProduct: HeroProductDesktopType[] =[
         alt:"Aurelia Printed Straight Kurti",
     },
     name: "Aurelia Printed Straight Kurti",
+    viewsCount:'2'
+  }
+
+]}]
+
+
+export const MenProduct:HeroProductDesktopType[] =[
+{ 
+  
+  url:"menDress",
+  product:[
+  {
+    img:{
+        src:"https://m.media-amazon.com/images/I/612MkbVyluL._SY550_.jpg",
+        alt:"Roadster Half‑Sleeve Polo Tee",
+    },
+    name: "Roadster Half‑Sleeve Polo Tee",
+     viewsCount:'1'
+  },
+  {
+    img:{
+        src:"https://m.media-amazon.com/images/I/51slHK9woDL._AC_SR175,263_FMwebp_QL65_.jpg",
+        alt:"Puma Performance Round‑Neck Tee",
+    },
+    name:"Puma Performance Round‑Neck Tee",
+    viewsCount:'1'
+  },
+  {
+    img:{
+        src:"https://m.media-amazon.com/images/I/61W3TkfRLrL._AC_SR175,263_FMwebp_QL65_.jpg",
+        alt:"HRX Slim‑Fit Sports Tee",
+    },
+    name: "HRX Slim‑Fit Sports Tee",
+    viewsCount:'1'
+  },
+  {
+    img:{
+        src:"https://m.media-amazon.com/images/I/61HS4sTDnPL._AC_SR175,263_FMwebp_QL65_.jpg",
+        alt:"Allen Solly Active T‑Shirt",
+    },
+    name:"Allen Solly Active T‑Shirt",
     viewsCount:'2'
   }
 

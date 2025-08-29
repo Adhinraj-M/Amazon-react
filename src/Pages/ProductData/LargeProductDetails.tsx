@@ -1,13 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import DeskHeader from "../../Components/LargeScreenComponents/DeskHeader";
+import DeskHeader from "../../Components/LargeScreenComponents/Home/DeskHeader";
 import { ProductListContext } from "../../Context/ProductListContext";
-import type { CategoryProdut } from "../../Types/product";
-import NavDesk from "../../Components/LargeScreenComponents/NavDesk";
+import { type CategoryProdut } from "../../Types/product";
+import NavDesk from "../../Components/LargeScreenComponents/Home/NavDesk";
 import ProductImages from "../../Components/LargeScreenComponents/ProductDetails/ProductImages";
 import ProductDetailed from "../../Components/LargeScreenComponents/ProductDetails/ProductDetailed";
 import ProductDataRight from "../../Components/LargeScreenComponents/ProductDetails/ProductDataRight";
-import DeskFooter from "../../Components/LargeScreenComponents/DeskFooter";
+import DeskFooter from "../../Components/LargeScreenComponents/Home/DeskFooter";
 
 function LargeProductDetails() {
 
@@ -38,6 +38,8 @@ function LargeProductDetails() {
    const [productData, setProductData] = useState<CategoryProdut[] >([]);
   
     const params = useParams();
+  
+
   
     useEffect(() => {
       const filtered = cateProduct.filter((item) => item.id === params.productId);

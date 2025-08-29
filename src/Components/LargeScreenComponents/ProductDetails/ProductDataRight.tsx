@@ -1,4 +1,4 @@
-import type { CategoryProdut } from "../../../Types/product"
+import type { CategoryProdut } from "..Types/product"
 
 type productDataRightType={
     product:CategoryProdut[]

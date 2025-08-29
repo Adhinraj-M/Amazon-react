@@ -1,5 +1,5 @@
-import bigIcon from "../../../../public/icon-image/bigSizeIcon.png";
-import { deskSideMenuListFive, deskSideMenuListFour, deskSideMenuListOne, deskSideMenuListThree, deskSideMenuListTwo } from "../../../Types/deskSideMenuList";
+import bigIcon from "/icon-image/bigSizeIcon.png";
+import { deskSideMenuListFive, deskSideMenuListFour, deskSideMenuListOne, deskSideMenuListThree,deskSideMenuListTwo } from "../../../Types/deskSideMenuList";
 import DeskSideMenuSection from "./DeskSideMenuSection";
 
 type deskSideMenuType={

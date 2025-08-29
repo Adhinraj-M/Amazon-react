@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import IconImg from "../../../public/icon-image/last.png";
-import RatingIcon from "../../../public/icon-image/ProductIcons.png";
+import IconImg from "/icon-image/last.png";
+import RatingIcon from "/icon-image/ProductIcons.png";
 import axiosInstance from "../../api/axios";
 import type { CarWashProduct } from "../../Types/DeskCategories";
 

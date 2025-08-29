@@ -1,7 +1,7 @@
-
-import { HomeProductProvider } from "../../Context/HomeProductContext"
+import { HomeProductProvider } from "../../../Context/HomeProductContext"
+import SortCategory from "../Home/SortCategory"
 import ProductList from "./ProductList"
-import SortCategory from "./SortCategory"
+
 
 function DiscoverProduct() {
 

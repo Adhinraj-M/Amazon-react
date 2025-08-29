@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { HomeProductContext } from "../../Context/HomeProductContext";
-import { HomeSmallcategories } from "../../Types/categories";
+import { HomeProductContext } from "../../../Context/HomeProductContext";
+import { HomeSmallcategories } from "../../../Types/categories";
 
 type filterHomeType = {
   handleCatehide: () => void;

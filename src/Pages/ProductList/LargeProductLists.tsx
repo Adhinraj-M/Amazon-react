@@ -1,12 +1,12 @@
 import {  useContext  } from "react";
-import DeskHeader from "../../Components/LargeScreenComponents/DeskHeader";
-import NavDesk from "../../Components/LargeScreenComponents/NavDesk";
+import DeskHeader from "../../Components/LargeScreenComponents/Home/DeskHeader";
+import NavDesk from "../../Components/LargeScreenComponents/Home/NavDesk";
 import { RecentlyViewed } from "../../Types/DeskCategories";
 import Pagination from "../../Components/LargeScreenComponents/Pagination";
 import { ProductListContext } from "../../Context/ProductListContext";
 import FilterModal from "../../Components/LargeScreenComponents/FilterModal";
 import ProductList from "../../Components/LargeScreenComponents/ProductList";
-import DeskFooter from "../../Components/LargeScreenComponents/DeskFooter";
+import DeskFooter from "../../Components/LargeScreenComponents/Home/DeskFooter";
 
 function LargeProductLists() {
 

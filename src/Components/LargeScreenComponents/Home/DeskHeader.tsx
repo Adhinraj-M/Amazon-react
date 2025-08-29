@@ -1,8 +1,8 @@
 import { useState } from "react";
-import bigScreenIcon from "../../../public/icon-image/bigSizeIcon.png";
-import flagIcon from "../../../public/icon-image/flag.png";
-import Language from "./HeaderModals/Language";
-import AccountList from "./HeaderModals/AccountList";
+import bigScreenIcon from "/icon-image/bigSizeIcon.png";
+import flagIcon from "/icon-image/flag.png";
+import Language from "../HeaderModals/Language";
+import AccountList from "../HeaderModals/AccountList";
 import { Link } from "react-router-dom";
 
 type DeskHeaderType={

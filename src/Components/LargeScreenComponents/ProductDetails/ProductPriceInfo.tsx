@@ -1,4 +1,4 @@
-import type { CategoryProdut } from "../../../Types/product";
+import type { CategoryProdut } from "..Types/product";
 
 type productPriceInfoType={
     product:CategoryProdut | undefined
@@ -48,12 +48,11 @@ function ProductPriceInfo({product}:productPriceInfoType) {
 
           <div className="flex pb-[3px] ">
             <ol className="flex flex-wrap text-left list-disc">
-              {product.sizes.map((item, i) => {
+              {product?.sizes?.map((item, i) => {
                 return (
                   <li
                     key={i}
-                    className="mb-1 p-1 m-[0_4px_0_4px] pt-[3px] inline-block min-w-12.5 max-w-[175px] h-[32px] w-[48px] bg-white border border-[#888c8c] cursor-pointer rounded-lg text-sm hover:bg-blue-50"
-                  >
+                    className="mb-1 p-1 m-[0_4px_0_4px] pt-[3px] inline-block min-w-12.5 max-w-[175px] h-[32px] w-[48px] bg-white border border-[#888c8c] cursor-pointer rounded-lg text-sm hover:bg-blue-50">
                     {item}
                   </li>
                 );

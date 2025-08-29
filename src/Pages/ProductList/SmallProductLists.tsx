@@ -1,11 +1,11 @@
 import { useContext, useEffect } from "react";
-import Header from "../../Components/SmallScreenComponents/Header";
-import Address from "../../Components/SmallScreenComponents/Address";
-import FilterSection from "../../Components/SmallScreenComponents/FilterSection";
+import Address from "../../Components/SmallScreenComponents/Home/Address";
+import FilterSection from "../../Components/SmallScreenComponents/Filter/FilterSection";
 import { ProductListContext } from "../../Context/ProductListContext";
 import { Link } from "react-router-dom";
-import Footer from "../../Components/SmallScreenComponents/Footer";
+import Footer from "../../Components/SmallScreenComponents/Home/Footer";
 import useWindowWidth from "../../Helpers/WindowWidth";
+import Header from "../../Components/SmallScreenComponents/Home/Header";
 
 function SmallProductLists() {
   const {handleImmediateFilter,activeFilter, filterCategory, sortCategory, filteredLists, handleModal, toggle } =

@@ -1,28 +1,22 @@
 import { useContext, useEffect, useState } from "react";
-import Address from "./Address";
-import Header from "./Header";
-import Sponsored from "./Sponsored";
-import { ToggleContext } from "../../Context/toggleContext";
 import { useParams } from "react-router-dom";
-import { ProvidingBenefits } from "../../Types/categories";
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { ProductListContext } from "../../../Context/ProductListContext";
+import { ProvidingBenefits } from "../../../Types/categories";
+import type { CategoryProdut } from "../../../Types/product";
 
-function ProductInfo() {
-  const { handleSideBar, carProduct } = useContext(ToggleContext);
-
-  const params = useParams();
-  const [filtered, setFiltered] = useState(carProduct);
+function ProductData() {
+  const { cateProduct } = useContext(ProductListContext);
+  const [productData, setProductData] = useState<CategoryProdut[]>();
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
+  const params = useParams();
+
   useEffect(() => {
-    const filterData = carProduct?.filter(
-      (item) => item.id === params.productId
-    );
-    setFiltered(filterData);
-  }, [carProduct?.length]);
+    const filtered = cateProduct.filter((item) => item.id === params.productId);
+
+    setProductData(filtered);
+  }, [cateProduct]);
 
   const settings = {
     dots: true,
@@ -35,12 +29,10 @@ function ProductInfo() {
     arrows: true,
   };
 
+
   return (
     <>
-      <Header toggleBtn={handleSideBar} />
-      <Address />
-      <Sponsored />
-      {filtered?.length === 1 && (
+      {productData &&  (
         <div className="bg-white min-w-50 p-[0_14px] m-[0_auto] w-full">
           <div className="-mt-1 ">
             <div className="flex justify-between mt-1 items-center ">
@@ -53,26 +45,26 @@ function ProductInfo() {
                 <i
                   className="bg-[length:512px_512px] bg-no-repeat h-4.5 w-20 relative align-top  inline-block bg-[position:-210px_-467px] top-px"
                   style={{
-                    backgroundImage: `url(https://m.media-amazon.com/images/S/sash/VRxFMfjvVeE5Eoy.png)`,
+                    backgroundImage: `url(	https://m.media-amazon.com/images/S/sash/VRxFMfjvVeE5Eoy.png)`,
                   }}
                 ></i>
                 <span className="text-[#0f1111] text-[13px] leading-3.5 ml-1 mt-1">
-                  {filtered[0]?.no_of_rating}
+                  {productData[0]?.total_reviews}
                 </span>
               </div>
             </div>
             <h1 className="mt-px mb-2 text-[#565959] leading-[1.4] text-[13px] ">
-              {filtered[0]?.title}
+              {productData[0]?.product_detailed_title}
             </h1>
             <div className="m-[0_-4px] relative overflow-hidden !h-137.5 ">
-              <ol className="m-0 h-full p-0 ">
+              <ol className="m-0 h-full p-0">
                 <Slider {...settings}>
-                  {filtered[0].img.map((img, i) => (
+                  {productData[0]?.product_img.map((img, i) => (
                     <li key={i} className="h-full flex justify-center">
                       <img
                         className="h-[537.88px]"
                         src={img}
-                        alt={filtered[0]?.title}
+                        alt={productData[0]?.product_title}
                       />
                     </li>
                   ))}
@@ -83,16 +75,19 @@ function ProductInfo() {
             <div className="flex flex-col justify-center p-[6px_0] relative">
               <div className="flex items-center min-h-6 relative justify-center">
                 <ul className="border-none flex z-[1] p-0 w-auto items-center absolute h-2.5 list-none m-0">
-                  {Array.from({ length: filtered[0].img.length }, (_, i) => {
-                    return (
-                      <li
-                        key={i}
-                        className={` ${
-                          activeIndex === i ? "bg-[#000]" : "bg-[#cdcdcd]"
-                        } border-none h-2 w-2 m-[0_4px] p-[0_5px_0_0] rounded-3xl inline-block  leading-4 relative `}
-                      ></li>
-                    );
-                  })}
+                  {Array.from(
+                    { length: productData[0]?.product_img.length },
+                    (_, i) => {
+                      return (
+                        <li
+                          key={i}
+                          className={`${
+                            activeIndex === i ? "bg-[#000]" : "bg-[#cdcdcd]"
+                          } border-none h-2 w-2 m-[0_4px] p-[0_5px_0_0] rounded-3xl inline-block  leading-4 relative `}
+                        ></li>
+                      );
+                    }
+                  )}
                 </ul>
               </div>
               <div className="flex absolute grow-1 justify-end h-6 w-full items-center">
@@ -107,11 +102,97 @@ function ProductInfo() {
                 <span
                   className="h-6 w-6 cursor-pointer inline-block bg-cover"
                   style={{
-                    backgroundImage: `url(https://m.media-amazon.com/images/G/01/share-icons/share-android.svg)`,
+                    backgroundImage: `url(	https://m.media-amazon.com/images/G/01/share-icons/share-android.svg)`,
                   }}
                 ></span>
               </div>
             </div>
+
+            {(productData[0]?.product_category === "women_kurtis" ||
+              productData[0]?.product_category === "men_clothing") && (
+              <div className="p-[16px_14px_16px] relative border-t-[5px] border-t-[#F3F3F3] border-b border-b-[#d5d9d9] m-[0_-14px_12px] overflow-hidden bg-transparent">
+                <div className="mb-4">
+                  <span className=" text-[15px] leading-[1.35] p-0 ">
+                    Colour:
+                    <span className="uppercase font-fontBold">black</span>
+                  </span>
+                </div>
+
+                <div className="m-[0_-14px] p-[0_14px] max-h-100 opacity-100 overflow-y-hidden relative whitespace-nowrap flex">
+                  <ul className="-mb-2 m-[0_0_0_-4px] flex text-left relative list-none">
+                    <li className="m-[0_0_0_5px]  inline-block w-20 pb-3 text-[15px] ">
+                      <div className="border-2 border-[#000] p-[0_5px] m-[0_auto] w-17.5 h-17.5 overflow-hidden rounded-[50%] relative bg-[rgba(210,210,210,.25)] ">
+                        <img
+                          className="min-w-[5px] transform-[translateY(5px)_scale(1.7)]"
+                          src={productData[0]?.product_img[0]}
+                          alt="black"
+                        />
+                      </div>
+                      <div className="mt-[11px] text-[11px] relative ">
+                        <span className="absolute -top-5 m-[auto_2px] inline-block bg-[#CC0C39] text-white rounded-sm  p-[4px_4.7px]">
+                          Limited time
+                        </span>
+                        <div className="text-center flex flex-col gap-y-0.5 relative top-2">
+                          <span className="mr-0.5 ml-0.5 block">
+                            
+                            ₹{productData[0]?.product_price}
+                          </span>
+                          <span className="mr-0.5 ml-0.5 whitespace-nowrap line-through text-[#aaa] block ">
+                            ₹{productData[0]?.product_actual_price}
+                          </span>
+                          <span className="overflow-hidden whitespace-nowrap text-center font-fontBold">
+                            BLACK
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div className="m-[16px_0_0_0] pt-0  ">
+                  <div className="flex justify-between mb-2 w-full ">
+                    <div className="flex gap-x-1">
+                      <span className="text-[15px] leading-[1.35]">Size:</span>
+                      <span className="text-[15px] leading-[1.35] font-fontBold">
+                        2XL
+                      </span>
+                    </div>
+                    <span className="text-[#2162a1] text-[15px] leading-[1.35] ">
+                      Size guide
+                    </span>
+                  </div>
+
+                  <div className="m-[0_-14px] p-[0_14px] max-h-100 opacity-100">
+                    <ul className="flex m-[0_0_0_-4px] text-left list-none gap-1">
+                      <li className="flex-[0_0_auto] max-w-57.5 m-[0_0_0_5px]  justify-center items-center relative border border-[#2e3040] rounded-[3px] ">
+                        <button className="p-[12px_16px_12px_17px]  text-left text-[15px] leading-5">
+                          S
+                        </button>
+                      </li>
+                      <li className="flex-[0_0_auto] max-w-57.5 m-[0_0_0_5px]  justify-center items-center relative border border-[#2e3040] rounded-[3px] ">
+                        <button className="p-[12px_16px_12px_17px]  text-left text-[15px] leading-5">
+                          M
+                        </button>
+                      </li>
+                      <li className="flex-[0_0_auto] max-w-57.5 m-[0_0_0_5px]  justify-center items-center relative border border-[#2e3040] rounded-[3px] ">
+                        <button className="p-[12px_16px_12px_17px]  text-left text-[15px] leading-5">
+                          L
+                        </button>
+                      </li>
+                      <li className="flex-[0_0_auto] max-w-57.5 m-[0_0_0_5px]  justify-center items-center relative border border-[#2e3040] rounded-[3px] ">
+                        <button className="p-[12px_16px_12px_17px]  text-left text-[15px] leading-5">
+                          XL
+                        </button>
+                      </li>
+                      <li className="flex-[0_0_auto] max-w-57.5 m-[0_0_0_5px]  justify-center items-center relative border border-[#2e3040] rounded-[3px] ">
+                        <button className="p-[12px_16px_12px_17px]  text-left text-[15px] leading-5">
+                          2XL
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           <span className="bg-[#CC0C39] p-[4px_8px_4px_8px] rounded-sm inline-block mb-1 text-white text-[13px] leading-[1.4]">
@@ -119,18 +200,18 @@ function ProductInfo() {
           </span>
           <div className="flex items-center">
             <span className="mr-1 text-[#CC0C39] text-4xl leading-[1.22] ">
-              {filtered[0]?.offer_percentage}
+              {productData[0]?.product_offer}
             </span>
             <span className="mr-1 text-[38px] ">
               <span className="text-[15px] -top-[15px] relative">₹</span>
-              <span> {filtered[0]?.offer_price}</span>
+              <span> {productData[0]?.product_price}</span>
             </span>
           </div>
           <span className="text-[#565959] mb-2 text-[13px]">
-            M.R.P.:{" "}
+            M.R.P.:
             <span className="inline-block  line-through">
-              ₹{filtered[0]?.original_price}
-            </span>{" "}
+              ₹{productData[0]?.product_actual_price}
+            </span>
           </span>
           <span className="text-[15px] leading-[1.35] flex">
             <i className="flex rounded-[2px_0_0_2px] bg-[#3e4650] leading-[1.05] text-[12px] text-white p-[3px_4px_3px_15px] relative top-px tracking-[0.96px] align-top before:content-[''] before:absolute before:-right-[5px] before:bottom-0 before:border-dashed before:border-r-[6px] before:border-b-[#3e4650] before:border-[rgba(255,255,255,0)] before:w-0 before:h-0 before:leading-0 before:border-l-0 before:!border-b-[10px] after:content-[''] after:absolute after:top-0 after:-right-[5px] after:bottom-0 after:border-dashed after:border-r-[6px] after:border-t-[#3e4650] after:border-[rgba(255,255,255,0)] after:w-0 after:h-0 after:leading-0 after:border-l-0 after:!border-t-[10px] ">
@@ -156,8 +237,8 @@ function ProductInfo() {
                     alt=""
                   />
                   <span className="inline-block align-middle pl-[17px] pr-1 text-[15px] leading-[1.35]">
-                    {" "}
-                    All offers & discounts{" "}
+                    
+                    All offers & discounts
                   </span>
                 </div>
                 <i
@@ -171,10 +252,10 @@ function ProductInfo() {
           </div>
           <div className="relative">
             <div className="text-[15px] mb-3 ">
-              Free delivery{" "}
+              Free delivery
               <span className="font-fontBold">Saturday, 23 August</span> on your
-              first order. Order within{" "}
-              <span className="text-[#067D62]">18 hrs 7 min</span>.{" "}
+              first order. Order within
+              <span className="text-[#067D62]">18 hrs 7 min</span>.
               <span className="text-[#2162a1] underline">Details</span>
             </div>
             <div className="flex">
@@ -196,7 +277,9 @@ function ProductInfo() {
               name=""
               id=""
             >
-              <option value="">Quantity: 1</option>
+              <option className="" value="">
+                Quantity: 1
+              </option>
             </select>
             <i
               className="inline-block bg-[length:400px_900px] bg-no-repeat -mt-1.5 absolute z-[1] top-43 right-3 w-[15px] h-3 bg-[position:-5px_-59px]"
@@ -272,5 +355,5 @@ function ProductInfo() {
   );
 }
 
-export default ProductInfo;
+export default ProductData;
 

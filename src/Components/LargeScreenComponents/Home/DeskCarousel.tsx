@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { deskCarousel } from "../../Types/DeskCategories";
+import { deskCarousel } from "../../../Types/DeskCategories";
 
 function DeskCarousel() {
 

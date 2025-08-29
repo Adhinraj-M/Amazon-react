@@ -1,4 +1,4 @@
-import { amazonServiceOne, amazonServiceTwo } from "../../Types/DeskCategories"
+import { amazonServiceOne, amazonServiceTwo } from "../../../Types/DeskCategories"
 
 function AmazonService() {
 

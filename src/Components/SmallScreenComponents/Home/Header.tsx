@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import smallIconImage from '../../../public/icon-image/smallSizeIcon.png'
+import smallIconImage from '/icon-image/smallSizeIcon.png'
 import {Link} from 'react-router-dom'
+import SideMenuBar from '../sideMenuComponents/SideMenuBar'
 import TopBar from './TopBar'
-import SideMenuBar from './sideMenuComponents/SideMenuBar'
 
 
 

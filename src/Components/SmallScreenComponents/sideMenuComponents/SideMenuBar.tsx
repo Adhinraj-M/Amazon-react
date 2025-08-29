@@ -1,10 +1,7 @@
-import smallSizeIcon from "../../../../public/icon-image/smallSizeIcon.png";
-import {
-  ProgramsFeaturesMenu,
-  TopCategoriesMenu,
-  TrendingListMenu,
-} from "../../../Types/categories";
+import smallSizeIcon from "/icon-image/smallSizeIcon.png";
+
 import SideMenuSub from "./SideMenuSub";
+import { ProgramsFeaturesMenu, TopCategoriesMenu, TrendingListMenu } from "../../../Types/categories";
 
  type SideMenuBarProps={
   toggleBtn:()=>void,

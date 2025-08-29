@@ -1,15 +1,15 @@
-import Address from "../../Components/SmallScreenComponents/Address";
-import AmazonOffer from "../../Components/SmallScreenComponents/AmazonOffer";
-import CategorySmall from "../../Components/SmallScreenComponents/CategorySmall";
-import DashboardCategory from "../../Components/SmallScreenComponents/DashboardCategory";
-import Header from "../../Components/SmallScreenComponents/Header";
-import HeroCarousel from "../../Components/SmallScreenComponents/HeroCarousel";
-import CubicList from "../../Components/SmallScreenComponents/CubicList";
-import CuratedCardList from "../../Components/SmallScreenComponents/CuratedCardList";
+import Address from "../../Components/SmallScreenComponents/Home/Address";
+import AmazonOffer from "../../Components/SmallScreenComponents/Home/AmazonOffer";
 import { useContext } from "react";
-import DiscoverProduct from "../../Components/SmallScreenComponents/DiscoverProduct";
-import Footer from "../../Components/SmallScreenComponents/Footer";
 import { ToggleContext } from "../../Context/toggleContext";
+import Footer from "../../Components/SmallScreenComponents/Home/Footer";
+import DiscoverProduct from "../../Components/SmallScreenComponents/Product/DiscoverProduct";
+import CuratedCardList from "../../Components/SmallScreenComponents/Home/CuratedCardList";
+import CubicList from "../../Components/SmallScreenComponents/Home/CubicList";
+import HeroCarousel from "../../Components/SmallScreenComponents/Home/HeroCarousel";
+import Header from "../../Components/SmallScreenComponents/Home/Header";
+import CategorySmall from "../../Components/SmallScreenComponents/Home/CategorySmall";
+import DashboardCategory from "../../Components/SmallScreenComponents/DashboardCategory";
 
 function SmallHome() {
   const { carProduct } = useContext(ToggleContext);
@@ -44,7 +44,7 @@ function SmallHome() {
       <CuratedCardList />
       <CubicList products={carProduct} />
       <DiscoverProduct />
-      <Footer />
+      <Footer/>
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import { MdKeyboardArrowDown } from "react-icons/md";
-import FilterHome from "./FilterHome";
 import { useContext } from "react";
-import { HomeProductContext } from "../../Context/HomeProductContext";
-import { priceSortCategories } from "../../Types/categories";
+import { HomeProductContext } from "../../../Context/HomeProductContext";
+import { priceSortCategories } from "../../../Types/categories";
+import FilterHome from "../Filter/FilterHome";
 
 function SortCategory() {
 const {handleFilterPrice,selectedPrice,handleCateShow,cateList,selecedCategory,handleClearFilter} = useContext(HomeProductContext)

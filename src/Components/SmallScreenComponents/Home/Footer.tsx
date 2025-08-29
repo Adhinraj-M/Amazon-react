@@ -1,4 +1,4 @@
-import flagIcon from "../../../public/icon-image/flag.png";
+import flagIcon from "/icon-image/flag.png";
 
 function Footer() {
   const footerMenu: string[] = [

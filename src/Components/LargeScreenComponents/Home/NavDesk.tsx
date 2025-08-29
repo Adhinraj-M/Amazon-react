@@ -1,8 +1,8 @@
 import {  useEffect, useState } from "react";
-import bigScreenIcon from "../../../public/icon-image/bigSizeIcon.png";
-import useWindowWidth from "../../Helpers/WindowWidth";
-import PrimeModal from "./HeaderModals/PrimeModal";
-import DeskSideMenu from "./DeskTopSideMenu/DeskSideMenu";
+import bigScreenIcon from "/icon-image/bigSizeIcon.png";
+import useWindowWidth from "../../../Helpers/WindowWidth";
+import PrimeModal from "../HeaderModals/PrimeModal";
+import DeskSideMenu from "../DeskTopSideMenu/DeskSideMenu";
 
 
 

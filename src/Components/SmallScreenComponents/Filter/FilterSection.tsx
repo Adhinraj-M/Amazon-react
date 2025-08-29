@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import type { CategoryFilter } from "../../Types/product";
-import { ProductListContext } from "../../Context/ProductListContext";
+import type { CategoryFilter } from "../../../Types/product";
+import { ProductListContext } from "../../../Context/ProductListContext";
 
 type filterSectionType = {
   handleModal: () => void;

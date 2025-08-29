@@ -1,4 +1,4 @@
-import mediaIcons from '../../../public/icon-image/mediaIcons.png'
+import mediaIcons from '/icon-image/mediaIcons.png'
 import  type {CategoryProductImg}  from '../../Types/DeskCategories'
 
 type ProductCardCarouselType ={
