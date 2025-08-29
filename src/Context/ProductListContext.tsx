@@ -10,7 +10,7 @@ import FilterProduct from "../Helpers/FilterProduct";
 
 type ProductListContextType = {
   cateProduct: CategoryProdut[] | [];
-  sortCategory: {sub_cate:string,category:string}[];
+  sortCategory: {sub_cate:string,category:string,pos:number}[];
   filterCategory: CategoryFilter[] | [];
   activeIndex: number;
   filterBtn: {
@@ -37,6 +37,7 @@ type ProductListContextType = {
   handleFilterModal: (i: number) => void;
   modalIndex: number | null;
   handleCategoryClear: (i: number | null) => void;
+  handleImmediateFilter:(item:{sub_cate:string,category:string,pos:number})=> void
 };
 
 export const ProductListContext = createContext<ProductListContextType>({
@@ -64,12 +65,13 @@ export const ProductListContext = createContext<ProductListContextType>({
   handleFilterModal: () => {},
   modalIndex: null,
   handleCategoryClear: () => {},
+  handleImmediateFilter:() => {}
 });
 
 export const ProductListProvider = ({ children }: { children: ReactNode }) => {
   const params = useParams();
   const [cateProduct, setCateProduct] = useState<CategoryProdut[]>([]);
-  const [sortCategory, setSortCategory] = useState<{sub_cate:string,category:string}[]>([]);
+  const [sortCategory, setSortCategory] = useState<{sub_cate:string,category:string,pos:number}[]>([]);
   const [filterCategory, setFilterCategory] = useState<CategoryFilter[]>([]);
 
 
@@ -284,6 +286,7 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
   // filtering main function
   const handleFilters = () => {
     const filtered = FilterProduct(cateProduct, selectedFilters);
+
     setFilteredLists(filtered);
     handleModal();
     handleFilterModal(modalIndex);
@@ -319,8 +322,52 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  // large screen filter modal handling
+  //immdate filter outside filter component mobile
 
+ const  handleImmediateFilter =(item:{sub_cate:string,category:string,pos:number})=>{
+   
+    const currentItems: any = selectedFilters[item.category] || [];
+    
+    let updated = currentItems.includes(item.sub_cate)
+      ? currentItems.filter((i:any)=> i !== item.sub_cate)
+      : [...currentItems,item.sub_cate];
+
+    let updatedSelectedFilter;
+    if (updated[0] === "Up to ₹500") {
+       updated = selectedFilters.slider[1] === '3999' ? {min:'115',max:'500'}:{min:'115',max:'3999'}
+        
+        updatedSelectedFilter = {
+          ...selectedFilters,
+          ['slider']:[updated.min,updated.max],
+        };
+    
+    } else {
+      updatedSelectedFilter = {
+        ...selectedFilters,
+        [item.category]: updated,
+      };
+    }
+
+    const currentIndexes=activeFilter[item.category] || []
+    let updatedIndexes = currentIndexes.includes(item.pos) ? currentIndexes.filter((i:number)=> i !== item.pos ) : [...currentIndexes,item.pos]
+    // console.log("updated Indexes",updatedIndexes)
+
+    setActiveFilter((prev)=>{
+      return{
+          ...prev,
+          [item.category]:updatedIndexes
+      }
+    })
+ 
+    setSelectedFilters(updatedSelectedFilter);
+    const filtered = FilterProduct(cateProduct, updatedSelectedFilter);
+    // console.log("filtered",filtered)
+    setFilteredLists(filtered);
+    
+   }
+
+
+  // large screen filter modal handling
   const [modalIndex, setModalIndex] = useState<number | null>(null);
 
   const handleFilterModal = (i: number | null) => {
@@ -354,9 +401,13 @@ export const ProductListProvider = ({ children }: { children: ReactNode }) => {
         handleFilterModal,
         modalIndex,
         handleCategoryClear,
+        handleImmediateFilter
       }}
     >
       {children}
     </ProductListContext.Provider>
   );
 };
+
+
+

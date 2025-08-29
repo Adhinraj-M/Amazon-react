@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Header from "../../Components/SmallScreenComponents/Header";
 import Address from "../../Components/SmallScreenComponents/Address";
 import FilterSection from "../../Components/SmallScreenComponents/FilterSection";
@@ -8,8 +8,9 @@ import Footer from "../../Components/SmallScreenComponents/Footer";
 import useWindowWidth from "../../Helpers/WindowWidth";
 
 function SmallProductLists() {
-  const { filterCategory, sortCategory, filteredLists, handleModal, toggle } =
+  const {handleImmediateFilter,activeFilter, filterCategory, sortCategory, filteredLists, handleModal, toggle } =
     useContext(ProductListContext);
+    let count = Object.values(activeFilter).flat().length;
 
   // to avoid background scroll when the filter modal opens
   const width = useWindowWidth();
@@ -19,6 +20,13 @@ function SmallProductLists() {
   } else {
     document.body.style.overflowY = "scroll";
   }
+
+  useEffect(()=>{
+
+  },[filteredLists])
+
+  console.log("active indexes",activeFilter)
+
 
   return (
     <div className="min-large:hidden ">
@@ -59,7 +67,7 @@ function SmallProductLists() {
               <button className="ml-2 mr-2 shrink-0 whitespace-nowrap h-8 flex items-center p-[9px] rounded-lg bg-[#f9d52a] border border-[#f34552] w-auto text-center justify-center text-sm leading-5 max-w-[115px] overflow-hidden text-ellipsis" >
                 Bazaar
               </button>
-              <button className="mr-2  shrink-0 whitespace-nowrap h-8 flex items-center p-[9px] rounded-lg w-auto border border-[#e8e8e8] text-center bg-white justify-center">
+              <button className={`mr-2  shrink-0 whitespace-nowrap h-8 ${activeFilter['Customer Rating']?.includes(0) ? 'bg-[#f9d52a]  border-[#f34552]':'border-[#e8e8e8] bg-white'} flex items-center p-[9px] rounded-lg w-auto border  text-center justify-center`} onClick={()=>handleImmediateFilter({sub_cate:'4',category:'Customer Rating',pos:0})}>
                 <div className="flex pb-0.5 mr-1">
                   {Array.from({ length: 4 }, (_, i: number) => {
                     return (
@@ -79,12 +87,12 @@ function SmallProductLists() {
               </button>
 
               {sortCategory &&
-                sortCategory.map((item: {sub_cate:string,category:string}, index: number) => {
+                sortCategory.map((item:{sub_cate:string,category:string,pos: number},index:number) => {
                   return (
                     <button
                       key={index}
-                      onClick={() => console.log(item)}
-                      className="mr-2 text-sm shrink-0 whitespace-nowrap h-8 flex items-center p-[9px] rounded-lg w-auto border border-[#e8e8e8] text-center bg-white justify-center "
+                      onClick={() => handleImmediateFilter(item)}
+                      className={` ${activeFilter[item.category]?.includes(item.pos) ? 'bg-[#f9d52a]  border-[#f34552]':'border-[#e8e8e8] bg-white'} mr-2 text-sm shrink-0 whitespace-nowrap h-8 flex items-center p-[9px] rounded-lg w-auto border  text-center justify-center`}
                     >
                       {item.sub_cate}
                     </button>
@@ -98,7 +106,7 @@ function SmallProductLists() {
               >
                 <span className="!text-sm !leading-5 text-black">Filters</span>
                 <span className="!text-sm !leading-5 text-black ml-1.5 ">
-                  (1)
+                  ({count})
                 </span>
                 <span className="ml-1.5 mt-0.5 text-black w-2.5 h-2.5 transform-[rotate(0)] transition-[transform_.25s_ease-in-out] origin-[center_40%] before:bg-black before:content-[''] before:absolute before:w-[5px] before:h-0.5 before:top-1/2 before:right-1/2 before:-mr-px before:-mt-px before:origin-[4px_1px] before:transform-[rotate(45deg)] after:bg-black after:content-[''] after:absolute after:w-[5px] after:h-0.5 after:top-1/2 after:left-1/2 after:-ml-px after:-mt-px after:origin-[1px_1px] after:transform-[rotate(-45deg)]"></span>
               </button>
