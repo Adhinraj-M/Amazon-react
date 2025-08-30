@@ -65,7 +65,7 @@ function ProductList() {
                   </span>
                   <div className="flex">
                     <span className="text-[#565959] text-xs leading-4 block">
-                      M.R.P.:{" "}
+                      M.R.P.:
                     </span>
                     <span className=" text-xs text-[#565959] ml-1">
                       ₹{item.product_actual_price}
@@ -92,3 +92,5 @@ function ProductList() {
 }
 
 export default ProductList;
+
+

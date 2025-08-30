@@ -5,8 +5,7 @@ import axiosInstance from "../../api/axios";
 import type { CarWashProduct } from "../../Types/DeskCategories";
 
 function Pagination() {
-  const [washProduct, setWashProduct] = useState<CarWashProduct[] | null>([]);
-  const [error, setError] = useState<string>();
+  const [washProduct, setWashProduct] = useState<CarWashProduct [] | null>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [itemsPerPage,setItemsPerPage] = useState<number>(4)
   const [spaceLeft,setSpaceLeft] = useState(0)
@@ -14,7 +13,6 @@ function Pagination() {
   const olRef = useRef<HTMLOListElement | null>(null)
   const liRef = useRef<HTMLLIElement>(null)
   
-
   useEffect(() => {
     axiosInstance
       .get<CarWashProduct[]>("carWashing.json")
@@ -23,10 +21,8 @@ function Pagination() {
       })
       .catch((err) => {
         console.log(err);
-        setError("Failed to load carWashing.json");
       });
   }, []);
-
 
   // pagination set up
 
@@ -50,7 +46,7 @@ function Pagination() {
 
   function calculateItemsPerPage() {
     if (!olRef.current) return;
-
+  
     const containerWidth = olRef.current.offsetWidth;
     const itemWidth = 165;
 
@@ -60,7 +56,6 @@ function Pagination() {
     const marginLeft = Math.floor(leftoverSpace / noOfItems)
     
     setSpaceLeft(marginLeft);
-
   
     if (itemsPerPage !== noOfItems) {
       setItemsPerPage(noOfItems);
@@ -118,7 +113,7 @@ function Pagination() {
               </button>
             </div>
             <div className="mx-[42px] overflow-hidden relative h-103">
-              <ol ref={olRef}  className="m-0 h-full flex whitespace-nowrap   text-[#0f1111] tracking-[-4px] list-none ">
+              <ol ref={olRef}  className="m-0 h-full flex whitespace-nowrap text-[#0f1111] tracking-[-4px] list-none ">
                 {currentItems &&
                   currentItems.map((item) => {
                     return (

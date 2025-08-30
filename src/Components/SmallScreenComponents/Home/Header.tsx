@@ -9,7 +9,7 @@ import TopBar from './TopBar'
 function Header() {
 
   const [showSideBar,setShowSideBar]=useState<boolean>(false)
-    const [showTopBar, setShowTopBar] = useState<boolean>(false);
+  const [showTopBar, setShowTopBar] = useState<boolean>(false);
   
       
        const handleSideBar = () =>{
@@ -49,9 +49,9 @@ function Header() {
         </div>
         <div className="flex-row-reverse flex-wrap overflow-hidden min-w-[60px] flex relative w-auto">
           <div className="order-2">
-            <button className="flex ml-[5px] leading-12 text-[13px] text-white">
+            <Link to={'/login'} className="flex ml-[5px] leading-12 text-[13px] text-white">
               Sign in ›
-            </button>
+            </Link>
           </div>
           <button className="order-1 flex p-[9px_0px_12px_4px] relative w-[39px] cursor-pointer">
             <i className="bg-[length:275px] block  w-[35px] h-[27px] order-2 bg-[position:-141px_-300px]" style={{backgroundImage:`url(${smallIconImage})`}}></i>

@@ -19,7 +19,7 @@ function ProductData() {
   }, [cateProduct]);
 
   const settings = {
-    dots: true,
+    dots: false,
     infinte: true,
     speed: 500,
     slidesToShow: 1,
@@ -28,6 +28,7 @@ function ProductData() {
     slidesToScroll: 1,
     arrows: true,
   };
+  console.log("productData",productData)
 
 
   return (
@@ -56,13 +57,12 @@ function ProductData() {
             <h1 className="mt-px mb-2 text-[#565959] leading-[1.4] text-[13px] ">
               {productData[0]?.product_detailed_title}
             </h1>
-            <div className="m-[0_-4px] relative overflow-hidden !h-137.5 ">
-              <ol className="m-0 h-full p-0">
+              <ol className=" p-0 m-[0_-4px] relative overflow-hidden ">
                 <Slider {...settings}>
                   {productData[0]?.product_img.map((img, i) => (
-                    <li key={i} className="h-full flex justify-center">
+                    <li key={i} className="h-full !flex justify-center w-full">
                       <img
-                        className="h-[537.88px]"
+                        className="h-full"
                         src={img}
                         alt={productData[0]?.product_title}
                       />
@@ -70,7 +70,6 @@ function ProductData() {
                   ))}
                 </Slider>
               </ol>
-            </div>
 
             <div className="flex flex-col justify-center p-[6px_0] relative">
               <div className="flex items-center min-h-6 relative justify-center">
@@ -153,7 +152,7 @@ function ProductData() {
                     <div className="flex gap-x-1">
                       <span className="text-[15px] leading-[1.35]">Size:</span>
                       <span className="text-[15px] leading-[1.35] font-fontBold">
-                        2XL
+                        {productData[0].sizes[1]}
                       </span>
                     </div>
                     <span className="text-[#2162a1] text-[15px] leading-[1.35] ">
@@ -163,31 +162,16 @@ function ProductData() {
 
                   <div className="m-[0_-14px] p-[0_14px] max-h-100 opacity-100">
                     <ul className="flex m-[0_0_0_-4px] text-left list-none gap-1">
-                      <li className="flex-[0_0_auto] max-w-57.5 m-[0_0_0_5px]  justify-center items-center relative border border-[#2e3040] rounded-[3px] ">
+                    { productData[0].sizes.map((item,i)=>{
+                      return(
+                        <li key={i} className="flex-[0_0_auto] max-w-57.5 m-[0_0_0_5px]  justify-center items-center relative border border-[#2e3040] rounded-[3px] ">
                         <button className="p-[12px_16px_12px_17px]  text-left text-[15px] leading-5">
-                          S
+                          {item}
                         </button>
                       </li>
-                      <li className="flex-[0_0_auto] max-w-57.5 m-[0_0_0_5px]  justify-center items-center relative border border-[#2e3040] rounded-[3px] ">
-                        <button className="p-[12px_16px_12px_17px]  text-left text-[15px] leading-5">
-                          M
-                        </button>
-                      </li>
-                      <li className="flex-[0_0_auto] max-w-57.5 m-[0_0_0_5px]  justify-center items-center relative border border-[#2e3040] rounded-[3px] ">
-                        <button className="p-[12px_16px_12px_17px]  text-left text-[15px] leading-5">
-                          L
-                        </button>
-                      </li>
-                      <li className="flex-[0_0_auto] max-w-57.5 m-[0_0_0_5px]  justify-center items-center relative border border-[#2e3040] rounded-[3px] ">
-                        <button className="p-[12px_16px_12px_17px]  text-left text-[15px] leading-5">
-                          XL
-                        </button>
-                      </li>
-                      <li className="flex-[0_0_auto] max-w-57.5 m-[0_0_0_5px]  justify-center items-center relative border border-[#2e3040] rounded-[3px] ">
-                        <button className="p-[12px_16px_12px_17px]  text-left text-[15px] leading-5">
-                          2XL
-                        </button>
-                      </li>
+                      )
+                    })  
+                      }
                     </ul>
                   </div>
                 </div>
@@ -351,9 +335,12 @@ function ProductData() {
           </div>
         </div>
       )}
+
+
     </>
   );
 }
 
 export default ProductData;
+
 

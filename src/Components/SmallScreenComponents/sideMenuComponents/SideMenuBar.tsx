@@ -2,6 +2,7 @@ import smallSizeIcon from "/icon-image/smallSizeIcon.png";
 
 import SideMenuSub from "./SideMenuSub";
 import { ProgramsFeaturesMenu, TopCategoriesMenu, TrendingListMenu } from "../../../Types/categories";
+import { Link } from "react-router-dom";
 
  type SideMenuBarProps={
   toggleBtn:()=>void,
@@ -22,7 +23,7 @@ function SideMenuBar({toggleBtn,toggle}:SideMenuBarProps) {
         ></button>
         <section className="pt-0 pb-[30px] m-0 absolute right-0 left-0 top-0 bottom-0 overflow-scroll will-change-[transform] block">
           <div className="flex flex-col justify-end bg-[#232f3e] text-white">
-            <div className="flex justify-end mb-4 p-[20px_20px_0_20px] items-center">
+            <Link to={'/login'} className="flex justify-end mb-4 p-[20px_20px_0_20px] items-center">
               <span className="flex pr-1 text-sm leading-4 text-white">
                 Sign in
               </span>
@@ -30,7 +31,7 @@ function SideMenuBar({toggleBtn,toggle}:SideMenuBarProps) {
                 className="h-6 w-6 bg-[position:-170px_-268px] bg-[length:275px] bg-no-repeat"
                 style={{ backgroundImage: `url(${smallSizeIcon})` }}
               ></span>
-            </div>
+            </Link>
             <div className="flex flex-col justify-end p-[0_20px_20px_20px] text-white ">
               <span className="leading-5 flex text-xl font-fontBold ">
                 Browse

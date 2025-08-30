@@ -7,6 +7,7 @@ import ProductInfo from "../Components/SmallScreenComponents/Product/ProductInfo
 import AllProductList from "../Pages/ProductList/AllProductList"
 import AllProductData from "../Pages/ProductData/AllProductData"
 import Home from "../Pages/Home/Home"
+import Login from "../Pages/Login/Login"
 
 const AppRouter=()=>{
     return(
@@ -17,6 +18,7 @@ const AppRouter=()=>{
                 <Route path="/productList/productData/:productId" element={<ProductListProvider><AllProductData/></ProductListProvider>}></Route> 
                 <Route path="/productData/:productId" element={<HomeProductProvider><HomeProductData/></HomeProductProvider>}></Route> 
                 <Route path="/productInfo/:productId" element={<ToggleBtnProvider><ProductInfo/></ToggleBtnProvider>}></Route>  
+                <Route path="/login" element={<Login/>}></Route>
             </Routes>
         </BrowserRouter>
 

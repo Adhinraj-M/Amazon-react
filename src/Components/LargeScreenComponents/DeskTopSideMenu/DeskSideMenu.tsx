@@ -1,6 +1,7 @@
 import bigIcon from "/icon-image/bigSizeIcon.png";
 import { deskSideMenuListFive, deskSideMenuListFour, deskSideMenuListOne, deskSideMenuListThree,deskSideMenuListTwo } from "../../../Types/deskSideMenuList";
 import DeskSideMenuSection from "./DeskSideMenuSection";
+import { Link } from "react-router-dom";
 
 type deskSideMenuType={
   sideBar:()=> void
@@ -17,14 +18,14 @@ function DeskSideMenu({sideBar}:deskSideMenuType) {
           onClick={sideBar}
           style={{ backgroundImage: `url(${bigIcon})` }} ></button>
 
-        <div className="bg-[#232f3e] h-[50px] flex items-center py-[12.5px]">
+        <Link to={'/login'} className="bg-[#232f3e] h-[50px] flex items-center py-[12.5px] cursor-pointer">
           <div
             className="m-[0_10px_0_36px] bg-[position:-137px_-340px] h-[25px] w-[27px] flex bg-repeat-x"
             style={{ backgroundImage: `url(${bigIcon})` }}></div>
           <span className="flex-1 overflow-hidden flex whitespace-nowrap text-[19px] max-w-[90%] leading-[25px] text-[#fff] text-ellipsis font-fontBold">
             Hello, sign in
           </span>
-        </div>
+        </Link>
 
         <div className="relative overflow-x-hidden flex-col flex pt-[7px] pb-[30px] m-0  right-0 left-0 top-0 bottom-0 overflow-scroll ">
         
