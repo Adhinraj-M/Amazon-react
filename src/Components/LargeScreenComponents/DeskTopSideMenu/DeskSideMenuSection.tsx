@@ -39,11 +39,11 @@ function DeskSideMenuSection({
           list.map((item, index) => {
             return (
               <div key={index}>
-                <li className=" pb-[15px] m-0 flex items-center pr-5 pl-[18px] pt-[13px] text-[14px] cursor-pointer w-full leading-4 justify-between">
+                <li className=" pb-[15px] m-0 flex items-center pr-5 pl-[18px] pt-[13px] text-[14px] cursor-pointer w-full leading-4 justify-between hover:bg-[#eaeded] ">
                   <span>{item.list}</span>
                   {item.hasSubList && (
                     <i
-                      className=" w-2.5 h-3.5 transform-[scaleX(1)] bg-[position:-137px_-288px] bg-repeat-x"
+                      className=" w-2.5 h-3.5 transform-[scaleX(1)] bg-[position:-137px_-288px] bg-repeat-x hover:bg-[position:-166px_-288px]"
                       style={{ backgroundImage: `url(${bigIcon})` }}
                     ></i>
                   )}

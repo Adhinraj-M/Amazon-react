@@ -2,12 +2,17 @@ import bigIcon from "/icon-image/bigSizeIcon.png";
 import { deskSideMenuListFive, deskSideMenuListFour, deskSideMenuListOne, deskSideMenuListThree,deskSideMenuListTwo } from "../../../Types/deskSideMenuList";
 import DeskSideMenuSection from "./DeskSideMenuSection";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import DeskSubMenu from "./DeskSubMenu";
 
 type deskSideMenuType={
   sideBar:()=> void
 }
 
 function DeskSideMenu({sideBar}:deskSideMenuType) {
+  const [subMenu,setSubMenu]=useState<boolean>(true)
+
+
   return (
     <div className="fixed top-0 right-0 left-0 bottom-0 z-[9999] visible">
       <div className=" bg-[rgba(0,0,0,.8)] absolute h-full w-full opacity-[1] flex "></div>
@@ -27,7 +32,7 @@ function DeskSideMenu({sideBar}:deskSideMenuType) {
           </span>
         </Link>
 
-        <div className="relative overflow-x-hidden flex-col flex pt-[7px] pb-[30px] m-0  right-0 left-0 top-0 bottom-0 overflow-scroll ">
+        {subMenu === false ?<div className="relative overflow-x-hidden flex-col flex pt-[7px] pb-[30px] m-0  right-0 left-0 top-0 bottom-0 overflow-scroll ">
         
           <DeskSideMenuSection menuList={deskSideMenuListOne} title="Trending" hasSeeMore={false}/>
 
@@ -50,10 +55,11 @@ function DeskSideMenu({sideBar}:deskSideMenuType) {
 
 
 
-        </div>
+        </div>:(<DeskSubMenu/>)}
       </div>
     </div>
   );
 }
 
 export default DeskSideMenu;
+
