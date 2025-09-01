@@ -61,6 +61,15 @@ function NavDesk() {
     }
   }, [screenWidth]);
 
+ useEffect(()=>{
+ if (showSideBar) {
+    document.body.style.overflowY = "hidden";
+  } else {
+    document.body.style.overflowY = "scroll";
+  }
+
+ },[showSideBar])
+
   return (
     <>
     <nav className="pl-[11px]  h-[39px] pt-0 flex static flex-nowrap bg-[#232f3e] w-full transform translate-[0,0,0] z-[4] bg-[position:0_-725px] desk2xl:pl-[15px]">

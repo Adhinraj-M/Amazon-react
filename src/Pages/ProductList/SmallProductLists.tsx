@@ -25,7 +25,6 @@ function SmallProductLists() {
 
   },[filteredLists])
 
-  console.log("active indexes",activeFilter)
 
 
   return (

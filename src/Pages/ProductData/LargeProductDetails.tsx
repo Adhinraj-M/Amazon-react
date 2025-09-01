@@ -47,7 +47,6 @@ function LargeProductDetails() {
       setProductData(filtered);
     }, [cateProduct,params.productId]);
 
-    console.log("productData",productData)
 
   return (
     <div className="min-large:block hidden">

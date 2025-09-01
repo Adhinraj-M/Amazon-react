@@ -1,20 +1,22 @@
 import { useEffect, useState } from "react";
 import bigIcon from "/icon-image/bigSizeIcon.png";
-import type { deskSideMenuList } from "../../../Types/deskSideMenuList";
+import type { deskSideMenuList, deskSideSubMenuList } from "../../../Types/deskSideMenuList";
 
 type DeskSideMenuSectionType = {
-  menuList: deskSideMenuList[];
+  menuList: (deskSideMenuList | deskSideSubMenuList)[];
   title: string;
   hasSeeMore: boolean;
+  handlesubMenu:(menuList:deskSideMenuList[],index:number)=>void
 };
 
 function DeskSideMenuSection({
   menuList,
   title,
   hasSeeMore,
+  handlesubMenu
 }: DeskSideMenuSectionType) {
 
-  const [list, setList] = useState<deskSideMenuList[]>(menuList);
+  const [list, setList] = useState<(deskSideMenuList | deskSideSubMenuList)[]>(menuList);
   const [Isexpand, setIsExpand] = useState<boolean>(false);
 
   useEffect(() => {
@@ -29,6 +31,7 @@ function DeskSideMenuSection({
     setIsExpand(!Isexpand);
   };
 
+
   return (
     <section className="h-auto ">
       <span className="ml-0 p-[13px_20px_7px_36px] text-lg font-fontBold leading-6 text-[#111] inline-block items-center">
@@ -39,11 +42,13 @@ function DeskSideMenuSection({
           list.map((item, index) => {
             return (
               <div key={index}>
-                <li className=" pb-[15px] m-0 flex items-center pr-5 pl-[18px] pt-[13px] text-[14px] cursor-pointer w-full leading-4 justify-between hover:bg-[#eaeded] ">
+                <li className="group pb-[15px] m-0 flex items-center pr-5 pl-[18px] pt-[13px] text-[14px] cursor-pointer w-full leading-4 justify-between hover:bg-[#eaeded] "
+                onClick={()=>handlesubMenu(menuList,index)}
+                >
                   <span>{item.list}</span>
                   {item.hasSubList && (
                     <i
-                      className=" w-2.5 h-3.5 transform-[scaleX(1)] bg-[position:-137px_-288px] bg-repeat-x hover:bg-[position:-166px_-288px]"
+                      className=" w-2.5 h-3.5 transform-[scaleX(1)] bg-[position:-137px_-288px] bg-repeat-x group-hover:bg-[position:-166px_-288px]"
                       style={{ backgroundImage: `url(${bigIcon})` }}
                     ></i>
                   )}
@@ -78,6 +83,7 @@ function DeskSideMenuSection({
           })}
       </ul>
     </section>
+  
   );
 }
 

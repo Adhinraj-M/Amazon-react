@@ -28,7 +28,6 @@ function ProductData() {
     slidesToScroll: 1,
     arrows: true,
   };
-  console.log("productData",productData)
 
 
   return (

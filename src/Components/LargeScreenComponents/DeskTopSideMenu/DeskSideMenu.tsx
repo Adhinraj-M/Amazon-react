@@ -1,16 +1,43 @@
 import bigIcon from "/icon-image/bigSizeIcon.png";
-import { deskSideMenuListFive, deskSideMenuListFour, deskSideMenuListOne, deskSideMenuListThree,deskSideMenuListTwo } from "../../../Types/deskSideMenuList";
+import { deskSideMenuListFive, deskSideMenuListFour, deskSideMenuListOne, deskSideMenuListThree,deskSideMenuListTwo, type deskSideMenuList, type deskSideSubMenuList } from "../../../Types/deskSideMenuList";
 import DeskSideMenuSection from "./DeskSideMenuSection";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import DeskSubMenu from "./DeskSubMenu";
+import { useState } from "react";
 
 type deskSideMenuType={
   sideBar:()=> void
 }
 
 function DeskSideMenu({sideBar}:deskSideMenuType) {
-  const [subMenu,setSubMenu]=useState<boolean>(true)
+  const [toggleSubMenu,setToggleSubMenu] = useState<boolean>(false)
+
+  const handleDetailedMenu =()=>{
+    setToggleSubMenu(!toggleSubMenu)
+  }
+
+  const [subLists,setSubLists] = useState<{heading:string,lists:string[]}[] | undefined>([])
+
+  const handlesubMenu=(menuList:(deskSideMenuList | deskSideSubMenuList)[],index:number)=>{
+
+  const items = menuList[index];
+
+  if(isSubMenuItem(items)) {
+    setSubLists(items.subList)
+    setToggleSubMenu(!toggleSubMenu)
+  } else {
+    console.log("No submenu");
+    return
+  }
+  }
+
+  
+
+
+  //this function check and if true the type will be set as deskSubMenuList
+  function isSubMenuItem( item: deskSideMenuList | deskSideSubMenuList): item is deskSideSubMenuList {
+  return item.hasSubList === true;
+  }
 
 
   return (
@@ -32,34 +59,34 @@ function DeskSideMenu({sideBar}:deskSideMenuType) {
           </span>
         </Link>
 
-        {subMenu === false ?<div className="relative overflow-x-hidden flex-col flex pt-[7px] pb-[30px] m-0  right-0 left-0 top-0 bottom-0 overflow-scroll ">
+        {!toggleSubMenu  ? <div className="relative overflow-x-hidden flex-col flex pt-[7px] pb-[30px] m-0  right-0 left-0 top-0 bottom-0 overflow-scroll ">
         
-          <DeskSideMenuSection menuList={deskSideMenuListOne} title="Trending" hasSeeMore={false}/>
+          <DeskSideMenuSection menuList={deskSideMenuListOne} title="Trending" hasSeeMore={false} handlesubMenu={handlesubMenu}/>
 
           <span className="border-b border-b-[#d5dbdb] p-0 m-[5px_0] block"></span>
 
-          <DeskSideMenuSection menuList={deskSideMenuListTwo} title="Digital Content and Devices" hasSeeMore={false}/>
+          <DeskSideMenuSection menuList={deskSideMenuListTwo} title="Digital Content and Devices" hasSeeMore={false} handlesubMenu={handlesubMenu}/>
 
           <span className="border-b border-b-[#d5dbdb] p-0 m-[5px_0] block"></span>
 
-          <DeskSideMenuSection menuList={deskSideMenuListThree} title="Shop by Category" hasSeeMore={true}/>
+          <DeskSideMenuSection menuList={deskSideMenuListThree} title="Shop by Category" hasSeeMore={true} handlesubMenu={handlesubMenu}/>
 
           <span className="border-b border-b-[#d5dbdb] p-0 m-[5px_0] block"></span>
 
 
-          <DeskSideMenuSection menuList={deskSideMenuListFour} title="Programs & Features" hasSeeMore={true}/>
+          <DeskSideMenuSection menuList={deskSideMenuListFour} title="Programs & Features" hasSeeMore={true} handlesubMenu={handlesubMenu}/>
 
           <span className="border-b border-b-[#d5dbdb] p-0 m-[5px_0] block"></span>
 
-          <DeskSideMenuSection menuList={deskSideMenuListFive} title="Help & Settings" hasSeeMore={false}/>
+          <DeskSideMenuSection menuList={deskSideMenuListFive} title="Help & Settings" hasSeeMore={false} handlesubMenu={handlesubMenu}/>
 
 
-
-        </div>:(<DeskSubMenu/>)}
+        </div>:(<DeskSubMenu subLists={subLists} handleDetailedMenu={handleDetailedMenu}/>)}
       </div>
     </div>
   );
 }
 
 export default DeskSideMenu;
+
 

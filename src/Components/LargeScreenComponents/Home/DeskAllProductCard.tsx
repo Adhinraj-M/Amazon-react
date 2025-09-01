@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 function DeskAllProductCard() {
 
-  console.log(MenProduct)
   return (
     <div className="p-[0_10px_0] relative !mb-0">
       <div className="max-w-[1219px] min-1240:max-w-[1480px] m-[0_auto] overflow-hidden p-[20px_0] min-w-[919px] flex flex-row flex-wrap text-[13px] leading-[19px] mb-0">
@@ -24,39 +23,39 @@ function DeskAllProductCard() {
           <Link to={`/productList/${MenProduct[0].url}`} className="grow h-[275px] mb-11  ">
             <div className="h-1/2 !mb-2 flex justify-between ">
               <div className="inline-block h-full m-0 p-[0_0_36px] relative w-[47.5%] float-left ">
-                <a className="h-full w-full relative block" href="#">
+                <div className="h-full w-full relative block" >
                   <div className="h-full overflow-hidden relative w-full !mb-0">
                     <img className="h-full left-[-9999px] !max-w-none right-[-9999px] m-auto absolute" src={MenProduct[0].product[0].img.src} alt={MenProduct[0].product[0].img.alt} />
                   </div>
                   <span className="h-9 overflow-hidden w-full inline-block text-xs leading-[18px]">{MenProduct[0].product[0].name}</span>
-                </a>
+                </div>
               </div>
               <div className="inline-block h-full m-0 p-[0_0_36px] relative w-[47.5%] float-left">
-                <a className="h-full w-full relative block" href="#">
+                <div className="h-full w-full relative block" >
                   <div className="h-full overflow-hidden relative w-full !mb-0">
                     <img className="h-full left-[-9999px] !max-w-none right-[-9999px] m-auto absolute" src={MenProduct[0].product[1].img.src} alt={MenProduct[0].product[1].img.alt} />
                   </div>
                   <span className="h-9 overflow-hidden w-full inline-block text-xs leading-[18px]">{MenProduct[0].product[1].name}</span>
-                </a>
+                </div>
               </div>
             </div>
 
             <div className="h-1/2 mb-0 flex justify-between">
             <div className="inline-block h-full m-0 p-[0_0_36px] relative w-[47.5%] float-left ">
-                <a className="h-full w-full relative block" href="#">
+                <div className="h-full w-full relative block" >
                   <div className="h-full overflow-hidden relative w-full !mb-0">
                     <img className="h-full left-[-9999px] !max-w-none right-[-9999px] m-auto absolute" src={MenProduct[0].product[2].img.src} alt={MenProduct[0].product[2].img.alt} />
                   </div>
                   <span className="h-9 overflow-hidden w-full inline-block text-xs leading-[18px]">{MenProduct[0].product[2].name}</span>
-                </a>
+                </div>
               </div>
               <div className="inline-block h-full m-0 p-[0_0_36px] relative w-[47.5%] float-left">
-                <a className="h-full w-full relative block" href="#">
+                <div className="h-full w-full relative block" >
                   <div className="h-full overflow-hidden relative w-full !mb-0">
                     <img className="h-full left-[-9999px] !max-w-none right-[-9999px] m-auto absolute" src={MenProduct[0].product[3].img.src}  alt={MenProduct[0].product[3].img.alt} />
                   </div>
                   <span className="h-9 overflow-hidden w-full inline-block text-xs leading-[18px]">{MenProduct[0].product[3].name}</span>
-                </a>
+                </div>
               </div>
             </div>
             

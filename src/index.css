@@ -10,7 +10,8 @@
     --breakpoint-large:1000px;
     --font-fontReg:'Amazon-regular';
     --font-fontBold:'Amazon-bold';
-    --font-fontLight:'Amazon-light';
+    --font-fontsLight:'Amazon-light';
+
     --animate-navbar:animate-navbar 0.2s;
 
 
@@ -44,10 +45,14 @@ body{
 }
 
 
+
 @font-face {
     font-family:'Amazon-light' ;
-    src: url('/public/Fonts/light.woff2');
+    src: url('/public/Fonts/AmazonUIFont-amazonember_bd-46b91bda68161c14e554a779643ef4957431987b._V2_\ \(1\).woff2');
 }
+
+
+
 
 a{
     text-decoration: none;
