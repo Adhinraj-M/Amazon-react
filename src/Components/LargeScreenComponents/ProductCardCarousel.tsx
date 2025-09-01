@@ -41,13 +41,13 @@ function ProductCardCarousel({products,categoryTitle}:ProductCardCarouselType) {
         {
           categoryTitle == "Up to 80% off | Home, kitchen & outdoors" && (
           <div>
-            <button className="inline left-0 rounded-[0_3px_3px_0] pr-[5px] opacity-50 absolute top-[55px] bg-white h-25 leading-25 w-[45px] text-center shadow-[0_1px_3px_#888]">
+            <button className="inline left-0 rounded-[0_3px_3px_0] pr-[5px] opacity-50 absolute top-[55px] bg-white h-25 leading-25 w-[45px] text-center shadow-[0_1px_3px_#888] cursor-pointer">
               <span
                 className="bg-[position:-14px_0] inline-block leading-normal align-top relative top-1/2 h-[22px] w-[13px] mt-[-11px] bg-[length:132px_235px]"
                 style={{ backgroundImage: `url(${mediaIcons})` }}
               ></span>
             </button>
-            <button className="inline right-0 rounded-[0_3px_3px_0] pr-[5px] opacity-100 absolute top-[55px] bg-white h-25 leading-25 w-[45px] text-center shadow-[0_1px_3px_#888]">
+            <button className="inline right-0 rounded-[0_3px_3px_0] pr-[5px] opacity-100 absolute top-[55px] bg-white h-25 leading-25 w-[45px] text-center shadow-[0_1px_3px_#888] cursor-pointer">
               <span
                 className="bg-[position:0_0] inline-block leading-normal align-top relative top-1/2 h-[22px] w-[13px] mt-[-11px] bg-[length:132px_235px]"
                 style={{ backgroundImage: `url(${mediaIcons})` }}

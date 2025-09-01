@@ -47,6 +47,16 @@ function LargeProductDetails() {
       setProductData(filtered);
     }, [cateProduct,params.productId]);
 
+    // when page load should display top 
+      useEffect(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth", 
+      });
+    }, [productData]);
+
+    
+
 
   return (
     <div className="min-large:block hidden">

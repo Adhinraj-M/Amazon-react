@@ -21,9 +21,15 @@ function SmallProductLists() {
     document.body.style.overflowY = "scroll";
   }
 
-  useEffect(()=>{
 
-  },[filteredLists])
+  // when page load should display top 
+  useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", 
+  });
+}, [filteredLists]);
+
 
 
 
