@@ -92,9 +92,6 @@ function Header() {
       </div>
 
       
-
-
-
     </header>
 
     {showTopBar && <TopBar toggleBtn={handleSideBar} />}

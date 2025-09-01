@@ -398,7 +398,7 @@
   { "sub_cate": "Short Sleeve", "category": "Sleeve Type" ,"pos":0},
   { "sub_cate": "3/4 Sleeve", "category": "Sleeve Type","pos":1 },
   { "sub_cate": "Black", "category": "Colours" ,"pos":0},
-  { "sub_cate": "White", "category": "Colours" ,"pos":1}
+  { "sub_cate": "Gray", "category": "Colours" ,"pos":1}
 
 ],
 
