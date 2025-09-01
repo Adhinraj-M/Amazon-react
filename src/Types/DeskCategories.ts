@@ -139,88 +139,212 @@ export type CategoryProductImg = {
 };
 
 
-export const HomeKitchenProduct:CategoryProductImg[]=[
-  {
-    img:{
-      src:"https://m.media-amazon.com/images/I/71a0mwTxooL._AC_SY200_.jpg",
-      alt:"beauty products "
-    },
-  },
-   {
-    img:{
-      src:"https://m.media-amazon.com/images/I/61aM36RGwgL._AC_SY200_.jpg",
-      alt:"induction cooker "
-    },
-  },
-  {
-    img:{
-      src:"https://m.media-amazon.com/images/I/61KKxQiKA+L._AC_SY200_.jpg",
-      alt:"clock "
-    },
-  },
-  {
-    img:{
-      src:"https://m.media-amazon.com/images/I/81GgEhnkx7L._AC_SY200_.jpg",
-      alt:"Garbage bags"
-    },
-  },
-  {
-    img:{
-      src:"https://m.media-amazon.com/images/I/718ou0YnWIL._AC_SY200_.jpg",
-      alt:"Brick Wallpaper"
-    },
-  },
-  {
-    img:{
-      src:"https://m.media-amazon.com/images/I/61ITlnte9uL._AC_SY200_.jpg",
-      alt:"Bucket spin mop"
-    },
-  },
-  {
-    img:{
-      src:"https://m.media-amazon.com/images/I/81BNQrU7lYL._AC_SY200_.jpg",
-      alt:"Hanger"
-    },
-  },
-  {
-    img:{
-      src:"https://m.media-amazon.com/images/I/714THosaxdL._AC_SY200_.jpg",
-      alt:"Plastic storage container"
-    },
-  },
-  {
-    img:{
-      src:"https://m.media-amazon.com/images/I/81SEVBzTWhL._AC_SY200_.jpg",
-      alt:"Ankle Socks"
-    },
-  },
-  {
-    img:{
-      src:"https://m.media-amazon.com/images/I/61wURjcgIEL._AC_SY200_.jpg",
-      alt:"Sandwich Toster"
-    },
-  },
-   {
-    img:{
-      src:"https://m.media-amazon.com/images/I/813RG-5ObbL._AC_SY200_.jpg",
-      alt:"Universal Liquid Vaporiser"
-    },
-  },
-  {
-    img:{
-      src:"https://m.media-amazon.com/images/I/71zSI8ZHvgL._AC_SY200_.jpg",
-      alt:"Mosquito"
-    },
-  },
-  {
-    img:{
-      src:"https://m.media-amazon.com/images/I/81g3zQi9KcL._AC_SY200_.jpg",
-      alt:"Chopping Board"
-    },
-  },
+// export const HomeKitchenProduct:CategoryProductImg[]=[
+//   {
+//     img:{
+//       src:"https://m.media-amazon.com/images/I/71a0mwTxooL._AC_SY200_.jpg",
+//       alt:"beauty products "
+//     },
+//   },
+//    {
+//     img:{
+//       src:"https://m.media-amazon.com/images/I/61aM36RGwgL._AC_SY200_.jpg",
+//       alt:"induction cooker "
+//     },
+//   },
+//   {
+//     img:{
+//       src:"https://m.media-amazon.com/images/I/61KKxQiKA+L._AC_SY200_.jpg",
+//       alt:"clock "
+//     },
+//   },
+//   {
+//     img:{
+//       src:"https://m.media-amazon.com/images/I/81GgEhnkx7L._AC_SY200_.jpg",
+//       alt:"Garbage bags"
+//     },
+//   },
+//   {
+//     img:{
+//       src:"https://m.media-amazon.com/images/I/718ou0YnWIL._AC_SY200_.jpg",
+//       alt:"Brick Wallpaper"
+//     },
+//   },
+//   {
+//     img:{
+//       src:"https://m.media-amazon.com/images/I/61ITlnte9uL._AC_SY200_.jpg",
+//       alt:"Bucket spin mop"
+//     },
+//   },
+//   {
+//     img:{
+//       src:"https://m.media-amazon.com/images/I/81BNQrU7lYL._AC_SY200_.jpg",
+//       alt:"Hanger"
+//     },
+//   },
+//   {
+//     img:{
+//       src:"https://m.media-amazon.com/images/I/714THosaxdL._AC_SY200_.jpg",
+//       alt:"Plastic storage container"
+//     },
+//   },
+//   {
+//     img:{
+//       src:"https://m.media-amazon.com/images/I/81SEVBzTWhL._AC_SY200_.jpg",
+//       alt:"Ankle Socks"
+//     },
+//   },
+//   {
+//     img:{
+//       src:"https://m.media-amazon.com/images/I/61wURjcgIEL._AC_SY200_.jpg",
+//       alt:"Sandwich Toster"
+//     },
+//   },
+//    {
+//     img:{
+//       src:"https://m.media-amazon.com/images/I/813RG-5ObbL._AC_SY200_.jpg",
+//       alt:"Universal Liquid Vaporiser"
+//     },
+//   },
+//   {
+//     img:{
+//       src:"https://m.media-amazon.com/images/I/71zSI8ZHvgL._AC_SY200_.jpg",
+//       alt:"Mosquito"
+//     },
+//   },
+//   {
+//     img:{
+//       src:"https://m.media-amazon.com/images/I/81g3zQi9KcL._AC_SY200_.jpg",
+//       alt:"Chopping Board"
+//     },
+//   },
   
 
+// ]
+
+export const menFashion:CategoryProductImg[]=[
+  {
+    img: {
+      src: "https://m.media-amazon.com/images/I/612MkbVyluL._SY550_.jpg",
+      alt: "Roadster Half‑Sleeve Polo Tee"
+    }
+  },
+  {
+    img: {
+      src: "https://m.media-amazon.com/images/I/51slHK9woDL._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt: "Puma Performance Round‑Neck Tee"
+    }
+  },
+  {
+    img: {
+      src: "https://m.media-amazon.com/images/I/61W3TkfRLrL._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt: "HRX Slim‑Fit Sports Tee"
+    }
+  },
+  {
+    img: {
+      src: "https://m.media-amazon.com/images/I/61HS4sTDnPL._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt: "Allen Solly Active T‑Shirt"
+    }
+  },
+  {
+    img: {
+      src: "https://m.media-amazon.com/images/I/61YqacacUQL._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt: "Jockey Essentials Cotton Tee"
+    }
+  },
+  {
+    img: {
+      src: "https://m.media-amazon.com/images/I/71U69KZLpvL._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt: "H&M Crew Neck Tee (Pack of 3)"
+    }
+  },
+  {
+    img: {
+      src: "https://m.media-amazon.com/images/I/512fUCcOjyL._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt: "Levi’s Basic Tee"
+    }
+  },
+  {
+    img: {
+      src: "https://m.media-amazon.com/images/I/71XQUGnlB-L._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt: "Nike Legacy Dri‑Fit Tee"
+    }
+  },
+  {
+    img: {
+      src: "https://m.media-amazon.com/images/I/710VGd5-f-L._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt: "Adidas Originals Tee"
+    }
+  },
+  {
+    img: {
+      src: "https://m.media-amazon.com/images/I/71jnHCClWwL._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt: "U.S. Polo Assn. Stripe Tee"
+    }
+  },
+  {
+    img: {
+      src: "https://m.media-amazon.com/images/I/51gCxr-c7GL._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt: "Van Heusen V‑Neck Tee"
+    }
+  },
+  {
+    img: {
+      src: "https://m.media-amazon.com/images/I/41b-P8PcD2L._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt: "Tommy Hilfiger Basic Tee"
+    }
+  },
+  {
+    img: {
+      src: "https://m.media-amazon.com/images/I/51euDQ7gprL._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt: "Jack & Jones Graphic Tee"
+    }
+  },
+  {
+    img: {
+      src: "https://m.media-amazon.com/images/I/414n2iXIV6L._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt: "Cult Fiction Organic Tee"
+    }
+  },
+  {
+    img: {
+      src: "https://m.media-amazon.com/images/I/71wOGr1VUlL._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt: "Roadster Oversized Tee"
+    }
+  },
+  {
+    img: {
+      src: "https://m.media-amazon.com/images/I/41QZ3GN9qJL._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt: "Nike Sports Crew Tee"
+    }
+  },
+  {
+    img: {
+      src: "https://m.media-amazon.com/images/I/61zlnZCLSVL._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt: "Adidas Climalite Tee"
+    }
+  },
+  {
+    img: {
+      src: "https://m.media-amazon.com/images/I/3149lH9LrUL._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt: "Puma Graphic Tee"
+    }
+  },
+  {
+    img: {
+      src: "https://m.media-amazon.com/images/I/61AjC4PsXqL._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt: "Levi’s Logo Tee"
+    }
+  },
+  {
+    img: {
+      src: "https://m.media-amazon.com/images/I/71XlIMP2HWL._AC_SR175,263_FMwebp_QL65_.jpg",
+      alt: "Tommy Hilfiger Striped Tee"
+    }
+  }
 ]
+
 
 export const MobileCategoryProduct: CategoryProductImg[] = [
   {

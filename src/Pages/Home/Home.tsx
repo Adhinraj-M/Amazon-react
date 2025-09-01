@@ -6,8 +6,6 @@ import SmallHome from "./SmallHome"
 
 function Home() {
 
-  
-
   return (
     <div>
       <ToggleBtnProvider>
@@ -19,3 +17,5 @@ function Home() {
 }
 
 export default Home
+
+

@@ -112,7 +112,7 @@ function ProductData() {
                 <div className="mb-4">
                   <span className=" text-[15px] leading-[1.35] p-0 ">
                     Colour:
-                    <span className="uppercase font-fontBold">black</span>
+                    <span className="uppercase font-fontBold">{productData[0]?.colours}</span>
                   </span>
                 </div>
 
@@ -123,7 +123,7 @@ function ProductData() {
                         <img
                           className="min-w-[5px] transform-[translateY(5px)_scale(1.7)]"
                           src={productData[0]?.product_img[0]}
-                          alt="black"
+                          alt={productData[0]?.colours}
                         />
                       </div>
                       <div className="mt-[11px] text-[11px] relative ">
@@ -139,7 +139,7 @@ function ProductData() {
                             ₹{productData[0]?.product_actual_price}
                           </span>
                           <span className="overflow-hidden whitespace-nowrap text-center font-fontBold">
-                            BLACK
+                           {productData[0]?.colours}
                           </span>
                         </div>
                       </div>

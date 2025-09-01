@@ -75,7 +75,6 @@ const [selectedPrice,setSelectedPrice] = useState<{[key:number]:{min:number,max:
 
    const {min,max} = price
 
-   // i want to use this immediately after updating
    const updated ={
     ...selectedPrice,
      [index]:{ min,
@@ -91,7 +90,7 @@ const [selectedPrice,setSelectedPrice] = useState<{[key:number]:{min:number,max:
 }
 
   // filtering according to the category and price function
-  const filteredProducts = (updated: any) => {
+  const filteredProducts = (updated: { [key: number]: { min: number; max: number; isSelected: boolean } }) => {
     const activeKeys = Object.entries(activeFilters)
       .filter(([_, value]) => value === true)
       .map(([key]) => HomeSmallcategories[Number(key)]);

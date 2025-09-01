@@ -9,6 +9,7 @@ import Header from "../Home/Header";
 import { HomeProductContext } from "../../../Context/HomeProductContext";
 import type { Products } from "../../../Types/product";
 import { ProvidingBenefits } from "../../../Types/categories";
+import Footer from "../Home/Footer";
 
 function HomeProductData() {
   const { filterList } = useContext(HomeProductContext);
@@ -27,7 +28,7 @@ function HomeProductData() {
   }, [filterList]);
 
   const settings = {
-    dots: true,
+    dots: false,
     infinte: true,
     speed: 500,
     slidesToShow: 1,
@@ -37,8 +38,10 @@ function HomeProductData() {
     arrows: true,
   };
 
+  const size:string[] =["S","M","L","XL","2Xl"]
+
   return (
-    <>
+    <div className="min-large:hidden">
       <Header  />
       <Address />
       <Sponsored />
@@ -66,13 +69,13 @@ function HomeProductData() {
             <h1 className="mt-px mb-2 text-[#565959] leading-[1.4] text-[13px] ">
               {productData[0]?.product_detailed_title}
             </h1>
-            <div className="m-[0_-4px] relative overflow-hidden !h-137.5 ">
+            <div className="m-[0_-4px] relative overflow-hidden  ">
               <ol className="m-0 h-full p-0">
                 <Slider {...settings}>
                   {productData[0].product_img.map((img, i) => (
                     <li key={i} className="h-full flex justify-center">
                       <img
-                        className="h-[537.88px]"
+                        className="h-auto"
                         src={img}
                         alt={productData[0]?.product_title}
                       />
@@ -118,8 +121,8 @@ function HomeProductData() {
               </div>
             </div>
 
-            {(productData[0]?.product_category === "women_kurtis" ||
-              productData[0]?.product_category === "men_clothing") && (
+            {(productData[0]?.product_category === "Clothing" ||
+              productData[0]?.product_category === "Clothing") && (
               <div className="p-[16px_14px_16px] relative border-t-[5px] border-t-[#F3F3F3] border-b border-b-[#d5d9d9] m-[0_-14px_12px] overflow-hidden bg-transparent">
                 <div className="mb-4">
                   <span className=" text-[15px] leading-[1.35] p-0 ">
@@ -173,31 +176,16 @@ function HomeProductData() {
 
                   <div className="m-[0_-14px] p-[0_14px] max-h-100 opacity-100">
                     <ul className="flex m-[0_0_0_-4px] text-left list-none gap-1">
-                      <li className="flex-[0_0_auto] max-w-57.5 m-[0_0_0_5px]  justify-center items-center relative border border-[#2e3040] rounded-[3px] ">
+                      {size.map((item,index)=>{
+                        return(
+                        <li key={index} className="flex-[0_0_auto] max-w-57.5 m-[0_0_0_5px]  justify-center items-center relative border border-[#2e3040] rounded-[3px] ">
                         <button className="p-[12px_16px_12px_17px]  text-left text-[15px] leading-5">
-                          S
+                          {item}
                         </button>
                       </li>
-                      <li className="flex-[0_0_auto] max-w-57.5 m-[0_0_0_5px]  justify-center items-center relative border border-[#2e3040] rounded-[3px] ">
-                        <button className="p-[12px_16px_12px_17px]  text-left text-[15px] leading-5">
-                          M
-                        </button>
-                      </li>
-                      <li className="flex-[0_0_auto] max-w-57.5 m-[0_0_0_5px]  justify-center items-center relative border border-[#2e3040] rounded-[3px] ">
-                        <button className="p-[12px_16px_12px_17px]  text-left text-[15px] leading-5">
-                          L
-                        </button>
-                      </li>
-                      <li className="flex-[0_0_auto] max-w-57.5 m-[0_0_0_5px]  justify-center items-center relative border border-[#2e3040] rounded-[3px] ">
-                        <button className="p-[12px_16px_12px_17px]  text-left text-[15px] leading-5">
-                          XL
-                        </button>
-                      </li>
-                      <li className="flex-[0_0_auto] max-w-57.5 m-[0_0_0_5px]  justify-center items-center relative border border-[#2e3040] rounded-[3px] ">
-                        <button className="p-[12px_16px_12px_17px]  text-left text-[15px] leading-5">
-                          2XL
-                        </button>
-                      </li>
+                        )
+                      })
+                      }
                     </ul>
                   </div>
                 </div>
@@ -359,7 +347,8 @@ function HomeProductData() {
           </div>
         </div>
       )}
-    </>
+      <Footer/>
+    </div>
   );
 }
 

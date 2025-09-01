@@ -111,31 +111,31 @@ export const CuratedProduct:CuratedProductType[]=[
         id:'cp_4',
         img:'https://m.media-amazon.com/images/I/41w1uizy5-L._SR540,200_.jpg',
         title:`Home décor | Starting ₹79`,
-        url_endpoint:'homeDecor'
+        url_endpoint:'WomenDress'
     },
     {
         id:'cp_5',
         img:'https://m.media-amazon.com/images/I/41YBFpAZykL._SR540,200_.jpg',
         title:`Kitchen essentials | Under ₹299`,
-        url_endpoint:'kitchen'
+        url_endpoint:'menDress'
     },
     {
         id:'cp_6',
         img:'https://m.media-amazon.com/images/I/31vCBYV+1uL._SR540,200_.jpg',
         title:`Mobile accessories | Starting ₹99`,
-        url_endpoint:'mobileAccessories'
+        url_endpoint:'WomenDress'
     },
     {
         id:'cp_7',
         img:'https://m.media-amazon.com/images/I/31VTHFIvC-L._SR540,200_.jpg',
         title:`Headphones | Starting ₹199`,
-        url_endpoint:'headPhones'
+        url_endpoint:'menDress'
     },
     {
         id:'cp_8',
         img:'https://m.media-amazon.com/images/I/41Tuqb5TxdL._SR540,200_.jpg',
         title:`Kids' wear | Starting ₹79`,
-        url_endpoint:'kidsWear'
+        url_endpoint:'WomenDress'
     },
 ]
 

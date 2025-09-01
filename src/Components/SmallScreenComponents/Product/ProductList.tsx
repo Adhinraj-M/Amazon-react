@@ -1,4 +1,4 @@
-import { useContext, useEffect, useMemo } from "react";
+import { useContext, useEffect } from "react";
 import ProductIcons from "/icon-image/ProductIcons.png";
 import { VscLoading } from "react-icons/vsc";
 import { Link, useSearchParams } from "react-router-dom";
@@ -11,21 +11,23 @@ function ProductList() {
   const [searchParams,setSearchParams] = useSearchParams()
 
 
-  const categories = useMemo(()=> searchParams.getAll("category")
-   ,[searchParams])
+  // const categories = useMemo(()=> searchParams.getAll("category")
+  //  ,[searchParams])
 
 //filter
-  useEffect(()=>{
-    const cateFilter = categories.includes('All') || categories.length === 0 ? products : products?.filter((product)=>{
-       return categories.some((category)=> product.product_category === category)
-    })
-    setFilterList(cateFilter) 
+  // useEffect(()=>{
+  //   const cateFilter = categories.includes('All') || categories.length === 0 ? products : products?.filter((product)=>{
+  //      return categories.some((category)=> product.product_category === category)
+  //   })
+  //   setFilterList(cateFilter) 
 
-     if(categories.length > 0){
-       setSelectedCategory(categories)
-     }             
+  //    if(categories.length > 0){
+  //      setSelectedCategory(categories)
+  //    }             
                  
-  },[categories,products])
+  // },[categories,products])
+
+  console.log("filterList",filterList)
 
 // setting the searchParams
   useEffect(()=>{

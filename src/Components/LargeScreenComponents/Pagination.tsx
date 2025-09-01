@@ -5,10 +5,10 @@ import axiosInstance from "../../api/axios";
 import type { CarWashProduct } from "../../Types/DeskCategories";
 
 function Pagination() {
-  const [washProduct, setWashProduct] = useState<CarWashProduct [] | null>([]);
+  const [washProduct, setWashProduct] = useState<CarWashProduct [] | null>(null);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [itemsPerPage,setItemsPerPage] = useState<number>(4)
-  const [spaceLeft,setSpaceLeft] = useState(0)
+  const [spaceLeft,setSpaceLeft] = useState<number>(0)
 
   const olRef = useRef<HTMLOListElement | null>(null)
   const liRef = useRef<HTMLLIElement>(null)
@@ -16,7 +16,7 @@ function Pagination() {
   useEffect(() => {
     axiosInstance
       .get<CarWashProduct[]>("carWashing.json")
-      .then((res: any) => {
+      .then((res) => {
         setWashProduct(res.data);
       })
       .catch((err) => {
@@ -26,14 +26,15 @@ function Pagination() {
 
   // pagination set up
 
-  const totalPage: number = washProduct
-    ? Math.ceil(washProduct?.length / itemsPerPage)
+  const totalPage: number = washProduct  
+    ? Math.ceil(washProduct?.length / itemsPerPage) //rounds to the next integer 
     : 0;
 
   const indexOfLastItem: number = currentPage * itemsPerPage;
   const indexOfFirstItem: number = indexOfLastItem - itemsPerPage;
   const currentItems: CarWashProduct[] | null =
     washProduct && washProduct.slice(indexOfFirstItem, indexOfLastItem);
+
 
   const handlePagination = (pageNumber: number) => {
     if (pageNumber < 1 || pageNumber > totalPage) {
@@ -104,7 +105,7 @@ function Pagination() {
               <button
                 onClick={() => handlePagination(currentPage - 1)}
                 disabled={currentPage === 1}
-                className={`rounded-lg relative self-center  border bg-white border-[#888c8c] inline-block p-0 text-center align-middle cursor-pointer w-[34px] h-[37px] ${
+                className={`disabled:cursor-not-allowed rounded-lg relative self-center  border bg-white border-[#888c8c] inline-block p-0 text-center align-middle cursor-pointer w-[34px] h-[37px] ${
                   currentPage === 1 && "opacity-50 cursor-not-allowed"
                 }`}>
                 <i
@@ -176,7 +177,7 @@ function Pagination() {
               <button
                 onClick={() => handlePagination(currentPage + 1)}
                 disabled={currentPage === totalPage}
-                className={`rounded-lg relative  self-center border bg-white border-[#888c8c] inline-block p-0 text-center align-middle cursor-pointer w-[34px] h-[37px] ${
+                className={` disabled:cursor-not-allowed rounded-lg relative  self-center border bg-white border-[#888c8c] inline-block p-0 text-center align-middle cursor-pointer w-[34px] h-[37px] ${
                   currentPage === totalPage && "opacity-50 cursor-not-allowed"
                 }`}
               >
@@ -214,3 +215,4 @@ function Pagination() {
 }
 
 export default Pagination;
+

@@ -9,6 +9,7 @@ import Slider from "react-slick";
 import { ToggleContext } from "../../../Context/toggleContext";
 import { ProvidingBenefits } from "../../../Types/categories";
 import Header from "../Home/Header";
+import Footer from "../Home/Footer";
 
 function ProductInfo() {
   const {  carProduct } = useContext(ToggleContext);
@@ -25,7 +26,7 @@ function ProductInfo() {
   }, [carProduct?.length]);
 
   const settings = {
-    dots: true,
+    dots: false,
     infinte: true,
     speed: 500,
     slidesToShow: 1,
@@ -61,16 +62,16 @@ function ProductInfo() {
                 </span>
               </div>
             </div>
-            <h1 className="mt-px mb-2 text-[#565959] leading-[1.4] text-[13px] ">
+            <h1 className="mt-px mb-4 text-[#565959] leading-[1.4] text-[13px] h-full ">
               {filtered[0]?.title}
             </h1>
-            <div className="m-[0_-4px] relative overflow-hidden !h-137.5 ">
+            <div className="m-[0_-4px] relative overflow-hidden">
               <ol className="m-0 h-full p-0 ">
                 <Slider {...settings}>
                   {filtered[0].img.map((img, i) => (
                     <li key={i} className="h-full flex justify-center">
                       <img
-                        className="h-[537.88px]"
+                        className="h-full"
                         src={img}
                         alt={filtered[0]?.title}
                       />
@@ -268,6 +269,7 @@ function ProductInfo() {
           </div>
         </div>
       )}
+      <Footer/>
     </>
   );
 }

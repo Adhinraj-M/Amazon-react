@@ -8,7 +8,7 @@ import FourProductCard from "../../Components/LargeScreenComponents/FourProductC
 import Pagination from "../../Components/LargeScreenComponents/Pagination";
 import ProductCardCarousel from "../../Components/LargeScreenComponents/ProductCardCarousel";
 import SingleCategoryProduct from "../../Components/LargeScreenComponents/SingleCategoryProduct";
-import { BeautyCategoryProducts, HeroDeskProduct, HomeKitchenProduct, MenProduct, MobileCategoryProduct} from "../../Types/DeskCategories";
+import { BeautyCategoryProducts, HeroDeskProduct, menFashion, MenProduct, MobileCategoryProduct} from "../../Types/DeskCategories";
 import NavDesk from "../../Components/LargeScreenComponents/Home/NavDesk";
 import { ToggleContext } from "../../Context/toggleContext";
 
@@ -26,7 +26,7 @@ function LargeHome() {
       <DeskAllProductCard />
       <div className="max-w-[1480px] 2xl:m-auto">
         <ProductCardCarousel
-          products={HomeKitchenProduct}
+          products={menFashion}
           categoryTitle="Up to 80% off | Home, kitchen & outdoors"
         />
         <hr className="h-5 border-none m-0 block" />
