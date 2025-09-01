@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Address from "../Home/Address";
 import Sponsored from "../Home/Sponsored";
-import Slider from "react-slick";
+import Slider, { type Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Header from "../Home/Header";
@@ -27,16 +27,17 @@ function HomeProductData() {
     setProductData(filtered);
   }, [filterList]);
 
-  const settings = {
+  const settings:Settings = {
     dots: false,
-    infinte: true,
+    infinite: true,
     speed: 500,
     slidesToShow: 1,
-    beforeChange: (oldIndex: number, newIndex: number) =>
+    beforeChange: (_oldIndex: number, newIndex: number) =>
       setActiveIndex(newIndex),
     slidesToScroll: 1,
     arrows: true,
   };
+
 
   const size:string[] =["S","M","L","XL","2Xl"]
 

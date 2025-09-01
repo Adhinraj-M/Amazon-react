@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Slider from "react-slick";
+import Slider, { type Settings } from "react-slick";
 import { ProductListContext } from "../../../Context/ProductListContext";
 import { ProvidingBenefits } from "../../../Types/categories";
 import type { CategoryProdut } from "../../../Types/product";
@@ -18,12 +18,12 @@ function ProductData() {
     setProductData(filtered);
   }, [cateProduct]);
 
-  const settings = {
+  const settings:Settings = {
     dots: false,
-    infinte: true,
+    infinite: true,
     speed: 500,
     slidesToShow: 1,
-    beforeChange: (oldIndex: number, newIndex: number) =>
+    beforeChange: (_oldIndex: number, newIndex: number) =>
       setActiveIndex(newIndex),
     slidesToScroll: 1,
     arrows: true,

@@ -8,26 +8,9 @@ function ProductList() {
   const { filterList,selecedCategory } = useContext(HomeProductContext);
 
 
-  const [searchParams,setSearchParams] = useSearchParams()
+  const [_searchParams,setSearchParams] = useSearchParams()
 
-
-  // const categories = useMemo(()=> searchParams.getAll("category")
-  //  ,[searchParams])
-
-//filter
-  // useEffect(()=>{
-  //   const cateFilter = categories.includes('All') || categories.length === 0 ? products : products?.filter((product)=>{
-  //      return categories.some((category)=> product.product_category === category)
-  //   })
-  //   setFilterList(cateFilter) 
-
-  //    if(categories.length > 0){
-  //      setSelectedCategory(categories)
-  //    }             
-                 
-  // },[categories,products])
-
-  // console.log("filterList",filterList)
+  
 
 // setting the searchParams
   useEffect(()=>{

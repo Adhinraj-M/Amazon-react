@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import type { CarWashProduct } from "../../Types/DeskCategories";
+import type { CarWashProduct } from "../../../Types/DeskCategories";
 
 type cubicProductType={
   products:CarWashProduct[] | undefined

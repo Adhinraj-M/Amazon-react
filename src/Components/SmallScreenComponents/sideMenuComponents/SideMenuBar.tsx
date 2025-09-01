@@ -4,12 +4,14 @@ import SideMenuSub from "./SideMenuSub";
 import { ProgramsFeaturesMenu, TopCategoriesMenu, TrendingListMenu } from "../../../Types/categories";
 import { Link } from "react-router-dom";
 
+
  type SideMenuBarProps={
   toggleBtn:()=>void,
-  toggle:boolean
 }
 
-function SideMenuBar({toggleBtn,toggle}:SideMenuBarProps) {
+function SideMenuBar({toggleBtn}:SideMenuBarProps) {
+
+ 
 
   return (
     <div

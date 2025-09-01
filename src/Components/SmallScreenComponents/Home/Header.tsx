@@ -32,6 +32,16 @@ function Header() {
   }, []);
 
 
+   useEffect(()=>{
+   if (showSideBar) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "scroll";
+    }
+  
+   },[showSideBar])
+
+
   return (
     <>
     <header className="relative z-[208] text-xs leading-[1em] min-w-[200px]">
@@ -89,10 +99,11 @@ function Header() {
 
     {showTopBar && <TopBar toggleBtn={handleSideBar} />}
 
-      {showSideBar && <SideMenuBar toggleBtn={handleSideBar} toggle={showSideBar} />}
+      {showSideBar && <SideMenuBar toggleBtn={handleSideBar}  />}
 
     </>
   );
 }
 
 export default Header;
+

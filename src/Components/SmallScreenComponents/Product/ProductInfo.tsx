@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+import Slider, { type Settings } from "react-slick";
 import { ToggleContext } from "../../../Context/toggleContext";
 import { ProvidingBenefits } from "../../../Types/categories";
 import Header from "../Home/Header";
@@ -25,12 +25,12 @@ function ProductInfo() {
     setFiltered(filterData);
   }, [carProduct?.length]);
 
-  const settings = {
+  const settings:Settings = {
     dots: false,
-    infinte: true,
+    infinite: true,
     speed: 500,
     slidesToShow: 1,
-    beforeChange: (oldIndex: number, newIndex: number) =>
+    beforeChange: (_oldIndex: number, newIndex: number) =>
       setActiveIndex(newIndex),
     slidesToScroll: 1,
     arrows: true,
