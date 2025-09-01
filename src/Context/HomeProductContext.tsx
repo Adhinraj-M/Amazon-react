@@ -42,7 +42,6 @@ export const HomeProductContext = createContext<HomeProductType>({
 
 export const HomeProductProvider = ({ children }:{ children: ReactNode }) => {
   const [products, setProducts] = useState<Products[]>();
-  const [error, setError] = useState<string | null>(null);
   const [filterList, setFilterList] = useState<Products[] | undefined>();
   const [activeFilters, setActiveFilters] = useState<{[key: number]: boolean;}>({
     0: true,
@@ -63,7 +62,6 @@ const [selectedPrice,setSelectedPrice] = useState<{[key:number]:{min:number,max:
         setFilterList(res.data);
       })
       .catch((err) => {
-        setError("Failed to load data.json");
         console.log(err);
       });
   }, []);

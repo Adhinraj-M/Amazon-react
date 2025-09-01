@@ -5,7 +5,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { HomeProductContext } from "../../../Context/HomeProductContext";
 
 function ProductList() {
-  const {setFilterList, filterList,products,selecedCategory ,setSelectedCategory} = useContext(HomeProductContext);
+  const { filterList,selecedCategory } = useContext(HomeProductContext);
 
 
   const [searchParams,setSearchParams] = useSearchParams()
@@ -27,7 +27,7 @@ function ProductList() {
                  
   // },[categories,products])
 
-  console.log("filterList",filterList)
+  // console.log("filterList",filterList)
 
 // setting the searchParams
   useEffect(()=>{
